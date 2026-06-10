@@ -1,0 +1,334 @@
+Jimi Hendrix
+Janis Joplin
+Jim Morrison
+Kurt Cobain
+Chris Cornell
+Chester Bennington
+Prince
+Michael Jackson
+Whitney Houston
+Amy Winehouse
+David Bowie
+George Michael
+Tina Turner
+Donna Summer
+Dusty Springfield
+Roy Orbison
+Tom Petty
+Jeff Buckley
+Luciano Pavarotti
+Maria Callas
+Enrico Caruso
+Ravi Shankar
+Yehudi Menuhin
+Mstislav Rostropovich
+Glenn Gould
+Charlie Chaplin
+Buster Keaton
+Harold Lloyd
+Greta Garbo
+Marlene Dietrich
+Audrey Hepburn
+Ingrid Bergman
+Humphrey Bogart
+Cary Grant
+James Stewart
+Clark Gable
+Gary Cooper
+John Wayne
+Gregory Peck
+Spencer Tracy
+Marlon Brando
+James Dean
+Montgomery Clift
+Orson Welles
+Laurence Olivier
+Peter O'Toole
+Alec Guinness
+Sean Connery
+Richard Burton
+Charlton Heston
+Paul Newman
+Steve McQueen
+Robert Mitchum
+Kirk Douglas
+Donald Sutherland
+Philip Seymour Hoffman
+Robin Williams
+Gene Wilder
+Heath Ledger
+Chadwick Boseman
+Alan Rickman
+Christopher Lee
+Peter Cushing
+Bela Lugosi
+Boris Karloff
+Toshiro Mifune
+Omar Sharif
+Marcello Mastroianni
+Vittorio De Sica
+Federico Fellini
+Akira Kurosawa
+Yasujiro Ozu
+Satyajit Ray
+Ritwik Ghatak
+Guru Dutt
+Raj Kapoor
+Dilip Kumar
+Dev Anand
+Nargis
+Meena Kumari
+Smita Patil
+Shashi Kapoor
+Irrfan Khan
+Soumitra Chatterjee
+Uttam Kumar
+Alfred Hitchcock
+Stanley Kubrick
+Billy Wilder
+John Ford
+Frank Capra
+Sergio Leone
+Andrei Tarkovsky
+Ingmar Bergman
+Luis Bunuel
+Robert Bresson
+Jean-Luc Godard
+Francois Truffaut
+Agnes Varda
+Roman Polanski
+Krzysztof Kieslowski
+Bernardo Bertolucci
+Pier Paolo Pasolini
+Anna Magnani
+Gina Lollobrigida
+Rudolph Valentino
+Jean Harlow
+Marilyn Monroe
+Bette Davis
+Joan Crawford
+Katharine Hepburn
+Elizabeth Taylor
+Grace Kelly
+Vivien Leigh
+Rita Hayworth
+Ava Gardner
+Judy Garland
+Hedy Lamarr
+Lauren Bacall
+Natalie Wood
+Princess Diana
+Elizabeth II
+Winston Churchill
+Clement Attlee
+Margaret Thatcher
+Harold Wilson
+Edward Heath
+Anthony Eden
+Neville Chamberlain
+David Lloyd George
+Stanley Baldwin
+Ramsay MacDonald
+William Gladstone
+Benjamin Disraeli
+Robert Peel
+Arthur Wellesley (Duke of Wellington)
+Horatio Nelson
+Oliver Cromwell
+William Pitt the Younger
+William Pitt the Elder
+George Canning
+Lord Palmerston
+Otto von Bismarck
+Kaiser Wilhelm II
+Frederick the Great
+Maria Theresa
+Joseph II
+Catherine the Great
+Peter the Great
+Nicholas II
+Alexander II of Russia
+Vladimir Lenin
+Joseph Stalin
+Leon Trotsky
+Nikita Khrushchev
+Leonid Brezhnev
+Mikhail Gorbachev
+Boris Yeltsin
+Charles de Gaulle
+Georges Clemenceau
+Napoleon Bonaparte
+Napoleon III
+Louis XIV
+Louis XV
+Louis XVI
+Marie Antoinette
+Maximilien Robespierre
+Georges Danton
+Jean-Paul Marat
+Lafayette
+Talleyrand
+Metternich
+Giuseppe Garibaldi
+Camillo Cavour
+Victor Emmanuel II
+Benito Mussolini
+Alcide De Gasperi
+Francisco Franco
+Juan Peron
+Eva Peron
+Simon Bolivar
+Jose de San Martin
+Bernardo O'Higgins
+Antonio Jose de Sucre
+Miguel Hidalgo
+Emiliano Zapata
+Pancho Villa
+Benito Juarez
+Porfirio Diaz
+Getulio Vargas
+Juscelino Kubitschek
+Salvador Allende
+Augusto Pinochet
+Fidel Castro
+Che Guevara
+Fulgencio Batista
+Hugo Chavez
+Nelson Mandela
+Desmond Tutu
+Kwame Nkrumah
+Jomo Kenyatta
+Julius Nyerere
+Patrice Lumumba
+Thomas Sankara
+Haile Selassie
+Menelik II
+Shaka Zulu
+Cetshwayo
+Samora Machel
+Leopold Senghor
+Muammar Gaddafi
+Yasser Arafat
+Golda Meir
+Yitzhak Rabin
+Menachem Begin
+David Ben-Gurion
+Chaim Weizmann
+Theodor Herzl
+Ruhollah Khomeini
+Mohammad Reza Pahlavi
+Saddam Hussein
+King Faisal of Saudi Arabia
+Ibn Saud
+George Washington
+John Adams
+Thomas Jefferson
+James Madison
+James Monroe
+John Quincy Adams
+Andrew Jackson
+Martin Van Buren
+William Henry Harrison
+John Tyler
+James K. Polk
+Zachary Taylor
+Millard Fillmore
+Franklin Pierce
+James Buchanan
+Abraham Lincoln
+Andrew Johnson
+Ulysses S. Grant
+Rutherford B. Hayes
+James A. Garfield
+Chester A. Arthur
+Grover Cleveland
+Benjamin Harrison
+William McKinley
+Theodore Roosevelt
+William Howard Taft
+Woodrow Wilson
+Warren G. Harding
+Calvin Coolidge
+Herbert Hoover
+Franklin D. Roosevelt
+Harry S. Truman
+Dwight D. Eisenhower
+John F. Kennedy
+Lyndon B. Johnson
+Richard Nixon
+Gerald Ford
+Ronald Reagan
+George H. W. Bush
+Jimmy Carter
+Eleanor Roosevelt
+Martin Luther King Jr.
+Malcolm X
+Rosa Parks
+Frederick Douglass
+Harriet Tubman
+Sojourner Truth
+Susan B. Anthony
+Elizabeth Cady Stanton
+W. E. B. Du Bois
+Booker T. Washington
+Ida B. Wells
+Cesar Chavez
+Thurgood Marshall
+Ruth Bader Ginsburg
+Antonin Scalia
+Oliver Wendell Holmes Jr.
+John Marshall
+Sacagawea
+Daniel Boone
+Davy Crockett
+Sam Houston
+Kit Carson
+George Custer
+Crazy Horse
+Sitting Bull
+Geronimo
+Tecumseh
+Red Cloud
+Chief Joseph
+Buffalo Bill Cody
+Wyatt Earp
+Doc Holliday
+Annie Oakley
+Jesse James
+Billy the Kid
+Babe Ruth
+Lou Gehrig
+Joe DiMaggio
+Jackie Robinson
+Hank Aaron
+Roberto Clemente
+Mickey Mantle
+Ted Williams
+Ty Cobb
+Cy Young
+Honus Wagner
+Walter Johnson
+Jim Thorpe
+Muhammad Ali
+Joe Louis
+Rocky Marciano
+Sonny Liston
+Kobe Bryant
+Diego Maradona
+Pele
+Johan Cruyff
+Antonie van Leeuwenhoek
+Jane Goodall
+Mo Yan
+Hilaire Belloc
+Mahmoud Sami al-Barudi
+Hafez Ibrahim
+Stevie Ray Vaughan
+Dolores Huerta
+Sandra Day O'Connor
+George Foreman
+Rosa Luxemburg
+Sun Yat-sen
+Ho Chi Minh
+Pol Pot
+Nicolae Ceausescu

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_862858119462c12d20970fa21d0d5cd9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    \
+    <style>
+      @keyframes streak-flash {
+        0% { background-color: rgba(220, 53, 69, 0.3); }
+        100% { background-color: transparent; }
+      }
+
+      .streak-flash {
+        animation: streak-flash 600ms ease-out;
+      }
+    </style>
+    <div id="quiz-panel" style="position: fixed; top: 16px; left: 16px; z-index: 9999; background: rgba(255,255,255,0.92); border-radius: 10px; padding: 12px 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); max-width: 320px; font-family: Helvetica Neue, Arial, sans-serif;">
+      <div style="font-weight: 700; margin-bottom: 6px;">Guess The Person</div>
+      <div style="font-size: 13px; margin-bottom: 8px;">Use the birth/death markers and map clues to guess who this is.</div>
+      <input id="quiz-input" type="text" placeholder="Type a name" style="width: 100%; box-sizing: border-box; padding: 7px 8px; border: 1px solid #bdbdbd; border-radius: 6px; margin-bottom: 8px;" />
+      <button id="quiz-submit" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #1565c0; color: white; font-weight: 700; cursor: pointer;">Check Answer</button>
+      <div id="quiz-result" style="margin-top: 8px; font-size: 13px;"></div>
+      <div id="quiz-stats" style="margin-top: 6px; font-size: 12px; color: #666; font-weight: 600;">Correct: <span id="correct-count">0</span> | Streak: <span id="streak-count">0</span></div>
+      <button id="quiz-reset" style="width: 100%; padding: 6px 8px; border: 0; border-radius: 6px; background: #e0e0e0; color: #555; font-weight: 500; font-size: 12px; cursor: pointer; margin-top: 6px;">Reset Score</button>
+    </div>
+    <script>
+      (function() {
+        const expected = 'Napoleon';
+        const storageKeys = {
+          correct: "correctCount",
+          streak: "streak",
+        };
+
+        const normalize = (value) => (value || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/['’`-]/g, "")
+          .replace(/[^a-z0-9\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+
+        const input = document.getElementById("quiz-input");
+        const submit = document.getElementById("quiz-submit");
+        const result = document.getElementById("quiz-result");
+        const correctCountElement = document.getElementById("correct-count");
+        const streakCountElement = document.getElementById("streak-count");
+        const reset = document.getElementById("quiz-reset");
+
+        let correctCount = 0;
+        let streak = 0;
+
+        const updateScoreDisplay = () => {
+          if (correctCountElement) {
+            correctCountElement.textContent = String(correctCount);
+          }
+          if (streakCountElement) {
+            streakCountElement.textContent = String(streak);
+          }
+        };
+
+        const initializeScore = () => {
+          const storedCorrectCount = window.sessionStorage.getItem(storageKeys.correct);
+          const storedStreak = window.sessionStorage.getItem(storageKeys.streak);
+
+          const parsedCorrectCount = Number.parseInt(storedCorrectCount || "0", 10);
+          const parsedStreak = Number.parseInt(storedStreak || "0", 10);
+
+          correctCount = Number.isNaN(parsedCorrectCount) ? 0 : parsedCorrectCount;
+          streak = Number.isNaN(parsedStreak) ? 0 : parsedStreak;
+          updateScoreDisplay();
+        };
+
+        const flashStreakReset = () => {
+          if (!streakCountElement) {
+            return;
+          }
+
+          streakCountElement.classList.remove("streak-flash");
+          void streakCountElement.offsetWidth;
+          streakCountElement.classList.add("streak-flash");
+          window.setTimeout(() => {
+            streakCountElement.classList.remove("streak-flash");
+          }, 600);
+        };
+
+        const check = () => {
+          if (!input || !result) {
+            return;
+          }
+
+          const guess = normalize(input.value);
+          if (!guess) {
+            result.style.color = "#7f6000";
+            result.textContent = "Enter a guess first.";
+            input.focus();
+            return;
+          }
+
+          if (guess === normalize(expected)) {
+            correctCount += 1;
+            streak += 1;
+            window.sessionStorage.setItem(storageKeys.correct, String(correctCount));
+            window.sessionStorage.setItem(storageKeys.streak, String(streak));
+            updateScoreDisplay();
+
+            result.style.color = "#1b5e20";
+            result.textContent = "Correct!";
+            input.value = "";
+            input.focus();
+            return;
+          }
+
+          streak = 0;
+          window.sessionStorage.setItem(storageKeys.streak, String(streak));
+          updateScoreDisplay();
+          result.style.color = "#b71c1c";
+          result.textContent = "Not quite. Try again.";
+          flashStreakReset();
+        };
+
+        const resetScore = () => {
+          if (window.sessionStorage) {
+            window.sessionStorage.removeItem(storageKeys.correct);
+            window.sessionStorage.removeItem(storageKeys.streak);
+          }
+
+          correctCount = 0;
+          streak = 0;
+          updateScoreDisplay();
+
+          if (result) {
+            result.textContent = "";
+          }
+          if (input) {
+            input.value = "";
+            input.focus();
+          }
+        };
+
+        if (submit) {
+          submit.addEventListener("click", check);
+        }
+        if (input) {
+          input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+              check();
+            }
+          });
+        }
+        if (reset) {
+          reset.addEventListener("click", resetScore);
+        }
+
+        initializeScore();
+      })();
+    </script>
+    
+    
+            <div class="folium-map" id="map_862858119462c12d20970fa21d0d5cd9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_862858119462c12d20970fa21d0d5cd9 = L.map(
+                "map_862858119462c12d20970fa21d0d5cd9",
+                {
+                    center: [12.996849999999998, 1.5349500000000003],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-85,
+-540,
+],
+[
+85,
+540,
+],
+],
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_78a4cfde5c62be541238adf7d08c759e = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_78a4cfde5c62be541238adf7d08c759e.addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var marker_515bb3da60aa8f104f15a42117c7da04 = L.marker(
+                [41.9267, -351.2631],
+                {
+}
+            ).addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var div_icon_b7be3f69f9042c19eea2032e6d582dad = L.divIcon({
+  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" /\u003e\n        \u003crect x=\"91\" y=\"32\" width=\"138\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\"\u003e1769-08-15\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
+  "iconSize": [320, 90],
+  "iconAnchor": [160, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_b7cf7f2ee72eb170e2a99621ffe8bdc8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4d639f43ba561bead5edeb16c3b3d13 = $(`<div id="html_a4d639f43ba561bead5edeb16c3b3d13" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Ajaccio</div>`)[0];
+                popup_b7cf7f2ee72eb170e2a99621ffe8bdc8.setContent(html_a4d639f43ba561bead5edeb16c3b3d13);
+            
+        
+
+        marker_515bb3da60aa8f104f15a42117c7da04.bindPopup(popup_b7cf7f2ee72eb170e2a99621ffe8bdc8)
+        ;
+
+        
+    
+    
+                marker_515bb3da60aa8f104f15a42117c7da04.setIcon(div_icon_b7be3f69f9042c19eea2032e6d582dad);
+            
+    
+            var marker_08b902bba630e3a7070228f7a6ddee16 = L.marker(
+                [-15.933, -365.667],
+                {
+}
+            ).addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var div_icon_998513ae39cb6bc316a2fc36196933a0 = L.divIcon({
+  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" /\u003e\n        \u003crect x=\"91\" y=\"28\" width=\"138\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\"\u003e1821-05-05\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
+  "iconSize": [320, 90],
+  "iconAnchor": [160, 90],
+  "className": "empty",
+});
+        
+    
+        var popup_ae7a53563dcbc40c5ac767db3d9987b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35a04d57523f3d938372bfac4d2b6639 = $(`<div id="html_35a04d57523f3d938372bfac4d2b6639" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Longwood, Saint Helena</div>`)[0];
+                popup_ae7a53563dcbc40c5ac767db3d9987b4.setContent(html_35a04d57523f3d938372bfac4d2b6639);
+            
+        
+
+        marker_08b902bba630e3a7070228f7a6ddee16.bindPopup(popup_ae7a53563dcbc40c5ac767db3d9987b4)
+        ;
+
+        
+    
+    
+                marker_08b902bba630e3a7070228f7a6ddee16.setIcon(div_icon_998513ae39cb6bc316a2fc36196933a0);
+            
+    
+            var marker_13451e0a36e894f7c640cfaf1d1960ea = L.marker(
+                [41.9267, 8.7369],
+                {
+}
+            ).addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var div_icon_8e335801b7d27921c1f7f406ebf8d587 = L.divIcon({
+  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" /\u003e\n        \u003crect x=\"91\" y=\"32\" width=\"138\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\"\u003e1769-08-15\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
+  "iconSize": [320, 90],
+  "iconAnchor": [160, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_d598461b51f37a2e573b0991f1bf3fbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b44d5a31fd007d8d4377b4b048987c48 = $(`<div id="html_b44d5a31fd007d8d4377b4b048987c48" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Ajaccio</div>`)[0];
+                popup_d598461b51f37a2e573b0991f1bf3fbb.setContent(html_b44d5a31fd007d8d4377b4b048987c48);
+            
+        
+
+        marker_13451e0a36e894f7c640cfaf1d1960ea.bindPopup(popup_d598461b51f37a2e573b0991f1bf3fbb)
+        ;
+
+        
+    
+    
+                marker_13451e0a36e894f7c640cfaf1d1960ea.setIcon(div_icon_8e335801b7d27921c1f7f406ebf8d587);
+            
+    
+            var marker_813aa1bed8d9e0f2b7808046c558857b = L.marker(
+                [-15.933, -5.667],
+                {
+}
+            ).addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var div_icon_bb168ec71c2ec50b438dcdbbf866439c = L.divIcon({
+  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" /\u003e\n        \u003crect x=\"91\" y=\"28\" width=\"138\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\"\u003e1821-05-05\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
+  "iconSize": [320, 90],
+  "iconAnchor": [160, 90],
+  "className": "empty",
+});
+        
+    
+        var popup_7f518d087126eff84596718323f96f5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6a29d4c8d36b05a25544477215706cc = $(`<div id="html_f6a29d4c8d36b05a25544477215706cc" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Longwood, Saint Helena</div>`)[0];
+                popup_7f518d087126eff84596718323f96f5f.setContent(html_f6a29d4c8d36b05a25544477215706cc);
+            
+        
+
+        marker_813aa1bed8d9e0f2b7808046c558857b.bindPopup(popup_7f518d087126eff84596718323f96f5f)
+        ;
+
+        
+    
+    
+                marker_813aa1bed8d9e0f2b7808046c558857b.setIcon(div_icon_bb168ec71c2ec50b438dcdbbf866439c);
+            
+    
+            var marker_ee851dcc2ca77d31919a8549c13973e2 = L.marker(
+                [41.9267, 368.7369],
+                {
+}
+            ).addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var div_icon_56a04f028a795de9190d66a5fb3454c8 = L.divIcon({
+  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" /\u003e\n        \u003crect x=\"91\" y=\"32\" width=\"138\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\"\u003e1769-08-15\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
+  "iconSize": [320, 90],
+  "iconAnchor": [160, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_c4045f5e819299c00d64b62fb8649386 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b61533142e9aef2d862f08c259b16f20 = $(`<div id="html_b61533142e9aef2d862f08c259b16f20" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Ajaccio</div>`)[0];
+                popup_c4045f5e819299c00d64b62fb8649386.setContent(html_b61533142e9aef2d862f08c259b16f20);
+            
+        
+
+        marker_ee851dcc2ca77d31919a8549c13973e2.bindPopup(popup_c4045f5e819299c00d64b62fb8649386)
+        ;
+
+        
+    
+    
+                marker_ee851dcc2ca77d31919a8549c13973e2.setIcon(div_icon_56a04f028a795de9190d66a5fb3454c8);
+            
+    
+            var marker_1e7ac517bf085631b22140a1f5e11e6b = L.marker(
+                [-15.933, 354.333],
+                {
+}
+            ).addTo(map_862858119462c12d20970fa21d0d5cd9);
+        
+    
+            var div_icon_e2b069cd69522abc6e472ea436f9d74f = L.divIcon({
+  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" /\u003e\n        \u003crect x=\"91\" y=\"28\" width=\"138\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\"\u003e1821-05-05\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
+  "iconSize": [320, 90],
+  "iconAnchor": [160, 90],
+  "className": "empty",
+});
+        
+    
+        var popup_68008cb9dfa05b4b080b9de12c711ff9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ce4a9b06879d55a31acbc3ab0082c41 = $(`<div id="html_2ce4a9b06879d55a31acbc3ab0082c41" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Longwood, Saint Helena</div>`)[0];
+                popup_68008cb9dfa05b4b080b9de12c711ff9.setContent(html_2ce4a9b06879d55a31acbc3ab0082c41);
+            
+        
+
+        marker_1e7ac517bf085631b22140a1f5e11e6b.bindPopup(popup_68008cb9dfa05b4b080b9de12c711ff9)
+        ;
+
+        
+    
+    
+                marker_1e7ac517bf085631b22140a1f5e11e6b.setIcon(div_icon_e2b069cd69522abc6e472ea436f9d74f);
+            
+</script>
+</html>

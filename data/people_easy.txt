@@ -1,0 +1,333 @@
+Julius Caesar
+Cleopatra VII
+Alexander the Great
+Socrates
+Plato
+Aristotle
+Homer
+Pericles
+Leonidas I
+Themistocles
+Alcibiades
+Pythagoras
+Euclid
+Archimedes
+Herodotus
+Thucydides
+Sappho
+Demosthenes
+Solon
+Draco
+Hannibal Barca
+Scipio Africanus
+Cato the Elder
+Cato the Younger
+Cicero
+Virgil
+Ovid
+Horace
+Livy
+Tacitus
+Nero
+Augustus
+Tiberius
+Caligula
+Claudius
+Vespasian
+Titus
+Domitian
+Trajan
+Hadrian
+Marcus Aurelius
+Commodus
+Constantine the Great
+Diocletian
+Justinian I
+Belisarius
+Attila the Hun
+Alaric I
+Boudica
+Vercingetorix
+Charlemagne
+Louis the Pious
+Alfred the Great
+William the Conqueror
+Harold Godwinson
+Richard the Lionheart
+King John
+Henry II of England
+Thomas Becket
+Eleanor of Aquitaine
+Philip II of France
+Saint Louis (Louis IX)
+Edward I of England
+Edward III of England
+Richard II of England
+Henry IV of England
+Henry V of England
+Joan of Arc
+Charles VII of France
+Louis XI of France
+Ivan III of Russia
+Ivan IV (Ivan the Terrible)
+Yaroslav the Wise
+Vladimir the Great
+Olga of Kyiv
+Mieszko I
+Casimir III the Great
+Jan Hus
+Wenceslaus IV
+Sigismund, Holy Roman Emperor
+Frederick I Barbarossa
+Frederick II, Holy Roman Emperor
+Otto I, Holy Roman Emperor
+Henry IV, Holy Roman Emperor
+Pope Urban II
+Pope Innocent III
+Saladin
+Richard of York
+Margaret of Anjou
+Edward IV of England
+Richard III of England
+Henry VII of England
+Henry VIII of England
+Catherine of Aragon
+Anne Boleyn
+Thomas Cromwell
+Thomas More
+Elizabeth I
+Mary I of England
+James VI and I
+Mary, Queen of Scots
+Robert the Bruce
+William Wallace
+David I of Scotland
+Macbeth (King of Scotland)
+Llywelyn the Great
+Owain Glyndwr
+Harald Hardrada
+Cnut the Great
+Eric the Red
+Leif Erikson
+Genghis Khan
+Kublai Khan
+Ogedei Khan
+Batu Khan
+Tamerlane (Timur)
+Babur
+Humayun
+Akbar
+Jahangir
+Shah Jahan
+Aurangzeb
+Ashoka
+Chandragupta Maurya
+Bindusara
+Harsha
+Rajaraja Chola I
+Rajendra Chola I
+Prithviraj Chauhan
+Rana Sanga
+Maharana Pratap
+Shivaji
+Sambhaji
+Tipu Sultan
+Hyder Ali
+Rani Lakshmibai
+Bahadur Shah Zafar
+Alauddin Khalji
+Muhammad bin Tughlaq
+Sher Shah Suri
+Ahilyabai Holkar
+Guru Nanak
+Guru Gobind Singh
+Kabir
+Mirabai
+Tulsidas
+Kalidasa
+Chanakya (Kautilya)
+Xuanzang
+Faxian
+Sun Tzu
+Confucius
+Mencius
+Laozi
+Qin Shi Huang
+Liu Bang
+Emperor Wu of Han
+Cao Cao
+Liu Bei
+Sun Quan
+Zhuge Liang
+Sima Qian
+Wang Yangming
+Zheng He
+Hongwu Emperor
+Yongle Emperor
+Kangxi Emperor
+Qianlong Emperor
+Empress Wu Zetian
+Empress Dowager Cixi
+Tokugawa Ieyasu
+Oda Nobunaga
+Toyotomi Hideyoshi
+Minamoto no Yoritomo
+Ashikaga Takauji
+Emperor Meiji
+Saigo Takamori
+Date Masamune
+Uesugi Kenshin
+Takeda Shingen
+Yi Sun-sin
+Sejong the Great
+Gwanggaeto the Great
+Kim Yushin
+Baybars
+Suleiman the Magnificent
+Mehmed II
+Selim I
+Osman I
+Murad I
+Abdul Hamid II
+Ataturk
+Nasser
+Anwar Sadat
+King Farouk
+Ibn Sina (Avicenna)
+Al-Farabi
+Al-Khwarizmi
+Al-Biruni
+Omar Khayyam
+Ibn Battuta
+Ibn Khaldun
+Averroes (Ibn Rushd)
+Maimonides
+Rumi
+Hafez
+Ferdowsi
+Nizam al-Mulk
+Nur Jahan
+Nader Shah
+Abbas the Great
+Darius I
+Xerxes I
+Cyrus the Great
+Cambyses II
+Artaxerxes I
+Mithridates VI
+Antiochus III
+Ptolemy I Soter
+Ptolemy II Philadelphus
+Ramses II
+Akhenaten
+Tutankhamun
+Hatshepsut
+Thutmose III
+Amenhotep III
+Pepi II
+Imhotep
+Sargon of Akkad
+Hammurabi
+Nebuchadnezzar II
+Ashurbanipal
+Gilgamesh
+Nabonidus
+Saint Paul
+Saint Peter
+Saint Augustine
+Thomas Aquinas
+Francis of Assisi
+Dominic de Guzman
+Bernard of Clairvaux
+Catherine of Siena
+Teresa of Avila
+John of the Cross
+Martin Luther
+John Calvin
+Huldrych Zwingli
+Ignatius of Loyola
+Francis Xavier
+Erasmus
+Nicolaus Copernicus
+Tycho Brahe
+Johannes Kepler
+Galileo Galilei
+Isaac Newton
+Edmond Halley
+Robert Hooke
+Christiaan Huygens
+Blaise Pascal
+Pierre de Fermat
+Leonhard Euler
+Joseph-Louis Lagrange
+Pierre-Simon Laplace
+Carl Friedrich Gauss
+Bernhard Riemann
+Niels Henrik Abel
+Evariste Galois
+Henri Poincare
+Augustin-Louis Cauchy
+Sophus Lie
+Emmy Noether
+David Hilbert
+Georg Cantor
+Alan Turing
+John von Neumann
+Kurt Godel
+Srinivasa Ramanujan
+Euclides da Cunha
+Benoit Mandelbrot
+Andrey Kolmogorov
+Mikhail Lomonosov
+Antoine Lavoisier
+Joseph Priestley
+Henry Cavendish
+Michael Faraday
+James Clerk Maxwell
+Andre-Marie Ampere
+Alessandro Volta
+Luigi Galvani
+Georg Ohm
+Nikola Tesla
+Thomas Edison
+Guglielmo Marconi
+Alexander Graham Bell
+Charles Babbage
+Ada Lovelace
+Grace Hopper
+Claude Shannon
+Conway Berners-Lee
+Norbert Wiener
+Albert Einstein
+Max Planck
+Niels Bohr
+Werner Heisenberg
+Erwin Schrodinger
+Wolfgang Pauli
+Enrico Fermi
+Richard Feynman
+J. Robert Oppenheimer
+Marie Curie
+Pierre Curie
+Irene Joliot-Curie
+Lise Meitner
+Otto Hahn
+Dmitri Mendeleev
+Linus Pauling
+Rosalind Franklin
+Francis Crick
+James Watson
+Barbara McClintock
+Charles Darwin
+Alfred Russel Wallace
+Gregor Mendel
+Louis Pasteur
+Robert Koch
+Edward Jenner
+Alexander Fleming
+Jonas Salk
+Albert Sabin
+Ignaz Semmelweis
+Joseph Lister
+William Harvey
+Andreas Vesalius

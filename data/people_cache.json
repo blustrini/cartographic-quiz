@@ -1,0 +1,292 @@
+{
+  "Chaim Weizmann": {
+    "birth_date": "1874-11-27",
+    "birth_lat": 52.317,
+    "birth_lon": 25.6,
+    "birth_place": "Motal",
+    "death_date": "1952-11-09",
+    "death_lat": 31.89694,
+    "death_lon": 34.81667,
+    "death_place": "Rehovot",
+    "status": "ok"
+  },
+  "Dizzy Gillespie": {
+    "birth_date": "1917-10-21",
+    "birth_lat": 34.69389,
+    "birth_lon": -79.89111,
+    "birth_place": "Cheraw, South Carolina",
+    "death_date": "1993-01-06",
+    "death_lat": 40.891197,
+    "death_lon": -73.972515,
+    "death_place": "Englewood, New Jersey",
+    "status": "ok"
+  },
+  "Edouard Manet": {
+    "birth_date": "1832-01-23",
+    "birth_lat": 48.8588897,
+    "birth_lon": 2.320041,
+    "birth_place": "Paris, France",
+    "death_date": "1883-04-30",
+    "death_lat": 48.8588897,
+    "death_lon": 2.320041,
+    "death_place": "Paris, France",
+    "status": "ok"
+  },
+  "Faiz Ahmed Faiz": {
+    "status": "bad"
+  },
+  "Frederick II, Holy Roman Emperor": {
+    "birth_date": "26 December 1194",
+    "birth_lat": 43.52361,
+    "birth_lon": 13.23917,
+    "birth_place": "Jesi",
+    "death_date": "1250-12-13",
+    "death_lat": 41.683,
+    "death_lon": 15.283,
+    "death_place": "Castel Fiorentino",
+    "status": "ok"
+  },
+  "Gerald Ford": {
+    "birth_date": "1913-07-14",
+    "birth_lat": 41.25861,
+    "birth_lon": -95.9375,
+    "birth_place": "Omaha, Nebraska",
+    "death_date": "2006-12-26",
+    "death_lat": 33.76917,
+    "death_lon": -116.42111,
+    "death_place": "Rancho Mirage, California",
+    "status": "ok"
+  },
+  "Grace Kelly": {
+    "birth_date": "1929-11-12",
+    "birth_lat": 39.9528,
+    "birth_lon": -75.1636,
+    "birth_place": "Philadelphia",
+    "death_date": "1982-09-14",
+    "death_lat": 43.7324,
+    "death_lon": 7.4182,
+    "death_place": "La Colle, Monaco",
+    "status": "ok"
+  },
+  "Guru Dutt": {
+    "birth_date": "1925-07-09",
+    "birth_lat": 12.97889,
+    "birth_lon": 77.59167,
+    "birth_place": "Bangalore",
+    "death_date": "1964-10-10",
+    "death_lat": 19.07611,
+    "death_lon": 72.8775,
+    "death_place": "Bombay",
+    "status": "ok"
+  },
+  "H. G. Wells": {
+    "birth_date": "1866-09-21",
+    "birth_lat": 51.407,
+    "birth_lon": 0.021,
+    "birth_place": "Bromley",
+    "death_date": "1946-08-13",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
+    "status": "ok"
+  },
+  "Harold Wilson": {
+    "birth_date": "1916-03-11",
+    "birth_lat": 53.6347,
+    "birth_lon": -1.8366,
+    "birth_place": "Cowlersley",
+    "death_date": "1995-05-23",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
+    "status": "ok"
+  },
+  "Harry S. Truman": {
+    "birth_date": "1884-05-08",
+    "birth_lat": 37.49778,
+    "birth_lon": -94.27917,
+    "birth_place": "Lamar, Missouri",
+    "death_date": "1972-12-26",
+    "death_lat": 39.09972,
+    "death_lon": -94.57833,
+    "death_place": "Kansas City, Missouri",
+    "status": "ok"
+  },
+  "Hernan Cortes": {
+    "birth_date": "1485",
+    "birth_lat": 38.96306,
+    "birth_lon": -5.95778,
+    "birth_place": "Medell\u00edn",
+    "death_date": "1547-12-02",
+    "death_lat": 37.383,
+    "death_lon": -6.05,
+    "death_place": "Castilleja de la Cuesta",
+    "status": "ok"
+  },
+  "King John": {
+    "birth_date": "1166/7",
+    "birth_lat": 52.5310214,
+    "birth_lon": -1.2649062,
+    "birth_place": "England",
+    "death_date": "19 October 1216",
+    "death_lat": 52.5310214,
+    "death_lon": -1.2649062,
+    "death_place": ", England",
+    "status": "ok"
+  },
+  "Martin Luther": {
+    "birth_date": "10 November 1483",
+    "birth_lat": 51.52861,
+    "birth_lon": 11.54667,
+    "birth_place": "Eisleben",
+    "death_date": "1546-02-18",
+    "death_lat": 51.5283282,
+    "death_lon": 11.5465911,
+    "death_place": "Eisleben, County of Mansfeld, Holy Roman Empire",
+    "status": "ok"
+  },
+  "Meena Kumari": {
+    "birth_date": "1933-08-01",
+    "birth_lat": 19.07611,
+    "birth_lon": 72.8775,
+    "birth_place": "Bombay",
+    "death_date": "1972-03-31",
+    "death_lat": 19.054999,
+    "death_lon": 72.8692035,
+    "death_place": "Bombay, Maharashtra, India.",
+    "status": "ok"
+  },
+  "Meghnad Saha": {
+    "status": "bad"
+  },
+  "Menachem Begin": {
+    "birth_date": "1913-08-16",
+    "birth_lat": 52.13472,
+    "birth_lon": 23.65694,
+    "birth_place": "Brest-Litovsk",
+    "death_date": "1992-03-09",
+    "death_lat": 32.08,
+    "death_lon": 34.78,
+    "death_place": "Tel Aviv",
+    "status": "ok"
+  },
+  "Montgomery Clift": {
+    "birth_date": "1920-10-17",
+    "birth_lat": 41.25861,
+    "birth_lon": -95.9375,
+    "birth_place": "Omaha, Nebraska",
+    "death_date": "1966-07-23",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, U.S.",
+    "status": "ok"
+  },
+  "Peter Tosh": {
+    "birth_date": "1944-10-19",
+    "birth_lat": 18.37,
+    "birth_lon": -78.205,
+    "birth_place": "Grange Hill, Jamaica",
+    "death_date": "1987-09-11",
+    "death_lat": 17.97139,
+    "death_lon": -76.79306,
+    "death_place": "Kingston",
+    "status": "ok"
+  },
+  "Pierre de Fermat": {
+    "birth_date": "1601-08-17",
+    "birth_lat": 43.8839,
+    "birth_lon": 0.9892,
+    "birth_place": "Beaumont-de-Lomagne",
+    "death_date": "1665-01-12",
+    "death_lat": 43.6,
+    "death_lon": 2.25,
+    "death_place": "Castres",
+    "status": "ok"
+  },
+  "Ramses II": {
+    "status": "bad"
+  },
+  "Robert Schumann": {
+    "birth_date": "1810-06-08",
+    "birth_lat": 50.717,
+    "birth_lon": 12.5,
+    "birth_place": "Zwickau",
+    "death_date": "1856-07-29",
+    "death_lat": 50.7353,
+    "death_lon": 7.1022,
+    "death_place": "Bonn",
+    "status": "ok"
+  },
+  "Tokugawa Ieyasu": {
+    "birth_date": "1543-01-31",
+    "birth_lat": 34.95639,
+    "birth_lon": 137.15889,
+    "birth_place": "Okazaki Castle",
+    "death_date": "1616-06-01",
+    "death_lat": 34.97944,
+    "death_lon": 138.38361,
+    "death_place": "Sunpu Castle",
+    "status": "ok"
+  },
+  "Tycho Brahe": {
+    "birth_date": "14 December 1546",
+    "birth_lat": 55.9794,
+    "birth_lon": 13.1347,
+    "birth_place": "Knutstorp Castle",
+    "death_date": "1601-10-24",
+    "death_lat": 50.0875,
+    "death_lon": 14.42139,
+    "death_place": "Prague",
+    "status": "ok"
+  },
+  "Victor Emmanuel II": {
+    "birth_date": "1820-03-14",
+    "birth_lat": 45.06889,
+    "birth_lon": 7.68611,
+    "birth_place": "Palazzo Carignano",
+    "death_date": "1878-01-09",
+    "death_lat": 41.9,
+    "death_lon": 12.4875,
+    "death_place": "Quirinal Palace",
+    "status": "ok"
+  },
+  "Vittorio De Sica": {
+    "birth_date": "1901-07-07",
+    "birth_lat": 41.717,
+    "birth_lon": 13.617,
+    "birth_place": "Sora, Lazio",
+    "death_date": "1974-11-13",
+    "death_lat": 48.8881,
+    "death_lon": 2.2686,
+    "death_place": "Neuilly-sur-Seine",
+    "status": "ok"
+  },
+  "William Harvey": {
+    "birth_date": "1 April 1578",
+    "birth_lat": 51.07917,
+    "birth_lon": 1.17944,
+    "birth_place": "Folkestone",
+    "death_date": "1657-06-03",
+    "death_lat": 51.451,
+    "death_lon": -0.243,
+    "death_place": "Roehampton",
+    "status": "ok"
+  },
+  "William Henry Harrison": {
+    "birth_date": "1773-02-09",
+    "birth_lat": 37.32167,
+    "birth_lon": -77.18167,
+    "birth_place": "Berkeley Plantation",
+    "death_date": "1841-04-04",
+    "death_lat": 38.89778,
+    "death_lon": -77.03639,
+    "death_place": "White House",
+    "status": "ok"
+  },
+  "Yongle Emperor": {
+    "status": "bad"
+  },
+  "Zhuge Liang": {
+    "status": "bad"
+  }
+}
