@@ -92,6 +92,10 @@ Files under `data/`:
 - `people_bad.txt`: names known to fail scraping/validation.
 - `people_cache.json`: cached scrape/validation records.
 
+Difficulty curation guidance:
+
+- `docs/people_difficulty_criteria.md`
+
 ## Development
 
 Run tests:

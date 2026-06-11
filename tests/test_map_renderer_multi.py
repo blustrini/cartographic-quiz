@@ -26,6 +26,8 @@ def test_generate_multi_life_map_injects_round_data_and_summary_ui(tmp_path):
     assert "One guess per round. Wrong answers move to the next person." in html
     assert 'id="quiz-instructions"' in html
     assert 'id="quiz-emoji-grid"' in html
+    assert html.index('id="quiz-emoji-grid"') < html.index('id="quiz-copy-summary"')
+    assert html.index('id="quiz-copy-summary"') < html.index('id="quiz-result"')
     assert "const rounds =" in html
     assert "Napoleon Bonaparte" in html
     assert "Marie Curie" in html

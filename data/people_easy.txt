@@ -93,3 +93,103 @@ Pele
 Diego Maradona
 Princess Diana
 Elizabeth II
+Mahatma Gandhi
+Mother Teresa
+Adolf Hitler
+Mao Zedong
+Queen Victoria
+George VI
+Sigmund Freud
+Carl Jung
+Florence Nightingale
+Louis Braille
+Helen Keller
+Neil Armstrong
+Yuri Gagarin
+Kalpana Chawla
+Amelia Earhart
+Wilbur Wright
+Orville Wright
+J. R. R. Tolkien
+Roald Dahl
+Hans Christian Andersen
+Aesop
+Johannes Gutenberg
+Johann Strauss II
+Gavrilo Princip
+Archduke Franz Ferdinand
+John Paul II
+Pope John XXIII
+Pope Pius XII
+Pope Benedict XVI
+Benjamin Franklin
+Alexander Hamilton
+Stephen Hawking
+Mark Twain
+Ernest Hemingway
+F. Scott Fitzgerald
+William Faulkner
+Harper Lee
+Sylvia Plath
+Emily Dickinson
+Walt Whitman
+Louisa May Alcott
+Hans Holbein the Younger
+Martha Graham
+Ayrton Senna
+Bruce Lee
+Muhammad ibn Musa al-Khwarizmi
+Ibn Sina
+Maimonides
+Rene Descartes
+Immanuel Kant
+Friedrich Nietzsche
+Soren Kierkegaard
+Bertrand Russell
+Karl Marx
+Friedrich Engels
+George Orwell
+Mustafa Kemal Ataturk
+Indira Gandhi
+Jawaharlal Nehru
+B. R. Ambedkar
+Sardar Vallabhbhai Patel
+Lal Bahadur Shastri
+Subhas Chandra Bose
+Bhagat Singh
+A. P. J. Abdul Kalam
+Deng Xiaoping
+Chiang Kai-shek
+Lee Kuan Yew
+Kim Il-sung
+Sukarno
+Suharto
+Corazon Aquino
+Ferdinand Marcos
+Chiune Sugihara
+Anne Frank
+Edith Piaf
+Lucille Ball
+Nina Simone
+Walt Disney
+Coco Chanel
+Gianni Versace
+Yves Saint Laurent
+Christian Dior
+Alexander McQueen
+Robert Boyle
+Ernest Rutherford
+J. J. Thomson
+Lord Kelvin
+James Watt
+George Stephenson
+Isambard Kingdom Brunel
+Alfred Nobel
+George Washington Carver
+Karl Benz
+Gottlieb Daimler
+Henry Ford
+Robert F. Kennedy
+Idi Amin
+Niki Lauda
+Suleiman I

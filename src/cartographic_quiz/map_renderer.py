@@ -617,6 +617,8 @@ def generate_multi_life_map(
       <input id="quiz-input" type="text" placeholder="Type a name" style="width: 100%; box-sizing: border-box; padding: 7px 8px; border: 1px solid #bdbdbd; border-radius: 6px; margin-bottom: 8px;" />
       <button id="quiz-submit" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #1565c0; color: white; font-weight: 700; cursor: pointer;">Submit Guess</button>
       <div id="quiz-emoji-grid" style="display: none; margin-top: 8px; font-size: 24px; line-height: 1.25; letter-spacing: 1px;"></div>
+      <button id="quiz-copy-summary" style="display: none; width: 100%; padding: 6px 8px; border: 0; border-radius: 6px; background: #455a64; color: white; font-weight: 600; cursor: pointer; margin-top: 8px;">Copy Emoji Summary</button>
+      <div id="quiz-copy-status" style="margin-top: 6px; font-size: 12px; color: #546e7a; min-height: 16px;"></div>
       <div id="quiz-result" style="margin-top: 8px; font-size: 13px;"></div>
       <div id="quiz-controls" style="display: none; margin-top: 8px;">
         <button id="quiz-continue" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #2e7d32; color: white; font-weight: 700; cursor: pointer; margin-bottom: 6px;">Continue</button>
@@ -626,8 +628,6 @@ def generate_multi_life_map(
         </div>
       </div>
       <div id="quiz-stats" style="margin-top: 6px; font-size: 12px; color: #666; font-weight: 600;">Correct: <span id="correct-count">0</span> | Wrong: <span id="wrong-count">0</span></div>
-      <button id="quiz-copy-summary" style="display: none; width: 100%; padding: 6px 8px; border: 0; border-radius: 6px; background: #455a64; color: white; font-weight: 600; cursor: pointer; margin-top: 8px;">Copy Emoji Summary</button>
-      <div id="quiz-copy-status" style="margin-top: 6px; font-size: 12px; color: #546e7a; min-height: 16px;"></div>
     </div>
     <script>
       (function() {{
