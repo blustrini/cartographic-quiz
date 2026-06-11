@@ -1,4 +1,5 @@
 import json
+import re
 from typing import Sequence
 
 import folium
@@ -88,7 +89,33 @@ COUNTRY_LEVEL_NAMES = {
     "wales",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
+REGION_APPROX_RADIUS_METERS = 900_000
 MAX_CITY_LEVEL_ZOOM = 8
+REGION_LEVEL_NAMES = {
+    "africa",
+    "asia",
+    "central asia",
+    "east asia",
+    "southeast asia",
+    "south asia",
+    "west asia",
+    "europe",
+    "central europe",
+    "eastern europe",
+    "western europe",
+    "north america",
+    "south america",
+    "middle east",
+    "levant",
+    "mesopotamia",
+    "caucasus",
+    "balkans",
+    "iberia",
+}
+REGION_DIRECTIONAL_PATTERN = re.compile(
+    r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
+    r"(?:asia|africa|europe|america|americas)\b"
+)
 
 
 def _is_country_level_location(location_name: str | None) -> bool:
@@ -96,6 +123,23 @@ def _is_country_level_location(location_name: str | None) -> bool:
         return False
     normalized = location_name.strip().lower()
     return normalized in COUNTRY_LEVEL_NAMES
+
+
+def _is_region_level_location(location_name: str | None) -> bool:
+    if not location_name:
+        return False
+    normalized = " ".join(location_name.strip().lower().split())
+    return normalized in REGION_LEVEL_NAMES or bool(REGION_DIRECTIONAL_PATTERN.search(normalized))
+
+
+def _is_approximate_pin_location(location_name: str | None) -> bool:
+    return _is_country_level_location(location_name) or _is_region_level_location(location_name)
+
+
+def _approximate_radius_for_location(location_name: str | None) -> int:
+    if _is_region_level_location(location_name):
+        return REGION_APPROX_RADIUS_METERS
+    return COUNTRY_APPROX_RADIUS_METERS
 
 
 def _build_popup(event_kind: str, location_name: str | None) -> str:
@@ -106,6 +150,12 @@ def _build_popup(event_kind: str, location_name: str | None) -> str:
             f"Place: {place}<br>"
             "<i>Country-level location only (approximate pin)</i>"
         )
+    if _is_region_level_location(location_name):
+        return (
+            f"<b>{event_kind}</b><br>"
+            f"Place: {place}<br>"
+            "<i>Region-level location only (approximate pin)</i>"
+        )
     return f"<b>{event_kind}</b><br>Place: {place}"
 
 
@@ -115,12 +165,13 @@ def _add_country_precision_circle(
     longitude: float,
     popup_html: str,
     *,
+    radius_meters: int,
     color: str,
     fill_color: str,
 ) -> None:
     folium.Circle(
         location=[latitude, longitude],
-        radius=COUNTRY_APPROX_RADIUS_METERS,
+        radius=radius_meters,
         popup=popup_html,
         color=color,
         weight=1,
@@ -197,12 +248,14 @@ def generate_life_map(
         birth_popup = _build_popup("Birth", birth_event.location_name)
         death_popup = _build_popup("Death", death_event.location_name)
 
-        if _is_country_level_location(birth_event.location_name):
+        if _is_approximate_pin_location(birth_event.location_name):
+            birth_radius = _approximate_radius_for_location(birth_event.location_name)
             _add_country_precision_circle(
                 life_map,
                 birth_event.latitude,
                 current_birth_lon,
                 birth_popup,
+                radius_meters=birth_radius,
                 color="#1b5e20",
                 fill_color="#66bb6a",
             )
@@ -226,12 +279,14 @@ def generate_life_map(
                 ),
             ).add_to(life_map)
 
-        if _is_country_level_location(death_event.location_name):
+        if _is_approximate_pin_location(death_event.location_name):
+            death_radius = _approximate_radius_for_location(death_event.location_name)
             _add_country_precision_circle(
                 life_map,
                 death_event.latitude,
                 current_death_lon,
                 death_popup,
+                radius_meters=death_radius,
                 color="#b71c1c",
                 fill_color="#ef5350",
             )
@@ -430,12 +485,6 @@ def generate_life_map(
           const guess = canonicalizeName(normalize(input.value));
           const acceptedAnswers = buildAcceptedAnswers(expected);
           const normalizedExpected = canonicalizeName(normalize(expected));
-          if (!guess) {{
-            result.style.color = "#7f6000";
-            result.textContent = "Enter a guess first.";
-            input.focus();
-            return;
-          }}
 
           if (isTooGenericGuess(guess, normalizedExpected)) {{
             result.style.color = "#7f6000";
@@ -573,17 +622,18 @@ def generate_multi_life_map(
                     "date": birth_event.date_str,
                     "place": birth_event.location_name,
                     "popup": _build_popup("Birth", birth_event.location_name),
-                    "country_level": _is_country_level_location(birth_event.location_name),
+                    "country_level": _is_approximate_pin_location(birth_event.location_name),
                     "icon": (
                         None
-                        if _is_country_level_location(birth_event.location_name)
+                        if _is_approximate_pin_location(birth_event.location_name)
                         else build_birth_marker_svg(birth_event.date_str)
                     ),
                     "country_label_html": (
                         _build_country_date_label_html(birth_event.date_str, color="#1b5e20")
-                        if _is_country_level_location(birth_event.location_name)
+                        if _is_approximate_pin_location(birth_event.location_name)
                         else None
                     ),
+                    "circle_radius": _approximate_radius_for_location(birth_event.location_name),
                 },
                 "death": {
                     "lat": death_event.latitude,
@@ -591,17 +641,18 @@ def generate_multi_life_map(
                     "date": death_event.date_str,
                     "place": death_event.location_name,
                     "popup": _build_popup("Death", death_event.location_name),
-                    "country_level": _is_country_level_location(death_event.location_name),
+                    "country_level": _is_approximate_pin_location(death_event.location_name),
                     "icon": (
                         None
-                        if _is_country_level_location(death_event.location_name)
+                        if _is_approximate_pin_location(death_event.location_name)
                         else build_death_marker_svg(death_event.date_str)
                     ),
                     "country_label_html": (
                         _build_country_date_label_html(death_event.date_str, color="#b71c1c")
-                        if _is_country_level_location(death_event.location_name)
+                        if _is_approximate_pin_location(death_event.location_name)
                         else None
                     ),
+                    "circle_radius": _approximate_radius_for_location(death_event.location_name),
                 },
             }
         )
@@ -858,7 +909,7 @@ def generate_multi_life_map(
 
           if (round.birth.country_level) {{
             L.circle([round.birth.lat, round.birth.lon], {{
-              radius: {COUNTRY_APPROX_RADIUS_METERS},
+              radius: round.birth.circle_radius,
               color: "#1b5e20",
               weight: 1,
               fillColor: "#66bb6a",
@@ -888,7 +939,7 @@ def generate_multi_life_map(
 
           if (round.death.country_level) {{
             L.circle([round.death.lat, round.death.lon], {{
-              radius: {COUNTRY_APPROX_RADIUS_METERS},
+              radius: round.death.circle_radius,
               color: "#b71c1c",
               weight: 1,
               fillColor: "#ef5350",
@@ -1027,12 +1078,6 @@ def generate_multi_life_map(
           const guess = canonicalizeName(normalize(input.value));
           const acceptedAnswers = buildAcceptedAnswers(rounds[currentIndex].person);
           const normalizedExpected = canonicalizeName(normalize(rounds[currentIndex].person));
-          if (!guess) {{
-            result.style.color = "#7f6000";
-            result.textContent = "Enter a guess first.";
-            input.focus();
-            return;
-          }}
 
           if (isTooGenericGuess(guess, normalizedExpected)) {{
             result.style.color = "#7f6000";

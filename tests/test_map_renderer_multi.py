@@ -46,6 +46,7 @@ def test_generate_multi_life_map_injects_round_data_and_summary_ui(tmp_path):
     assert "levenshteinDistance" in html
     assert "isCloseMatch" in html
     assert "Please enter the full name, not just a surname." in html
+    assert "Enter a guess first." not in html
     assert "country_level" in html
     assert 'id="quiz-controls"' in html
     assert 'id="quiz-continue"' in html
@@ -94,7 +95,8 @@ def test_generate_multi_life_map_marks_country_level_locations(tmp_path):
     html = output_file.read_text(encoding="utf-8")
 
     assert "Country-level location only (approximate pin)" in html
-    assert "radius: 250000" in html
+    assert '"circle_radius": 250000' in html
+    assert "radius: round.birth.circle_radius" in html
     assert "color: \"#1b5e20\"" in html
     assert "fillColor: \"#66bb6a\"" in html
     assert '"country_level": true' in html
@@ -102,3 +104,25 @@ def test_generate_multi_life_map_marks_country_level_locations(tmp_path):
     assert '"country_label_html"' in html
     assert "1572" in html
     assert "iconSize: [320, 34]" in html
+
+
+def test_generate_multi_life_map_marks_region_level_locations(tmp_path):
+    output_file = tmp_path / "multi_region_map.html"
+    rounds = [
+        (
+            CartographicDate("600 BC", "Central Asia", 45.0, 67.0),
+            CartographicDate("530 BC", "Pasargadae", 30.2, 53.2),
+            "Cyrus the Great",
+        )
+    ]
+
+    generate_multi_life_map(rounds=rounds, output_filename=str(output_file))
+    html = output_file.read_text(encoding="utf-8")
+
+    assert "Region-level location only (approximate pin)" in html
+    assert '"circle_radius": 900000' in html
+    assert "radius: round.birth.circle_radius" in html
+    assert "color: \"#1b5e20\"" in html
+    assert "fillColor: \"#66bb6a\"" in html
+    assert '"country_level": true' in html
+    assert '"icon": null' in html

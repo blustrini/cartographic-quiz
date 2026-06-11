@@ -18,9 +18,9 @@ DIFFICULTY_POOL_FILES: dict[str, str] = {
     "hard": "people_hard.txt",
 }
 DIFFICULTY_WEIGHTS: dict[str, float] = {
-    "easy": 0.4,
-    "medium": 0.4,
-    "hard": 0.2,
+    "easy": 0.6,
+    "medium": 0.3,
+    "hard": 0.1,
 }
 
 

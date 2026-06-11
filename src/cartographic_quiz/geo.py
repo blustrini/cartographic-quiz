@@ -15,6 +15,27 @@ HISTORICAL_POLITY_TERMS = (
     "sultanate",
     "khanate",
 )
+REGION_CENTROIDS = {
+    "africa": (1.6508, 17.6791),
+    "asia": (34.0479, 100.6197),
+    "central asia": (43.0, 66.0),
+    "east asia": (36.0, 115.0),
+    "southeast asia": (10.5, 104.5),
+    "south asia": (23.0, 79.0),
+    "west asia": (33.0, 44.0),
+    "europe": (54.5260, 15.2551),
+    "central europe": (50.0, 14.0),
+    "eastern europe": (54.0, 30.0),
+    "western europe": (47.0, 2.0),
+    "north america": (46.0, -100.0),
+    "south america": (-15.0, -60.0),
+    "middle east": (29.0, 45.0),
+    "levant": (33.5, 36.0),
+    "mesopotamia": (33.0, 44.0),
+    "caucasus": (42.5, 45.0),
+    "balkans": (42.5, 22.0),
+    "iberia": (40.2, -3.5),
+}
 
 
 def _geocode_candidates(text: str) -> list[str]:
@@ -39,6 +60,17 @@ def _geocode_candidates(text: str) -> list[str]:
         if candidate and candidate not in deduped:
             deduped.append(candidate)
     return deduped
+
+
+def _normalized_location_key(text: str) -> str:
+    return " ".join(text.strip().lower().split())
+
+
+def _region_centroid(text: str) -> tuple[Optional[float], Optional[float]]:
+    centroid = REGION_CENTROIDS.get(_normalized_location_key(text))
+    if centroid:
+        return centroid
+    return None, None
 
 
 def fetch_html(url: str, headers: dict) -> Optional[str]:
@@ -98,6 +130,9 @@ def geocode_fallback(text: str) -> tuple[Optional[float], Optional[float]]:
     geolocator = Nominatim(user_agent="history_proof_final_mapper")
     try:
         for candidate in _geocode_candidates(text):
+            centroid_lat, centroid_lon = _region_centroid(candidate)
+            if centroid_lat is not None and centroid_lon is not None:
+                return centroid_lat, centroid_lon
             location = geolocator.geocode(candidate)
             if location:
                 return location.latitude, location.longitude

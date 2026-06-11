@@ -161,9 +161,29 @@ def test_is_valid_place_name_rejects_event_terms():
     assert not biography._is_valid_place_name("]")
     assert not biography._is_valid_place_name("a")
     assert not biography._is_valid_place_name("c.")
+    assert not biography._is_valid_place_name("(near)")
+    assert not biography._is_valid_place_name("U.S.")
+    assert not biography._is_valid_place_name("O.S.")
+    assert not biography._is_valid_place_name("old style")
     assert not biography._is_valid_place_name("1213 BC")
     assert not biography._is_valid_place_name("iii")
+    assert not biography._is_valid_place_name("Battle of Hastings")
+    assert biography._is_valid_place_name("Battle Creek, Michigan")
     assert biography._is_valid_place_name("New York City")
+
+
+def test_extract_place_from_cell_ignores_near_token():
+    cell = BeautifulSoup(
+        "<td>23 September 63 BC<br>(near)<br><a href='/wiki/Rome'>Rome</a></td>",
+        "html.parser",
+    ).find("td")
+
+    assert biography._extract_place_from_cell(cell, "23 September 63 BC") == "Rome"
+
+
+def test_extract_present_day_place_supports_now_alias():
+    text = "551 BC Zou, Lu (now Qufu, Shandong)"
+    assert biography._extract_present_day_place(text) == "Qufu"
 
 
 @patch("cartographic_quiz.biography.geocode_fallback")
@@ -434,3 +454,186 @@ def test_scrape_robust_biography_does_not_use_death_cause_as_date(
     assert data.death_date == "8 December 1980"
     assert data.death_date != "Gunshot wounds"
     assert data.death_place == "New York City"
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_prefers_now_place_over_historical_region(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Confucius"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>
+            551 BC<br>
+            <a href="/wiki/Zou_(state)">Zou</a>,
+            <a href="/wiki/Lu_(state)">Lu</a>
+            (now <a href="/wiki/Qufu">Qufu</a>, Shandong)
+          </td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>479 BC<br><a href="/wiki/Qufu">Qufu</a>, Lu</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Qufu"):
+            return 35.60056, 116.99111
+        if url.endswith("/wiki/Zou_(state)"):
+            return 5.3, 10.4
+        if url.endswith("/wiki/Lu_(state)"):
+            return 4.2, 11.5
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.return_value = (None, None)
+
+    data = biography.scrape_robust_biography("Confucius")
+
+    assert data is not None
+    assert data.birth_place == "Qufu"
+    assert data.birth_lat == 35.60056
+    assert data.birth_lon == 116.99111
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_uses_region_centroid_for_central_asia(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Cyrus the Great"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>c. 600 BC<br><a href="/wiki/Fars_Province">Fars</a></td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>530 BC<br>Central Asia</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Fars_Province"):
+            return 29.417, 53.233
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.side_effect = lambda place: (43.0, 66.0) if place == "Central Asia" else (None, None)
+
+    data = biography.scrape_robust_biography("Cyrus the Great")
+
+    assert data is not None
+    assert data.death_place == "Central Asia"
+    assert data.death_lat == 43.0
+    assert data.death_lon == 66.0
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_ignores_old_style_token_as_place(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Samuel Johnson"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>
+            18 September 1709 (O.S.)<br>
+            <a href="/wiki/Lichfield">Lichfield</a>, Staffordshire, England
+          </td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>13 December 1784<br><a href="/wiki/London">London</a>, England</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Lichfield"):
+            return 52.6835, -1.8265
+        if url.endswith("/wiki/London"):
+            return 51.5074, -0.1278
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.return_value = (None, None)
+
+    data = biography.scrape_robust_biography("Samuel Johnson")
+
+    assert data is not None
+    assert data.birth_place == "Lichfield"
+    assert data.birth_lat == 52.6835
+    assert data.birth_lon == -1.8265
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_does_not_use_us_abbreviation_as_place(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Sojourner Truth"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>c. 1797<br><a href="/wiki/Swartekill,_New_York">Swartekill, New York</a>, U.S.</td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>November 26, 1883<br><a href="/wiki/Battle_Creek,_Michigan">Battle Creek, Michigan</a>, U.S.</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Swartekill,_New_York"):
+            return 41.77, -74.13
+        if url.endswith("/wiki/Battle_Creek,_Michigan"):
+            return 42.3211, -85.1797
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.return_value = (None, None)
+
+    data = biography.scrape_robust_biography("Sojourner Truth")
+
+    assert data is not None
+    assert data.birth_place == "Swartekill, New York"
+    assert data.death_place == "Battle Creek, Michigan"

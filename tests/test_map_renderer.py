@@ -93,6 +93,7 @@ def test_quiz_script_includes_session_storage_animation_and_events(tmp_path):
     assert "levenshteinDistance" in html
     assert "isCloseMatch" in html
     assert "Please enter the full name, not just a surname." in html
+    assert "Enter a guess first." not in html
 
 
 def test_map_caps_zoom_to_city_level(tmp_path):
@@ -132,6 +133,37 @@ def test_country_level_location_adds_precision_note_and_circle(tmp_path):
     assert "country-date-label" in html
     assert "font-size:22px" in html
     assert '"maxZoom": 8' in html
+
+
+def test_region_level_location_adds_precision_note_and_circle(tmp_path):
+    output_file = tmp_path / "region_map.html"
+    birth_event = CartographicDate(
+        date_str="600 BC",
+        location_name="Central Asia",
+        latitude=45.0,
+        longitude=67.0,
+    )
+    death_event = CartographicDate(
+        date_str="530 BC",
+        location_name="Pasargadae",
+        latitude=30.2,
+        longitude=53.2,
+    )
+
+    generate_life_map(
+        birth_event=birth_event,
+        death_event=death_event,
+        person_name="Cyrus the Great",
+        output_filename=str(output_file),
+    )
+    html = output_file.read_text(encoding="utf-8")
+
+    assert "Region-level location only (approximate pin)" in html
+    assert "900000" in html
+    assert "#1b5e20" in html
+    assert "#66bb6a" in html
+    assert "600 BC" in html
+    assert "\\ud83d\\udc76 600 BC" in html
 
 
 def test_person_name_embedding_is_safe_for_quotes(tmp_path):

@@ -17,8 +17,6 @@ NON_PLACE_TERMS = (
     "assassination",
     "gunshot",
     "wound",
-    "battle",
-    "war",
     "execution",
     "disease",
     "syndrome",
@@ -28,8 +26,41 @@ NON_PLACE_TERMS = (
     "suicide",
 )
 BIRTH_ALT_DATE_HEADERS = ("baptized", "baptised", "christened", "christening")
-NON_PLACE_SINGLETONS = {"a", "an", "the", "c", "c.", "ca", "ca.", "circa", "ad", "bc", "bce", "ce"}
+NON_PLACE_SINGLETONS = {
+    "a",
+    "an",
+    "the",
+    "c",
+    "c.",
+    "ca",
+    "ca.",
+    "circa",
+    "ad",
+    "bc",
+    "bce",
+    "ce",
+    "near",
+    "u.s",
+    "u.s.",
+    "us",
+    "u.s.a",
+    "u.s.a.",
+    "usa",
+    "o.s",
+    "o.s.",
+    "os",
+    "n.s",
+    "n.s.",
+    "ns",
+    "old style",
+    "new style",
+}
 ROMAN_NUMERAL_TOKEN = re.compile(r"^[ivxlcdm]+$", flags=re.IGNORECASE)
+NON_PLACE_TERM_PATTERN = re.compile(
+    r"\b(?:" + "|".join(re.escape(term) for term in NON_PLACE_TERMS) + r")\b",
+    flags=re.IGNORECASE,
+)
+WAR_BATTLE_EVENT_PATTERN = re.compile(r"\b(?:battle|war)\b\s+(?:of|at)\b", flags=re.IGNORECASE)
 
 
 def _normalize_text(text: str) -> str:
@@ -97,11 +128,15 @@ def _extract_date_candidate(text: str) -> Optional[str]:
 
 
 def _is_valid_place_name(text: str) -> bool:
-    normalized = _normalize_text(text).lower().strip(" ,.;:-")
+    normalized = _normalize_text(text).lower().strip(" ,.;:-()[]")
     if not normalized:
         return False
 
     if normalized in NON_PLACE_SINGLETONS:
+        return False
+
+    normalized_letters = re.sub(r"[^a-z]", "", normalized)
+    if normalized_letters in {"os", "ns"}:
         return False
 
     if not re.search(r"[a-z]", normalized):
@@ -114,7 +149,10 @@ def _is_valid_place_name(text: str) -> bool:
     if ROMAN_NUMERAL_TOKEN.fullmatch(letters_only):
         return False
 
-    if any(term in normalized for term in NON_PLACE_TERMS):
+    if NON_PLACE_TERM_PATTERN.search(normalized):
+        return False
+
+    if WAR_BATTLE_EVENT_PATTERN.search(normalized):
         return False
 
     if any(token in normalized for token in ("death cause", "cause of death", "born in", "died from")):
@@ -298,7 +336,11 @@ def _clean_place_text(text: str, date_str: Optional[str]) -> str:
 
 
 def _extract_present_day_place(text: str) -> Optional[str]:
-    match = re.search(r"present-day\s+([^)]+)", text, flags=re.IGNORECASE)
+    match = re.search(
+        r"(?:present-day|now)\s*[:,-]?\s*(?:in\s+)?([^)]+)",
+        text,
+        flags=re.IGNORECASE,
+    )
     if not match:
         return None
 
