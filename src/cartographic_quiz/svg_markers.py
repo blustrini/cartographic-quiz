@@ -1,4 +1,5 @@
 from html import escape
+import re
 from typing import Optional
 
 
@@ -14,6 +15,22 @@ MIN_LABEL_BOX_WIDTH = 110
 MAX_LABEL_BOX_WIDTH = 288
 LABEL_BOX_HEIGHT = 30
 LABEL_GAP_FROM_TRIANGLE = 10
+MONTH_NAMES = (
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+)
+BIRTH_DATE_PREFIX = "👶"
+DEATH_DATE_PREFIX = "💀"
 
 
 def _compute_label_box_width(label: str) -> int:
@@ -33,8 +50,25 @@ def _build_label_box(label: str, y: int, color: str) -> str:
     )
 
 
+def _format_display_date(date_str: Optional[str]) -> str:
+    if not date_str:
+        return "Unknown"
+
+    cleaned = date_str.strip()
+    iso_match = re.fullmatch(r"(\d{1,4})-(\d{2})-(\d{2})", cleaned)
+    if not iso_match:
+        return cleaned
+
+    year = int(iso_match.group(1))
+    month = int(iso_match.group(2))
+    day = int(iso_match.group(3))
+    if month < 1 or month > 12:
+        return cleaned
+    return f"{day} {MONTH_NAMES[month - 1]} {year}"
+
+
 def build_birth_marker_svg(date_str: Optional[str]) -> str:
-    label = date_str or "Unknown"
+    label = f"{BIRTH_DATE_PREFIX} {_format_display_date(date_str)}"
     label_y = BIRTH_BASE_Y + LABEL_GAP_FROM_TRIANGLE
     label_group = _build_label_box(label, label_y, "#1b5e20")
     return f"""
@@ -46,7 +80,7 @@ def build_birth_marker_svg(date_str: Optional[str]) -> str:
 
 
 def build_death_marker_svg(date_str: Optional[str]) -> str:
-    label = date_str or "Unknown"
+    label = f"{DEATH_DATE_PREFIX} {_format_display_date(date_str)}"
     label_y = DEATH_BASE_Y - LABEL_GAP_FROM_TRIANGLE - LABEL_BOX_HEIGHT
     label_group = _build_label_box(label, label_y, "#b71c1c")
     return f"""

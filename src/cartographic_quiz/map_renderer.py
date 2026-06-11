@@ -11,7 +11,145 @@ from cartographic_quiz.constants import (
     ICON_SIZE,
 )
 from cartographic_quiz.models import CartographicDate
-from cartographic_quiz.svg_markers import build_birth_marker_svg, build_death_marker_svg
+from cartographic_quiz.svg_markers import build_birth_marker_svg, build_death_marker_svg, _format_display_date
+
+
+COUNTRY_LEVEL_NAMES = {
+    "afghanistan",
+    "albania",
+    "algeria",
+    "argentina",
+    "armenia",
+    "australia",
+    "austria",
+    "azerbaijan",
+    "bangladesh",
+    "belarus",
+    "belgium",
+    "brazil",
+    "bulgaria",
+    "canada",
+    "chile",
+    "china",
+    "colombia",
+    "croatia",
+    "cuba",
+    "czech republic",
+    "denmark",
+    "egypt",
+    "england",
+    "ethiopia",
+    "finland",
+    "france",
+    "georgia",
+    "germany",
+    "ghana",
+    "greece",
+    "hungary",
+    "india",
+    "indonesia",
+    "iran",
+    "iraq",
+    "ireland",
+    "israel",
+    "italy",
+    "japan",
+    "kazakhstan",
+    "kenya",
+    "libya",
+    "mexico",
+    "morocco",
+    "netherlands",
+    "new zealand",
+    "nigeria",
+    "north korea",
+    "norway",
+    "pakistan",
+    "peru",
+    "poland",
+    "portugal",
+    "romania",
+    "russia",
+    "scotland",
+    "serbia",
+    "south africa",
+    "south korea",
+    "spain",
+    "sweden",
+    "switzerland",
+    "syria",
+    "thailand",
+    "turkey",
+    "ukraine",
+    "united kingdom",
+    "united states",
+    "united states of america",
+    "vietnam",
+    "wales",
+}
+COUNTRY_APPROX_RADIUS_METERS = 250_000
+MAX_CITY_LEVEL_ZOOM = 8
+
+
+def _is_country_level_location(location_name: str | None) -> bool:
+    if not location_name:
+        return False
+    normalized = location_name.strip().lower()
+    return normalized in COUNTRY_LEVEL_NAMES
+
+
+def _build_popup(event_kind: str, location_name: str | None) -> str:
+    place = location_name or "Unknown"
+    if _is_country_level_location(location_name):
+        return (
+            f"<b>{event_kind}</b><br>"
+            f"Place: {place}<br>"
+            "<i>Country-level location only (approximate pin)</i>"
+        )
+    return f"<b>{event_kind}</b><br>Place: {place}"
+
+
+def _add_country_precision_circle(
+    life_map: folium.Map,
+    latitude: float,
+    longitude: float,
+    popup_html: str,
+    *,
+    color: str,
+    fill_color: str,
+) -> None:
+    folium.Circle(
+        location=[latitude, longitude],
+        radius=COUNTRY_APPROX_RADIUS_METERS,
+        popup=popup_html,
+        color=color,
+        weight=1,
+        fill=True,
+        fill_color=fill_color,
+        fill_opacity=0.16,
+        opacity=0.7,
+    ).add_to(life_map)
+
+
+def _build_country_date_label_html(date_str: str | None, *, color: str) -> str:
+    prefix = "👶" if color == "#1b5e20" else "💀"
+    label = f"{prefix} {_format_display_date(date_str)}"
+    return (
+        "<div class=\"country-date-label\" "
+        "style=\""
+        "display:inline-block;"
+        "padding:2px 12px;"
+        "border-radius:8px;"
+        "background:rgba(255,255,255,0.9);"
+        "border:1px solid rgba(0,0,0,0.2);"
+        "font-family:Helvetica Neue, Arial, sans-serif;"
+        "font-size:22px;"
+        "line-height:1.15;"
+        "font-weight:700;"
+        f"color:{color};"
+        "white-space:nowrap;"
+        f"\">{label}</div>"
+    )
 
 
 def generate_life_map(
@@ -39,6 +177,7 @@ def generate_life_map(
         location=[center_lat, center_lon],
         zoom_start=3,
         tiles="CartoDB Voyager",
+        max_zoom=MAX_CITY_LEVEL_ZOOM,
         max_bounds=True,
         min_lat=-85,
         max_lat=85,
@@ -55,25 +194,66 @@ def generate_life_map(
         current_birth_lon = birth_event.longitude + lon_shift
         current_death_lon = death_event.longitude + lon_shift
 
-        folium.Marker(
-            location=[birth_event.latitude, current_birth_lon],
-            popup=f"<b>Birth</b><br>Place: {birth_event.location_name}",
-            icon=folium.DivIcon(
-                html=birth_html,
-                icon_size=ICON_SIZE,
-                icon_anchor=BIRTH_ICON_ANCHOR,
-            ),
-        ).add_to(life_map)
+        birth_popup = _build_popup("Birth", birth_event.location_name)
+        death_popup = _build_popup("Death", death_event.location_name)
 
-        folium.Marker(
-            location=[death_event.latitude, current_death_lon],
-            popup=f"<b>Death</b><br>Place: {death_event.location_name}",
-            icon=folium.DivIcon(
-                html=death_html,
-                icon_size=ICON_SIZE,
-                icon_anchor=DEATH_ICON_ANCHOR,
-            ),
-        ).add_to(life_map)
+        if _is_country_level_location(birth_event.location_name):
+            _add_country_precision_circle(
+                life_map,
+                birth_event.latitude,
+                current_birth_lon,
+                birth_popup,
+                color="#1b5e20",
+                fill_color="#66bb6a",
+            )
+            folium.Marker(
+                location=[birth_event.latitude, current_birth_lon],
+                icon=folium.DivIcon(
+                    html=_build_country_date_label_html(birth_event.date_str, color="#1b5e20"),
+                    icon_size=(320, 34),
+                    icon_anchor=(160, 17),
+                    class_name="empty",
+                ),
+            ).add_to(life_map)
+        else:
+            folium.Marker(
+                location=[birth_event.latitude, current_birth_lon],
+                popup=birth_popup,
+                icon=folium.DivIcon(
+                    html=birth_html,
+                    icon_size=ICON_SIZE,
+                    icon_anchor=BIRTH_ICON_ANCHOR,
+                ),
+            ).add_to(life_map)
+
+        if _is_country_level_location(death_event.location_name):
+            _add_country_precision_circle(
+                life_map,
+                death_event.latitude,
+                current_death_lon,
+                death_popup,
+                color="#b71c1c",
+                fill_color="#ef5350",
+            )
+            folium.Marker(
+                location=[death_event.latitude, current_death_lon],
+                icon=folium.DivIcon(
+                    html=_build_country_date_label_html(death_event.date_str, color="#b71c1c"),
+                    icon_size=(320, 34),
+                    icon_anchor=(160, 17),
+                    class_name="empty",
+                ),
+            ).add_to(life_map)
+        else:
+            folium.Marker(
+                location=[death_event.latitude, current_death_lon],
+                popup=death_popup,
+                icon=folium.DivIcon(
+                    html=death_html,
+                    icon_size=ICON_SIZE,
+                    icon_anchor=DEATH_ICON_ANCHOR,
+                ),
+            ).add_to(life_map)
 
     quiz_html = fr"""\
     <style>
@@ -111,6 +291,31 @@ def generate_life_map(
           .replace(/[^a-z0-9\s]/g, " ")
           .replace(/\s+/g, " ")
           .trim();
+
+        const canonicalizeName = (value) => (value || "")
+          .replace(/\bsaint\b/g, "st")
+          .replace(/\s+/g, " ")
+          .trim();
+
+        const buildAcceptedAnswers = (expectedValue) => {{
+          const variants = new Set();
+          const normalizedExpected = normalize(expectedValue);
+          if (normalizedExpected) {{
+            variants.add(normalizedExpected);
+            variants.add(canonicalizeName(normalizedExpected));
+          }}
+
+          const commaIndex = expectedValue.indexOf(",");
+          if (commaIndex !== -1) {{
+            const shortName = normalize(expectedValue.slice(0, commaIndex));
+            if (shortName) {{
+              variants.add(shortName);
+              variants.add(canonicalizeName(shortName));
+            }}
+          }}
+
+          return variants;
+        }};
 
         const levenshteinDistance = (left, right) => {{
           if (left === right) {{
@@ -218,8 +423,13 @@ def generate_life_map(
             return;
           }}
 
-          const guess = normalize(input.value);
-          const normalizedExpected = normalize(expected);
+          if (awaitingAdvance) {{
+            return;
+          }}
+
+          const guess = canonicalizeName(normalize(input.value));
+          const acceptedAnswers = buildAcceptedAnswers(expected);
+          const normalizedExpected = canonicalizeName(normalize(expected));
           if (!guess) {{
             result.style.color = "#7f6000";
             result.textContent = "Enter a guess first.";
@@ -234,7 +444,10 @@ def generate_life_map(
             return;
           }}
 
-          if (guess === normalizedExpected || isCloseMatch(guess, normalizedExpected)) {{
+          const matchedExactly = acceptedAnswers.has(guess);
+          const matchedClosely = Array.from(acceptedAnswers).some((candidate) => isCloseMatch(guess, candidate));
+
+          if (matchedExactly || matchedClosely) {{
             correctCount += 1;
             streak += 1;
             window.sessionStorage.setItem(storageKeys.correct, String(correctCount));
@@ -281,7 +494,13 @@ def generate_life_map(
         if (input) {{
           input.addEventListener("keydown", (event) => {{
             if (event.key === "Enter") {{
-              check();
+              event.preventDefault();
+              event.stopPropagation();
+              if (awaitingAdvance) {{
+                nextRound();
+              }} else {{
+                check();
+              }}
             }}
           }});
         }}
@@ -335,6 +554,7 @@ def generate_multi_life_map(
         location=[center_lat, center_lon],
         zoom_start=2,
         tiles="CartoDB Voyager",
+        max_zoom=MAX_CITY_LEVEL_ZOOM,
         max_bounds=True,
         min_lat=-85,
         max_lat=85,
@@ -352,16 +572,36 @@ def generate_multi_life_map(
                     "lon": birth_event.longitude,
                     "date": birth_event.date_str,
                     "place": birth_event.location_name,
-                    "popup": f"<b>Birth</b><br>Place: {birth_event.location_name}",
-                    "icon": build_birth_marker_svg(birth_event.date_str),
+                    "popup": _build_popup("Birth", birth_event.location_name),
+                    "country_level": _is_country_level_location(birth_event.location_name),
+                    "icon": (
+                        None
+                        if _is_country_level_location(birth_event.location_name)
+                        else build_birth_marker_svg(birth_event.date_str)
+                    ),
+                    "country_label_html": (
+                        _build_country_date_label_html(birth_event.date_str, color="#1b5e20")
+                        if _is_country_level_location(birth_event.location_name)
+                        else None
+                    ),
                 },
                 "death": {
                     "lat": death_event.latitude,
                     "lon": death_event.longitude,
                     "date": death_event.date_str,
                     "place": death_event.location_name,
-                    "popup": f"<b>Death</b><br>Place: {death_event.location_name}",
-                    "icon": build_death_marker_svg(death_event.date_str),
+                    "popup": _build_popup("Death", death_event.location_name),
+                    "country_level": _is_country_level_location(death_event.location_name),
+                    "icon": (
+                        None
+                        if _is_country_level_location(death_event.location_name)
+                        else build_death_marker_svg(death_event.date_str)
+                    ),
+                    "country_label_html": (
+                        _build_country_date_label_html(death_event.date_str, color="#b71c1c")
+                        if _is_country_level_location(death_event.location_name)
+                        else None
+                    ),
                 },
             }
         )
@@ -373,11 +613,21 @@ def generate_multi_life_map(
     <div id="quiz-panel" style="position: fixed; top: 16px; left: 16px; z-index: 9999; background: rgba(255,255,255,0.94); border-radius: 10px; padding: 12px 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); max-width: 340px; font-family: Helvetica Neue, Arial, sans-serif;">
       <div style="font-weight: 700; margin-bottom: 6px;">Guess The Person</div>
       <div id="quiz-progress" style="font-size: 12px; color: #555; margin-bottom: 6px;">Round 1/{len(valid_rounds)}</div>
-      <div style="font-size: 13px; margin-bottom: 8px;">One guess per round. Wrong answers move to the next person.</div>
+      <div id="quiz-instructions" style="font-size: 13px; margin-bottom: 8px;">One guess per round. Wrong answers move to the next person.</div>
       <input id="quiz-input" type="text" placeholder="Type a name" style="width: 100%; box-sizing: border-box; padding: 7px 8px; border: 1px solid #bdbdbd; border-radius: 6px; margin-bottom: 8px;" />
       <button id="quiz-submit" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #1565c0; color: white; font-weight: 700; cursor: pointer;">Submit Guess</button>
+      <div id="quiz-emoji-grid" style="display: none; margin-top: 8px; font-size: 24px; line-height: 1.25; letter-spacing: 1px;"></div>
       <div id="quiz-result" style="margin-top: 8px; font-size: 13px;"></div>
+      <div id="quiz-controls" style="display: none; margin-top: 8px;">
+        <button id="quiz-continue" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #2e7d32; color: white; font-weight: 700; cursor: pointer; margin-bottom: 6px;">Continue</button>
+        <div style="display: flex; gap: 6px;">
+          <button id="quiz-force-correct" style="flex: 1; padding: 6px 8px; border: 0; border-radius: 6px; background: #43a047; color: white; font-weight: 600; cursor: pointer;">Force Correct</button>
+          <button id="quiz-force-wrong" style="flex: 1; padding: 6px 8px; border: 0; border-radius: 6px; background: #e53935; color: white; font-weight: 600; cursor: pointer;">Force Wrong</button>
+        </div>
+      </div>
       <div id="quiz-stats" style="margin-top: 6px; font-size: 12px; color: #666; font-weight: 600;">Correct: <span id="correct-count">0</span> | Wrong: <span id="wrong-count">0</span></div>
+      <button id="quiz-copy-summary" style="display: none; width: 100%; padding: 6px 8px; border: 0; border-radius: 6px; background: #455a64; color: white; font-weight: 600; cursor: pointer; margin-top: 8px;">Copy Emoji Summary</button>
+      <div id="quiz-copy-status" style="margin-top: 6px; font-size: 12px; color: #546e7a; min-height: 16px;"></div>
     </div>
     <script>
       (function() {{
@@ -392,6 +642,31 @@ def generate_multi_life_map(
           .replace(/[^a-z0-9\s]/g, " ")
           .replace(/\s+/g, " ")
           .trim();
+
+        const canonicalizeName = (value) => (value || "")
+          .replace(/\bsaint\b/g, "st")
+          .replace(/\s+/g, " ")
+          .trim();
+
+        const buildAcceptedAnswers = (expectedValue) => {{
+          const variants = new Set();
+          const normalizedExpected = normalize(expectedValue);
+          if (normalizedExpected) {{
+            variants.add(normalizedExpected);
+            variants.add(canonicalizeName(normalizedExpected));
+          }}
+
+          const commaIndex = expectedValue.indexOf(",");
+          if (commaIndex !== -1) {{
+            const shortName = normalize(expectedValue.slice(0, commaIndex));
+            if (shortName) {{
+              variants.add(shortName);
+              variants.add(canonicalizeName(shortName));
+            }}
+          }}
+
+          return variants;
+        }};
 
         const levenshteinDistance = (left, right) => {{
           if (left === right) {{
@@ -453,9 +728,17 @@ def generate_multi_life_map(
         const input = document.getElementById("quiz-input");
         const submit = document.getElementById("quiz-submit");
         const result = document.getElementById("quiz-result");
+        const instructions = document.getElementById("quiz-instructions");
+        const emojiGrid = document.getElementById("quiz-emoji-grid");
         const progress = document.getElementById("quiz-progress");
         const correctCountElement = document.getElementById("correct-count");
         const wrongCountElement = document.getElementById("wrong-count");
+        const controls = document.getElementById("quiz-controls");
+        const continueButton = document.getElementById("quiz-continue");
+        const forceCorrectButton = document.getElementById("quiz-force-correct");
+        const forceWrongButton = document.getElementById("quiz-force-wrong");
+        const copySummaryButton = document.getElementById("quiz-copy-summary");
+        const copyStatus = document.getElementById("quiz-copy-status");
 
         let currentIndex = 0;
         let correctCount = 0;
@@ -463,6 +746,90 @@ def generate_multi_life_map(
         const roundResults = [];
         let mapRef = null;
         let roundLayer = null;
+        let awaitingAdvance = false;
+        let pendingResultIndex = -1;
+        let latestEmojiSummary = "";
+
+        const setCopyStatus = (message, color = "#546e7a") => {{
+          if (!copyStatus) {{
+            return;
+          }}
+          copyStatus.style.color = color;
+          copyStatus.textContent = message;
+        }};
+
+        const buildEmojiSummary = () => {{
+          const total = roundResults.length;
+          if (!total) {{
+            return "";
+          }}
+
+          const columns = total >= 10 ? 5 : Math.min(5, total);
+          const symbols = roundResults.map((entry) => (entry.isCorrect ? "✅" : "❌"));
+          const lines = [];
+
+          for (let i = 0; i < symbols.length; i += columns) {{
+            lines.push(symbols.slice(i, i + columns).join(""));
+          }}
+
+          return `Cartographic Quiz: ${{correctCount}}/${{total}} correct\n${{lines.join("\n")}}`;
+        }};
+
+        const buildEmojiGridHtml = () => {{
+          const total = roundResults.length;
+          if (!total) {{
+            return "";
+          }}
+
+          const columns = total >= 10 ? 5 : Math.min(5, total);
+          const symbols = roundResults.map((entry) => (entry.isCorrect ? "✅" : "❌"));
+          const lines = [];
+
+          for (let i = 0; i < symbols.length; i += columns) {{
+            lines.push(symbols.slice(i, i + columns).join(""));
+          }}
+
+          return lines.join("<br>");
+        }};
+
+        const copyTextToClipboard = async (text) => {{
+          if (navigator.clipboard && navigator.clipboard.writeText) {{
+            await navigator.clipboard.writeText(text);
+            return;
+          }}
+
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          textArea.style.position = "fixed";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+        }};
+
+        const buildWikipediaUrl = (personName) => {{
+          const normalized = (personName || "").trim().replace(/\s+/g, "_");
+          return `https://en.wikipedia.org/wiki/${{encodeURIComponent(normalized)}}`;
+        }};
+
+        const setGuessingLocked = (locked) => {{
+          if (input) {{
+            input.disabled = locked;
+          }}
+          if (submit) {{
+            submit.disabled = locked;
+            submit.style.opacity = locked ? "0.65" : "1";
+          }}
+        }};
+
+        const setControlsVisible = (visible) => {{
+          if (!controls) {{
+            return;
+          }}
+          controls.style.display = visible ? "block" : "none";
+        }};
 
         const updateStats = () => {{
           if (correctCountElement) {{
@@ -489,31 +856,71 @@ def generate_multi_life_map(
 
           roundLayer.clearLayers();
 
-          const birthIcon = L.divIcon({{
-            html: round.birth.icon,
-            iconSize: [320, 90],
-            iconAnchor: [160, 0],
-            className: "empty",
-          }});
-          L.marker([round.birth.lat, round.birth.lon], {{ icon: birthIcon }})
-            .bindPopup(round.birth.popup)
-            .addTo(roundLayer);
+          if (round.birth.country_level) {{
+            L.circle([round.birth.lat, round.birth.lon], {{
+              radius: {COUNTRY_APPROX_RADIUS_METERS},
+              color: "#1b5e20",
+              weight: 1,
+              fillColor: "#66bb6a",
+              fillOpacity: 0.16,
+            }}).bindPopup(round.birth.popup).addTo(roundLayer);
+            if (round.birth.country_label_html) {{
+              const birthLabelIcon = L.divIcon({{
+                html: round.birth.country_label_html,
+                iconSize: [320, 34],
+                iconAnchor: [160, 17],
+                className: "empty",
+              }});
+              L.marker([round.birth.lat, round.birth.lon], {{ icon: birthLabelIcon, interactive: false }})
+                .addTo(roundLayer);
+            }}
+          }} else {{
+            const birthIcon = L.divIcon({{
+              html: round.birth.icon,
+              iconSize: [320, 90],
+              iconAnchor: [160, 0],
+              className: "empty",
+            }});
+            L.marker([round.birth.lat, round.birth.lon], {{ icon: birthIcon }})
+              .bindPopup(round.birth.popup)
+              .addTo(roundLayer);
+          }}
 
-          const deathIcon = L.divIcon({{
-            html: round.death.icon,
-            iconSize: [320, 90],
-            iconAnchor: [160, 90],
-            className: "empty",
-          }});
-          L.marker([round.death.lat, round.death.lon], {{ icon: deathIcon }})
-            .bindPopup(round.death.popup)
-            .addTo(roundLayer);
+          if (round.death.country_level) {{
+            L.circle([round.death.lat, round.death.lon], {{
+              radius: {COUNTRY_APPROX_RADIUS_METERS},
+              color: "#b71c1c",
+              weight: 1,
+              fillColor: "#ef5350",
+              fillOpacity: 0.16,
+            }}).bindPopup(round.death.popup).addTo(roundLayer);
+            if (round.death.country_label_html) {{
+              const deathLabelIcon = L.divIcon({{
+                html: round.death.country_label_html,
+                iconSize: [320, 34],
+                iconAnchor: [160, 17],
+                className: "empty",
+              }});
+              L.marker([round.death.lat, round.death.lon], {{ icon: deathLabelIcon, interactive: false }})
+                .addTo(roundLayer);
+            }}
+          }} else {{
+            const deathIcon = L.divIcon({{
+              html: round.death.icon,
+              iconSize: [320, 90],
+              iconAnchor: [160, 90],
+              className: "empty",
+            }});
+            L.marker([round.death.lat, round.death.lon], {{ icon: deathIcon }})
+              .bindPopup(round.death.popup)
+              .addTo(roundLayer);
+          }}
 
           const bounds = L.latLngBounds([
             [round.birth.lat, round.birth.lon],
             [round.death.lat, round.death.lon],
           ]);
-          mapRef.fitBounds(bounds.pad(0.5));
+          mapRef.fitBounds(bounds.pad(0.5), {{ maxZoom: {MAX_CITY_LEVEL_ZOOM} }});
         }};
 
         const renderRound = () => {{
@@ -526,16 +933,15 @@ def generate_multi_life_map(
             return;
           }}
 
-          input.disabled = true;
-          submit.disabled = true;
-          submit.style.opacity = "0.65";
+          setControlsVisible(false);
+          setGuessingLocked(true);
 
           const total = rounds.length;
           const accuracy = total ? Math.round((correctCount / total) * 100) : 0;
           progress.textContent = `Complete (${{total}}/${{total}})`;
           result.style.color = "#263238";
 
-          const summaryHeader = `
+          result.innerHTML = `
             <div style="margin-bottom: 8px;">
               Finished! Correct: <b>${{correctCount}}</b> | Wrong: <b>${{wrongCount}}</b> | Accuracy: <b>${{accuracy}}%</b>
             </div>
@@ -547,13 +953,31 @@ def generate_multi_life_map(
               <div>Birth: ${{entry.birthDate}} - ${{entry.birthPlace}}</div>
               <div>Death: ${{entry.deathDate}} - ${{entry.deathPlace}}</div>
               <div>Your guess: <b>${{entry.guess}}</b></div>
-              <div>Answer: <b>${{entry.answer}}</b></div>
+              <div>Answer: <a href="${{buildWikipediaUrl(entry.answer)}}" target="_blank" rel="noopener noreferrer"><b>${{entry.answer}}</b></a></div>
+              <div>Result: <b>${{entry.isCorrect ? "Correct" : "Wrong"}}</b>${{entry.overridden ? " (manual override)" : ""}}</div>
             </button>
           `).join("");
 
           result.style.maxHeight = "260px";
           result.style.overflowY = "auto";
-          result.innerHTML = summaryHeader + detailItems;
+          result.innerHTML += detailItems;
+
+          if (instructions) {{
+            instructions.style.display = "none";
+          }}
+          input.style.display = "none";
+          submit.style.display = "none";
+
+          if (emojiGrid) {{
+            emojiGrid.innerHTML = buildEmojiGridHtml();
+            emojiGrid.style.display = "block";
+          }}
+
+          latestEmojiSummary = buildEmojiSummary();
+          if (copySummaryButton) {{
+            copySummaryButton.style.display = "block";
+          }}
+          setCopyStatus("Copy your emoji scorecard to share.");
 
           result.addEventListener("click", (event) => {{
             const target = event.target;
@@ -577,6 +1001,11 @@ def generate_multi_life_map(
         }};
 
         const nextRound = () => {{
+          awaitingAdvance = false;
+          pendingResultIndex = -1;
+          setControlsVisible(false);
+          setGuessingLocked(false);
+
           currentIndex += 1;
           if (currentIndex >= rounds.length) {{
             finishQuiz();
@@ -595,8 +1024,9 @@ def generate_multi_life_map(
             return;
           }}
 
-          const guess = normalize(input.value);
-          const normalizedExpected = normalize(rounds[currentIndex].person);
+          const guess = canonicalizeName(normalize(input.value));
+          const acceptedAnswers = buildAcceptedAnswers(rounds[currentIndex].person);
+          const normalizedExpected = canonicalizeName(normalize(rounds[currentIndex].person));
           if (!guess) {{
             result.style.color = "#7f6000";
             result.textContent = "Enter a guess first.";
@@ -613,14 +1043,20 @@ def generate_multi_life_map(
 
           const rawGuess = (input.value || "").trim();
           const revealed = rounds[currentIndex].person;
-          if (guess === normalizedExpected || isCloseMatch(guess, normalizedExpected)) {{
+          const revealedLink = `<a href="${{buildWikipediaUrl(revealed)}}" target="_blank" rel="noopener noreferrer">${{revealed}}</a>`;
+          let isCorrect = false;
+          const matchedExactly = acceptedAnswers.has(guess);
+          const matchedClosely = Array.from(acceptedAnswers).some((candidate) => isCloseMatch(guess, candidate));
+
+          if (matchedExactly || matchedClosely) {{
             correctCount += 1;
+            isCorrect = true;
             result.style.color = "#1b5e20";
-            result.textContent = `Correct! It was ${{revealed}}.`;
+            result.innerHTML = `Correct! It was ${{revealedLink}}.`;
           }} else {{
             wrongCount += 1;
             result.style.color = "#b71c1c";
-            result.textContent = `Not quite. It was ${{revealed}}.`;
+            result.innerHTML = `Not quite. It was ${{revealedLink}}.`;
           }}
 
           roundResults.push({{
@@ -630,19 +1066,91 @@ def generate_multi_life_map(
             deathPlace: rounds[currentIndex].death.place,
             guess: rawGuess || "(blank)",
             answer: revealed,
+            isCorrect,
+            overridden: false,
           }});
+          pendingResultIndex = roundResults.length - 1;
 
           updateStats();
-          window.setTimeout(nextRound, 500);
+          awaitingAdvance = true;
+          setGuessingLocked(true);
+          setControlsVisible(true);
+        }};
+
+        const applyManualOverride = (forceCorrect) => {{
+          if (!result || pendingResultIndex < 0) {{
+            return;
+          }}
+
+          const entry = roundResults[pendingResultIndex];
+          if (!entry) {{
+            return;
+          }}
+
+          if (entry.isCorrect !== forceCorrect) {{
+            if (forceCorrect) {{
+              wrongCount = Math.max(0, wrongCount - 1);
+              correctCount += 1;
+            }} else {{
+              correctCount = Math.max(0, correctCount - 1);
+              wrongCount += 1;
+            }}
+            entry.isCorrect = forceCorrect;
+          }}
+
+          entry.overridden = true;
+          updateStats();
+          result.style.color = forceCorrect ? "#1b5e20" : "#b71c1c";
+          const answerLink = `<a href="${{buildWikipediaUrl(entry.answer)}}" target="_blank" rel="noopener noreferrer">${{entry.answer}}</a>`;
+          result.innerHTML = forceCorrect
+            ? `Manually set to correct. It was ${{answerLink}}.`
+            : `Manually set to wrong. It was ${{answerLink}}.`;
         }};
 
         if (submit) {{
           submit.addEventListener("click", check);
         }}
+        if (continueButton) {{
+          continueButton.addEventListener("click", nextRound);
+        }}
+        if (forceCorrectButton) {{
+          forceCorrectButton.addEventListener("click", () => applyManualOverride(true));
+        }}
+        if (forceWrongButton) {{
+          forceWrongButton.addEventListener("click", () => applyManualOverride(false));
+        }}
         if (input) {{
           input.addEventListener("keydown", (event) => {{
             if (event.key === "Enter") {{
-              check();
+              event.preventDefault();
+              event.stopPropagation();
+              if (awaitingAdvance) {{
+                nextRound();
+              }} else {{
+                check();
+              }}
+            }}
+          }});
+        }}
+        document.addEventListener("keydown", (event) => {{
+          if (event.key !== "Enter" || !awaitingAdvance) {{
+            return;
+          }}
+          event.preventDefault();
+          nextRound();
+        }});
+        if (copySummaryButton) {{
+          copySummaryButton.addEventListener("click", async () => {{
+            if (!latestEmojiSummary) {{
+              setCopyStatus("No summary available yet.", "#b71c1c");
+              return;
+            }}
+
+            try {{
+              await copyTextToClipboard(latestEmojiSummary);
+              setCopyStatus("Copied emoji scorecard to clipboard.", "#1b5e20");
+            }} catch (_error) {{
+              setCopyStatus("Could not copy automatically. Select and copy manually.", "#b71c1c");
             }}
           }});
         }}

@@ -17,3 +17,6 @@ package = true
 
 [project.scripts]
 cartographic-quiz = "cartographic_quiz.__main__:main"
+publish = "cartographic_quiz.__main__:publish_main"
+clear-cache = "cartographic_quiz.__main__:clear_cache_main"
+cartographic-quiz-publish = "cartographic_quiz.__main__:publish_main"

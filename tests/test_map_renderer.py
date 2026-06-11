@@ -95,6 +95,45 @@ def test_quiz_script_includes_session_storage_animation_and_events(tmp_path):
     assert "Please enter the full name, not just a surname." in html
 
 
+def test_map_caps_zoom_to_city_level(tmp_path):
+    html = _render_map_html(tmp_path)
+    assert '"maxZoom": 8' in html
+
+
+def test_country_level_location_adds_precision_note_and_circle(tmp_path):
+    output_file = tmp_path / "country_map.html"
+    birth_event = CartographicDate(
+        date_str="1572",
+        location_name="England",
+        latitude=52.3555,
+        longitude=-1.1743,
+    )
+    death_event = CartographicDate(
+        date_str="1637",
+        location_name="London",
+        latitude=51.5074,
+        longitude=-0.1278,
+    )
+
+    generate_life_map(
+        birth_event=birth_event,
+        death_event=death_event,
+        person_name="Ben Jonson",
+        output_filename=str(output_file),
+    )
+    html = output_file.read_text(encoding="utf-8")
+
+    assert "Country-level location only (approximate pin)" in html
+    assert "250000" in html
+    assert "#1b5e20" in html
+    assert "#66bb6a" in html
+    assert "1572" in html
+    assert "\\ud83d\\udc76 1572" in html
+    assert "country-date-label" in html
+    assert "font-size:22px" in html
+    assert '"maxZoom": 8' in html
+
+
 def test_person_name_embedding_is_safe_for_quotes(tmp_path):
     person_name = "D'Artagnan"
     html = _render_map_html(tmp_path, person_name=person_name)

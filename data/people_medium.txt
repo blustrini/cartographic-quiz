@@ -23,13 +23,6 @@ Ibn al-Haytham
 Al-Jazari
 Hero of Alexandria
 Zhang Heng
-Ferdinand Magellan
-Juan Sebastian Elcano
-Christopher Columbus
-Amerigo Vespucci
-Vasco da Gama
-Bartolomeu Dias
-Henry the Navigator
 John Cabot
 Sebastian Cabot
 Jacques Cartier
@@ -40,13 +33,9 @@ Vasco Nunez de Balboa
 Francisco de Orellana
 Pedro Alvares Cabral
 Abel Tasman
-James Cook
 William Dampier
 Vitus Bering
 Jean-Francois de La Perouse
-Roald Amundsen
-Robert Falcon Scott
-Ernest Shackleton
 Fridtjof Nansen
 David Livingstone
 Henry Morton Stanley
@@ -57,7 +46,6 @@ Alexander von Humboldt
 Matthew Flinders
 Ibn Majid
 Pytheas
-Marco Polo
 Niccolo de Conti
 Afanasy Nikitin
 Xu Xiake
@@ -66,7 +54,6 @@ Dante Alighieri
 Geoffrey Chaucer
 Giovanni Boccaccio
 Francesco Petrarch
-William Shakespeare
 Christopher Marlowe
 Ben Jonson
 John Milton
@@ -76,7 +63,6 @@ Daniel Defoe
 Jonathan Swift
 Laurence Sterne
 Henry Fielding
-Jane Austen
 Mary Shelley
 Percy Bysshe Shelley
 Lord Byron
@@ -85,13 +71,11 @@ William Wordsworth
 Samuel Taylor Coleridge
 Robert Burns
 Walter Scott
-Charles Dickens
 George Eliot
 Thomas Hardy
 Charlotte Bronte
 Emily Bronte
 Anne Bronte
-Oscar Wilde
 Bram Stoker
 H. G. Wells
 Arthur Conan Doyle
@@ -101,22 +85,17 @@ T. S. Eliot
 D. H. Lawrence
 Virginia Woolf
 James Joyce
-George Orwell
 Aldous Huxley
 Evelyn Waugh
 Graham Greene
-Agatha Christie
 Dorothy L. Sayers
 P. G. Wodehouse
 E. M. Forster
 Joseph Conrad
 C. S. Lewis
-Leo Tolstoy
-Fyodor Dostoevsky
 Ivan Turgenev
 Nikolai Gogol
 Anton Chekhov
-Alexander Pushkin
 Mikhail Lermontov
 Boris Pasternak
 Alexander Solzhenitsyn
@@ -131,37 +110,26 @@ Rainer Maria Rilke
 Thomas Mann
 Hermann Hesse
 Bertolt Brecht
-Johann Wolfgang von Goethe
 Friedrich Schiller
 Heinrich Heine
-Voltaire
-Jean-Jacques Rousseau
 Denis Diderot
-Victor Hugo
 Alexandre Dumas
 Emile Zola
 Gustave Flaubert
 Guy de Maupassant
 Marcel Proust
-Albert Camus
-Jean-Paul Sartre
 Simone de Beauvoir
 Stendhal
 Honore de Balzac
 Moliere
-Miguel de Cervantes
 Federico Garcia Lorca
 Antonio Machado
 Lope de Vega
 Calderon de la Barca
 Benito Perez Galdos
-Jorge Luis Borges
 Julio Cortazar
-Gabriel Garcia Marquez
-Pablo Neruda
 Octavio Paz
 Mario Vargas Llosa
-Rabindranath Tagore
 Bankim Chandra Chatterjee
 Munshi Premchand
 Saadat Hasan Manto
@@ -197,19 +165,14 @@ Ibn Arabi
 Al-Mutanabbi
 Khalil Gibran
 Mahmoud Darwish
-Leonardo da Vinci
-Michelangelo
-Raphael
 Donatello
 Sandro Botticelli
 Titian
 Tintoretto
-Caravaggio
 El Greco
 Diego Velazquez
 Francisco Goya
 Peter Paul Rubens
-Rembrandt
 Johannes Vermeer
 Jan van Eyck
 Albrecht Durer
@@ -219,19 +182,16 @@ Pierre-Auguste Renoir
 Edgar Degas
 Edouard Manet
 Paul Cezanne
-Vincent van Gogh
 Paul Gauguin
 Georges Seurat
 Henri de Toulouse-Lautrec
 Henri Matisse
-Pablo Picasso
 Georges Braque
 Wassily Kandinsky
 Kazimir Malevich
 Piet Mondrian
 Joan Miro
 Salvador Dali
-Frida Kahlo
 Diego Rivera
 Marc Chagall
 Edvard Munch
@@ -247,15 +207,11 @@ Norman Rockwell
 Ansel Adams
 Dorothea Lange
 Yousuf Karsh
-Ludwig van Beethoven
-Wolfgang Amadeus Mozart
 Joseph Haydn
 Franz Schubert
-Johann Sebastian Bach
 George Frideric Handel
 Antonio Vivaldi
 Niccolo Paganini
-Frederic Chopin
 Franz Liszt
 Robert Schumann
 Clara Schumann
@@ -270,7 +226,6 @@ Erik Satie
 Igor Stravinsky
 Sergei Prokofiev
 Dmitri Shostakovich
-Pyotr Ilyich Tchaikovsky
 Modest Mussorgsky
 Nikolai Rimsky-Korsakov
 Antonin Dvorak
@@ -289,7 +244,6 @@ Aaron Copland
 George Gershwin
 Leonard Bernstein
 Duke Ellington
-Louis Armstrong
 Charlie Parker
 Dizzy Gillespie
 Thelonious Monk
@@ -309,7 +263,6 @@ B. B. King
 Muddy Waters
 Howlin' Wolf
 Robert Johnson
-Elvis Presley
 Buddy Holly
 Chuck Berry
 Little Richard
@@ -325,9 +278,25 @@ Nusrat Fateh Ali Khan
 Lata Mangeshkar
 Kishore Kumar
 R. D. Burman
-Freddie Mercury
-John Lennon
 George Harrison
 Brian Jones
 Keith Moon
 John Bonham
+Jane Austen
+Charles Dickens
+Oscar Wilde
+Agatha Christie
+Leo Tolstoy
+Fyodor Dostoevsky
+Alexander Pushkin
+Johann Wolfgang von Goethe
+Voltaire
+Jean-Jacques Rousseau
+Victor Hugo
+Albert Camus
+Jean-Paul Sartre
+Miguel de Cervantes
+Jorge Luis Borges
+Gabriel Garcia Marquez
+Pablo Neruda
+Rabindranath Tagore

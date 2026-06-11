@@ -1,49 +1,669 @@
 {
-  "Chaim Weizmann": {
-    "birth_date": "1874-11-27",
-    "birth_lat": 52.317,
-    "birth_lon": 25.6,
-    "birth_place": "Motal",
-    "death_date": "1952-11-09",
-    "death_lat": 31.89694,
-    "death_lon": 34.81667,
-    "death_place": "Rehovot",
+  "Abbas the Great": {
+    "birth_date": "27 January 1571",
+    "birth_lat": 34.34194,
+    "birth_lon": 62.20306,
+    "birth_place": "Herat",
+    "death_date": "19 January 1629",
+    "death_lat": 36.79167,
+    "death_lon": 53.10972,
+    "death_place": "Farahabad",
     "status": "ok"
   },
-  "Dizzy Gillespie": {
-    "birth_date": "1917-10-21",
-    "birth_lat": 34.69389,
-    "birth_lon": -79.89111,
-    "birth_place": "Cheraw, South Carolina",
-    "death_date": "1993-01-06",
-    "death_lat": 40.891197,
-    "death_lon": -73.972515,
-    "death_place": "Englewood, New Jersey",
+  "Abdul Hamid II": {
+    "birth_date": "1842-09-21",
+    "birth_lat": 41.013,
+    "birth_lon": 28.984,
+    "birth_place": "Topkap\u0131 Palace",
+    "death_date": "1918-02-10",
+    "death_lat": 41.0425,
+    "death_lon": 29.04,
+    "death_place": "Beylerbeyi Palace",
     "status": "ok"
   },
-  "Edouard Manet": {
-    "birth_date": "1832-01-23",
-    "birth_lat": 48.8588897,
-    "birth_lon": 2.320041,
-    "birth_place": "Paris, France",
-    "death_date": "1883-04-30",
-    "death_lat": 48.8588897,
-    "death_lon": 2.320041,
+  "Ada Lovelace": {
+    "birth_date": "1815-12-10",
+    "birth_lat": 51.5074456,
+    "birth_lon": -0.1277653,
+    "birth_place": "London, England",
+    "death_date": "1852-11-27",
+    "death_lat": 51.5177,
+    "death_lon": -0.147,
+    "death_place": "Marylebone",
+    "status": "ok"
+  },
+  "Al-Jazari": {
+    "status": "bad"
+  },
+  "Al-Khwarizmi": {
+    "status": "bad"
+  },
+  "Alan Rickman": {
+    "birth_date": "1946-02-21",
+    "birth_lat": 51.5074456,
+    "birth_lon": -0.1277653,
+    "birth_place": "London, England",
+    "death_date": "2016-01-14",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
+    "status": "ok"
+  },
+  "Albert Einstein": {
+    "birth_date": "1879-03-14",
+    "birth_lat": 48.39861,
+    "birth_lon": 9.99111,
+    "birth_place": "Ulm",
+    "death_date": "1955-04-18",
+    "death_lat": 40.358244,
+    "death_lon": -74.666728,
+    "death_place": "Princeton, New Jersey",
+    "status": "ok"
+  },
+  "Albrecht Durer": {
+    "birth_date": "1471-05-21",
+    "birth_lat": 49.45,
+    "birth_lon": 11.083,
+    "birth_place": "Free Imperial City of Nuremberg",
+    "death_date": "1528-04-06",
+    "death_lat": 49.45,
+    "death_lon": 11.083,
+    "death_place": "Free Imperial City of Nuremberg, Holy Roman Empire",
+    "status": "ok"
+  },
+  "Alexander Solzhenitsyn": {
+    "birth_date": "1918-12-11",
+    "birth_lat": 43.917,
+    "birth_lon": 42.717,
+    "birth_place": "Kislovodsk",
+    "death_date": "2008-08-03",
+    "death_lat": 55.625578,
+    "death_lon": 37.6063916,
+    "death_place": "Moscow, Russia",
+    "status": "ok"
+  },
+  "Alexander the Great": {
+    "birth_date": "21 July 356 BC",
+    "birth_lat": 40.754669,
+    "birth_lon": 22.52105,
+    "birth_place": "Pella",
+    "death_date": "11 June 323 BC",
+    "death_lat": 32.5425,
+    "death_lon": 44.42111,
+    "death_place": "Babylon",
+    "status": "ok"
+  },
+  "Amenhotep III": {
+    "status": "bad"
+  },
+  "Andreas Vesalius": {
+    "birth_date": "31 December 1514",
+    "birth_lat": 50.84667,
+    "birth_lon": 4.3525,
+    "birth_place": "Brussels",
+    "death_date": "1564-10-15",
+    "death_lat": 37.8,
+    "death_lon": 20.75,
+    "death_place": "Zakynthos",
+    "status": "ok"
+  },
+  "Andy Warhol": {
+    "birth_date": "1928-08-06",
+    "birth_lat": 40.43972,
+    "birth_lon": -79.97639,
+    "birth_place": "Pittsburgh",
+    "death_date": "1987-02-22",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, U.S.",
+    "status": "ok"
+  },
+  "Antonio Vivaldi": {
+    "birth_date": "1678-03-04",
+    "birth_lat": 45.4375,
+    "birth_lon": 12.33583,
+    "birth_place": "Venice",
+    "death_date": "1741-07-28",
+    "death_lat": 48.2083,
+    "death_lon": 16.3725,
+    "death_place": "Vienna",
+    "status": "ok"
+  },
+  "Ataturk": {
+    "birth_date": "c. 1881",
+    "birth_lat": 40.6403,
+    "birth_lon": 22.9356,
+    "birth_place": "Salonica",
+    "death_date": "1938-11-10",
+    "death_lat": 41.01361,
+    "death_lon": 28.955,
+    "death_place": "Istanbul",
+    "status": "ok"
+  },
+  "Augusto Pinochet": {
+    "birth_date": "1915-11-25",
+    "birth_lat": -33.04611,
+    "birth_lon": -71.61972,
+    "birth_place": "Valpara\u00edso",
+    "death_date": "2006-12-10",
+    "death_lat": -33.4375,
+    "death_lon": -70.65,
+    "death_place": "Santiago",
+    "status": "ok"
+  },
+  "Bankim Chandra Chatterjee": {
+    "birth_date": "26 June 1838",
+    "birth_lat": 22.89,
+    "birth_lon": 88.42,
+    "birth_place": "Naihati",
+    "death_date": "1894-04-08",
+    "death_lat": 22.5675,
+    "death_lon": 88.37,
+    "death_place": "Calcutta",
+    "status": "ok"
+  },
+  "Baybars": {
+    "status": "bad"
+  },
+  "Ben Jonson": {
+    "birth_date": "11 June 1572",
+    "birth_lat": 52.5310214,
+    "birth_lon": -1.2649062,
+    "birth_place": "England",
+    "death_date": "18 August 1637",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
+    "status": "ok"
+  },
+  "Bernardo Bertolucci": {
+    "birth_date": "1941-03-16",
+    "birth_lat": 44.801472,
+    "birth_lon": 10.328,
+    "birth_place": "Parma",
+    "death_date": "2018-11-26",
+    "death_lat": 41.89333,
+    "death_lon": 12.48278,
+    "death_place": "Rome",
+    "status": "ok"
+  },
+  "Bernhard Riemann": {
+    "birth_date": "1826-09-17",
+    "birth_lat": 53.04222,
+    "birth_lon": 11.07861,
+    "birth_place": "Breselenz",
+    "death_date": "1866-07-20",
+    "death_lat": 45.933,
+    "death_lon": 8.533,
+    "death_place": "Selasca",
+    "status": "ok"
+  },
+  "Boris Pasternak": {
+    "birth_date": "1890-02-10",
+    "birth_lat": 55.625578,
+    "birth_lon": 37.6063916,
+    "birth_place": "Moscow, Russian Empire",
+    "death_date": "1960-05-30",
+    "death_lat": 55.65778,
+    "death_lon": 37.35222,
+    "death_place": "Peredelkino",
+    "status": "ok"
+  },
+  "Bram Stoker": {
+    "birth_date": "1847-11-08",
+    "birth_lat": 53.365,
+    "birth_lon": -6.21,
+    "birth_place": "Clontarf, Dublin",
+    "death_date": "1912-04-20",
+    "death_lat": 51.4887,
+    "death_lon": -0.1395,
+    "death_place": "Pimlico, London",
+    "status": "ok"
+  },
+  "Caligula": {
+    "birth_date": "31 August AD 12",
+    "birth_lat": 41.4479472,
+    "birth_lon": 12.6290528,
+    "birth_place": "Antium",
+    "death_date": "24 January AD 41",
+    "death_lat": 41.88833,
+    "death_lon": 12.48694,
+    "death_place": "Palatine Hill",
+    "status": "ok"
+  },
+  "Calvin Coolidge": {
+    "birth_date": "1872-07-04",
+    "birth_lat": 43.5299,
+    "birth_lon": -72.7388,
+    "birth_place": "Plymouth Notch, Vermont",
+    "death_date": "1933-01-05",
+    "death_lat": 42.333,
+    "death_lon": -72.65,
+    "death_place": "Northampton, Massachusetts",
+    "status": "ok"
+  },
+  "Carolus Linnaeus": {
+    "birth_date": "1707-05-23",
+    "birth_lat": 56.618,
+    "birth_lon": 14.202,
+    "birth_place": "R\u00e5shult",
+    "death_date": "1778-01-10",
+    "death_lat": 59.8175,
+    "death_lon": 17.77639,
+    "death_place": "Hammarby",
+    "status": "ok"
+  },
+  "Charles Darwin": {
+    "birth_date": "1809-02-12",
+    "birth_lat": 52.708,
+    "birth_lon": -2.754,
+    "birth_place": "Shrewsbury",
+    "death_date": "1882-04-19",
+    "death_lat": 51.3359,
+    "death_lon": 0.0535,
+    "death_place": "Downe",
+    "status": "ok"
+  },
+  "Charlotte Bronte": {
+    "birth_date": "1816-04-21",
+    "birth_lat": 53.7898,
+    "birth_lon": -1.8504,
+    "birth_place": "Thornton",
+    "death_date": "1855-03-31",
+    "death_lat": 53.83,
+    "death_lon": -1.96,
+    "death_place": "Haworth",
+    "status": "ok"
+  },
+  "Christopher Columbus": {
+    "birth_date": "31 October 1451",
+    "birth_lat": 44.41111,
+    "birth_lon": 8.93278,
+    "birth_place": "Genoa",
+    "death_date": "1506-05-20",
+    "death_lat": 41.65278,
+    "death_lon": -4.72361,
+    "death_place": "Valladolid",
+    "status": "ok"
+  },
+  "Christopher Marlowe": {
+    "birth_date": "26 February 1564",
+    "birth_lat": 51.28,
+    "birth_lon": 1.08,
+    "birth_place": "Canterbury",
+    "death_date": "30 May 1593",
+    "death_lat": 51.478,
+    "death_lon": -0.0265,
+    "death_place": "Deptford",
+    "status": "ok"
+  },
+  "Chuck Berry": {
+    "birth_date": "1926-10-18",
+    "birth_lat": 38.62722,
+    "birth_lon": -90.19778,
+    "birth_place": "St. Louis, Missouri",
+    "death_date": "2017-03-18",
+    "death_lat": 38.76,
+    "death_lon": -90.6167,
+    "death_place": "St. Charles County, Missouri",
+    "status": "ok"
+  },
+  "Confucius": {
+    "birth_date": "c. 551 BCE",
+    "birth_lat": 7.2834335,
+    "birth_lon": 2.1227604,
+    "birth_place": "Zou,",
+    "death_date": "c. 479 BCE",
+    "death_lat": 35.2252806,
+    "death_lon": 116.6536111,
+    "death_place": "Si River",
+    "status": "ok"
+  },
+  "Constantine the Great": {
+    "birth_date": "27 February 272",
+    "birth_lat": 43.32083,
+    "birth_lon": 21.89583,
+    "birth_place": "Naissus",
+    "death_date": "22 May 337",
+    "death_lat": 40.7625,
+    "death_lon": 29.9175,
+    "death_place": "Achyron,",
+    "status": "ok"
+  },
+  "Cy Young": {
+    "status": "bad"
+  },
+  "D. H. Lawrence": {
+    "birth_date": "1885-09-11",
+    "birth_lat": 53.018,
+    "birth_lon": -1.304,
+    "birth_place": "Eastwood, Nottinghamshire",
+    "death_date": "1930-03-02",
+    "death_lat": 43.7236,
+    "death_lon": 7.1142,
+    "death_place": "Vence",
+    "status": "ok"
+  },
+  "Date Masamune": {
+    "birth_date": "September 5, 1567",
+    "birth_lat": 37.92225,
+    "birth_lon": 140.116778,
+    "birth_place": "Yonezawa, Yamagata",
+    "death_date": "1636-06-27",
+    "death_lat": 35.68389,
+    "death_lon": 139.77444,
+    "death_place": "Edo",
+    "status": "ok"
+  },
+  "Davy Crockett": {
+    "birth_date": "1786-08-17",
+    "birth_lat": 36.22806,
+    "birth_lon": -82.63056,
+    "birth_place": "Limestone",
+    "death_date": "1836-03-06",
+    "death_lat": 29.425,
+    "death_lon": -98.4939,
+    "death_place": "San Antonio",
+    "status": "ok"
+  },
+  "Domitian": {
+    "status": "bad"
+  },
+  "Donatello": {
+    "birth_date": "c. 1386",
+    "birth_lat": 43.76944,
+    "birth_lon": 11.25611,
+    "birth_place": "Republic of Florence",
+    "death_date": "1466-12-13",
+    "death_lat": 43.76944,
+    "death_lon": 11.25611,
+    "death_place": "Republic of Florence",
+    "status": "ok"
+  },
+  "Donna Summer": {
+    "birth_date": "1948-12-31",
+    "birth_lat": 42.36028,
+    "birth_lon": -71.05778,
+    "birth_place": "Boston",
+    "death_date": "2012-05-17",
+    "death_lat": 26.13611,
+    "death_lon": -81.79444,
+    "death_place": "Naples, Florida",
+    "status": "ok"
+  },
+  "Duke Ellington": {
+    "birth_date": "1899-04-29",
+    "birth_lat": 38.90472,
+    "birth_lon": -77.01639,
+    "birth_place": "Washington, D.C.",
+    "death_date": "1974-05-24",
+    "death_lat": 40.7128,
+    "death_lon": -74.0061,
+    "death_place": "New York City",
+    "status": "ok"
+  },
+  "Dwight D. Eisenhower": {
+    "birth_date": "1890-10-14",
+    "birth_lat": 33.74972,
+    "birth_lon": -96.5575,
+    "birth_place": "Denison, Texas",
+    "death_date": "1969-03-28",
+    "death_lat": 38.8950982,
+    "death_lon": -77.0363849,
+    "death_place": "Washington, D.C., U.S.",
+    "status": "ok"
+  },
+  "Edgar Degas": {
+    "birth_date": "1834-07-19",
+    "birth_lat": 48.8567,
+    "birth_lon": 2.3522,
+    "birth_place": "Paris",
+    "death_date": "1917-09-27",
+    "death_lat": 48.8567,
+    "death_lon": 2.3522,
     "death_place": "Paris, France",
     "status": "ok"
   },
-  "Faiz Ahmed Faiz": {
-    "status": "bad"
+  "Edvard Grieg": {
+    "birth_date": "1843-06-15",
+    "birth_lat": 60.38944,
+    "birth_lon": 5.33,
+    "birth_place": "Bergen",
+    "death_date": "1907-09-04",
+    "death_lat": 60.38944,
+    "death_lon": 5.33,
+    "death_place": "Bergen, Norway",
+    "status": "ok"
   },
-  "Frederick II, Holy Roman Emperor": {
-    "birth_date": "26 December 1194",
-    "birth_lat": 43.52361,
-    "birth_lon": 13.23917,
-    "birth_place": "Jesi",
-    "death_date": "1250-12-13",
-    "death_lat": 41.683,
-    "death_lon": 15.283,
-    "death_place": "Castel Fiorentino",
+  "Edward Hopper": {
+    "birth_date": "1882-07-22",
+    "birth_lat": 41.0925,
+    "birth_lon": -73.9225,
+    "birth_place": "Nyack, New York",
+    "death_date": "1967-05-15",
+    "death_lat": 40.7127,
+    "death_lon": -74.0059,
+    "death_place": "Manhattan",
+    "status": "ok"
+  },
+  "El Greco": {
+    "birth_date": "1 October 1541",
+    "birth_lat": 35.325,
+    "birth_lon": 25.067,
+    "birth_place": "either",
+    "death_date": "1614-04-07",
+    "death_lat": 39.85667,
+    "death_lon": -4.02444,
+    "death_place": "Toledo",
+    "status": "ok"
+  },
+  "Elizabeth II": {
+    "birth_date": "1926-04-21",
+    "birth_lat": 51.5074456,
+    "birth_lon": -0.1277653,
+    "birth_place": ", London, England",
+    "death_date": "2022-09-08",
+    "death_lat": 57.04083,
+    "death_lon": -3.23,
+    "death_place": "Balmoral Castle",
+    "status": "ok"
+  },
+  "Elizabeth Taylor": {
+    "birth_date": "1932-02-27",
+    "birth_lat": 51.50722,
+    "birth_lon": -0.1275,
+    "birth_place": "London",
+    "death_date": "2011-03-23",
+    "death_lat": 34.05,
+    "death_lon": -118.25,
+    "death_place": "Los Angeles",
+    "status": "ok"
+  },
+  "Ella Fitzgerald": {
+    "birth_date": "1917-04-25",
+    "birth_lat": 37.07083,
+    "birth_lon": -76.48444,
+    "birth_place": "Newport News, Virginia",
+    "death_date": "1996-06-15",
+    "death_lat": 34.07306,
+    "death_lon": -118.39944,
+    "death_place": "Beverly Hills, California",
+    "status": "ok"
+  },
+  "Elvis Presley": {
+    "birth_date": "1935-01-08",
+    "birth_lat": 34.25972,
+    "birth_lon": -88.72583,
+    "birth_place": "Tupelo, Mississippi",
+    "death_date": "1977-08-16",
+    "death_lat": 35.14611,
+    "death_lon": -90.05194,
+    "death_place": "Memphis, Tennessee",
+    "status": "ok"
+  },
+  "Emily Bronte": {
+    "birth_date": "1818-07-30",
+    "birth_lat": 53.7898,
+    "birth_lon": -1.8504,
+    "birth_place": "Thornton",
+    "death_date": "1848-12-19",
+    "death_lat": 53.83,
+    "death_lon": -1.96,
+    "death_place": "Haworth",
+    "status": "ok"
+  },
+  "Emmy Noether": {
+    "birth_date": "1882-03-23",
+    "birth_lat": 49.5925,
+    "birth_lon": 11.005,
+    "birth_place": "Erlangen",
+    "death_date": "1935-04-14",
+    "death_lat": 40.02111,
+    "death_lon": -75.31694,
+    "death_place": "Bryn Mawr, Pennsylvania",
+    "status": "ok"
+  },
+  "Emperor Wu of Han": {
+    "birth_date": "156 BC",
+    "birth_lat": 34.30833,
+    "birth_lon": 108.85833,
+    "birth_place": "Chang'an",
+    "death_date": "29 March 87 BC",
+    "death_lat": 34.30833,
+    "death_lon": 108.85833,
+    "death_place": "Chang'an",
+    "status": "ok"
+  },
+  "Enrico Caruso": {
+    "birth_date": "1873-02-25",
+    "birth_lat": 40.8358,
+    "birth_lon": 14.2486,
+    "birth_place": "Naples",
+    "death_date": "1921-08-02",
+    "death_lat": 40.8358,
+    "death_lon": 14.2486,
+    "death_place": "Naples, Kingdom of Italy",
+    "status": "ok"
+  },
+  "Erasmus": {
+    "birth_date": "28 October 1466",
+    "birth_lat": 51.92,
+    "birth_lon": 4.48,
+    "birth_place": "Rotterdam",
+    "death_date": "1536-07-12",
+    "death_lat": 47.55472,
+    "death_lon": 7.59056,
+    "death_place": "Basel",
+    "status": "ok"
+  },
+  "Francesco Petrarch": {
+    "birth_date": "1304-07-20",
+    "birth_lat": 43.46333,
+    "birth_lon": 11.87833,
+    "birth_place": "Arezzo",
+    "death_date": "1374-07-19",
+    "death_lat": 45.27,
+    "death_lon": 11.71833,
+    "death_place": "Arqu\u00e0",
+    "status": "ok"
+  },
+  "Francisco Franco": {
+    "birth_date": "1892-12-04",
+    "birth_lat": 43.48444,
+    "birth_lon": -8.23278,
+    "birth_place": "Ferrol",
+    "death_date": "1975-11-20",
+    "death_lat": 40.4169,
+    "death_lon": -3.7033,
+    "death_place": "Madrid",
+    "status": "ok"
+  },
+  "Francisco Goya": {
+    "birth_date": "1746-03-30",
+    "birth_lat": 41.34333,
+    "birth_lon": -0.85861,
+    "birth_place": "Fuendetodos",
+    "death_date": "1828-04-16",
+    "death_lat": 44.84,
+    "death_lon": -0.58,
+    "death_place": "Bordeaux",
+    "status": "ok"
+  },
+  "Frank Capra": {
+    "birth_date": "1897-05-18",
+    "birth_lat": 37.7,
+    "birth_lon": 13.25,
+    "birth_place": "Bisacquino",
+    "death_date": "1991-09-03",
+    "death_lat": 33.67528,
+    "death_lon": -116.2975,
+    "death_place": "La Quinta, California",
+    "status": "ok"
+  },
+  "Franklin Pierce": {
+    "birth_date": "1804-11-23",
+    "birth_lat": 43.14889,
+    "birth_lon": -71.94222,
+    "birth_place": "Hillsborough, New Hampshire",
+    "death_date": "1869-10-08",
+    "death_lat": 43.20667,
+    "death_lon": -71.53806,
+    "death_place": "Concord, New Hampshire",
+    "status": "ok"
+  },
+  "Frida Kahlo": {
+    "birth_date": "1907-07-06",
+    "birth_lat": 19.35,
+    "birth_lon": -99.16222,
+    "birth_place": "Coyoac\u00e1n",
+    "death_date": "1954-07-13",
+    "death_lat": 19.3207722,
+    "death_lon": -99.1514678,
+    "death_place": "Mexico City, Mexico",
+    "status": "ok"
+  },
+  "Fyodor Dostoevsky": {
+    "birth_date": "1821-11-11",
+    "birth_lat": 55.625578,
+    "birth_lon": 37.6063916,
+    "birth_place": "Moscow, Russia",
+    "death_date": "1881-02-09",
+    "death_lat": 59.9606739,
+    "death_lon": 30.1586551,
+    "death_place": "Saint Petersburg, Russia",
+    "status": "ok"
+  },
+  "George Canning": {
+    "birth_date": "1770-04-11",
+    "birth_lat": 51.5177,
+    "birth_lon": -0.147,
+    "birth_place": "Marylebone",
+    "death_date": "1827-08-08",
+    "death_lat": 51.49,
+    "death_lon": -0.26,
+    "death_place": "Chiswick",
+    "status": "ok"
+  },
+  "George Frideric Handel": {
+    "birth_date": "1685-03-05",
+    "birth_lat": 51.48278,
+    "birth_lon": 11.96972,
+    "birth_place": "Halle",
+    "death_date": "1759-04-14",
+    "death_lat": 51.49472,
+    "death_lon": -0.13528,
+    "death_place": "Westminster",
+    "status": "ok"
+  },
+  "Georges Clemenceau": {
+    "birth_date": "1841-09-28",
+    "birth_lat": 46.6767,
+    "birth_lon": -0.85,
+    "birth_place": "Mouilleron-en-Pareds",
+    "death_date": "1929-11-24",
+    "death_lat": 48.8588897,
+    "death_lon": 2.320041,
+    "death_place": "Paris, France",
     "status": "ok"
   },
   "Gerald Ford": {
@@ -57,6 +677,28 @@
     "death_place": "Rancho Mirage, California",
     "status": "ok"
   },
+  "Gertrude Bell": {
+    "birth_date": "1868-07-14",
+    "birth_lat": 54.9,
+    "birth_lon": -1.52,
+    "birth_place": "Washington New Hall",
+    "death_date": "1926-07-12",
+    "death_lat": 33.31528,
+    "death_lon": 44.36611,
+    "death_place": "Baghdad",
+    "status": "ok"
+  },
+  "Giovanni Boccaccio": {
+    "birth_date": "1313-06-16",
+    "birth_lat": 43.54778,
+    "birth_lon": 11.04111,
+    "birth_place": "Certaldo",
+    "death_date": "1375-12-21",
+    "death_lat": 43.54778,
+    "death_lon": 11.04111,
+    "death_place": "Certaldo, Republic of Florence",
+    "status": "ok"
+  },
   "Grace Kelly": {
     "birth_date": "1929-11-12",
     "birth_lat": 39.9528,
@@ -68,48 +710,131 @@
     "death_place": "La Colle, Monaco",
     "status": "ok"
   },
-  "Guru Dutt": {
-    "birth_date": "1925-07-09",
-    "birth_lat": 12.97889,
-    "birth_lon": 77.59167,
-    "birth_place": "Bangalore",
-    "death_date": "1964-10-10",
-    "death_lat": 19.07611,
-    "death_lon": 72.8775,
-    "death_place": "Bombay",
+  "Gregory Peck": {
+    "birth_date": "1916-04-05",
+    "birth_lat": 32.715,
+    "birth_lon": -117.1625,
+    "birth_place": "San Diego",
+    "death_date": "2003-06-12",
+    "death_lat": 34.05,
+    "death_lon": -118.25,
+    "death_place": "Los Angeles",
     "status": "ok"
   },
-  "H. G. Wells": {
-    "birth_date": "1866-09-21",
-    "birth_lat": 51.407,
-    "birth_lon": 0.021,
-    "birth_place": "Bromley",
-    "death_date": "1946-08-13",
-    "death_lat": 51.5074456,
-    "death_lon": -0.1277653,
-    "death_place": "London, England",
+  "Greta Garbo": {
+    "birth_date": "1905-09-18",
+    "birth_lat": 59.31306,
+    "birth_lon": 18.06806,
+    "birth_place": "S\u00f6dermalm",
+    "death_date": "1990-04-15",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, U.S.",
     "status": "ok"
   },
-  "Harold Wilson": {
-    "birth_date": "1916-03-11",
-    "birth_lat": 53.6347,
-    "birth_lon": -1.8366,
-    "birth_place": "Cowlersley",
-    "death_date": "1995-05-23",
-    "death_lat": 51.5074456,
-    "death_lon": -0.1277653,
-    "death_place": "London, England",
+  "Guru Gobind Singh": {
+    "birth_date": "22 December 1666",
+    "birth_lat": 25.58611,
+    "birth_lon": 85.18444,
+    "birth_place": "Patna Sahib",
+    "death_date": "1708-10-07",
+    "death_lat": 19.15278,
+    "death_lon": 77.31861,
+    "death_place": "Hazur Sahib",
     "status": "ok"
   },
-  "Harry S. Truman": {
-    "birth_date": "1884-05-08",
-    "birth_lat": 37.49778,
-    "birth_lon": -94.27917,
-    "birth_place": "Lamar, Missouri",
-    "death_date": "1972-12-26",
-    "death_lat": 39.09972,
-    "death_lon": -94.57833,
-    "death_place": "Kansas City, Missouri",
+  "Gustav Klimt": {
+    "birth_date": "1862-07-14",
+    "birth_lat": 48.20639,
+    "birth_lon": 16.27556,
+    "birth_place": "Baumgarten",
+    "death_date": "1918-02-06",
+    "death_lat": 48.2075,
+    "death_lon": 16.365,
+    "death_place": "Vienna,",
+    "status": "ok"
+  },
+  "Guy de Maupassant": {
+    "birth_date": "1850-08-05",
+    "birth_lat": 49.8589,
+    "birth_lon": 1.1022,
+    "birth_place": "Tourville-sur-Arques",
+    "death_date": "1893-07-06",
+    "death_lat": 48.8571111,
+    "death_lon": 2.2841361,
+    "death_place": "Passy",
+    "status": "ok"
+  },
+  "Hafez": {
+    "birth_date": "c. 1325",
+    "birth_lat": 29.61,
+    "birth_lon": 52.5425,
+    "birth_place": "Shiraz",
+    "death_date": "1390",
+    "death_lat": 29.61,
+    "death_lon": 52.5425,
+    "death_place": "Shiraz,",
+    "status": "ok"
+  },
+  "Hannibal Barca": {
+    "birth_date": "247 BC",
+    "birth_lat": 36.8528,
+    "birth_lon": 10.3233,
+    "birth_place": "Carthage",
+    "death_date": "181 BC",
+    "death_lat": 40.769562,
+    "death_lon": 29.539812,
+    "death_place": "Libyssa",
+    "status": "ok"
+  },
+  "Heath Ledger": {
+    "birth_date": "1979-04-04",
+    "birth_lat": -32.0,
+    "birth_lon": 115.9,
+    "birth_place": "Perth",
+    "death_date": "2008-01-22",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, US",
+    "status": "ok"
+  },
+  "Hector Berlioz": {
+    "status": "bad"
+  },
+  "Henry IV of England": {
+    "status": "bad"
+  },
+  "Henry Morton Stanley": {
+    "birth_date": "1841-01-28",
+    "birth_lat": 53.1854,
+    "birth_lon": -3.4178,
+    "birth_place": "Denbigh",
+    "death_date": "1904-05-10",
+    "death_lat": 51.49472,
+    "death_lon": -0.13528,
+    "death_place": "Westminster",
+    "status": "ok"
+  },
+  "Henry V of England": {
+    "birth_date": "16 September 1386",
+    "birth_lat": 51.8125,
+    "birth_lon": -2.7167,
+    "birth_place": "Monmouth Castle",
+    "death_date": "31 August 1422",
+    "death_lat": 48.84278,
+    "death_lon": 2.43583,
+    "death_place": "Ch\u00e2teau de Vincennes",
+    "status": "ok"
+  },
+  "Henry VIII of England": {
+    "birth_date": "28 June 1491",
+    "birth_lat": 51.48222,
+    "birth_lon": -0.00667,
+    "birth_place": "Palace of Placentia",
+    "death_date": "28 January 1547",
+    "death_lat": 51.50444,
+    "death_lon": -0.12556,
+    "death_place": "Palace of Whitehall",
     "status": "ok"
   },
   "Hernan Cortes": {
@@ -123,15 +848,434 @@
     "death_place": "Castilleja de la Cuesta",
     "status": "ok"
   },
-  "King John": {
-    "birth_date": "1166/7",
-    "birth_lat": 52.5310214,
-    "birth_lon": -1.2649062,
-    "birth_place": "England",
-    "death_date": "19 October 1216",
-    "death_lat": 52.5310214,
-    "death_lon": -1.2649062,
-    "death_place": ", England",
+  "Hilaire Belloc": {
+    "birth_date": "1870-07-27",
+    "birth_lat": 48.8411,
+    "birth_lon": 2.1344,
+    "birth_place": "La Celle-Saint-Cloud",
+    "death_date": "1953-07-16",
+    "death_lat": 51.2365,
+    "death_lon": -0.5703,
+    "death_place": "Guildford",
+    "status": "ok"
+  },
+  "Hugo Chavez": {
+    "birth_date": "1954-07-28",
+    "birth_lat": 8.75278,
+    "birth_lon": -69.93306,
+    "birth_place": "Sabaneta, Barinas",
+    "death_date": "2013-03-05",
+    "death_lat": 10.50611,
+    "death_lon": -66.91444,
+    "death_place": "Caracas",
+    "status": "ok"
+  },
+  "Humayun": {
+    "birth_date": "6 March 1508",
+    "birth_lat": 34.517,
+    "birth_lon": 69.183,
+    "birth_place": "Afghanistan",
+    "death_date": "1556-01-27",
+    "death_lat": 21.0,
+    "death_lon": 78.0,
+    "death_place": "India",
+    "status": "ok"
+  },
+  "Ibn Khaldun": {
+    "birth_date": "27 May 1332",
+    "birth_lat": 36.80639,
+    "birth_lon": 10.18167,
+    "birth_place": "Tunis",
+    "death_date": "1406-03-17",
+    "death_lat": 30.04444,
+    "death_lon": 31.23583,
+    "death_place": "Cairo",
+    "status": "ok"
+  },
+  "Isaac Newton": {
+    "birth_date": "1643-01-04",
+    "birth_lat": 14.8855385,
+    "birth_lon": 120.2068546,
+    "birth_place": "O.S.",
+    "death_date": "1727-03-31",
+    "death_lat": 14.8855385,
+    "death_lon": 120.2068546,
+    "death_place": "O.S.",
+    "status": "ok"
+  },
+  "Ivan Turgenev": {
+    "birth_date": "1818-11-09",
+    "birth_lat": 52.96861,
+    "birth_lon": 36.06944,
+    "birth_place": "Oryol",
+    "death_date": "1883-09-03",
+    "death_lat": 48.8667,
+    "death_lon": 2.1333,
+    "death_place": "Bougival",
+    "status": "ok"
+  },
+  "J. M. Coetzee": {
+    "status": "bad"
+  },
+  "James Brown": {
+    "birth_date": "1933-05-03",
+    "birth_lat": 33.24444,
+    "birth_lon": -81.37083,
+    "birth_place": "Barnwell, South Carolina",
+    "death_date": "2006-12-25",
+    "death_lat": 33.74889,
+    "death_lon": -84.39,
+    "death_place": "Atlanta",
+    "status": "ok"
+  },
+  "Jane Austen": {
+    "birth_date": "1775-12-16",
+    "birth_lat": 51.2303,
+    "birth_lon": -1.2189,
+    "birth_place": "Steventon, Hampshire",
+    "death_date": "1817-07-18",
+    "death_lat": 51.0632,
+    "death_lon": -1.308,
+    "death_place": "Winchester",
+    "status": "ok"
+  },
+  "Jeff Buckley": {
+    "birth_date": "1966-11-17",
+    "birth_lat": 33.83611,
+    "birth_lon": -117.88972,
+    "birth_place": "Anaheim, California",
+    "death_date": "1997-05-29",
+    "death_lat": 35.14611,
+    "death_lon": -90.05194,
+    "death_place": "Memphis, Tennessee",
+    "status": "ok"
+  },
+  "Jim Morrison": {
+    "birth_date": "1943-12-08",
+    "birth_lat": 28.10833,
+    "birth_lon": -80.64028,
+    "birth_place": "Melbourne, Florida",
+    "death_date": "1971-07-03",
+    "death_lat": 48.8588897,
+    "death_lon": 2.320041,
+    "death_place": "Paris, France",
+    "status": "ok"
+  },
+  "Jimi Hendrix": {
+    "birth_date": "1942-11-27",
+    "birth_lat": 47.60389,
+    "birth_lon": -122.33,
+    "birth_place": "Seattle",
+    "death_date": "1970-09-18",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
+    "status": "ok"
+  },
+  "Joe Louis": {
+    "birth_date": "1914-05-13",
+    "birth_lat": 32.89833,
+    "birth_lon": -85.40056,
+    "birth_place": "LaFayette, Alabama",
+    "death_date": "1981-04-12",
+    "death_lat": 36.08194,
+    "death_lon": -115.12472,
+    "death_place": "Paradise, Nevada",
+    "status": "ok"
+  },
+  "Johannes Brahms": {
+    "status": "bad"
+  },
+  "John Cabot": {
+    "status": "bad"
+  },
+  "John Calvin": {
+    "birth_date": "1509-07-10",
+    "birth_lat": 49.5817,
+    "birth_lon": 2.9997,
+    "birth_place": "Noyon",
+    "death_date": "1564-05-27",
+    "death_lat": 46.20167,
+    "death_lon": 6.14694,
+    "death_place": "Geneva",
+    "status": "ok"
+  },
+  "John Lennon": {
+    "birth_date": "1940-10-09",
+    "birth_lat": 53.4072,
+    "birth_lon": -2.9917,
+    "birth_place": "Liverpool",
+    "death_date": "1980-12-08",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, US",
+    "status": "ok"
+  },
+  "John Milton": {
+    "birth_date": "1608-12-09",
+    "birth_lat": 51.5144,
+    "birth_lon": -0.0966,
+    "birth_place": "Bread Street",
+    "death_date": "1674-11-08",
+    "death_lat": 51.5238778,
+    "death_lon": -0.0901861,
+    "death_place": "Bunhill Row",
+    "status": "ok"
+  },
+  "John Tyler": {
+    "birth_date": "1790-03-29",
+    "birth_lat": 37.35417,
+    "birth_lon": -77.10167,
+    "birth_place": "Greenway Plantation",
+    "death_date": "1862-01-18",
+    "death_lat": 37.53583,
+    "death_lon": -77.43111,
+    "death_place": "Ballard House",
+    "status": "ok"
+  },
+  "Joseph Lister": {
+    "birth_date": "1827-04-05",
+    "birth_lat": 51.5395,
+    "birth_lon": 0.0232,
+    "birth_place": "Upton House",
+    "death_date": "1912-02-10",
+    "death_lat": 51.2043,
+    "death_lon": 1.3985,
+    "death_place": "Walmer",
+    "status": "ok"
+  },
+  "Juan Peron": {
+    "birth_date": "1895-10-08",
+    "birth_lat": -34.60389,
+    "birth_lon": -58.38139,
+    "birth_place": "Buenos Aires",
+    "death_date": "1974-07-01",
+    "death_lat": -34.60389,
+    "death_lon": -58.38139,
+    "death_place": "Buenos Aires, Argentina",
+    "status": "ok"
+  },
+  "Julio Cortazar": {
+    "birth_date": "1914-08-26",
+    "birth_lat": 50.833,
+    "birth_lon": 4.367,
+    "birth_place": "Ixelles",
+    "death_date": "1984-02-12",
+    "death_lat": 48.8567,
+    "death_lon": 2.3522,
+    "death_place": "Paris",
+    "status": "ok"
+  },
+  "Julius Caesar": {
+    "birth_date": "13 July 100 BC",
+    "birth_lat": 41.8950714,
+    "birth_lon": 12.490837,
+    "birth_place": "Suburra",
+    "death_date": "15 March 44 BC",
+    "death_lat": 41.8953,
+    "death_lon": 12.4736,
+    "death_place": "Theatre of Pompey",
+    "status": "ok"
+  },
+  "Julius Nyerere": {
+    "birth_date": "1922-04-13",
+    "birth_lat": -1.767,
+    "birth_lon": 33.967,
+    "birth_place": "Butiama",
+    "death_date": "1999-10-14",
+    "death_lat": 51.50722,
+    "death_lon": -0.1275,
+    "death_place": "London",
+    "status": "ok"
+  },
+  "Juscelino Kubitschek": {
+    "birth_date": "1902-09-12",
+    "birth_lat": -18.2440862,
+    "birth_lon": -43.6006487,
+    "birth_place": "Diamantina, Minas Gerais",
+    "death_date": "1976-08-22",
+    "death_lat": -22.46889,
+    "death_lon": -44.44694,
+    "death_place": "Resende, Rio de Janeiro",
+    "status": "ok"
+  },
+  "Keith Moon": {
+    "birth_date": "1946-08-23",
+    "birth_lat": 51.5528,
+    "birth_lon": -0.2979,
+    "birth_place": "Wembley",
+    "death_date": "1978-09-07",
+    "death_lat": 51.51,
+    "death_lon": -0.147,
+    "death_place": "Mayfair",
+    "status": "ok"
+  },
+  "Khalil Gibran": {
+    "birth_date": "1883-01-06",
+    "birth_lat": 34.2507231,
+    "birth_lon": 36.0099915,
+    "birth_place": "Lebanon",
+    "death_date": "1931-04-10",
+    "death_lat": 40.7128,
+    "death_lon": -74.0061,
+    "death_place": "New York City",
+    "status": "ok"
+  },
+  "Kim Yushin": {
+    "status": "bad"
+  },
+  "Kurt Cobain": {
+    "birth_date": "1967-02-20",
+    "birth_lat": 46.95861,
+    "birth_lon": -123.81056,
+    "birth_place": "Aberdeen, Washington",
+    "death_date": "1994-04-05",
+    "death_lat": 47.60389,
+    "death_lon": -122.33,
+    "death_place": "Seattle, Washington",
+    "status": "ok"
+  },
+  "Lao She": {
+    "birth_date": "1899-02-03",
+    "birth_lat": 39.92,
+    "birth_lon": 116.39,
+    "birth_place": "Beijing,",
+    "death_date": "1966-08-24",
+    "death_lat": 35.0,
+    "death_lon": 103.0,
+    "death_place": "Beijing,",
+    "status": "ok"
+  },
+  "Lauren Bacall": {
+    "birth_date": "1924-09-16",
+    "birth_lat": 40.8466508,
+    "birth_lon": -73.8785937,
+    "birth_place": "The Bronx, New York City, U.S.",
+    "death_date": "2014-08-12",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, U.S.",
+    "status": "ok"
+  },
+  "Leonhard Euler": {
+    "birth_date": "1707-04-15",
+    "birth_lat": 47.55472,
+    "birth_lon": 7.59056,
+    "birth_place": "Basel",
+    "death_date": "1783-09-18",
+    "death_lat": 43.3890851,
+    "death_lon": -0.6150563,
+    "death_place": "OS",
+    "status": "ok"
+  },
+  "Lope de Vega": {
+    "birth_date": "25 November 1562",
+    "birth_lat": 40.4169,
+    "birth_lon": -3.7033,
+    "birth_place": "Madrid",
+    "death_date": "1635-08-27",
+    "death_lat": 40.4169,
+    "death_lon": -3.7033,
+    "death_place": "Madrid, Castile",
+    "status": "ok"
+  },
+  "Lord Byron": {
+    "birth_date": "1788-01-22",
+    "birth_lat": 51.50722,
+    "birth_lon": -0.1275,
+    "birth_place": "London",
+    "death_date": "1824-04-19",
+    "death_lat": 38.36917,
+    "death_lon": 21.42778,
+    "death_place": "Missolonghi",
+    "status": "ok"
+  },
+  "Lord Palmerston": {
+    "birth_date": "1784-10-20",
+    "birth_lat": 51.49472,
+    "birth_lon": -0.13528,
+    "birth_place": "Westminster",
+    "death_date": "1865-10-18",
+    "death_lat": 51.801,
+    "death_lon": -0.246,
+    "death_place": "Brocket Hall",
+    "status": "ok"
+  },
+  "Louis XIV": {
+    "birth_date": "1638-09-05",
+    "birth_lat": 48.89806,
+    "birth_lon": 2.09639,
+    "birth_place": "Ch\u00e2teau de Saint-Germain-en-Laye",
+    "death_date": "1715-09-01",
+    "death_lat": 48.8047,
+    "death_lon": 2.1203,
+    "death_place": "Palace of Versailles",
+    "status": "ok"
+  },
+  "Louis XV": {
+    "birth_date": "1710-02-15",
+    "birth_lat": 48.8047,
+    "birth_lon": 2.1203,
+    "birth_place": "Palace of Versailles",
+    "death_date": "1774-05-10",
+    "death_lat": 48.8047,
+    "death_lon": 2.1203,
+    "death_place": "Palace of Versailles, France",
+    "status": "ok"
+  },
+  "Lu Xun": {
+    "birth_date": "1881-09-25",
+    "birth_lat": 30.0511,
+    "birth_lon": 120.5833,
+    "birth_place": "Shaoxing, Zhejiang",
+    "death_date": "1936-10-19",
+    "death_lat": 31.2325,
+    "death_lon": 121.46917,
+    "death_place": "Shanghai",
+    "status": "ok"
+  },
+  "Marcel Proust": {
+    "birth_date": "1871-07-10",
+    "birth_lat": 48.8567,
+    "birth_lon": 2.3522,
+    "birth_place": "Paris",
+    "death_date": "1922-11-18",
+    "death_lat": 48.8567,
+    "death_lon": 2.3522,
+    "death_place": "Paris, France",
+    "status": "ok"
+  },
+  "Marcus Aurelius": {
+    "birth_date": "121-04-26",
+    "birth_lat": 41.89333,
+    "birth_lon": 12.48278,
+    "birth_place": "Rome",
+    "death_date": "17 March 180",
+    "death_lat": 48.21083,
+    "death_lon": 16.37028,
+    "death_place": "Vindobona",
+    "status": "ok"
+  },
+  "Marie Antoinette": {
+    "birth_date": "1755-11-02",
+    "birth_lat": 48.20639,
+    "birth_lon": 16.36528,
+    "birth_place": "Hofburg",
+    "death_date": "1793-10-16",
+    "death_lat": 48.8656331,
+    "death_lon": 2.3212357,
+    "death_place": "Place de la R\u00e9volution",
+    "status": "ok"
+  },
+  "Mario Vargas Llosa": {
+    "birth_date": "1936-03-28",
+    "birth_lat": -16.39889,
+    "birth_lon": -71.53694,
+    "birth_place": "Arequipa",
+    "death_date": "2025-04-13",
+    "death_lat": -12.06,
+    "death_lon": -77.0375,
+    "death_place": "Lima",
     "status": "ok"
   },
   "Martin Luther": {
@@ -140,115 +1284,498 @@
     "birth_lon": 11.54667,
     "birth_place": "Eisleben",
     "death_date": "1546-02-18",
-    "death_lat": 51.5283282,
-    "death_lon": 11.5465911,
+    "death_lat": 51.52861,
+    "death_lon": 11.54667,
     "death_place": "Eisleben, County of Mansfeld, Holy Roman Empire",
     "status": "ok"
   },
-  "Meena Kumari": {
-    "birth_date": "1933-08-01",
-    "birth_lat": 19.07611,
-    "birth_lon": 72.8775,
-    "birth_place": "Bombay",
-    "death_date": "1972-03-31",
-    "death_lat": 19.054999,
-    "death_lon": 72.8692035,
-    "death_place": "Bombay, Maharashtra, India.",
+  "Marvin Gaye": {
+    "birth_date": "1939-04-02",
+    "birth_lat": 38.90472,
+    "birth_lon": -77.01639,
+    "birth_place": "Washington, D.C.",
+    "death_date": "1984-04-01",
+    "death_lat": 34.05,
+    "death_lon": -118.25,
+    "death_place": "Los Angeles",
     "status": "ok"
   },
-  "Meghnad Saha": {
+  "Mary Shelley": {
+    "birth_date": "1797-08-30",
+    "birth_lat": 51.50722,
+    "birth_lon": -0.1275,
+    "birth_place": "London",
+    "death_date": "1851-02-01",
+    "death_lat": 51.50722,
+    "death_lon": -0.1275,
+    "death_place": "London",
+    "status": "ok"
+  },
+  "Maxim Gorky": {
     "status": "bad"
   },
-  "Menachem Begin": {
-    "birth_date": "1913-08-16",
-    "birth_lat": 52.13472,
-    "birth_lon": 23.65694,
-    "birth_place": "Brest-Litovsk",
-    "death_date": "1992-03-09",
-    "death_lat": 32.08,
-    "death_lon": 34.78,
-    "death_place": "Tel Aviv",
+  "Maximilien Robespierre": {
+    "birth_date": "1758-05-06",
+    "birth_lat": 50.292,
+    "birth_lon": 2.78,
+    "birth_place": "Arras",
+    "death_date": "1794-07-28",
+    "death_lat": 48.8656331,
+    "death_lon": 2.3212357,
+    "death_place": "Place de la R\u00e9volution",
     "status": "ok"
   },
-  "Montgomery Clift": {
-    "birth_date": "1920-10-17",
-    "birth_lat": 41.25861,
-    "birth_lon": -95.9375,
-    "birth_place": "Omaha, Nebraska",
-    "death_date": "1966-07-23",
+  "Menelik II": {
+    "birth_date": "1844-08-17",
+    "birth_lat": 9.6077,
+    "birth_lon": 39.736239,
+    "birth_place": "Ankober",
+    "death_date": "1913-12-12",
+    "death_lat": 9.03583,
+    "death_lon": 38.7525,
+    "death_place": "Addis Ababa",
+    "status": "ok"
+  },
+  "Michael Faraday": {
+    "birth_date": "1791-09-22",
+    "birth_lat": 51.49278,
+    "birth_lon": -0.10111,
+    "birth_place": "Newington Butts",
+    "death_date": "1867-08-25",
+    "death_lat": 51.422,
+    "death_lon": -0.367,
+    "death_place": "Hampton",
+    "status": "ok"
+  },
+  "Mieszko I": {
+    "status": "bad"
+  },
+  "Muhammad Ali": {
+    "birth_date": "1942-01-17",
+    "birth_lat": 38.25611,
+    "birth_lon": -85.75139,
+    "birth_place": "Louisville, Kentucky",
+    "death_date": "2016-06-03",
+    "death_lat": 33.49306,
+    "death_lon": -111.92611,
+    "death_place": "Scottsdale, Arizona",
+    "status": "ok"
+  },
+  "Nadine Gordimer": {
+    "birth_date": "1923-11-20",
+    "birth_lat": -26.25472,
+    "birth_lon": 28.44278,
+    "birth_place": "Springs",
+    "death_date": "2014-07-13",
+    "death_lat": -26.20444,
+    "death_lon": 28.04556,
+    "death_place": "Johannesburg",
+    "status": "ok"
+  },
+  "Nelson Mandela": {
+    "birth_date": "1918-07-18",
+    "birth_lat": -31.95,
+    "birth_lon": 28.516,
+    "birth_place": "Mvezo",
+    "death_date": "2013-12-05",
+    "death_lat": -26.20444,
+    "death_lon": 28.04556,
+    "death_place": "Johannesburg",
+    "status": "ok"
+  },
+  "Nicolae Ceausescu": {
+    "birth_date": "1918-02-08",
+    "birth_lat": 44.595,
+    "birth_lon": 24.5469,
+    "birth_place": "Scornice\u0219ti",
+    "death_date": "1989-12-25",
+    "death_lat": 44.92444,
+    "death_lon": 25.45722,
+    "death_place": "T\u00e2rgovi\u0219te",
+    "status": "ok"
+  },
+  "Omar Sharif": {
+    "birth_date": "1932-04-10",
+    "birth_lat": 31.1975,
+    "birth_lon": 29.8925,
+    "birth_place": "Alexandria",
+    "death_date": "2015-07-10",
+    "death_lat": 30.04444,
+    "death_lon": 31.23583,
+    "death_place": "Cairo",
+    "status": "ok"
+  },
+  "P. G. Wodehouse": {
+    "status": "bad"
+  },
+  "Pablo Neruda": {
+    "birth_date": "1904-07-12",
+    "birth_lat": -36.15,
+    "birth_lon": -71.833,
+    "birth_place": "Parral",
+    "death_date": "1973-09-23",
+    "death_lat": -33.4375,
+    "death_lon": -70.65,
+    "death_place": "Santiago",
+    "status": "ok"
+  },
+  "Patsy Cline": {
+    "birth_date": "1932-09-08",
+    "birth_lat": 39.183,
+    "birth_lon": -78.167,
+    "birth_place": "Winchester, Virginia",
+    "death_date": "1963-03-05",
+    "death_lat": 36.04639,
+    "death_lon": -88.08583,
+    "death_place": "near",
+    "status": "ok"
+  },
+  "Paul Gauguin": {
+    "birth_date": "1848-06-07",
+    "birth_lat": 48.8588897,
+    "birth_lon": 2.320041,
+    "birth_place": "Paris, France",
+    "death_date": "1903-05-08",
+    "death_lat": -9.80306,
+    "death_lon": -139.03972,
+    "death_place": "Atuona",
+    "status": "ok"
+  },
+  "Paul Newman": {
+    "birth_date": "1925-01-26",
+    "birth_lat": 41.50972,
+    "birth_lon": -81.56333,
+    "birth_place": "Cleveland Heights, Ohio",
+    "death_date": "2008-09-26",
+    "death_lat": 41.12333,
+    "death_lon": -73.34694,
+    "death_place": "Westport, Connecticut",
+    "status": "ok"
+  },
+  "Pedro Alvares Cabral": {
+    "birth_date": "1467",
+    "birth_lat": 40.35,
+    "birth_lon": -7.35,
+    "birth_place": "Belmonte",
+    "death_date": "1520",
+    "death_lat": 39.23389,
+    "death_lon": -8.68611,
+    "death_place": "Santar\u00e9m",
+    "status": "ok"
+  },
+  "Pele": {
+    "birth_date": "1940-10-23",
+    "birth_lat": -21.69472,
+    "birth_lon": -45.25528,
+    "birth_place": "Tr\u00eas Cora\u00e7\u00f5es",
+    "death_date": "2022-12-29",
+    "death_lat": -23.55,
+    "death_lon": -46.633,
+    "death_place": "S\u00e3o Paulo",
+    "status": "ok"
+  },
+  "Pierre Curie": {
+    "birth_date": "1859-05-15",
+    "birth_lat": 48.8567,
+    "birth_lon": 2.3522,
+    "birth_place": "Paris",
+    "death_date": "1906-04-19",
+    "death_lat": 48.8567,
+    "death_lon": 2.3522,
+    "death_place": "Paris, France",
+    "status": "ok"
+  },
+  "Plato": {
+    "birth_date": "423 BC",
+    "birth_lat": 37.97,
+    "birth_lon": 23.72,
+    "birth_place": "Athens",
+    "death_date": "347 BC",
+    "death_lat": 37.97,
+    "death_lon": 23.72,
+    "death_place": "Athens",
+    "status": "ok"
+  },
+  "Pol Pot": {
+    "birth_date": "1925-05-19",
+    "birth_lat": 12.699707,
+    "birth_lon": 104.858204,
+    "birth_place": "Prek Sbauv",
+    "death_date": "1998-04-15",
+    "death_lat": 14.167,
+    "death_lon": 103.5,
+    "death_place": "Choam,",
+    "status": "ok"
+  },
+  "Porfirio Diaz": {
+    "birth_date": "15 September 1830",
+    "birth_lat": 17.06056,
+    "birth_lon": -96.72528,
+    "birth_place": "Oaxaca de Ju\u00e1rez",
+    "death_date": "2 July 1915",
+    "death_lat": 48.8567,
+    "death_lon": 2.3522,
+    "death_place": "Paris",
+    "status": "ok"
+  },
+  "Prafulla Chandra Ray": {
+    "birth_date": "2 August 1861",
+    "birth_lat": 22.5889,
+    "birth_lon": 89.3361,
+    "birth_place": "Paikgacha",
+    "death_date": "1944-06-16",
+    "death_lat": 22.5675,
+    "death_lon": 88.37,
+    "death_place": "Calcutta",
+    "status": "ok"
+  },
+  "R. D. Burman": {
+    "birth_date": "1939-06-27",
+    "birth_lat": 22.5675,
+    "birth_lon": 88.37,
+    "birth_place": "Calcutta",
+    "death_date": "1994-01-04",
+    "death_lat": 19.07611,
+    "death_lon": 72.8775,
+    "death_place": "Bombay",
+    "status": "ok"
+  },
+  "Rajaraja Chola I": {
+    "birth_date": "947-11-03",
+    "birth_lat": 10.78694,
+    "birth_lon": 79.13778,
+    "birth_place": "Thanjavur",
+    "death_date": "1014-01-00",
+    "death_lat": 10.78694,
+    "death_lon": 79.13778,
+    "death_place": "Thanjavur, Chola Empire",
+    "status": "ok"
+  },
+  "Ray Charles": {
+    "birth_date": "1930-09-23",
+    "birth_lat": 31.58222,
+    "birth_lon": -84.16556,
+    "birth_place": "Albany, Georgia",
+    "death_date": "2004-06-10",
+    "death_lat": 34.0536909,
+    "death_lon": -118.242766,
+    "death_place": "Los Angeles, California, U.S.",
+    "status": "ok"
+  },
+  "Richard Burton": {
+    "birth_date": "1925-11-10",
+    "birth_lat": 51.634,
+    "birth_lon": -3.744,
+    "birth_place": "Pontrhydyfen",
+    "death_date": "1984-08-05",
+    "death_lat": 46.35278,
+    "death_lon": 6.19111,
+    "death_place": "C\u00e9ligny",
+    "status": "ok"
+  },
+  "Richard II of England": {
+    "birth_date": "6 January 1367",
+    "birth_lat": 44.84,
+    "birth_lon": -0.58,
+    "birth_place": "Bordeaux",
+    "death_date": "14 February 1400",
+    "death_lat": 53.69556,
+    "death_lon": -1.30389,
+    "death_place": "Pontefract Castle",
+    "status": "ok"
+  },
+  "Richard of York": {
+    "status": "bad"
+  },
+  "Rita Hayworth": {
+    "birth_date": "1918-10-17",
+    "birth_lat": 40.7127281,
+    "birth_lon": -74.0060152,
+    "birth_place": "New York City, U.S.",
+    "death_date": "1987-05-14",
     "death_lat": 40.7127281,
     "death_lon": -74.0060152,
     "death_place": "New York City, U.S.",
     "status": "ok"
   },
-  "Peter Tosh": {
-    "birth_date": "1944-10-19",
-    "birth_lat": 18.37,
-    "birth_lon": -78.205,
-    "birth_place": "Grange Hill, Jamaica",
-    "death_date": "1987-09-11",
-    "death_lat": 17.97139,
-    "death_lon": -76.79306,
-    "death_place": "Kingston",
+  "Robert Mitchum": {
+    "birth_date": "1917-08-06",
+    "birth_lat": 41.18639,
+    "birth_lon": -73.19556,
+    "birth_place": "Bridgeport, Connecticut",
+    "death_date": "1997-07-01",
+    "death_lat": 34.417,
+    "death_lon": -119.7,
+    "death_place": "Santa Barbara, California",
     "status": "ok"
   },
-  "Pierre de Fermat": {
-    "birth_date": "1601-08-17",
-    "birth_lat": 43.8839,
-    "birth_lon": 0.9892,
-    "birth_place": "Beaumont-de-Lomagne",
-    "death_date": "1665-01-12",
-    "death_lat": 43.6,
-    "death_lon": 2.25,
-    "death_place": "Castres",
+  "Rudolph Valentino": {
+    "birth_date": "1895-05-06",
+    "birth_lat": 40.633,
+    "birth_lon": 16.933,
+    "birth_place": "Castellaneta",
+    "death_date": "1926-08-23",
+    "death_lat": 40.7128,
+    "death_lon": -74.0061,
+    "death_place": "New York City",
     "status": "ok"
   },
-  "Ramses II": {
+  "Saadat Hasan Manto": {
+    "birth_date": "1912-05-11",
+    "birth_lat": 30.8368764,
+    "birth_lon": 76.1913755,
+    "birth_place": "Punjab",
+    "death_date": "1955-01-18",
+    "death_lat": 31.54972,
+    "death_lon": 74.34361,
+    "death_place": "Lahore",
+    "status": "ok"
+  },
+  "Saladin": {
+    "birth_date": "c. 1137",
+    "birth_lat": 34.61,
+    "birth_lon": 43.68,
+    "birth_place": "Tikrit",
+    "death_date": "4 March 1193",
+    "death_lat": 33.51306,
+    "death_lon": 36.30944,
+    "death_place": "Damascus",
+    "status": "ok"
+  },
+  "Sam Cooke": {
+    "birth_date": "1931-01-22",
+    "birth_lat": 34.2,
+    "birth_lon": -90.567,
+    "birth_place": "Clarksdale, Mississippi",
+    "death_date": "1964-12-11",
+    "death_lat": 34.0536909,
+    "death_lon": -118.242766,
+    "death_place": "Los Angeles, California, U.S.",
+    "status": "ok"
+  },
+  "Sandro Botticelli": {
+    "birth_date": "c. 1445",
+    "birth_lat": 43.77139,
+    "birth_lon": 11.25417,
+    "birth_place": "Florence",
+    "death_date": "1510-05-17",
+    "death_lat": 43.77139,
+    "death_lon": 11.25417,
+    "death_place": "Florence, Republic of Florence",
+    "status": "ok"
+  },
+  "Satyajit Ray": {
+    "birth_date": "1921-05-02",
+    "birth_lat": 22.5675,
+    "birth_lon": 88.37,
+    "birth_place": "Calcutta",
+    "death_date": "1992-04-23",
+    "death_lat": 22.5675,
+    "death_lon": 88.37,
+    "death_place": "Calcutta",
+    "status": "ok"
+  },
+  "Sitting Bull": {
+    "birth_date": "c. 1831",
+    "birth_lat": 45.5769389,
+    "birth_lon": -102.471525,
+    "birth_place": "Grand River",
+    "death_date": "1890-12-15",
+    "death_lat": 45.75,
+    "death_lon": -101.2,
+    "death_place": "Standing Rock Indian Reservation",
+    "status": "ok"
+  },
+  "Solon": {
+    "birth_date": "c. 630 BC",
+    "birth_lat": 37.97,
+    "birth_lon": 23.72,
+    "birth_place": "Athens",
+    "death_date": "c. 560 BC",
+    "death_lat": 34.0,
+    "death_lon": 33.0,
+    "death_place": "Cyprus",
+    "status": "ok"
+  },
+  "Stephen Jay Gould": {
+    "birth_date": "1941-09-10",
+    "birth_lat": 40.7128,
+    "birth_lon": -74.0061,
+    "birth_place": "New York City",
+    "death_date": "2002-05-20",
+    "death_lat": 40.7128,
+    "death_lon": -74.0061,
+    "death_place": "New York City, New York, U.S.",
+    "status": "ok"
+  },
+  "Theodore Roosevelt": {
+    "birth_date": "1858-10-27",
+    "birth_lat": 40.7127281,
+    "birth_lon": -74.0060152,
+    "birth_place": "New York City, U.S.",
+    "death_date": "1919-01-06",
+    "death_lat": 40.88556,
+    "death_lon": -73.4975,
+    "death_place": "Sagamore Hill",
+    "status": "ok"
+  },
+  "Thomas Cromwell": {
+    "birth_date": "1485",
+    "birth_lat": 51.46,
+    "birth_lon": -0.22,
+    "birth_place": "Putney",
+    "death_date": "1540-07-28",
+    "death_lat": 51.5085,
+    "death_lon": -0.0782,
+    "death_place": "Tower Hill",
+    "status": "ok"
+  },
+  "Thomas Hardy": {
+    "birth_date": "1840-06-02",
+    "birth_lat": 50.7181,
+    "birth_lon": -2.4101,
+    "birth_place": "Stinsford",
+    "death_date": "1928-01-11",
+    "death_lat": 50.7154,
+    "death_lon": -2.4367,
+    "death_place": "Dorchester, Dorset",
+    "status": "ok"
+  },
+  "Thomas More": {
+    "birth_date": "7 February 1478",
+    "birth_lat": 51.51556,
+    "birth_lon": -0.09306,
+    "birth_place": "City of London",
+    "death_date": "6 July 1535",
+    "death_lat": 51.5085,
+    "death_lon": -0.0782,
+    "death_place": "Tower Hill",
+    "status": "ok"
+  },
+  "Thomas Sankara": {
+    "birth_date": "1949-12-21",
+    "birth_lat": 12.967,
+    "birth_lon": -2.267,
+    "birth_place": "Yako",
+    "death_date": "1987-10-15",
+    "death_lat": 12.36861,
+    "death_lon": -1.5275,
+    "death_place": "Ouagadougou",
+    "status": "ok"
+  },
+  "Toshiro Mifune": {
+    "birth_date": "1920-04-01",
+    "birth_lat": 36.0669,
+    "birth_lon": 120.3827,
+    "birth_place": "Qingdao",
+    "death_date": "1997-12-24",
+    "death_lat": 35.683556,
+    "death_lon": 139.559528,
+    "death_place": "Mitaka, Tokyo",
+    "status": "ok"
+  },
+  "Tutankhamun": {
     "status": "bad"
-  },
-  "Robert Schumann": {
-    "birth_date": "1810-06-08",
-    "birth_lat": 50.717,
-    "birth_lon": 12.5,
-    "birth_place": "Zwickau",
-    "death_date": "1856-07-29",
-    "death_lat": 50.7353,
-    "death_lon": 7.1022,
-    "death_place": "Bonn",
-    "status": "ok"
-  },
-  "Tokugawa Ieyasu": {
-    "birth_date": "1543-01-31",
-    "birth_lat": 34.95639,
-    "birth_lon": 137.15889,
-    "birth_place": "Okazaki Castle",
-    "death_date": "1616-06-01",
-    "death_lat": 34.97944,
-    "death_lon": 138.38361,
-    "death_place": "Sunpu Castle",
-    "status": "ok"
-  },
-  "Tycho Brahe": {
-    "birth_date": "14 December 1546",
-    "birth_lat": 55.9794,
-    "birth_lon": 13.1347,
-    "birth_place": "Knutstorp Castle",
-    "death_date": "1601-10-24",
-    "death_lat": 50.0875,
-    "death_lon": 14.42139,
-    "death_place": "Prague",
-    "status": "ok"
-  },
-  "Victor Emmanuel II": {
-    "birth_date": "1820-03-14",
-    "birth_lat": 45.06889,
-    "birth_lon": 7.68611,
-    "birth_place": "Palazzo Carignano",
-    "death_date": "1878-01-09",
-    "death_lat": 41.9,
-    "death_lon": 12.4875,
-    "death_place": "Quirinal Palace",
-    "status": "ok"
   },
   "Vittorio De Sica": {
     "birth_date": "1901-07-07",
@@ -261,15 +1788,37 @@
     "death_place": "Neuilly-sur-Seine",
     "status": "ok"
   },
-  "William Harvey": {
-    "birth_date": "1 April 1578",
-    "birth_lat": 51.07917,
-    "birth_lon": 1.17944,
-    "birth_place": "Folkestone",
-    "death_date": "1657-06-03",
-    "death_lat": 51.451,
-    "death_lon": -0.243,
-    "death_place": "Roehampton",
+  "Vladimir Lenin": {
+    "birth_date": "1870",
+    "birth_lat": 54.317,
+    "birth_lon": 48.367,
+    "birth_place": "Simbirsk",
+    "death_date": "1924-01-21",
+    "death_lat": 55.5045,
+    "death_lon": 37.765028,
+    "death_place": "Gorki",
+    "status": "ok"
+  },
+  "Vladimir Nabokov": {
+    "birth_date": "1899-04-22",
+    "birth_lat": 59.9375,
+    "birth_lon": 30.30861,
+    "birth_place": "Saint Petersburg",
+    "death_date": "1977-07-02",
+    "death_lat": 46.435,
+    "death_lon": 6.9125,
+    "death_place": "Montreux",
+    "status": "ok"
+  },
+  "Whitney Houston": {
+    "birth_date": "1963-08-09",
+    "birth_lat": 39.7837304,
+    "birth_lon": -100.445882,
+    "birth_place": ", U.S.",
+    "death_date": "2012-02-11",
+    "death_lat": 34.07306,
+    "death_lon": -118.39944,
+    "death_place": "Beverly Hills, California",
     "status": "ok"
   },
   "William Henry Harrison": {
@@ -283,10 +1832,59 @@
     "death_place": "White House",
     "status": "ok"
   },
-  "Yongle Emperor": {
-    "status": "bad"
+  "William McKinley": {
+    "birth_date": "1843-01-29",
+    "birth_lat": 41.18889,
+    "birth_lon": -80.74722,
+    "birth_place": "Niles, Ohio",
+    "death_date": "1901-09-14",
+    "death_lat": 42.88639,
+    "death_lon": -78.87806,
+    "death_place": "Buffalo, New York",
+    "status": "ok"
   },
-  "Zhuge Liang": {
-    "status": "bad"
+  "Yehudi Menuhin": {
+    "birth_date": "1916-04-22",
+    "birth_lat": 40.7128,
+    "birth_lon": -74.0061,
+    "birth_place": "New York City",
+    "death_date": "1999-03-12",
+    "death_lat": 52.52,
+    "death_lon": 13.405,
+    "death_place": "Berlin",
+    "status": "ok"
+  },
+  "Yukio Mishima": {
+    "birth_date": "1925-01-14",
+    "birth_lat": 32.8214159,
+    "birth_lon": 79.3566757,
+    "birth_place": "banchi",
+    "death_date": "1970-11-25",
+    "death_lat": 36.3078151,
+    "death_lon": 139.4943779,
+    "death_place": "JGSDF",
+    "status": "ok"
+  },
+  "ben johnson": {
+    "birth_date": "1918-06-13",
+    "birth_lat": 36.87361,
+    "birth_lon": -96.56917,
+    "birth_place": "Foraker, Oklahoma",
+    "death_date": "1996-04-08",
+    "death_lat": 33.42222,
+    "death_lon": -111.82278,
+    "death_place": "Mesa, Arizona",
+    "status": "ok"
+  },
+  "ben jonson": {
+    "birth_date": "11 June 1572",
+    "birth_lat": 52.5310214,
+    "birth_lon": -1.2649062,
+    "birth_place": "England",
+    "death_date": "18 August 1637",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
+    "status": "ok"
   }
 }

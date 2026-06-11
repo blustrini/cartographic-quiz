@@ -1,3 +1,16 @@
+Hilaire Belloc
+Mahmoud Sami al-Barudi
+Hafez Ibrahim
+Mo Yan
+Stevie Ray Vaughan
+George Foreman
+Dolores Huerta
+Sandra Day O'Connor
+Rosa Luxemburg
+Sun Yat-sen
+Ho Chi Minh
+Pol Pot
+Nicolae Ceausescu
 Jimi Hendrix
 Janis Joplin
 Jim Morrison
@@ -117,11 +130,7 @@ Judy Garland
 Hedy Lamarr
 Lauren Bacall
 Natalie Wood
-Princess Diana
-Elizabeth II
-Winston Churchill
 Clement Attlee
-Margaret Thatcher
 Harold Wilson
 Edward Heath
 Anthony Eden
@@ -157,12 +166,9 @@ Mikhail Gorbachev
 Boris Yeltsin
 Charles de Gaulle
 Georges Clemenceau
-Napoleon Bonaparte
 Napoleon III
-Louis XIV
 Louis XV
 Louis XVI
-Marie Antoinette
 Maximilien Robespierre
 Georges Danton
 Jean-Paul Marat
@@ -191,10 +197,8 @@ Juscelino Kubitschek
 Salvador Allende
 Augusto Pinochet
 Fidel Castro
-Che Guevara
 Fulgencio Batista
 Hugo Chavez
-Nelson Mandela
 Desmond Tutu
 Kwame Nkrumah
 Jomo Kenyatta
@@ -220,7 +224,6 @@ Mohammad Reza Pahlavi
 Saddam Hussein
 King Faisal of Saudi Arabia
 Ibn Saud
-George Washington
 John Adams
 Thomas Jefferson
 James Madison
@@ -235,7 +238,6 @@ Zachary Taylor
 Millard Fillmore
 Franklin Pierce
 James Buchanan
-Abraham Lincoln
 Andrew Johnson
 Ulysses S. Grant
 Rutherford B. Hayes
@@ -244,24 +246,19 @@ Chester A. Arthur
 Grover Cleveland
 Benjamin Harrison
 William McKinley
-Theodore Roosevelt
 William Howard Taft
 Woodrow Wilson
 Warren G. Harding
 Calvin Coolidge
 Herbert Hoover
-Franklin D. Roosevelt
 Harry S. Truman
 Dwight D. Eisenhower
-John F. Kennedy
 Lyndon B. Johnson
 Richard Nixon
 Gerald Ford
-Ronald Reagan
 George H. W. Bush
 Jimmy Carter
 Eleanor Roosevelt
-Martin Luther King Jr.
 Malcolm X
 Rosa Parks
 Frederick Douglass
@@ -309,26 +306,10 @@ Cy Young
 Honus Wagner
 Walter Johnson
 Jim Thorpe
-Muhammad Ali
 Joe Louis
 Rocky Marciano
 Sonny Liston
 Kobe Bryant
-Diego Maradona
-Pele
 Johan Cruyff
 Antonie van Leeuwenhoek
 Jane Goodall
-Mo Yan
-Hilaire Belloc
-Mahmoud Sami al-Barudi
-Hafez Ibrahim
-Stevie Ray Vaughan
-Dolores Huerta
-Sandra Day O'Connor
-George Foreman
-Rosa Luxemburg
-Sun Yat-sen
-Ho Chi Minh
-Pol Pot
-Nicolae Ceausescu

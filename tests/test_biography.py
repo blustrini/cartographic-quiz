@@ -162,6 +162,7 @@ def test_is_valid_place_name_rejects_event_terms():
     assert not biography._is_valid_place_name("a")
     assert not biography._is_valid_place_name("c.")
     assert not biography._is_valid_place_name("1213 BC")
+    assert not biography._is_valid_place_name("iii")
     assert biography._is_valid_place_name("New York City")
 
 
@@ -201,6 +202,144 @@ def test_scrape_robust_biography_rejects_noise_place_tokens(
 
     data = biography.scrape_robust_biography("Harold Wilson", verbose=False)
     assert data is None
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_reuses_previous_place_link_when_missing_later_link(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Antiochus III"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>c. 241 BC<br><a href="/wiki/Susa">Susa</a></td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>3 July 187 BC<br>Susa, Seleucid Empire</td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Susa"):
+            return 32.19056, 48.25778
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.return_value = (None, None)
+
+    data = biography.scrape_robust_biography("Antiochus III")
+
+    assert data is not None
+    assert data.birth_place == "Susa"
+    assert data.birth_lat == 32.19056
+    assert data.death_place == "Susa, Seleucid Empire"
+    assert data.death_lat == 32.19056
+    assert data.death_lon == 48.25778
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_prefers_previous_link_for_composite_repeated_place(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Antiochus III"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>c. 241 BC<br><a href="/wiki/Susa">Susa</a></td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>3 July 187 BC<br><a href="/wiki/Susa,_Italy">Susa, Seleucid Empire</a></td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Susa"):
+            return 32.19056, 48.25778
+        if url.endswith("/wiki/Susa,_Italy"):
+            return 45.1372115, 7.0539789
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.return_value = (None, None)
+
+    data = biography.scrape_robust_biography("Antiochus III")
+
+    assert data is not None
+    assert data.death_place == "Susa, Seleucid Empire"
+    assert data.death_lat == 32.19056
+    assert data.death_lon == 48.25778
+
+
+@patch("cartographic_quiz.biography.geocode_fallback")
+@patch("cartographic_quiz.biography.get_coordinates_from_wikipedia_url")
+@patch("cartographic_quiz.biography.fetch_html")
+@patch("cartographic_quiz.biography.fetch_json")
+def test_scrape_robust_biography_prefers_present_day_place_over_historical_prefecture(
+    mock_fetch_json,
+    mock_fetch_html,
+    mock_get_coordinates,
+    mock_geocode_fallback,
+):
+    mock_fetch_json.return_value = {"query": {"search": [{"title": "Hongwu Emperor"}]}}
+    mock_fetch_html.return_value = """
+    <html><body>
+      <table class="infobox biography vcard">
+        <tr>
+          <th>Born</th>
+          <td>
+            21 October 1328<br>
+            <a href="/wiki/Hao_Prefecture">Hao Prefecture</a>, Henan Jiangbei
+            (present-day <a href="/wiki/Fengyang_County">Fengyang County</a>, Anhui)
+          </td>
+        </tr>
+        <tr>
+          <th>Died</th>
+          <td>24 June 1398<br><a href="/wiki/Ming_Palace">Ming Palace</a></td>
+        </tr>
+      </table>
+    </body></html>
+    """
+
+    def fake_coords(url, _headers):
+        if url.endswith("/wiki/Fengyang_County"):
+            return 32.88, 117.56
+        if url.endswith("/wiki/Hao_Prefecture"):
+            return 33.58, 130.38
+        if url.endswith("/wiki/Ming_Palace"):
+            return 32.03806, 118.8175
+        return None, None
+
+    mock_get_coordinates.side_effect = fake_coords
+    mock_geocode_fallback.return_value = (None, None)
+
+    data = biography.scrape_robust_biography("Hongwu Emperor")
+
+    assert data is not None
+    assert data.birth_place == "Fengyang County"
+    assert data.birth_lat == 32.88
+    assert data.birth_lon == 117.56
 
 
 @patch("cartographic_quiz.biography.geocode_fallback")

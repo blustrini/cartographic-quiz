@@ -20,6 +20,9 @@ Scope: whole repository.
 - Run single-person quiz: `uv run cartographic-quiz <name> [-o output.html]`
 - Run random multi-round quiz: `uv run cartographic-quiz --num-random <N> [-o output.html]`
 - Rescan bad-name list: `uv run cartographic-quiz --rescan-bad`
+- Clear cache/list files: `uv run cartographic-quiz --clear-cache`
+- Clear cache/list files (entrypoint): `uv run clear-cache`
+- Publish existing HTML to GitHub Pages docs site: `uv run publish <path-to-output.html> [--no-push]`
 - Multi-word names are unquoted-safe (arg parser joins tokens).
 
 ## Key Paths

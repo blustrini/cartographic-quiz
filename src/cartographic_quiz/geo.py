@@ -7,6 +7,40 @@ from geopy.geocoders import Nominatim
 from cartographic_quiz.constants import REQUEST_TIMEOUT_SECONDS
 
 
+HISTORICAL_POLITY_TERMS = (
+    "empire",
+    "kingdom",
+    "dynasty",
+    "caliphate",
+    "sultanate",
+    "khanate",
+)
+
+
+def _geocode_candidates(text: str) -> list[str]:
+    cleaned = text.strip()
+    if not cleaned:
+        return []
+
+    if "," not in cleaned:
+        return [cleaned]
+
+    parts = [part.strip() for part in cleaned.split(",") if part.strip()]
+    if not parts:
+        return [cleaned]
+
+    base = parts[0]
+    trailing = " ".join(parts[1:]).lower()
+    prioritize_base = any(token in trailing for token in HISTORICAL_POLITY_TERMS)
+
+    candidates = [base, cleaned] if prioritize_base else [cleaned, base]
+    deduped: list[str] = []
+    for candidate in candidates:
+        if candidate and candidate not in deduped:
+            deduped.append(candidate)
+    return deduped
+
+
 def fetch_html(url: str, headers: dict) -> Optional[str]:
     try:
         response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT_SECONDS)
@@ -63,13 +97,10 @@ def geocode_fallback(text: str) -> tuple[Optional[float], Optional[float]]:
     """Fallback geocoder that trims historical tails if standard lookup fails."""
     geolocator = Nominatim(user_agent="history_proof_final_mapper")
     try:
-        location = geolocator.geocode(text)
-        if not location and "," in text:
-            clean_base = text.split(",")[0].strip()
-            location = geolocator.geocode(clean_base)
-
-        if location:
-            return location.latitude, location.longitude
+        for candidate in _geocode_candidates(text):
+            location = geolocator.geocode(candidate)
+            if location:
+                return location.latitude, location.longitude
     except Exception:
         pass
     return None, None

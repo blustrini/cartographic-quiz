@@ -1,6 +1,8 @@
 import argparse
 import json
 import random
+import shutil
+import subprocess
 from pathlib import Path
 from typing import Sequence
 
@@ -8,6 +10,18 @@ from cartographic_quiz.biography import _is_valid_place_name, scrape_robust_biog
 from cartographic_quiz.constants import DEFAULT_REPEATS_EACH_SIDE
 from cartographic_quiz.map_renderer import generate_life_map, generate_multi_life_map
 from cartographic_quiz.models import CartographicDate
+
+
+DIFFICULTY_POOL_FILES: dict[str, str] = {
+    "easy": "people_easy.txt",
+    "medium": "people_medium.txt",
+    "hard": "people_hard.txt",
+}
+DIFFICULTY_WEIGHTS: dict[str, float] = {
+    "easy": 0.4,
+    "medium": 0.4,
+    "hard": 0.2,
+}
 
 
 def _data_dir() -> Path:
@@ -24,6 +38,23 @@ def _bad_list_path() -> Path:
 
 def _good_list_path() -> Path:
     return _data_dir() / "people_good.txt"
+
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+def _clear_cache_files() -> tuple[int, int]:
+    targets = (_cache_path(), _good_list_path(), _bad_list_path())
+    removed = 0
+    missing = 0
+    for path in targets:
+        if path.exists():
+            path.unlink()
+            removed += 1
+        else:
+            missing += 1
+    return removed, missing
 
 
 def _load_cache() -> dict[str, dict[str, object]]:
@@ -136,17 +167,6 @@ def _normalize_cached_records(
     good_changed = False
 
     for name, record in list(cache.items()):
-        status = record.get("status")
-        if status == "ok" and not _is_complete_biography(record):
-            cache[name] = {"status": "bad"}
-            cache_changed = True
-            if name not in bad_names:
-                bad_names.add(name)
-                bad_changed = True
-            if name in good_names:
-                good_names.discard(name)
-                good_changed = True
-
         if cache.get(name, {}).get("status") == "bad" and name not in bad_names:
             bad_names.add(name)
             bad_changed = True
@@ -173,7 +193,138 @@ def _read_person_pool() -> list[str]:
     return list(dict.fromkeys(names))
 
 
-def _build_round_profiles(names: Sequence[str]) -> list[tuple[CartographicDate, CartographicDate, str]]:
+def _read_difficulty_pools() -> dict[str, list[str]]:
+    data_dir = _data_dir()
+    bad_names = _load_bad_names()
+    pools: dict[str, list[str]] = {}
+
+    for difficulty, filename in DIFFICULTY_POOL_FILES.items():
+        path = data_dir / filename
+        names: list[str] = []
+        if path.exists():
+            for line in path.read_text(encoding="utf-8").splitlines():
+                cleaned = line.strip()
+                if cleaned and cleaned not in bad_names:
+                    names.append(cleaned)
+        pools[difficulty] = list(dict.fromkeys(names))
+
+    return pools
+
+
+def _compute_difficulty_targets(total: int) -> dict[str, int]:
+    targets = {difficulty: int(total * DIFFICULTY_WEIGHTS[difficulty]) for difficulty in DIFFICULTY_WEIGHTS}
+    remainder = total - sum(targets.values())
+    if remainder <= 0:
+        return targets
+
+    fractional_order = sorted(
+        DIFFICULTY_WEIGHTS,
+        key=lambda difficulty: (total * DIFFICULTY_WEIGHTS[difficulty]) - targets[difficulty],
+        reverse=True,
+    )
+    for index in range(remainder):
+        difficulty = fractional_order[index % len(fractional_order)]
+        targets[difficulty] += 1
+    return targets
+
+
+def _build_random_round_profiles(
+    person_pool: Sequence[str] | dict[str, Sequence[str]],
+    requested_count: int,
+) -> tuple[list[tuple[CartographicDate, CartographicDate, str]], int]:
+    if isinstance(person_pool, dict):
+        pools = {difficulty: list(dict.fromkeys(names)) for difficulty, names in person_pool.items()}
+        all_names = [
+            name
+            for difficulty in ("easy", "medium", "hard")
+            for name in pools.get(difficulty, [])
+        ]
+        target_count = min(requested_count, len(all_names))
+        if target_count == 0:
+            return [], 0
+
+        desired = _compute_difficulty_targets(target_count)
+        remaining_by_difficulty = {
+            difficulty: list(pools.get(difficulty, [])) for difficulty in ("easy", "medium", "hard")
+        }
+        name_to_difficulty = {
+            name: difficulty for difficulty, names in remaining_by_difficulty.items() for name in names
+        }
+
+        rounds: list[tuple[CartographicDate, CartographicDate, str]] = []
+        successes_by_difficulty = {difficulty: 0 for difficulty in ("easy", "medium", "hard")}
+
+        while len(rounds) < target_count and any(remaining_by_difficulty.values()):
+            needed = target_count - len(rounds)
+            batch_counts = {difficulty: 0 for difficulty in ("easy", "medium", "hard")}
+
+            for difficulty in ("easy", "medium", "hard"):
+                outstanding = max(0, desired[difficulty] - successes_by_difficulty[difficulty])
+                if outstanding <= 0:
+                    continue
+                take = min(outstanding, len(remaining_by_difficulty[difficulty]), needed - sum(batch_counts.values()))
+                batch_counts[difficulty] = take
+
+            while sum(batch_counts.values()) < needed:
+                candidates = sorted(
+                    (
+                        difficulty
+                        for difficulty in ("easy", "medium", "hard")
+                        if len(remaining_by_difficulty[difficulty]) > batch_counts[difficulty]
+                    ),
+                    key=lambda difficulty: len(remaining_by_difficulty[difficulty]) - batch_counts[difficulty],
+                    reverse=True,
+                )
+                if not candidates:
+                    break
+                batch_counts[candidates[0]] += 1
+
+            selected_names: list[str] = []
+            for difficulty in ("easy", "medium", "hard"):
+                count = batch_counts[difficulty]
+                if count <= 0:
+                    continue
+                picked = random.sample(remaining_by_difficulty[difficulty], count)
+                picked_set = set(picked)
+                remaining_by_difficulty[difficulty] = [
+                    name for name in remaining_by_difficulty[difficulty] if name not in picked_set
+                ]
+                selected_names.extend(picked)
+
+            if not selected_names:
+                break
+
+            random.shuffle(selected_names)
+            batch_rounds = _build_round_profiles(selected_names)
+            rounds.extend(batch_rounds)
+            for _, _, name in batch_rounds:
+                difficulty = name_to_difficulty.get(name)
+                if difficulty:
+                    successes_by_difficulty[difficulty] += 1
+
+        return rounds, target_count
+
+    target_count = min(requested_count, len(person_pool))
+    remaining_names = list(person_pool)
+    rounds: list[tuple[CartographicDate, CartographicDate, str]] = []
+
+    while remaining_names and len(rounds) < target_count:
+        needed = target_count - len(rounds)
+        batch_size = min(needed, len(remaining_names))
+        selected_names = random.sample(remaining_names, batch_size)
+        selected_set = set(selected_names)
+        remaining_names = [name for name in remaining_names if name not in selected_set]
+        rounds.extend(_build_round_profiles(selected_names))
+
+    return rounds, target_count
+
+
+def _build_round_profiles(
+    names: Sequence[str],
+    *,
+    force_rescrape_bad: bool = False,
+    force_rescrape_all: bool = False,
+) -> list[tuple[CartographicDate, CartographicDate, str]]:
     rounds: list[tuple[CartographicDate, CartographicDate, str]] = []
     cache = _load_cache()
     bad_names = _load_bad_names()
@@ -192,14 +343,42 @@ def _build_round_profiles(names: Sequence[str]) -> list[tuple[CartographicDate, 
     good_changed = good_changed or normalized_good_changed
 
     for name in names:
-        if name in bad_names:
+        if name in bad_names and not force_rescrape_bad:
             continue
 
+        if name in bad_names and force_rescrape_bad:
+            bad_names.discard(name)
+            bad_changed = True
+
         cached_record = cache.get(name, {})
-        if cached_record.get("status") == "bad":
+        if force_rescrape_all and cached_record:
+            cache.pop(name, None)
+            cached_record = {}
+            cache_changed = True
+            if name in bad_names:
+                bad_names.discard(name)
+                bad_changed = True
+            if name in good_names:
+                good_names.discard(name)
+                good_changed = True
+
+        if cached_record.get("status") == "ok" and not _is_complete_biography(cached_record):
+            cache.pop(name, None)
+            cached_record = {}
+            cache_changed = True
+            if name in good_names:
+                good_names.discard(name)
+                good_changed = True
+
+        if cached_record.get("status") == "bad" and not force_rescrape_bad:
             bad_names.add(name)
             bad_changed = True
             continue
+
+        if cached_record.get("status") == "bad" and force_rescrape_bad:
+            cache.pop(name, None)
+            cached_record = {}
+            cache_changed = True
 
         cached_round = _cache_record_to_round(name, cached_record)
         if cached_round is not None:
@@ -242,6 +421,9 @@ def _build_round_profiles(names: Sequence[str]) -> list[tuple[CartographicDate, 
 
         cache[name] = record
         cache_changed = True
+        if name in bad_names:
+            bad_names.discard(name)
+            bad_changed = True
         good_names.add(name)
         good_changed = True
 
@@ -318,13 +500,13 @@ def _rescan_bad_names() -> tuple[int, int, int]:
     return len(bad_names), rescued, still_bad
 
 
-def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, int | None, bool]:
+def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, int | None, bool, bool]:
     parser = argparse.ArgumentParser(description="Generate a life map from a Wikipedia biography.")
     parser.add_argument("name", nargs="*", help="Name of the person to map")
     parser.add_argument(
         "-o",
         "--output",
-        default="output.html",
+        default="quizzes/output.html",
         help="Output HTML filename (default: output.html)",
     )
     parser.add_argument(
@@ -339,6 +521,11 @@ def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, 
         action="store_true",
         help="Re-scrape names in people_bad.txt and refresh cache/bad-good lists",
     )
+    parser.add_argument(
+        "--clear-cache",
+        action="store_true",
+        help="Delete people_cache.json, people_good.txt, and people_bad.txt",
+    )
     args = parser.parse_args(argv)
 
     person_name = " ".join(args.name).strip() if args.name else None
@@ -346,17 +533,134 @@ def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, 
     if not Path(output_name).suffix:
         output_name = f"{output_name}.html"
 
-    if args.num_random is None and not person_name and not args.rescan_bad:
-        parser.error("either a person name, --num-random N, or --rescan-bad is required")
+    if args.num_random is None and not person_name and not args.rescan_bad and not args.clear_cache:
+        parser.error("either a person name, --num-random N, --rescan-bad, or --clear-cache is required")
 
     if args.num_random is not None and args.num_random <= 0:
         parser.error("--num-random must be a positive integer")
 
-    return person_name, output_name, args.num_random, args.rescan_bad
+    return person_name, output_name, args.num_random, args.rescan_bad, args.clear_cache
+
+
+def parse_publish_args(argv: Sequence[str] | None = None) -> tuple[str, bool]:
+    parser = argparse.ArgumentParser(
+        description="Publish an existing HTML quiz file to docs/index.html for GitHub Pages."
+    )
+    parser.add_argument(
+        "html_path", 
+        help="Path to an existing HTML file to publish",
+        default="quizzes/output.html"
+    )
+    parser.add_argument(
+        "--no-push",
+        action="store_true",
+        help="Prepare and commit docs/index.html without running git push",
+    )
+    args = parser.parse_args(argv)
+    return args.html_path, args.no_push
+
+
+def _run_git_command(args: Sequence[str], cwd: Path) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=cwd,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def _github_pages_url_from_remote(remote_url: str) -> str | None:
+    cleaned = remote_url.strip()
+    if cleaned.endswith(".git"):
+        cleaned = cleaned[:-4]
+
+    if cleaned.startswith("git@github.com:"):
+        path = cleaned.split(":", 1)[1]
+    elif cleaned.startswith("https://github.com/"):
+        path = cleaned[len("https://github.com/") :]
+    elif cleaned.startswith("ssh://git@github.com/"):
+        path = cleaned[len("ssh://git@github.com/") :]
+    else:
+        return None
+
+    parts = [part for part in path.split("/") if part]
+    if len(parts) < 2:
+        return None
+
+    owner, repo = parts[0], parts[1]
+    return f"https://{owner}.github.io/{repo}/"
+
+
+def _publish_html_file(html_path: str, *, push: bool = True) -> int:
+    repo_root = _repo_root()
+    source_path = Path(html_path).expanduser()
+    if not source_path.is_absolute():
+        source_path = (Path.cwd() / source_path).resolve()
+
+    if not source_path.exists() or not source_path.is_file():
+        print(f"Error: HTML file not found: {source_path}")
+        return 1
+
+    if source_path.suffix.lower() != ".html":
+        print(f"Error: Expected an .html file, got: {source_path.name}")
+        return 1
+
+    docs_dir = repo_root / "docs"
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    destination = docs_dir / "index.html"
+    shutil.copy2(source_path, destination)
+    (docs_dir / ".nojekyll").write_text("", encoding="utf-8")
+
+    status_result = _run_git_command(["status", "--porcelain", "--", "docs/index.html", "docs/.nojekyll"], repo_root)
+    if status_result.returncode != 0:
+        print(f"Error: Unable to inspect git status.\n{status_result.stderr.strip()}")
+        return 1
+
+    if not status_result.stdout.strip():
+        print("No publish changes detected under docs/. Nothing to commit.")
+    else:
+        add_result = _run_git_command(["add", "docs/index.html", "docs/.nojekyll"], repo_root)
+        if add_result.returncode != 0:
+            print(f"Error: Failed to stage docs files.\n{add_result.stderr.strip()}")
+            return 1
+
+        commit_result = _run_git_command(["commit", "-m", "Publish quiz map to GitHub Pages"], repo_root)
+        if commit_result.returncode != 0:
+            print(f"Error: Failed to commit publish changes.\n{commit_result.stderr.strip()}")
+            return 1
+
+        print(commit_result.stdout.strip())
+
+    if push:
+        push_result = _run_git_command(["push"], repo_root)
+        if push_result.returncode != 0:
+            print(f"Error: Failed to push branch.\n{push_result.stderr.strip()}")
+            return 1
+        if push_result.stdout.strip():
+            print(push_result.stdout.strip())
+
+    remote_result = _run_git_command(["remote", "get-url", "origin"], repo_root)
+    remote_url = remote_result.stdout.strip() if remote_result.returncode == 0 else ""
+    pages_url = _github_pages_url_from_remote(remote_url)
+
+    if pages_url:
+        print(f"Published file copied to docs/index.html. Share URL: {pages_url}")
+    else:
+        print("Published file copied to docs/index.html.")
+        print("Could not infer GitHub Pages URL from origin remote.")
+
+    print("If this is your first publish, enable Pages in GitHub: Settings -> Pages -> Deploy from a branch -> main/docs.")
+    return 0
 
 
 def main() -> None:
-    subject_name, output_filename, num_random, rescan_bad = parse_cli_args()
+    subject_name, output_filename, num_random, rescan_bad, clear_cache = parse_cli_args()
+
+    if clear_cache:
+        removed, missing = _clear_cache_files()
+        print(f"Cleared cache files. Removed: {removed} | Already missing: {missing}")
+        return
 
     if rescan_bad:
         total, rescued, still_bad = _rescan_bad_names()
@@ -364,17 +668,16 @@ def main() -> None:
         return
 
     if num_random is not None:
-        person_pool = _read_person_pool()
-        if not person_pool:
+        difficulty_pools = _read_difficulty_pools()
+        total_available = sum(len(names) for names in difficulty_pools.values())
+        if total_available == 0:
             print("Error: No people pool files found under data/.")
             return
 
-        sample_size = min(num_random, len(person_pool))
+        rounds, sample_size = _build_random_round_profiles(difficulty_pools, num_random)
         if sample_size < num_random:
-            print(f"Warning: Requested {num_random} names but only {len(person_pool)} are available. Using {sample_size}.")
+            print(f"Warning: Requested {num_random} names but only {total_available} are available. Using {sample_size}.")
 
-        selected_names = random.sample(person_pool, sample_size)
-        rounds = _build_round_profiles(selected_names)
         if not rounds:
             print("Error: No valid biographies could be scraped for the random selection.")
             return
@@ -393,7 +696,7 @@ def main() -> None:
         print("Error: Missing person name.")
         return
 
-    rounds = _build_round_profiles([subject_name])
+    rounds = _build_round_profiles([subject_name], force_rescrape_bad=True, force_rescrape_all=True)
     if not rounds:
         return
 
@@ -405,6 +708,16 @@ def main() -> None:
         output_filename=output_filename,
         repeats_each_side=DEFAULT_REPEATS_EACH_SIDE,
     )
+
+
+def publish_main() -> None:
+    html_path, no_push = parse_publish_args()
+    raise SystemExit(_publish_html_file(html_path, push=not no_push))
+
+
+def clear_cache_main() -> None:
+    removed, missing = _clear_cache_files()
+    print(f"Cleared cache files. Removed: {removed} | Already missing: {missing}")
 
 
 if __name__ == "__main__":

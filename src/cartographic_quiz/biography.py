@@ -29,6 +29,7 @@ NON_PLACE_TERMS = (
 )
 BIRTH_ALT_DATE_HEADERS = ("baptized", "baptised", "christened", "christening")
 NON_PLACE_SINGLETONS = {"a", "an", "the", "c", "c.", "ca", "ca.", "circa", "ad", "bc", "bce", "ce"}
+ROMAN_NUMERAL_TOKEN = re.compile(r"^[ivxlcdm]+$", flags=re.IGNORECASE)
 
 
 def _normalize_text(text: str) -> str:
@@ -110,6 +111,9 @@ def _is_valid_place_name(text: str) -> bool:
     if len(letters_only) < 2:
         return False
 
+    if ROMAN_NUMERAL_TOKEN.fullmatch(letters_only):
+        return False
+
     if any(term in normalized for term in NON_PLACE_TERMS):
         return False
 
@@ -124,6 +128,54 @@ def _is_valid_place_name(text: str) -> bool:
         return False
 
     return True
+
+
+def _remember_place_links(td, seen_links: list[tuple[str, str]]) -> None:
+    for link in td.find_all("a", href=lambda h: h and h.startswith("/wiki/") and "File:" not in h):
+        text = _normalize_text(link.get_text())
+        href = link.get("href", "")
+        if not text or not href:
+            continue
+        if any(href.startswith(prefix) for prefix in ("/wiki/Help:", "/wiki/Template:", "/wiki/Category:")):
+            continue
+        if not _is_valid_place_name(text):
+            continue
+        seen_links.append((text.lower(), href))
+
+
+def _find_previous_place_link(place_text: Optional[str], seen_links: list[tuple[str, str]]) -> Optional[str]:
+    normalized = _normalize_text(place_text or "").lower()
+    if not normalized:
+        return None
+
+    candidates = []
+    if "," in normalized:
+        head = _normalize_text(normalized.split(",", 1)[0]).lower()
+        if head:
+            candidates.append(head)
+    candidates.append(normalized)
+
+    for link_text, href in reversed(seen_links):
+        if any(candidate == link_text for candidate in candidates):
+            return href
+
+    return None
+
+
+def _prefer_previous_link_for_composite_place(
+    place_text: Optional[str],
+    current_href: Optional[str],
+    seen_links: list[tuple[str, str]],
+) -> Optional[str]:
+    normalized = _normalize_text(place_text or "")
+    if not normalized or "," not in normalized:
+        return current_href
+
+    previous_href = _find_previous_place_link(place_text, seen_links)
+    if previous_href and previous_href != current_href:
+        return previous_href
+
+    return current_href
 
 
 def _chunks_after_date(td, date_str: Optional[str]) -> list[str]:
@@ -156,6 +208,7 @@ def _extract_location_link(td, date_str: Optional[str] = None, place_text: Optio
     preferred_chunks = _chunks_after_date(td, date_str)
     place_normalized = _normalize_text(place_text or "").lower()
 
+    place_text_links = []
     preferred_links = []
     fallback_links = []
     for link in td.find_all("a", href=lambda h: h and h.startswith("/wiki/") and "File:" not in h):
@@ -175,10 +228,15 @@ def _extract_location_link(td, date_str: Optional[str] = None, place_text: Optio
             text_lower in place_normalized or place_normalized in text_lower
         )
 
-        if in_preferred_chunks or matches_place_text:
+        if matches_place_text:
+            place_text_links.append(href)
+        elif in_preferred_chunks:
             preferred_links.append(href)
         else:
             fallback_links.append(href)
+
+    if place_text_links:
+        return place_text_links[0]
 
     if preferred_links:
         return preferred_links[0]
@@ -237,6 +295,22 @@ def _clean_place_text(text: str, date_str: Optional[str]) -> str:
         flags=re.IGNORECASE,
     )
     return re.sub(r"\s+", " ", without_causes).strip(" ,;")
+
+
+def _extract_present_day_place(text: str) -> Optional[str]:
+    match = re.search(r"present-day\s+([^)]+)", text, flags=re.IGNORECASE)
+    if not match:
+        return None
+
+    segment = _normalize_text(match.group(1)).strip(" ,;.")
+    if not segment:
+        return None
+
+    candidate = _normalize_text(segment.split(",", 1)[0]).strip(" ,;.")
+    if _is_valid_place_name(candidate):
+        return candidate
+
+    return None
 
 
 def _resolve_title(name: str) -> Optional[str]:
@@ -301,6 +375,7 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
         return None
 
     data = BiographyData()
+    seen_place_links: list[tuple[str, str]] = []
 
     for row in infobox.find_all("tr"):
         th = row.find("th")
@@ -330,9 +405,10 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
                 if date_str:
                     data.death_date = date_str
 
+            present_day_place = _extract_present_day_place(td.get_text(" ", strip=True))
             cleaned_place = _clean_place_text(td.get_text(), date_str)
             extracted_place = _extract_place_from_cell(td, date_str)
-            final_place = extracted_place or cleaned_place
+            final_place = present_day_place or extracted_place or cleaned_place
             if final_place and not _is_valid_place_name(final_place):
                 final_place = None
 
@@ -344,6 +420,11 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
                     data.death_place = final_place
 
             location_href = _extract_location_link(td, date_str=date_str, place_text=final_place)
+            if not location_href:
+                location_href = _find_previous_place_link(final_place, seen_place_links)
+            else:
+                location_href = _prefer_previous_link_for_composite_place(final_place, location_href, seen_place_links)
+
             if location_href:
                 target_url = WIKIPEDIA_BASE_URL + location_href
                 if verbose:
@@ -376,6 +457,8 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
                     data.birth_place = extracted_place
                 if prefix == "death" and extracted_place:
                     data.death_place = extracted_place
+
+            _remember_place_links(td, seen_place_links)
 
             if prefix == "birth":
                 if data.birth_lat is None:
