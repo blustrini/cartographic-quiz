@@ -175,6 +175,20 @@
     "death_place": "Syracuse, Sicily",
     "status": "ok"
   },
+  "Baroness Eloise Wehrborn de Wagner-Bosquet": {
+    "status": "bad"
+  },
+  "Blackbeard": {
+    "birth_date": "c. 1680",
+    "birth_lat": 51.45361,
+    "birth_lon": -2.5975,
+    "birth_place": "Bristol",
+    "death_date": "22 November 1718",
+    "death_lat": 35.11278,
+    "death_lon": -75.97583,
+    "death_place": "Ocracoke",
+    "status": "ok"
+  },
   "Bloody Baron": {
     "status": "bad"
   },
@@ -220,6 +234,17 @@
     "death_lat": -21.26667,
     "death_lon": -66.31667,
     "death_place": "San Vicente Canton, Bolivia",
+    "status": "ok"
+  },
+  "Capablanca": {
+    "birth_date": "1888-11-19",
+    "birth_lat": 23.13667,
+    "birth_lon": -82.35889,
+    "birth_place": "Havana",
+    "death_date": "1942-03-08",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, US",
     "status": "ok"
   },
   "Catherine the Great": {
@@ -332,6 +357,17 @@
     "death_place": "Chief Chitambo's Village",
     "status": "ok"
   },
+  "Descartes": {
+    "birth_date": "1596-03-31",
+    "birth_lat": 46.9744,
+    "birth_lon": 0.6986,
+    "birth_place": "La Haye-en-Touraine",
+    "death_date": "1650-02-11",
+    "death_lat": 59.32944,
+    "death_lon": 18.06861,
+    "death_place": "Stockholm",
+    "status": "ok"
+  },
   "Diego Armando Maradona": {
     "birth_date": "1960-10-30",
     "birth_lat": -34.7,
@@ -354,6 +390,17 @@
     "death_place": "London, England",
     "status": "ok"
   },
+  "Edward Teach": {
+    "birth_date": "c. 1680",
+    "birth_lat": 51.45361,
+    "birth_lon": -2.5975,
+    "birth_place": "Bristol",
+    "death_date": "22 November 1718",
+    "death_lat": 35.11278,
+    "death_lon": -75.97583,
+    "death_place": "Ocracoke",
+    "status": "ok"
+  },
   "Edward VIII": {
     "birth_date": "1894-06-23",
     "birth_lat": 51.4452,
@@ -374,6 +421,17 @@
     "death_lat": 39.85667,
     "death_lon": -4.02444,
     "death_place": "Toledo",
+    "status": "ok"
+  },
+  "Eloise Wagner de Bosquet": {
+    "birth_date": "c. 1900",
+    "birth_lat": 48.2083,
+    "birth_lon": 16.3725,
+    "birth_place": "Vienna",
+    "death_date": "March 1934",
+    "death_lat": -1.2975,
+    "death_lon": -90.434167,
+    "death_place": "Floreana Island",
     "status": "ok"
   },
   "Emmy Noether": {
@@ -407,6 +465,31 @@
     "death_lat": 31.1975,
     "death_lon": 29.8925,
     "death_place": "Alexandria",
+    "status": "ok"
+  },
+  "Ernest Rutherford": {
+    "birth_date": "1871-08-30",
+    "birth_lat": -41.379,
+    "birth_lon": 173.114,
+    "birth_place": "Brightwater",
+    "death_date": "1937-10-19",
+    "death_lat": 52.205,
+    "death_lon": 0.1225,
+    "death_place": "Cambridge",
+    "status": "ok"
+  },
+  "Eugenio Eyraud": {
+    "status": "bad"
+  },
+  "Eug\u00e8ne Eyraud": {
+    "birth_date": "1820",
+    "birth_lat": 44.6819,
+    "birth_lon": 6.0764,
+    "birth_place": "Saint-Bonnet-en-Champsaur",
+    "death_date": "23 August 1868",
+    "death_lat": -27.12,
+    "death_lon": -109.35,
+    "death_place": "Hanga Roa (Easter Island)",
     "status": "ok"
   },
   "Eva Per\u00f3n": {
@@ -844,6 +927,28 @@
     "death_place": "Rio de Janeiro",
     "status": "ok"
   },
+  "Johan Sebastian Bach": {
+    "birth_date": "1685-03-31",
+    "birth_lat": 50.97611,
+    "birth_lon": 10.32056,
+    "birth_place": "Eisenach",
+    "death_date": "1750-07-28",
+    "death_lat": 51.34,
+    "death_lon": 12.375,
+    "death_place": "Leipzig",
+    "status": "ok"
+  },
+  "John Cabot": {
+    "birth_date": "c. 1450",
+    "birth_lat": 41.217,
+    "birth_lon": 13.567,
+    "birth_place": "Gaeta",
+    "death_date": "c. 1499",
+    "death_lat": 50,
+    "death_lon": -35,
+    "death_place": "North Atlantic",
+    "status": "ok"
+  },
   "John Keats": {
     "birth_date": "1795-10-31",
     "birth_lat": 51.5174,
@@ -868,6 +973,17 @@
   },
   "John Moore": {
     "status": "bad"
+  },
+  "John Moore (British Army officer)": {
+    "birth_date": "13 November 1761",
+    "birth_lat": 55.86111,
+    "birth_lon": -4.25,
+    "birth_place": "Glasgow",
+    "death_date": "1809-01-16",
+    "death_lat": 43.365,
+    "death_lon": -8.41,
+    "death_place": "A Coru\u00f1a",
+    "status": "ok"
   },
   "John Moore British Army officer": {
     "birth_date": "13 November 1761",
@@ -1122,6 +1238,17 @@
     "death_place": "Cambridge",
     "status": "ok"
   },
+  "Ludwig von Beethoven": {
+    "birth_date": "17 December 1770",
+    "birth_lat": 50.7353,
+    "birth_lon": 7.1022,
+    "birth_place": "Bonn",
+    "death_date": "1827-03-26",
+    "death_lat": 48.2083,
+    "death_lon": 16.3725,
+    "death_place": "Vienna",
+    "status": "ok"
+  },
   "Mahatma Gandhi": {
     "birth_date": "1869-10-02",
     "birth_lat": 21.641667,
@@ -1356,6 +1483,20 @@
     "death_place": "Longwood, Saint Helena",
     "status": "ok"
   },
+  "Niccolo Paganini": {
+    "status": "bad"
+  },
+  "Niels Henrik Abel": {
+    "birth_date": "1802-08-05",
+    "birth_lat": 59.34588,
+    "birth_lon": 5.85551,
+    "birth_place": "Nedstrand",
+    "death_date": "1829-04-06",
+    "death_lat": 58.58306,
+    "death_lon": 8.57222,
+    "death_place": "Froland",
+    "status": "ok"
+  },
   "Nziga Mbande": {
     "status": "bad"
   },
@@ -1401,6 +1542,17 @@
     "death_lat": 44.167,
     "death_lon": 28.633,
     "death_place": "Tomis",
+    "status": "ok"
+  },
+  "Patrice Lumumba": {
+    "birth_date": "1925-07-02",
+    "birth_lat": -3.4,
+    "birth_lon": 24.42,
+    "birth_place": "Katakokombe",
+    "death_date": "1961-01-17",
+    "death_lat": -11.66417,
+    "death_lon": 27.48278,
+    "death_place": "\u00c9lisabethville",
     "status": "ok"
   },
   "Paul Dirac": {
@@ -1513,6 +1665,17 @@
     "death_place": "Croton",
     "status": "ok"
   },
+  "Queen S\u0101lote Tupou III": {
+    "birth_date": "1900-03-13",
+    "birth_lat": -21.13139,
+    "birth_lon": -175.20056,
+    "birth_place": "Royal Palace",
+    "death_date": "1965-12-16",
+    "death_lat": -36.8492,
+    "death_lon": 174.7653,
+    "death_place": "Aotea Hospital,",
+    "status": "ok"
+  },
   "Queen Victoria I": {
     "birth_date": "1819-05-24",
     "birth_lat": 51.50528,
@@ -1523,6 +1686,26 @@
     "death_lon": -1.26972,
     "death_place": "Osborne House",
     "status": "ok"
+  },
+  "Rashid Nazhethdinov": {
+    "status": "bad"
+  },
+  "Rashid Nezhmetdhinov": {
+    "status": "bad"
+  },
+  "Rashid Nezhmetdinov": {
+    "birth_date": "1912-12-15",
+    "birth_lat": 50.28361,
+    "birth_lon": 57.22972,
+    "birth_place": "Aktiubinsk",
+    "death_date": "1974-06-03",
+    "death_lat": 55.79639,
+    "death_lon": 49.10889,
+    "death_place": "Kazan",
+    "status": "ok"
+  },
+  "Rashid Nezhmethdinov": {
+    "status": "bad"
   },
   "Richard I": {
     "birth_date": "8 September 1157",
@@ -1535,6 +1718,28 @@
     "death_place": "Ch\u00e2lus",
     "status": "ok"
   },
+  "Roald Amundsen": {
+    "birth_date": "1872-07-16",
+    "birth_lat": 59.2278,
+    "birth_lon": 11.0433,
+    "birth_place": "Borge, \u00d8stfold",
+    "death_date": "1928-06-18",
+    "death_lat": 75.0,
+    "death_lon": 40.0,
+    "death_place": "Barents Sea",
+    "status": "ok"
+  },
+  "Robert Falcon Scott": {
+    "birth_date": "1868-06-06",
+    "birth_lat": 50.37139,
+    "birth_lon": -4.14222,
+    "birth_place": "Plymouth",
+    "death_date": "1912-03-29",
+    "death_lat": -81.5,
+    "death_lon": -175.0,
+    "death_place": "Ross Ice Shelf",
+    "status": "ok"
+  },
   "Robert Guiscard": {
     "birth_date": "c. 1015",
     "birth_lat": 49.1272,
@@ -1544,6 +1749,17 @@
     "death_lat": 38.265,
     "death_lon": 20.5525,
     "death_place": "Cephalonia",
+    "status": "ok"
+  },
+  "Robert James Fischer": {
+    "birth_date": "1943-03-09",
+    "birth_lat": 41.88194,
+    "birth_lon": -87.62778,
+    "birth_place": "Chicago",
+    "death_date": "2008-01-17",
+    "death_lat": 64.14583,
+    "death_lon": -21.9425,
+    "death_place": "Reykjav\u00edk",
     "status": "ok"
   },
   "Rumi": {
@@ -1566,6 +1782,17 @@
     "death_lat": 53.32694,
     "death_lon": 5.99806,
     "death_place": "Dokkum",
+    "status": "ok"
+  },
+  "Salomon August Andree": {
+    "birth_date": "1854-10-18",
+    "birth_lat": 58.017,
+    "birth_lon": 14.467,
+    "birth_place": "Gr\u00e4nna",
+    "death_date": "1897-10-00",
+    "death_lat": 80.15139,
+    "death_lon": 32.59361,
+    "death_place": "Kvit\u00f8ya",
     "status": "ok"
   },
   "Sejong the Great": {
@@ -1612,6 +1839,17 @@
     "death_place": "Hampstead",
     "status": "ok"
   },
+  "Sir John Franklin": {
+    "birth_date": "1786-04-16",
+    "birth_lat": 53.1727,
+    "birth_lon": 0.0931,
+    "birth_place": "Spilsby",
+    "death_date": "1847-06-11",
+    "death_lat": 69.167,
+    "death_lon": -97.417,
+    "death_place": "King William Island",
+    "status": "ok"
+  },
   "Socrates": {
     "birth_date": "c. 470 BC",
     "birth_lat": 37.95,
@@ -1621,6 +1859,17 @@
     "death_lat": 37.97,
     "death_lon": 23.72,
     "death_place": "Athens",
+    "status": "ok"
+  },
+  "Steve Irwin": {
+    "birth_date": "1962-02-22",
+    "birth_lat": -37.895,
+    "birth_lon": 145.31,
+    "birth_place": "Upper Ferntree Gully",
+    "death_date": "2006-09-04",
+    "death_lat": -16.4137,
+    "death_lon": 145.767,
+    "death_place": "Batt Reef",
     "status": "ok"
   },
   "Subrahmanyan Chandrasekhar": {
@@ -1701,6 +1950,17 @@
     "death_lat": 46.8725,
     "death_lon": 6.3742,
     "death_place": "Fort de Joux",
+    "status": "ok"
+  },
+  "Tupaia": {
+    "birth_date": "1725",
+    "birth_lat": -16.82,
+    "birth_lon": -151.44,
+    "birth_place": "near Ha'amanino Harbour,",
+    "death_date": "20 December 1770",
+    "death_lat": -6.132212,
+    "death_lon": 106.811779,
+    "death_place": "Batavia",
     "status": "ok"
   },
   "Tycho Brahe": {
@@ -1822,6 +2082,17 @@
     "death_lat": 52.01167,
     "death_lon": 4.35917,
     "death_place": "Delft",
+    "status": "ok"
+  },
+  "Wolfgang Amadeus Mozart": {
+    "birth_date": "1756-01-27",
+    "birth_lat": 47.7981346,
+    "birth_lon": 13.0464806,
+    "birth_place": ", Salzburg",
+    "death_date": "1791-12-05",
+    "death_lat": 48.2083,
+    "death_lon": 16.3725,
+    "death_place": "Vienna",
     "status": "ok"
   },
   "W\u0142adys\u0142aw III of Poland": {

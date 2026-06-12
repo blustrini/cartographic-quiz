@@ -5,7 +5,8 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
         return
     name = bio.formatted_name
 
-    print(name)
+    if verbose:
+        print(f"Matching name: {name}")
 
     matched = True
     match name:
@@ -16,6 +17,30 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.death_lat = 41.9028
             bio.death_lon = 12.4964
             bio.death_place = "Rome"
+        case "John_Cabot":
+            bio.death_date = "c. 1499"
+            bio.death_lat = 50 
+            bio.death_lon = -35
+            bio.death_place = "North Atlantic"
+        case "Eugène_Eyraud":
+            bio.birth_date = "1820"
+            bio.birth_lat = 44.6819
+            bio.birth_lon = 6.0764
+            bio.birth_place = "Saint-Bonnet-en-Champsaur"
+            bio.death_date = "23 August 1868"
+            bio.death_lat = -27.12
+            bio.death_lon = -109.35
+            bio.death_place = "Hanga Roa (Easter Island)"
+        case "Eden_(2024_film)": # Baroness Eloise Wagner de Bosquet
+            bio.birth_date = "c. 1900"
+            bio.birth_place = "Vienna"
+            bio.birth_lat = 48.2083
+            bio.birth_lon= 16.3725
+
+            bio.death_date = "March 1934"
+            bio.death_place = "Floreana Island"
+            bio.death_lat = -1.2975
+            bio.death_lon = -90.434167
         case _:
             matched = False
 

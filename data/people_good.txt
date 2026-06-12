@@ -14,10 +14,12 @@ Antoine de Saint-Exupéry
 Antonio Carlos Jobim
 Antônio Carlos Jobim
 Archimedes
+Blackbeard
 Bloody White Baron
 Bruce Lee
 Buddy Holly
 Butch Cassidy
+Capablanca
 Catherine the Great
 Chandragupta Maurya
 Charles I of Austria
@@ -28,13 +30,18 @@ Cnut
 Constantinus
 Cyrus the Great
 David Livingstone
+Descartes
 Diego Armando Maradona
 Doris Lessing
+Edward Teach
 Edward VIII
 El Greco
+Eloise Wagner de Bosquet
 Emmy Noether
 Enrico Fermi
 Eratosthenes
+Ernest Rutherford
+Eugène Eyraud
 Eva Perón
 Father Damien
 Ferdinand Magellan
@@ -74,8 +81,11 @@ James Wolfe
 Jean-François de Lapérouse
 Joan of Arc
 Joao Gilberto
+Johan Sebastian Bach
+John Cabot
 John Keats
 John Lennon
+John Moore (British Army officer)
 John Moore British Army officer
 Josef Mengele
 Joseph Conrad
@@ -99,6 +109,7 @@ Lord Byron
 Louis IX of France
 Ludwig Boltzmann
 Ludwig Wittgenstein
+Ludwig von Beethoven
 Mahatma Gandhi
 Mahomet Weyonomon
 Malcolm X
@@ -120,10 +131,12 @@ Mother Theresa
 Mungo Park
 Mustafa Kemal Atatürk
 Napoleon Bonaparte
+Niels Henrik Abel
 Nzinga Mbande
 Olaudah Equiano
 Oscar Wilde
 Ovid
+Patrice Lumumba
 Paul Dirac
 Paul Gauguin
 Pele
@@ -134,16 +147,24 @@ Pope Francis
 Prince Metternich
 Prince Philip, Duke of Edinburgh
 Pythagoras
+Queen Sālote Tupou III
 Queen Victoria I
+Rashid Nezhmetdinov
 Richard I
+Roald Amundsen
+Robert Falcon Scott
 Robert Guiscard
+Robert James Fischer
 Rumi
 Saint Boniface
+Salomon August Andree
 Sejong the Great
 Seneca the Younger
 Septimus Severus
 Sigmund Freud
+Sir John Franklin
 Socrates
+Steve Irwin
 Subrahmanyan Chandrasekhar
 Sun Yat-sen
 Sylvia Plath
@@ -151,6 +172,7 @@ Themistocles
 Timur
 Tom Jobim
 Toussaint Louverture
+Tupaia
 Tycho Brahe
 Vercingetorix
 Vincent van Gogh
@@ -162,5 +184,6 @@ Walter Benjamin
 Wernher von Braun
 William Walker (filibuster)
 William the Silent
+Wolfgang Amadeus Mozart
 Władysław III of Poland
 Zog I

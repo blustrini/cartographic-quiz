@@ -433,17 +433,20 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
 
     soup = BeautifulSoup(html, "html.parser")
     infobox = soup.find("table", class_=lambda x: x and "infobox" in x)
+
     if not infobox:
+        infobox_boxes = []
         if verbose:
-            print(f"Error: No biography infobox panel found for '{name}'.")
-        return None
+            print(f"Warning: No biography infobox panel found for '{name}'.")
+    else:
+        infobox_boxes = infobox.find_all("tr")
 
     data = BiographyData()
     data.formatted_name = formatted_name
     data.url = url
     seen_place_links: list[tuple[str, str]] = []
 
-    for row in infobox.find_all("tr"):
+    for row in infobox_boxes:
         th = row.find("th")
         td = row.find("td")
         if not th or not td:

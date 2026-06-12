@@ -92,6 +92,8 @@ COUNTRY_LEVEL_NAMES = {
     "wales",
     "james bay",
     "kingdom of england",
+    "ross ice shelf",
+    "king william island",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -121,6 +123,8 @@ REGION_LEVEL_NAMES = {
     "atlantic ocean",
     "greenland",
     "mali empire",
+    "north atlantic",
+    "barents sea",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -130,6 +134,9 @@ REGION_DIRECTIONAL_PATTERN = re.compile(
 CUSTOM_RADIUS_METES: dict[str, int] = {
   "pacific ocean": 3_500_000,
   "mediterranean sea": 450_000,
+  "north atlantic": 1_700_000,
+  "ross ice shelf": 300_000,
+  "king william island": 100_000,
 }
 
 
