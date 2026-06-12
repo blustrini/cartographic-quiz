@@ -1781,6 +1781,17 @@
     "death_place": "Memphis, Tennessee",
     "status": "ok"
   },
+  "Mary Seacole": {
+    "birth_date": "1805-11-23",
+    "birth_lat": 17.97139,
+    "birth_lon": -76.79306,
+    "birth_place": "Kingston",
+    "death_date": "1881-05-14",
+    "death_lat": 51.5172,
+    "death_lon": -0.173,
+    "death_place": "Paddington",
+    "status": "ok"
+  },
   "Mary, Queen of Scots": {
     "birth_date": "8 December 1542",
     "birth_lat": 55.9785,
