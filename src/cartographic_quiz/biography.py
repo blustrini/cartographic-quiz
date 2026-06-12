@@ -73,6 +73,8 @@ NON_PLACE_SINGLETONS = {
     "approximately",
     "approx",
     "deme",
+    "presumed",
+    "aged",
 }
 ROMAN_NUMERAL_TOKEN = re.compile(r"^[ivxlcdm]+$", flags=re.IGNORECASE)
 NON_PLACE_TERM_PATTERN = re.compile(
@@ -363,7 +365,7 @@ def _clean_place_text(text: str, date_str: Optional[str]) -> str:
         without_date,
         flags=re.IGNORECASE,
     )
-    return re.sub(r"\s+", " ", without_causes).strip(" ,;")
+    return re.sub(r"\s+", " ", without_causes).strip(" ,;)(")
 
 
 def _extract_present_day_place(text: str) -> Optional[str]:

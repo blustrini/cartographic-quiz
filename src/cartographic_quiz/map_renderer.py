@@ -92,6 +92,7 @@ COUNTRY_LEVEL_NAMES = {
     "wales",
     "james bay",
     "kingdom of england",
+    "mali empire",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -273,7 +274,7 @@ def generate_life_map(
                 icon=folium.DivIcon(
                     html=_build_country_date_label_html(birth_event.date_str, color="#1b5e20"),
                     icon_size=(320, 34),
-                    icon_anchor=(160, 17),
+                    icon_anchor=(160, 0),
                     class_name="empty",
                 ),
             ).add_to(life_map)
@@ -304,7 +305,7 @@ def generate_life_map(
                 icon=folium.DivIcon(
                     html=_build_country_date_label_html(death_event.date_str, color="#b71c1c"),
                     icon_size=(320, 34),
-                    icon_anchor=(160, 17),
+                    icon_anchor=(160, 40),
                     class_name="empty",
                 ),
             ).add_to(life_map)

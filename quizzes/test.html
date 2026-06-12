@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d0980c2937018d4dbc24d109a289afa8 {
+                #map_acb03c4f512b7309ffce8f97423e5ca7 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -75,7 +75,7 @@
     </div>
     <script>
       (function() {
-        const expected = 'Rumi';
+        const expected = 'Mansa Musa';
         const storageKeys = {
           correct: "correctCount",
           streak: "streak",
@@ -305,16 +305,16 @@
     </script>
     
     
-            <div class="folium-map" id="map_d0980c2937018d4dbc24d109a289afa8" ></div>
+            <div class="folium-map" id="map_acb03c4f512b7309ffce8f97423e5ca7" ></div>
         
 </body>
 <script>
     
     
-            var map_d0980c2937018d4dbc24d109a289afa8 = L.map(
-                "map_d0980c2937018d4dbc24d109a289afa8",
+            var map_acb03c4f512b7309ffce8f97423e5ca7 = L.map(
+                "map_acb03c4f512b7309ffce8f97423e5ca7",
                 {
-                    center: [37.953720000000004, 50.78803],
+                    center: [11.3179733, -5.6804819],
                     crs: L.CRS.EPSG3857,
                     ...{
   "maxBounds": [
@@ -339,7 +339,7 @@
 
         
     
-            var tile_layer_7880ff84b7609f457b6f511b16519029 = L.tileLayer(
+            var tile_layer_67404cbc368b0da789c0d9845f0583b6 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -356,217 +356,253 @@
             );
         
     
-            tile_layer_7880ff84b7609f457b6f511b16519029.addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            tile_layer_67404cbc368b0da789c0d9845f0583b6.addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var marker_083ade32005492f43d642ac33d3d708e = L.marker(
-                [38.033, -290.91700000000003],
+            var circle_57a1e600b4d2684b6079119144987623 = L.circle(
+                [11.3179733, -365.6804819],
+                {"bubblingMouseEvents": true, "color": "#1b5e20", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#66bb6a", "fillOpacity": 0.16, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 250000, "stroke": true, "weight": 1}
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
+        
+    
+        var popup_f48bcc8d883b32c6dea28fd83216e78a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93c702d19702b065c2ef89ab9f2f2842 = $(`<div id="html_93c702d19702b065c2ef89ab9f2f2842" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Mali Empire<br><i>(exact location unknown)</i></div>`)[0];
+                popup_f48bcc8d883b32c6dea28fd83216e78a.setContent(html_93c702d19702b065c2ef89ab9f2f2842);
+            
+        
+
+        circle_57a1e600b4d2684b6079119144987623.bindPopup(popup_f48bcc8d883b32c6dea28fd83216e78a)
+        ;
+
+        
+    
+    
+            var marker_2cd6982e92a41596e87305ee7e2c925d = L.marker(
+                [11.3179733, -365.6804819],
                 {
 }
-            ).addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var div_icon_7fdce7b8da1aac3522f47c91197ed19d = L.divIcon({
-  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" /\u003e\n        \u003crect x=\"37\" y=\"32\" width=\"246\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\"\u003e\ud83d\udc76 30 September 1207\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
-  "iconSize": [320, 90],
+            var div_icon_c8a9b6a2856eca99686f576998b18b83 = L.divIcon({
+  "html": "\u003cdiv class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#1b5e20;white-space:nowrap;\"\u003e\ud83d\udc76 c. 1280\u003c/div\u003e",
+  "iconSize": [320, 34],
   "iconAnchor": [160, 0],
   "className": "empty",
 });
         
     
-        var popup_da81a70a67103bf20a01a75e920be8fa = L.popup({
+                marker_2cd6982e92a41596e87305ee7e2c925d.setIcon(div_icon_c8a9b6a2856eca99686f576998b18b83);
+            
+    
+            var circle_8a7c24cf9a6428dcb32f020a02807475 = L.circle(
+                [11.3179733, -365.6804819],
+                {"bubblingMouseEvents": true, "color": "#b71c1c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef5350", "fillOpacity": 0.16, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 250000, "stroke": true, "weight": 1}
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
+        
+    
+        var popup_4ff5b272d1fc4f4989fce3967ba87255 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_671b920116f5e7845ba3cea5cfa0fd07 = $(`<div id="html_671b920116f5e7845ba3cea5cfa0fd07" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Wakhsh</div>`)[0];
-                popup_da81a70a67103bf20a01a75e920be8fa.setContent(html_671b920116f5e7845ba3cea5cfa0fd07);
+                var html_409e5878524277023d708c894743a8af = $(`<div id="html_409e5878524277023d708c894743a8af" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Mali Empire<br><i>(exact location unknown)</i></div>`)[0];
+                popup_4ff5b272d1fc4f4989fce3967ba87255.setContent(html_409e5878524277023d708c894743a8af);
             
         
 
-        marker_083ade32005492f43d642ac33d3d708e.bindPopup(popup_da81a70a67103bf20a01a75e920be8fa)
+        circle_8a7c24cf9a6428dcb32f020a02807475.bindPopup(popup_4ff5b272d1fc4f4989fce3967ba87255)
         ;
 
         
     
     
-                marker_083ade32005492f43d642ac33d3d708e.setIcon(div_icon_7fdce7b8da1aac3522f47c91197ed19d);
-            
-    
-            var marker_4f955b469bd0c575167d0c5b352c868e = L.marker(
-                [37.87444, -327.50694],
+            var marker_1d5ee199e67b3aae4f0edb615abec58e = L.marker(
+                [11.3179733, -365.6804819],
                 {
 }
-            ).addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var div_icon_3a9aa60560a981f6259f98348cedc1dd = L.divIcon({
-  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" /\u003e\n        \u003crect x=\"43\" y=\"28\" width=\"234\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\"\u003e\ud83d\udc80 17 December 1273\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
-  "iconSize": [320, 90],
-  "iconAnchor": [160, 90],
+            var div_icon_1c8221f4581995db62b7206e048652cc = L.divIcon({
+  "html": "\u003cdiv class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#b71c1c;white-space:nowrap;\"\u003e\ud83d\udc80 c. 1337\u003c/div\u003e",
+  "iconSize": [320, 34],
+  "iconAnchor": [160, 40],
   "className": "empty",
 });
         
     
-        var popup_b6386b50d4434ad6f8b2b487cb2f59b4 = L.popup({
+                marker_1d5ee199e67b3aae4f0edb615abec58e.setIcon(div_icon_1c8221f4581995db62b7206e048652cc);
+            
+    
+            var circle_31f46fa12e2a067224d08a0bc488c701 = L.circle(
+                [11.3179733, -5.6804819],
+                {"bubblingMouseEvents": true, "color": "#1b5e20", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#66bb6a", "fillOpacity": 0.16, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 250000, "stroke": true, "weight": 1}
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
+        
+    
+        var popup_1cf5f696cb6bd43b2d4827c835257360 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4a6f2ced4c2e28c9482e08fd0fc9e895 = $(`<div id="html_4a6f2ced4c2e28c9482e08fd0fc9e895" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Konya</div>`)[0];
-                popup_b6386b50d4434ad6f8b2b487cb2f59b4.setContent(html_4a6f2ced4c2e28c9482e08fd0fc9e895);
+                var html_da2e9048e191fd50be1ee3277cf2b1de = $(`<div id="html_da2e9048e191fd50be1ee3277cf2b1de" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Mali Empire<br><i>(exact location unknown)</i></div>`)[0];
+                popup_1cf5f696cb6bd43b2d4827c835257360.setContent(html_da2e9048e191fd50be1ee3277cf2b1de);
             
         
 
-        marker_4f955b469bd0c575167d0c5b352c868e.bindPopup(popup_b6386b50d4434ad6f8b2b487cb2f59b4)
+        circle_31f46fa12e2a067224d08a0bc488c701.bindPopup(popup_1cf5f696cb6bd43b2d4827c835257360)
         ;
 
         
     
     
-                marker_4f955b469bd0c575167d0c5b352c868e.setIcon(div_icon_3a9aa60560a981f6259f98348cedc1dd);
-            
-    
-            var marker_9a0e5301b3184b4321c38400ccf942d6 = L.marker(
-                [38.033, 69.083],
+            var marker_ecaab951c171c8207a472bbe1a3c8ee3 = L.marker(
+                [11.3179733, -5.6804819],
                 {
 }
-            ).addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var div_icon_9fb14a4762a232481bed4a779a4ebfc3 = L.divIcon({
-  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" /\u003e\n        \u003crect x=\"37\" y=\"32\" width=\"246\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\"\u003e\ud83d\udc76 30 September 1207\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
-  "iconSize": [320, 90],
+            var div_icon_991a8d9b2c150902ecd8df0d1266b67f = L.divIcon({
+  "html": "\u003cdiv class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#1b5e20;white-space:nowrap;\"\u003e\ud83d\udc76 c. 1280\u003c/div\u003e",
+  "iconSize": [320, 34],
   "iconAnchor": [160, 0],
   "className": "empty",
 });
         
     
-        var popup_4f21777cf936f670f1c1e045496d455b = L.popup({
+                marker_ecaab951c171c8207a472bbe1a3c8ee3.setIcon(div_icon_991a8d9b2c150902ecd8df0d1266b67f);
+            
+    
+            var circle_cf2514f90a9bf751530bd23706e2e0cb = L.circle(
+                [11.3179733, -5.6804819],
+                {"bubblingMouseEvents": true, "color": "#b71c1c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef5350", "fillOpacity": 0.16, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 250000, "stroke": true, "weight": 1}
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
+        
+    
+        var popup_3ca4ff10412c5197172190333f3eb1e1 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_0dc76f3724ab856764af75a0f43e1290 = $(`<div id="html_0dc76f3724ab856764af75a0f43e1290" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Wakhsh</div>`)[0];
-                popup_4f21777cf936f670f1c1e045496d455b.setContent(html_0dc76f3724ab856764af75a0f43e1290);
+                var html_4cdc30419cc90b845bf669687db51d3c = $(`<div id="html_4cdc30419cc90b845bf669687db51d3c" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Mali Empire<br><i>(exact location unknown)</i></div>`)[0];
+                popup_3ca4ff10412c5197172190333f3eb1e1.setContent(html_4cdc30419cc90b845bf669687db51d3c);
             
         
 
-        marker_9a0e5301b3184b4321c38400ccf942d6.bindPopup(popup_4f21777cf936f670f1c1e045496d455b)
+        circle_cf2514f90a9bf751530bd23706e2e0cb.bindPopup(popup_3ca4ff10412c5197172190333f3eb1e1)
         ;
 
         
     
     
-                marker_9a0e5301b3184b4321c38400ccf942d6.setIcon(div_icon_9fb14a4762a232481bed4a779a4ebfc3);
-            
-    
-            var marker_b978769f604ebd523cbdb740576ada14 = L.marker(
-                [37.87444, 32.49306],
+            var marker_9b2d305061e3ec4cba92f8674ba3d653 = L.marker(
+                [11.3179733, -5.6804819],
                 {
 }
-            ).addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var div_icon_a3b969ee1e484e25378d72663c5b8500 = L.divIcon({
-  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" /\u003e\n        \u003crect x=\"43\" y=\"28\" width=\"234\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\"\u003e\ud83d\udc80 17 December 1273\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
-  "iconSize": [320, 90],
-  "iconAnchor": [160, 90],
+            var div_icon_18ccc14c37de31a059eb71a1f66486d4 = L.divIcon({
+  "html": "\u003cdiv class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#b71c1c;white-space:nowrap;\"\u003e\ud83d\udc80 c. 1337\u003c/div\u003e",
+  "iconSize": [320, 34],
+  "iconAnchor": [160, 40],
   "className": "empty",
 });
         
     
-        var popup_bbf72843bb0ef105da88c2890ffc3fb9 = L.popup({
+                marker_9b2d305061e3ec4cba92f8674ba3d653.setIcon(div_icon_18ccc14c37de31a059eb71a1f66486d4);
+            
+    
+            var circle_d0777afce73440c52c564fa6226df5d3 = L.circle(
+                [11.3179733, 354.3195181],
+                {"bubblingMouseEvents": true, "color": "#1b5e20", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#66bb6a", "fillOpacity": 0.16, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 250000, "stroke": true, "weight": 1}
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
+        
+    
+        var popup_89acaadb8d15f343c7ce9c7195a20fea = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_557e5b17e13e299c8deb7b8f27484889 = $(`<div id="html_557e5b17e13e299c8deb7b8f27484889" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Konya</div>`)[0];
-                popup_bbf72843bb0ef105da88c2890ffc3fb9.setContent(html_557e5b17e13e299c8deb7b8f27484889);
+                var html_6f98a63c2a14d6405bd9e05171c9b6f6 = $(`<div id="html_6f98a63c2a14d6405bd9e05171c9b6f6" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Mali Empire<br><i>(exact location unknown)</i></div>`)[0];
+                popup_89acaadb8d15f343c7ce9c7195a20fea.setContent(html_6f98a63c2a14d6405bd9e05171c9b6f6);
             
         
 
-        marker_b978769f604ebd523cbdb740576ada14.bindPopup(popup_bbf72843bb0ef105da88c2890ffc3fb9)
+        circle_d0777afce73440c52c564fa6226df5d3.bindPopup(popup_89acaadb8d15f343c7ce9c7195a20fea)
         ;
 
         
     
     
-                marker_b978769f604ebd523cbdb740576ada14.setIcon(div_icon_a3b969ee1e484e25378d72663c5b8500);
-            
-    
-            var marker_a188b3e65f48bf3b807d520da0979229 = L.marker(
-                [38.033, 429.08299999999997],
+            var marker_f29197fb9774807c9ec6a4e583839b53 = L.marker(
+                [11.3179733, 354.3195181],
                 {
 }
-            ).addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var div_icon_298f8ecb62a56a70edae5b22d4d9730e = L.divIcon({
-  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" /\u003e\n        \u003crect x=\"37\" y=\"32\" width=\"246\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\"\u003e\ud83d\udc76 30 September 1207\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
-  "iconSize": [320, 90],
+            var div_icon_5381aac28f73c8723ecf5648b4a19585 = L.divIcon({
+  "html": "\u003cdiv class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#1b5e20;white-space:nowrap;\"\u003e\ud83d\udc76 c. 1280\u003c/div\u003e",
+  "iconSize": [320, 34],
   "iconAnchor": [160, 0],
   "className": "empty",
 });
         
     
-        var popup_5c3abb71d72d20476db10ca44006b5b8 = L.popup({
+                marker_f29197fb9774807c9ec6a4e583839b53.setIcon(div_icon_5381aac28f73c8723ecf5648b4a19585);
+            
+    
+            var circle_cff65e6376b12990837b179744cb7a93 = L.circle(
+                [11.3179733, 354.3195181],
+                {"bubblingMouseEvents": true, "color": "#b71c1c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef5350", "fillOpacity": 0.16, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 250000, "stroke": true, "weight": 1}
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
+        
+    
+        var popup_b5cc2e4572d8aa4d8739d2db57ce9a98 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ec27a2a86162d0016c124a7bb1cf2bd4 = $(`<div id="html_ec27a2a86162d0016c124a7bb1cf2bd4" style="width: 100.0%; height: 100.0%;"><b>Birth</b><br>Place: Wakhsh</div>`)[0];
-                popup_5c3abb71d72d20476db10ca44006b5b8.setContent(html_ec27a2a86162d0016c124a7bb1cf2bd4);
+                var html_1ac77075a64c50ed558046cc1f4d14e1 = $(`<div id="html_1ac77075a64c50ed558046cc1f4d14e1" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Mali Empire<br><i>(exact location unknown)</i></div>`)[0];
+                popup_b5cc2e4572d8aa4d8739d2db57ce9a98.setContent(html_1ac77075a64c50ed558046cc1f4d14e1);
             
         
 
-        marker_a188b3e65f48bf3b807d520da0979229.bindPopup(popup_5c3abb71d72d20476db10ca44006b5b8)
+        circle_cff65e6376b12990837b179744cb7a93.bindPopup(popup_b5cc2e4572d8aa4d8739d2db57ce9a98)
         ;
 
         
     
     
-                marker_a188b3e65f48bf3b807d520da0979229.setIcon(div_icon_298f8ecb62a56a70edae5b22d4d9730e);
-            
-    
-            var marker_7daf11364695acb664032cfc2c8ce426 = L.marker(
-                [37.87444, 392.49306],
+            var marker_6c813e9bce1a4e8352d676e8b613968b = L.marker(
+                [11.3179733, 354.3195181],
                 {
 }
-            ).addTo(map_d0980c2937018d4dbc24d109a289afa8);
+            ).addTo(map_acb03c4f512b7309ffce8f97423e5ca7);
         
     
-            var div_icon_21430e4951b8ce5612fbf7b8f8e93d11 = L.divIcon({
-  "html": "\n    \u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\"\u003e\n        \u003cpolygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" /\u003e\n        \u003crect x=\"43\" y=\"28\" width=\"234\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /\u003e\u003ctext x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\"\u003e\ud83d\udc80 17 December 1273\u003c/text\u003e\n    \u003c/svg\u003e\n    ",
-  "iconSize": [320, 90],
-  "iconAnchor": [160, 90],
+            var div_icon_653d27b9221dd907f94cb50fe31ea428 = L.divIcon({
+  "html": "\u003cdiv class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#b71c1c;white-space:nowrap;\"\u003e\ud83d\udc80 c. 1337\u003c/div\u003e",
+  "iconSize": [320, 34],
+  "iconAnchor": [160, 40],
   "className": "empty",
 });
         
     
-        var popup_6b728e8601fa314ab6108cf5d026efcf = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_8bdc131c2e1e8ffa5f542cd3a1d07b52 = $(`<div id="html_8bdc131c2e1e8ffa5f542cd3a1d07b52" style="width: 100.0%; height: 100.0%;"><b>Death</b><br>Place: Konya</div>`)[0];
-                popup_6b728e8601fa314ab6108cf5d026efcf.setContent(html_8bdc131c2e1e8ffa5f542cd3a1d07b52);
-            
-        
-
-        marker_7daf11364695acb664032cfc2c8ce426.bindPopup(popup_6b728e8601fa314ab6108cf5d026efcf)
-        ;
-
-        
-    
-    
-                marker_7daf11364695acb664032cfc2c8ce426.setIcon(div_icon_21430e4951b8ce5612fbf7b8f8e93d11);
+                marker_6c813e9bce1a4e8352d676e8b613968b.setIcon(div_icon_653d27b9221dd907f94cb50fe31ea428);
             
 </script>
 </html>

@@ -2,21 +2,29 @@ Adolf Eichmann
 Akbar the Great
 Alaric I
 Albert Einstein
+Alex Salmond
 Alexander Hamilton
 Alexander Kerensky
 Alexander the Great
 Amelia Earhart
+Anne of Cleves
+Anne of Denmark
 Antoine de Saint-Exupéry
 Antonio Carlos Jobim
 Antônio Carlos Jobim
 Archimedes
 Bloody White Baron
 Bruce Lee
+Buddy Holly
 Butch Cassidy
 Catherine the Great
 Chandragupta Maurya
+Charles I of Austria
+Charles XIV of Sweden
 Chien-Shiung Wu
 Cleopatra
+Cnut
+Constantinus
 Cyrus the Great
 David Livingstone
 Diego Armando Maradona
@@ -34,6 +42,9 @@ Francisco de Miranda
 Gaiseric
 Galileo Galilei
 Genghis Khan
+George Armstrong Custer
+George II
+George II of Great Britain
 George Orwell
 Georgi Markov
 Gianni Versace
@@ -49,24 +60,32 @@ Hernán Cortés
 Hildegard of Bingen
 Hiram Bingham
 Horatio Nelson
+Hulegu Khan
 Ibn Battuta
 Idi Amin
+Irenaeus
 Isadora Duncan
 Italo Calvino
 James Clerk Maxwell
+James Francis Edward Stuart
 James Joyce
+James Wolfe
 Jean-François de Lapérouse
 Joan of Arc
 Joao Gilberto
 John Keats
 John Lennon
+John Moore British Army officer
+Josef Mengele
 Joseph Conrad
 Joseph Stalin
 Julian the Apostate
 Julius Caesar
 Kahlil Gibran
 Kamehameha I
+Kamehameha II
 King Alexander of Greece
+King Cnut
 Kofi Annan
 Kurt Gödel
 Leif Erikson
@@ -81,6 +100,9 @@ Ludwig Wittgenstein
 Mahatma Gandhi
 Mahomet Weyonomon
 Malcolm X
+Mansa Musa
+Marc Chagal
+Margaret Thatcher
 Maria Montessori
 Marie Antoinette
 Marie Curie
@@ -111,11 +133,13 @@ Prince Metternich
 Prince Philip, Duke of Edinburgh
 Pythagoras
 Queen Victoria I
+Richard I
 Robert Guiscard
 Rumi
 Saint Boniface
 Sejong the Great
 Seneca the Younger
+Septimus Severus
 Sigmund Freud
 Socrates
 Subrahmanyan Chandrasekhar
@@ -136,4 +160,5 @@ Walter Benjamin
 Wernher von Braun
 William Walker (filibuster)
 William the Silent
+Władysław III of Poland
 Zog I
