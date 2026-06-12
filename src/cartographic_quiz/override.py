@@ -102,6 +102,18 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.birth_lon = 126.99
             bio.death_lat = bio.birth_lat
             bio.death_lon = bio.birth_lon
+        case "Abraham":
+            # Using traditional biblical chronology / Bronze Age approximations
+            bio.birth_date = "c. 1813 B.C." 
+            bio.birth_lat = 30.9633
+            bio.birth_lon = 46.1031
+            bio.birth_place = "Ur of the Chaldees (Tell el-Muqayyar, Iraq)"
+
+            # The Cave of the Patriarchs in Hebron
+            bio.death_date = "c. 1638 B.C."
+            bio.death_lat = 31.5247
+            bio.death_lon = 35.1107
+            bio.death_place = "Hebron, Canaan (West Bank)"
 
         case _:
             matched = False

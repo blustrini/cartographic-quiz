@@ -1,4 +1,15 @@
 {
+  "Abraham": {
+    "birth_date": "c. 1813 B.C.",
+    "birth_lat": 30.9633,
+    "birth_lon": 46.1031,
+    "birth_place": "Ur of the Chaldees (Tell el-Muqayyar, Iraq)",
+    "death_date": "c. 1638 B.C.",
+    "death_lat": 31.5247,
+    "death_lon": 35.1107,
+    "death_place": "Hebron, Canaan (West Bank)",
+    "status": "ok"
+  },
   "Adolf Eichmann": {
     "birth_date": "1906-03-19",
     "birth_lat": 51.1719,
