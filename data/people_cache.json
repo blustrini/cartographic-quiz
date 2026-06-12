@@ -1569,6 +1569,17 @@
     "death_place": "Missolonghi",
     "status": "ok"
   },
+  "Lord Raglan": {
+    "birth_date": "1788-09-30",
+    "birth_lat": 51.543,
+    "birth_lon": -2.285,
+    "birth_place": "Badminton, Gloucestershire",
+    "death_date": "1855-06-28",
+    "death_lat": 44.605,
+    "death_lon": 33.5225,
+    "death_place": "Sevastopol",
+    "status": "ok"
+  },
   "Louis IX of France": {
     "birth_date": "25 April 1214",
     "birth_lat": 48.9294,
