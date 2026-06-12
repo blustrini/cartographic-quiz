@@ -1,0 +1,5 @@
+Unshittify/unvibecode this repo, it is extremely messy right now
+- e.g. the data + overrides should live together, in one location
+
+Add the ability to exclude names that have already been sampled
+- corollary: save the already sampled names somewhere to avoid duplicating
