@@ -186,6 +186,23 @@
     "death_place": "Syracuse, Sicily",
     "status": "ok"
   },
+  "Atilla": {
+    "status": "bad"
+  },
+  "Atilla the Hun": {
+    "birth_date": "c. 406",
+    "birth_lat": 47.45,
+    "birth_lon": 18.6,
+    "birth_place": "Pannonia (?)",
+    "death_date": "453",
+    "death_lat": 47.5,
+    "death_lon": 19.9167,
+    "death_place": "Alf\u00f6ld (Great Hungarian Plain) (?)",
+    "status": "ok"
+  },
+  "Attila the Hun": {
+    "status": "bad"
+  },
   "Baroness Eloise Wehrborn de Wagner-Bosquet": {
     "status": "bad"
   },
@@ -311,6 +328,17 @@
     "death_lat": 40.7128,
     "death_lon": -74.0061,
     "death_place": "New York City",
+    "status": "ok"
+  },
+  "Cicero": {
+    "birth_date": "3 January 106 BC",
+    "birth_lat": 41.64778,
+    "birth_lon": 13.60972,
+    "birth_place": "Arpinum",
+    "death_date": "7 December 43 BC",
+    "death_lat": 41.267,
+    "death_lon": 13.617,
+    "death_place": "Formiae",
     "status": "ok"
   },
   "Cleopatra": {
@@ -489,6 +517,28 @@
     "death_place": "Cambridge",
     "status": "ok"
   },
+  "Ernest Shackleton": {
+    "birth_date": "1874-02-15",
+    "birth_lat": 52.94778,
+    "birth_lon": -6.89278,
+    "birth_place": "Kilkea",
+    "death_date": "1922-01-05",
+    "death_lat": -54.28139,
+    "death_lon": -36.50806,
+    "death_place": "Grytviken",
+    "status": "ok"
+  },
+  "Ettore Majorana": {
+    "birth_date": "1906-08-05",
+    "birth_lat": 37.5,
+    "birth_lon": 15.09028,
+    "birth_place": "Catania",
+    "death_date": "25 March 1938 (?)",
+    "death_lat": 39.5,
+    "death_lon": 13.5,
+    "death_place": "Tyrrhenian Sea",
+    "status": "ok"
+  },
   "Eugenio Eyraud": {
     "status": "bad"
   },
@@ -578,6 +628,17 @@
     "death_lat": 43.75485,
     "death_lon": 11.2518,
     "death_place": "Arcetri",
+    "status": "ok"
+  },
+  "Ganghis Khan": {
+    "birth_date": "c. 1162",
+    "birth_lat": 48.7833,
+    "birth_lon": 109.167,
+    "birth_place": "Khentii Mountains",
+    "death_date": "25 August 1227",
+    "death_lat": 38.4759985,
+    "death_lon": 106.4798248,
+    "death_place": "Xingqing",
     "status": "ok"
   },
   "Genghis Khan": {
@@ -690,6 +751,17 @@
     "death_place": "Caprera",
     "status": "ok"
   },
+  "Glenn Miller": {
+    "birth_date": "1904-03-01",
+    "birth_lat": 40.74611,
+    "birth_lon": -95.03583,
+    "birth_place": "Clarinda, Iowa",
+    "death_date": "1944-12-15",
+    "death_lat": 50.2,
+    "death_lon": 0.0,
+    "death_place": "English Channel",
+    "status": "ok"
+  },
   "Grigori Rasputin": {
     "birth_date": "1869-01-21",
     "birth_lat": 57.2425,
@@ -778,6 +850,17 @@
     "death_place": "Castilleja de la Cuesta",
     "status": "ok"
   },
+  "Herodotus": {
+    "birth_date": "c. 484 BC",
+    "birth_lat": 37.03778,
+    "birth_lon": 27.42417,
+    "birth_place": "Halicarnassus",
+    "death_date": "c. 425 BC",
+    "death_lat": 39.71722,
+    "death_lon": 16.49556,
+    "death_place": "Thurii",
+    "status": "ok"
+  },
   "Hildegaard von Bingen": {
     "status": "bad"
   },
@@ -812,6 +895,17 @@
     "death_lat": 50.80194,
     "death_lon": -1.10972,
     "death_place": "HMS",
+    "status": "ok"
+  },
+  "Hugo Grotius": {
+    "birth_date": "10 April 1583",
+    "birth_lat": 52.01167,
+    "birth_lon": 4.35917,
+    "birth_place": "Delft",
+    "death_date": "28 August 1645",
+    "death_lat": 54.083,
+    "death_lon": 12.133,
+    "death_place": "Rostock",
     "status": "ok"
   },
   "Hulegu Khan": {
@@ -1172,6 +1266,17 @@
     "death_place": "Bern",
     "status": "ok"
   },
+  "Kublai Khan": {
+    "birth_date": "1215-09-23",
+    "birth_lat": 47.8855382,
+    "birth_lon": 106.9400452,
+    "birth_place": "Mongol Empire",
+    "death_date": "1294-02-18",
+    "death_lat": 39.93333,
+    "death_lon": 116.4,
+    "death_place": "Khanbaliq",
+    "status": "ok"
+  },
   "Kurt G\u00f6del": {
     "birth_date": "1906-04-28",
     "birth_lat": 49.1925,
@@ -1313,6 +1418,28 @@
     "death_lat": 51.50722,
     "death_lon": -0.1275,
     "death_place": "London",
+    "status": "ok"
+  },
+  "Mai (Ra'iatean man)": {
+    "birth_date": "c. 1751",
+    "birth_lat": -16.82,
+    "birth_lon": -151.44,
+    "birth_place": "Ra'iatea",
+    "death_date": "c. 1780",
+    "death_lat": -16.73,
+    "death_lon": -151.0,
+    "death_place": "Huahine",
+    "status": "ok"
+  },
+  "Maimonedes": {
+    "birth_date": "4 April 1138",
+    "birth_lat": 37.89,
+    "birth_lon": -4.78,
+    "birth_place": "C\u00f3rdoba",
+    "death_date": "12 December 1204",
+    "death_lat": 30.005,
+    "death_lon": 31.2375,
+    "death_place": "Fustat",
     "status": "ok"
   },
   "Malcolm X": {
@@ -1566,6 +1693,17 @@
     "death_place": "Westminster",
     "status": "ok"
   },
+  "Omai": {
+    "birth_date": "c. 1751",
+    "birth_lat": -16.82,
+    "birth_lon": -151.44,
+    "birth_place": "Ra'iatea",
+    "death_date": "c. 1780",
+    "death_lat": -16.73,
+    "death_lon": -151.0,
+    "death_place": "Huahine",
+    "status": "ok"
+  },
   "Oscar Wilde": {
     "birth_date": "1854-10-16",
     "birth_lat": 53.35,
@@ -1795,6 +1933,17 @@
     "death_place": "Barents Sea",
     "status": "ok"
   },
+  "Robert Capa": {
+    "birth_date": "October 22, 1913",
+    "birth_lat": 47.4925,
+    "birth_lon": 19.05139,
+    "birth_place": "Budapest",
+    "death_date": "1954-05-25",
+    "death_lat": 20.5,
+    "death_lon": 106.333,
+    "death_place": "Th\u00e1i B\u00ecnh Province",
+    "status": "ok"
+  },
   "Robert Falcon Scott": {
     "birth_date": "1868-06-06",
     "birth_lat": 50.37139,
@@ -1828,6 +1977,9 @@
     "death_place": "Reykjav\u00edk",
     "status": "ok"
   },
+  "Robert Scott": {
+    "status": "bad"
+  },
   "Rumi": {
     "birth_date": "30 September 1207",
     "birth_lat": 38.033,
@@ -1848,6 +2000,17 @@
     "death_lat": 53.32694,
     "death_lon": 5.99806,
     "death_place": "Dokkum",
+    "status": "ok"
+  },
+  "Saint Patrick": {
+    "birth_date": "c. 385",
+    "birth_lat": 54.2,
+    "birth_lon": -3.0,
+    "birth_place": "(Northwestern) Roman Britain (?)",
+    "death_date": "17th March c. 461",
+    "death_lat": 54.325,
+    "death_lon": -5.717,
+    "death_place": "Saul",
     "status": "ok"
   },
   "Salomon August Andree": {
@@ -1927,6 +2090,17 @@
     "death_place": "Athens",
     "status": "ok"
   },
+  "Stefan Zweig": {
+    "birth_date": "1881-11-28",
+    "birth_lat": 48.2083,
+    "birth_lon": 16.3725,
+    "birth_place": "Vienna",
+    "death_date": "1942-02-22",
+    "death_lat": -22.505,
+    "death_lon": -43.17889,
+    "death_place": "Petr\u00f3polis",
+    "status": "ok"
+  },
   "Steve Irwin": {
     "birth_date": "1962-02-22",
     "birth_lat": -37.895,
@@ -1949,6 +2123,17 @@
     "death_place": "Chicago, Illinois",
     "status": "ok"
   },
+  "Suleiman the Magnificent": {
+    "birth_date": "6 November 1494",
+    "birth_lat": 41.005,
+    "birth_lon": 39.7225,
+    "birth_place": "Trabzon",
+    "death_date": "1566-09-06",
+    "death_lat": 46.0475,
+    "death_lon": 17.79944,
+    "death_place": "Szigetv\u00e1r",
+    "status": "ok"
+  },
   "Sun Yat-sen": {
     "birth_date": "1866-11-12",
     "birth_lat": 22.4446667,
@@ -1969,6 +2154,17 @@
     "death_lat": 51.50722,
     "death_lon": -0.1275,
     "death_place": "London",
+    "status": "ok"
+  },
+  "Thales": {
+    "birth_date": "623 BC",
+    "birth_lat": 37.53028,
+    "birth_lon": 27.27833,
+    "birth_place": "Miletus",
+    "death_date": "545 BC",
+    "death_lat": 37.53028,
+    "death_lon": 27.27833,
+    "death_place": "Miletus",
     "status": "ok"
   },
   "Thales of Miletus": {
@@ -2095,6 +2291,17 @@
     "death_place": "London, England",
     "status": "ok"
   },
+  "Vladimir Lenin": {
+    "birth_date": "1870",
+    "birth_lat": 54.317,
+    "birth_lon": 48.367,
+    "birth_place": "Simbirsk",
+    "death_date": "1924-01-21",
+    "death_lat": 55.5045,
+    "death_lon": 37.765028,
+    "death_place": "Gorki",
+    "status": "ok"
+  },
   "Vladimir Nabokov": {
     "birth_date": "1899-04-22",
     "birth_lat": 59.9375,
@@ -2181,6 +2388,20 @@
     "death_lat": 43.217,
     "death_lon": 27.917,
     "death_place": "Varna",
+    "status": "ok"
+  },
+  "Zeno": {
+    "status": "bad"
+  },
+  "Zeno of Elea": {
+    "birth_date": "c. 490 BC",
+    "birth_lat": 40.16083,
+    "birth_lon": 15.155,
+    "birth_place": "Elea",
+    "death_date": "c. 430 BC",
+    "death_lat": 37.06917,
+    "death_lon": 15.2875,
+    "death_place": "Syracuse",
     "status": "ok"
   },
   "Zog I": {

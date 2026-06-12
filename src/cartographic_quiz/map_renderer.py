@@ -96,6 +96,13 @@ COUNTRY_LEVEL_NAMES = {
     "king william island",
     "begwena",
     "lower lorraine",
+    "english channel",
+    "khentii mountains",
+    "xingqing",
+    "pannonia (?)",
+    "alföld (great hungarian plain) (?)",
+    "(northwestern) roman britain (?)",
+    "tyrrhenian sea",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -127,6 +134,7 @@ REGION_LEVEL_NAMES = {
     "mali empire",
     "north atlantic",
     "barents sea",
+    "mongol empire",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -140,6 +148,11 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "ross ice shelf": 300_000,
   "king william island": 100_000,
   "begwena": 200_000,
+  "english channel": 160_000,
+  "pannonia (?)" : 120_000,
+  "alföld (great hungarian plain) (?)": 70_000,
+  "(northwestern) roman britain (?)": 150_000,
+  "tyrrhenian sea": 170_000,
 }
 
 

@@ -116,7 +116,7 @@ Adolf Eichmann
 Mungo Park
 Willem Barentsz
 René-Robert Cavelier, Sieur de La Salle
-Atilla the Hun
+Attila
 Hannibal Barca
 Mithridates VI of Pontus
 Pompey the Great
@@ -147,7 +147,6 @@ Pliny the Elder
 Archimedes
 Socrates
 Amelia Earhart
-Ayrton Senna
 Vincent van Gogh
 Virginia Woolf
 Alan Turing
@@ -215,7 +214,7 @@ Giordano Bruno
 Ibn Sina
 Pocahontas
 Mahomet Weyonomon
-Omai
+Mai (Ra'iatean man)
 William Adams
 Lafcadio Hearn
 Olaudah Equiano
@@ -244,7 +243,6 @@ Mustafa Kemal Atatürk
 Pedro II of Brazil
 William Walker (filibuster)
 Lope de Aguirre
-Henry Hudson
 Alexander Selkirk
 Hildergard of Bingen
 Joseph Stalin
@@ -289,3 +287,8 @@ Queen Gudit
 Baldwin I of Jerusalem
 Jeronimus Cornelisz
 Gertrude Bell
+Glenn Miller
+Maimonedes
+Hugo Grotius
+Robert Capa
+Vladimir Lenin

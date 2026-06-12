@@ -15,6 +15,7 @@ Antoine de Saint-Exupéry
 Antonio Carlos Jobim
 Antônio Carlos Jobim
 Archimedes
+Atilla the Hun
 Blackbeard
 Bloody White Baron
 Bruce Lee
@@ -26,6 +27,7 @@ Chandragupta Maurya
 Charles I of Austria
 Charles XIV of Sweden
 Chien-Shiung Wu
+Cicero
 Cleopatra
 Cnut
 Constantinus
@@ -42,6 +44,8 @@ Emmy Noether
 Enrico Fermi
 Eratosthenes
 Ernest Rutherford
+Ernest Shackleton
+Ettore Majorana
 Eugène Eyraud
 Eva Perón
 Father Damien
@@ -50,6 +54,7 @@ Ferdinand Marcos
 Francisco de Miranda
 Gaiseric
 Galileo Galilei
+Ganghis Khan
 Genghis Khan
 George Armstrong Custer
 George II
@@ -60,6 +65,7 @@ Gertrude Bell
 Gianni Versace
 Giordano Bruno
 Giuseppe Garibaldi
+Glenn Miller
 Grigori Rasputin
 Hannibal Barca
 Hans Holbein the Younger
@@ -68,9 +74,11 @@ Harry Houdini
 Heath Ledger
 Henry Hudson
 Hernán Cortés
+Herodotus
 Hildegard of Bingen
 Hiram Bingham
 Horatio Nelson
+Hugo Grotius
 Hulegu Khan
 Ibn Battuta
 Idi Amin
@@ -103,6 +111,7 @@ Kamehameha II
 King Alexander of Greece
 King Cnut
 Kofi Annan
+Kublai Khan
 Kurt Gödel
 Leif Erikson
 Leonardo da Vinci
@@ -116,6 +125,8 @@ Ludwig Wittgenstein
 Ludwig von Beethoven
 Mahatma Gandhi
 Mahomet Weyonomon
+Mai (Ra'iatean man)
+Maimonedes
 Malcolm X
 Mansa Musa
 Marc Chagal
@@ -138,6 +149,7 @@ Napoleon Bonaparte
 Niels Henrik Abel
 Nzinga Mbande
 Olaudah Equiano
+Omai
 Oscar Wilde
 Ovid
 Patrice Lumumba
@@ -158,11 +170,13 @@ Rabban Bar Sauma
 Rashid Nezhmetdinov
 Richard I
 Roald Amundsen
+Robert Capa
 Robert Falcon Scott
 Robert Guiscard
 Robert James Fischer
 Rumi
 Saint Boniface
+Saint Patrick
 Salomon August Andree
 Sejong the Great
 Seneca the Younger
@@ -170,10 +184,13 @@ Septimus Severus
 Sigmund Freud
 Sir John Franklin
 Socrates
+Stefan Zweig
 Steve Irwin
 Subrahmanyan Chandrasekhar
+Suleiman the Magnificent
 Sun Yat-sen
 Sylvia Plath
+Thales
 Themistocles
 Timur
 Tom Jobim
@@ -185,6 +202,7 @@ Vincent van Gogh
 Virginia Woolf
 Vitus Bering
 Vivien Leigh
+Vladimir Lenin
 Vladimir Nabokov
 Walter Benjamin
 Wernher von Braun
@@ -193,5 +211,6 @@ William Walker (filibuster)
 William the Silent
 Wolfgang Amadeus Mozart
 Władysław III of Poland
+Zeno of Elea
 Zog I
 baldwin I of Jerusalem

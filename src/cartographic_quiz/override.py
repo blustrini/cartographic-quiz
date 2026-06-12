@@ -50,6 +50,39 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.birth_place = "Lower Lorraine"
             bio.birth_lat = 50.8503
             bio.birth_lon = 4.3517
+        case "Glenn_Miller":
+            bio.death_place = "English Channel"
+            bio.death_lat = 50.2
+            bio.death_lon = 0.0
+        case "Attila":
+            bio.birth_place = "Pannonia (?)"
+            bio.birth_lat = 47.45
+            bio.birth_lon = 18.6
+
+            bio.death_place = "Alföld (Great Hungarian Plain) (?)"
+            bio.death_lat = 47.5
+            bio.death_lon = 19.9167
+        case "Thales_of_Miletus":
+            bio.death_place = bio.birth_place
+            bio.death_lat = bio.birth_lat
+            bio.death_lon = bio.birth_lon
+        case "Zeno_of_Elea":
+            bio.death_place = "Syracuse"
+        case "Saint_Patrick":
+            bio.birth_date = "c. 385"
+            bio.birth_lat = 54.2
+            bio.birth_lon = -3.0
+            bio.birth_place = "(Northwestern) Roman Britain (?)"
+            bio.death_date = "17th March c. 461"
+            bio.death_lat = 54.325
+            bio.death_lon = -5.717
+            bio.death_place = "Saul"
+        case "Ettore_Majorana":
+            bio.death_place = "Tyrrhenian Sea"
+            bio.death_date = "25 March 1938 (?)"
+            bio.death_lat = 39.5
+            bio.death_lon = 13.5
+
         case _:
             matched = False
 
