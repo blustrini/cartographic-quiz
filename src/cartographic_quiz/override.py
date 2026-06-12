@@ -86,6 +86,17 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.birth_place = "near Rome"
             bio.birth_lat = 41.8967
             bio.birth_lon = 12.4822
+        case "Bernardo_the_Japanese":
+            print(bio)
+            bio.birth_place = "Kagoshima"
+            bio.birth_lat = 31.5967
+            bio.birth_lon = 130.5578
+            bio.birth_date = "c. 1500s"
+
+            bio.death_place = "Coimbra"
+            bio.death_date = "February 1557"
+            bio.death_lat = 40.2089
+            bio.death_lon = -8.4191
 
         case _:
             matched = False

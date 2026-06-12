@@ -261,6 +261,17 @@
   "Baroness Eloise Wehrborn de Wagner-Bosquet": {
     "status": "bad"
   },
+  "Bernardo the Japanese": {
+    "birth_date": "c. 1500s",
+    "birth_lat": 31.5967,
+    "birth_lon": 130.5578,
+    "birth_place": "Kagoshima",
+    "death_date": "February 1557",
+    "death_lat": 40.2089,
+    "death_lon": -8.4191,
+    "death_place": "Coimbra",
+    "status": "ok"
+  },
   "Blackbeard": {
     "birth_date": "c. 1680",
     "birth_lat": 51.45361,
@@ -341,6 +352,17 @@
     "death_place": "Porto Ercole",
     "status": "ok"
   },
+  "Casanova": {
+    "birth_date": "1725-04-02",
+    "birth_lat": 45.4375,
+    "birth_lon": 12.33583,
+    "birth_place": "Venice",
+    "death_date": "1798-06-04",
+    "death_lat": 50.60389,
+    "death_lon": 13.74639,
+    "death_place": "Dux",
+    "status": "ok"
+  },
   "Catherine the Great": {
     "birth_date": "1729-05-02",
     "birth_lat": 53.4325,
@@ -361,6 +383,17 @@
     "death_lat": 12.97,
     "death_lon": 77.5,
     "death_place": "Karnataka",
+    "status": "ok"
+  },
+  "Charles Edward Stuart": {
+    "birth_date": "1720-12-31",
+    "birth_lat": 41.898521,
+    "birth_lon": 12.482733,
+    "birth_place": "Palazzo Muti",
+    "death_date": "1788-01-30",
+    "death_lat": 41.898521,
+    "death_lon": 12.482733,
+    "death_place": "Palazzo Muti, Rome, Papal States",
     "status": "ok"
   },
   "Charles I of Austria": {
@@ -408,6 +441,17 @@
     "death_lat": 40.7128,
     "death_lon": -74.0061,
     "death_place": "New York City",
+    "status": "ok"
+  },
+  "Chopin": {
+    "birth_date": "1810-03-01",
+    "birth_lat": 52.25,
+    "birth_lon": 20.317,
+    "birth_place": "\u017belazowa Wola",
+    "death_date": "1849-10-17",
+    "death_lat": 48.8534951,
+    "death_lon": 2.3483915,
+    "death_place": "Paris, France",
     "status": "ok"
   },
   "Cicero": {
@@ -752,6 +796,17 @@
     "death_lat": 45.57028,
     "death_lon": -107.4275,
     "death_place": "Little Bighorn",
+    "status": "ok"
+  },
+  "George Frideric Handel": {
+    "birth_date": "1685-03-05",
+    "birth_lat": 51.48278,
+    "birth_lon": 11.96972,
+    "birth_place": "Halle",
+    "death_date": "1759-04-14",
+    "death_lat": 51.49472,
+    "death_lon": -0.13528,
+    "death_place": "Westminster",
     "status": "ok"
   },
   "George II": {
@@ -1748,6 +1803,17 @@
     "death_place": "Cerro de las Campanas",
     "status": "ok"
   },
+  "Mikhail Bakunin": {
+    "birth_date": "1814-05-30",
+    "birth_lat": 56.93778,
+    "birth_lon": 34.45278,
+    "birth_place": "Pryamukhino",
+    "death_date": "1876-07-01",
+    "death_lat": 46.94806,
+    "death_lon": 7.4475,
+    "death_place": "Bern",
+    "status": "ok"
+  },
   "Mikhail Bulgakov": {
     "birth_date": "1891-05-15",
     "birth_lat": 50.45,
@@ -2084,6 +2150,17 @@
     "death_place": "Baghdad",
     "status": "ok"
   },
+  "Rabban Sauma": {
+    "birth_date": "c. 1220",
+    "birth_lat": 24.6792177,
+    "birth_lon": 109.6974837,
+    "birth_place": "Zhongdu",
+    "death_date": "January 1294",
+    "death_lat": 33.31528,
+    "death_lon": 44.36611,
+    "death_place": "Baghdad",
+    "status": "ok"
+  },
   "Rashid Nazhethdinov": {
     "status": "bad"
   },
@@ -2113,6 +2190,17 @@
     "death_lat": 45.6558,
     "death_lon": 0.9814,
     "death_place": "Ch\u00e2lus",
+    "status": "ok"
+  },
+  "Richard III of England": {
+    "birth_date": "2 October 1452",
+    "birth_lat": 52.5243,
+    "birth_lon": -0.4362,
+    "birth_place": "Fotheringhay Castle",
+    "death_date": "22 August 1485",
+    "death_lat": 52.59111,
+    "death_lon": -1.41028,
+    "death_place": "Bosworth Field",
     "status": "ok"
   },
   "Roald Amundsen": {
@@ -2385,6 +2473,17 @@
     "death_place": "Magnesia on the Maeander",
     "status": "ok"
   },
+  "Thomas Becket": {
+    "birth_date": "c. 1119",
+    "birth_lat": 51.5141,
+    "birth_lon": -0.0937,
+    "birth_place": "Cheapside",
+    "death_date": "29 December 1170",
+    "death_lat": 51.2797,
+    "death_lon": 1.0831,
+    "death_place": "Canterbury Cathedral",
+    "status": "ok"
+  },
   "Timur": {
     "birth_date": "1320s",
     "birth_lat": 38.833,
@@ -2465,6 +2564,17 @@
     "death_place": "Bishapur",
     "status": "ok"
   },
+  "Valerian emperor": {
+    "birth_date": "c. 199",
+    "birth_lat": 41.8967,
+    "birth_lon": 12.4822,
+    "birth_place": "near Rome",
+    "death_date": "260 AD",
+    "death_lat": 29.77778,
+    "death_lon": 51.57083,
+    "death_place": "Bishapur",
+    "status": "ok"
+  },
   "Vercingetorix": {
     "birth_date": "c. 82 BC",
     "birth_lat": 45.70833,
@@ -2475,6 +2585,9 @@
     "death_lon": 12.48278,
     "death_place": "Rome",
     "status": "ok"
+  },
+  "Vespasian": {
+    "status": "bad"
   },
   "Vincent van Gogh": {
     "birth_date": "1853-03-30",
