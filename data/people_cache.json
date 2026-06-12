@@ -10,6 +10,17 @@
     "death_place": "Ayalon Prison",
     "status": "ok"
   },
+  "Adrian IV": {
+    "birth_date": "c. 1100",
+    "birth_lat": 51.701,
+    "birth_lon": -0.416,
+    "birth_place": "Abbots Langley",
+    "death_date": "1 September 1159",
+    "death_lat": 41.74222,
+    "death_lon": 13.15833,
+    "death_place": "Anagni",
+    "status": "ok"
+  },
   "Akbar the Great": {
     "birth_date": "15 October 1542",
     "birth_lat": 25.36361,
@@ -98,6 +109,17 @@
     "death_place": "Babylon",
     "status": "ok"
   },
+  "Ali ibn abi talib": {
+    "birth_date": "600 CE",
+    "birth_lat": 21.4225,
+    "birth_lon": 39.82333,
+    "birth_place": "Mecca",
+    "death_date": "661 CE",
+    "death_lat": 41.3327156,
+    "death_lon": 69.1088364,
+    "death_place": "Ramadan",
+    "status": "ok"
+  },
   "Amelia Earhart": {
     "birth_date": "1897-07-24",
     "birth_lat": 39.5625,
@@ -107,6 +129,17 @@
     "death_lat": 0.0,
     "death_lon": -160.0,
     "death_place": "Pacific Ocean",
+    "status": "ok"
+  },
+  "Andrew Bonar Law": {
+    "birth_date": "1858-09-16",
+    "birth_lat": 46.633333,
+    "birth_lon": -64.866667,
+    "birth_place": "Kingston",
+    "death_date": "1923-10-30",
+    "death_lat": 51.50722,
+    "death_lon": -0.1275,
+    "death_place": "London",
     "status": "ok"
   },
   "Anne of Cleves": {
@@ -186,6 +219,17 @@
     "death_place": "Syracuse, Sicily",
     "status": "ok"
   },
+  "Arthur Wellesley Duke of Wellington": {
+    "birth_date": "1807-02-03",
+    "birth_lat": 51.5206,
+    "birth_lon": -0.1477,
+    "birth_place": "Harley Street",
+    "death_date": "1884-08-13",
+    "death_lat": 50.8288,
+    "death_lon": -0.1411,
+    "death_place": "Brighton railway station",
+    "status": "ok"
+  },
   "Atilla": {
     "status": "bad"
   },
@@ -202,6 +246,17 @@
   },
   "Attila the Hun": {
     "status": "bad"
+  },
+  "Babur": {
+    "birth_date": "1483-02-14",
+    "birth_lat": 40.78333,
+    "birth_lon": 72.33389,
+    "birth_place": "Andijan",
+    "death_date": "1530-12-26",
+    "death_lat": 27.18,
+    "death_lon": 78.02,
+    "death_place": "Agra",
+    "status": "ok"
   },
   "Baroness Eloise Wehrborn de Wagner-Bosquet": {
     "status": "bad"
@@ -275,6 +330,17 @@
     "death_place": "New York City, US",
     "status": "ok"
   },
+  "Caravaggio": {
+    "birth_date": "29 September 1571",
+    "birth_lat": 45.46694,
+    "birth_lon": 9.19,
+    "birth_place": "Milan",
+    "death_date": "1610-07-18",
+    "death_lat": 42.39389,
+    "death_lon": 11.20361,
+    "death_place": "Porto Ercole",
+    "status": "ok"
+  },
   "Catherine the Great": {
     "birth_date": "1729-05-02",
     "birth_lat": 53.4325,
@@ -307,6 +373,20 @@
     "death_lon": -16.917,
     "death_place": "Funchal, Madeira",
     "status": "ok"
+  },
+  "Charles V": {
+    "birth_date": "1500-02-24",
+    "birth_lat": 51.0592,
+    "birth_lon": 3.71574,
+    "birth_place": "Prinsenhof, Ghent",
+    "death_date": "1558-09-21",
+    "death_lat": 40.11417,
+    "death_lon": -5.73889,
+    "death_place": "Monastery of Yuste",
+    "status": "ok"
+  },
+  "Charles V Hapsburg": {
+    "status": "bad"
   },
   "Charles XIV of Sweden": {
     "birth_date": "1763-01-26",
@@ -641,6 +721,17 @@
     "death_place": "Xingqing",
     "status": "ok"
   },
+  "General Gordon": {
+    "birth_date": "28 January 1833",
+    "birth_lat": 51.488,
+    "birth_lon": 0.063,
+    "birth_place": "Woolwich",
+    "death_date": "1885-01-26",
+    "death_lat": 15.6,
+    "death_lon": 32.5,
+    "death_place": "Khartoum",
+    "status": "ok"
+  },
   "Genghis Khan": {
     "birth_date": "c. 1162",
     "birth_lat": 48.7833,
@@ -806,6 +897,17 @@
     "death_place": "Stamford Bridge, Yorkshire",
     "status": "ok"
   },
+  "Harold Godwinson": {
+    "birth_date": "c. 1022/23",
+    "birth_lat": 51.2,
+    "birth_lon": -2.0,
+    "birth_place": "Wessex",
+    "death_date": "14 October 1066",
+    "death_lat": 50.91194,
+    "death_lon": 0.4875,
+    "death_place": "Senlac Hill",
+    "status": "ok"
+  },
   "Harry Houdini": {
     "birth_date": "1874-03-24",
     "birth_lat": 47.4925,
@@ -837,6 +939,17 @@
     "death_lat": 53.5,
     "death_lon": -80.5,
     "death_place": "James Bay",
+    "status": "ok"
+  },
+  "Herbert Kitchener, 1st Earl Kitchener": {
+    "birth_date": "1850-06-24",
+    "birth_lat": 52.447,
+    "birth_lon": -9.486,
+    "birth_place": "Gunsborough Villa, north of",
+    "death_date": "1916-06-05",
+    "death_lat": 59.11775,
+    "death_lon": -3.397383,
+    "death_place": "HMS",
     "status": "ok"
   },
   "Hern\u00e1n Cort\u00e9s": {
@@ -930,6 +1043,17 @@
     "death_place": "Marrakesh",
     "status": "ok"
   },
+  "Ibn Khaldun": {
+    "birth_date": "27 May 1332",
+    "birth_lat": 36.80639,
+    "birth_lon": 10.18167,
+    "birth_place": "Tunis",
+    "death_date": "1406-03-17",
+    "death_lat": 30.04444,
+    "death_lon": 31.23583,
+    "death_place": "Cairo",
+    "status": "ok"
+  },
   "Idi Amin": {
     "birth_date": "1928-05-30",
     "birth_lat": 0.31361,
@@ -972,6 +1096,17 @@
     "death_lat": 43.31861,
     "death_lon": 11.33056,
     "death_place": "Siena",
+    "status": "ok"
+  },
+  "J. R. R. Tolkien": {
+    "birth_date": "1892-01-03",
+    "birth_lat": -29.117,
+    "birth_lon": 26.217,
+    "birth_place": "Bloemfontein",
+    "death_date": "1973-09-02",
+    "death_lat": 50.72,
+    "death_lon": -1.88,
+    "death_place": "Bournemouth",
     "status": "ok"
   },
   "James Clerk Maxwell": {
@@ -1178,6 +1313,17 @@
     "death_place": "Rome",
     "status": "ok"
   },
+  "Julian (emperor)": {
+    "birth_date": "331",
+    "birth_lat": 41.0125,
+    "birth_lon": 28.98,
+    "birth_place": "Constantinople",
+    "death_date": "26 June 363",
+    "death_lat": 34.19833,
+    "death_lon": 43.87417,
+    "death_place": "Samarra",
+    "status": "ok"
+  },
   "Julian the Apostate": {
     "birth_date": "331",
     "birth_lat": 41.0125,
@@ -1254,6 +1400,9 @@
     "death_lon": -2.1969,
     "death_place": "Shaftesbury",
     "status": "ok"
+  },
+  "Kitchener": {
+    "status": "bad"
   },
   "Kofi Annan": {
     "birth_date": "1938-04-08",
@@ -1442,6 +1591,17 @@
     "death_place": "Fustat",
     "status": "ok"
   },
+  "Maimonides": {
+    "birth_date": "4 April 1138",
+    "birth_lat": 37.89,
+    "birth_lon": -4.78,
+    "birth_place": "C\u00f3rdoba",
+    "death_date": "12 December 1204",
+    "death_lat": 30.005,
+    "death_lon": 31.2375,
+    "death_place": "Fustat",
+    "status": "ok"
+  },
   "Malcolm X": {
     "birth_date": "1925-05-19",
     "birth_lat": 41.25861,
@@ -1555,6 +1715,17 @@
     "death_place": "Fotheringhay Castle",
     "status": "ok"
   },
+  "Matteo Ricci": {
+    "birth_date": "6 October 1552",
+    "birth_lat": 43.30028,
+    "birth_lon": 13.45333,
+    "birth_place": "Macerata",
+    "death_date": "1610-05-11",
+    "death_lat": 39.9057136,
+    "death_lon": 116.3912972,
+    "death_place": "Beijing,",
+    "status": "ok"
+  },
   "Maximilian I": {
     "birth_date": "1832-07-06",
     "birth_lat": 48.184516,
@@ -1619,6 +1790,17 @@
     "death_lat": 22.5675,
     "death_lon": 88.37,
     "death_place": "Calcutta",
+    "status": "ok"
+  },
+  "Muhammad Ali Pasha": {
+    "birth_date": "4 March 1769",
+    "birth_lat": 42.0460611,
+    "birth_lon": 19.4938464,
+    "birth_place": "Ottoman Albania",
+    "death_date": "1849-08-02",
+    "death_lat": 31.199194,
+    "death_lon": 29.868639,
+    "death_place": "Ras el-Tin Palace",
     "status": "ok"
   },
   "Mungo Park": {
@@ -1836,6 +2018,17 @@
     "death_place": "Windsor Castle",
     "status": "ok"
   },
+  "Ptolemy I": {
+    "birth_date": "c. 369/68 BC",
+    "birth_lat": 40.5,
+    "birth_lon": 21.6667,
+    "birth_place": "Eordaea",
+    "death_date": "282 BC",
+    "death_lat": 31.1975,
+    "death_lon": 29.8925,
+    "death_place": "Alexandria",
+    "status": "ok"
+  },
   "Pythagoras": {
     "birth_date": "c. 570 BC",
     "birth_lat": 37.75,
@@ -2011,6 +2204,17 @@
     "death_lat": 54.325,
     "death_lon": -5.717,
     "death_place": "Saul",
+    "status": "ok"
+  },
+  "Saint Paul": {
+    "birth_date": "5 AD",
+    "birth_lat": 36.9165,
+    "birth_lon": 34.8951,
+    "birth_place": "Tarsus",
+    "death_date": "65 AD",
+    "death_lat": 41.89333,
+    "death_lon": 12.48278,
+    "death_place": "Rome",
     "status": "ok"
   },
   "Salomon August Andree": {
@@ -2192,6 +2396,17 @@
     "death_place": "Farab",
     "status": "ok"
   },
+  "Tolkien": {
+    "birth_date": "1892-01-03",
+    "birth_lat": -29.117,
+    "birth_lon": 26.217,
+    "birth_place": "Bloemfontein",
+    "death_date": "1973-09-02",
+    "death_lat": 50.72,
+    "death_lon": -1.88,
+    "death_place": "Bournemouth",
+    "status": "ok"
+  },
   "Tom Jobim": {
     "birth_date": "1927-01-25",
     "birth_lat": -22.91111,
@@ -2234,6 +2449,20 @@
     "death_lat": 50.0875,
     "death_lon": 14.42139,
     "death_place": "Prague",
+    "status": "ok"
+  },
+  "Valerian": {
+    "status": "bad"
+  },
+  "Valerian (emperor)": {
+    "birth_date": "c. 199",
+    "birth_lat": 41.8967,
+    "birth_lon": 12.4822,
+    "birth_place": "near Rome",
+    "death_date": "260 AD",
+    "death_lat": 29.77778,
+    "death_lon": 51.57083,
+    "death_place": "Bishapur",
     "status": "ok"
   },
   "Vercingetorix": {

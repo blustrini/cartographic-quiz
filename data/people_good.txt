@@ -1,4 +1,5 @@
 Adolf Eichmann
+Adrian IV
 Akbar the Great
 Alaric I
 Albert Einstein
@@ -7,7 +8,9 @@ Alexander Hamilton
 Alexander Kerensky
 Alexander Selkirk
 Alexander the Great
+Ali ibn abi talib
 Amelia Earhart
+Andrew Bonar Law
 Anne of Cleves
 Anne of Denmark
 Antoine de Saint Exupery
@@ -15,16 +18,20 @@ Antoine de Saint-Exupéry
 Antonio Carlos Jobim
 Antônio Carlos Jobim
 Archimedes
+Arthur Wellesley Duke of Wellington
 Atilla the Hun
+Babur
 Blackbeard
 Bloody White Baron
 Bruce Lee
 Buddy Holly
 Butch Cassidy
 Capablanca
+Caravaggio
 Catherine the Great
 Chandragupta Maurya
 Charles I of Austria
+Charles V
 Charles XIV of Sweden
 Chien-Shiung Wu
 Cicero
@@ -55,6 +62,7 @@ Francisco de Miranda
 Gaiseric
 Galileo Galilei
 Ganghis Khan
+General Gordon
 Genghis Khan
 George Armstrong Custer
 George II
@@ -70,9 +78,11 @@ Grigori Rasputin
 Hannibal Barca
 Hans Holbein the Younger
 Harald Hadrada
+Harold Godwinson
 Harry Houdini
 Heath Ledger
 Henry Hudson
+Herbert Kitchener, 1st Earl Kitchener
 Hernán Cortés
 Herodotus
 Hildegard of Bingen
@@ -81,10 +91,12 @@ Horatio Nelson
 Hugo Grotius
 Hulegu Khan
 Ibn Battuta
+Ibn Khaldun
 Idi Amin
 Irenaeus
 Isadora Duncan
 Italo Calvino
+J. R. R. Tolkien
 James Clerk Maxwell
 James Francis Edward Stuart
 James Joyce
@@ -103,6 +115,7 @@ Josef Mengele
 Joseph Conrad
 Joseph Stalin
 Josephus
+Julian (emperor)
 Julian the Apostate
 Julius Caesar
 Kahlil Gibran
@@ -127,6 +140,7 @@ Mahatma Gandhi
 Mahomet Weyonomon
 Mai (Ra'iatean man)
 Maimonedes
+Maimonides
 Malcolm X
 Mansa Musa
 Marc Chagal
@@ -137,12 +151,14 @@ Marie Curie
 Mark Antony
 Martin Luther King Jr.
 Mary, Queen of Scots
+Matteo Ricci
 Maximilian I
 Maximilian I of Mexico
 Mikhail Bulgakov
 Mithridates VI of Pontus
 Mother Teresa
 Mother Theresa
+Muhammad Ali Pasha
 Mungo Park
 Mustafa Kemal Atatürk
 Napoleon Bonaparte
@@ -162,6 +178,7 @@ Pompey the Great
 Pope Francis
 Prince Metternich
 Prince Philip, Duke of Edinburgh
+Ptolemy I
 Pythagoras
 Queen Gudit
 Queen Sālote Tupou III
@@ -177,6 +194,7 @@ Robert James Fischer
 Rumi
 Saint Boniface
 Saint Patrick
+Saint Paul
 Salomon August Andree
 Sejong the Great
 Seneca the Younger
@@ -193,10 +211,12 @@ Sylvia Plath
 Thales
 Themistocles
 Timur
+Tolkien
 Tom Jobim
 Toussaint Louverture
 Tupaia
 Tycho Brahe
+Valerian (emperor)
 Vercingetorix
 Vincent van Gogh
 Virginia Woolf

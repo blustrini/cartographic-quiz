@@ -82,6 +82,10 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.death_date = "25 March 1938 (?)"
             bio.death_lat = 39.5
             bio.death_lon = 13.5
+        case "Valerian_(emperor)":
+            bio.birth_place = "near Rome"
+            bio.birth_lat = 41.8967
+            bio.birth_lon = 12.4822
 
         case _:
             matched = False

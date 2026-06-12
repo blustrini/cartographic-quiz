@@ -103,6 +103,7 @@ COUNTRY_LEVEL_NAMES = {
     "alföld (great hungarian plain) (?)",
     "(northwestern) roman britain (?)",
     "tyrrhenian sea",
+    "near rome",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -153,6 +154,7 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "alföld (great hungarian plain) (?)": 70_000,
   "(northwestern) roman britain (?)": 150_000,
   "tyrrhenian sea": 170_000,
+  "near rome": 100_000,
 }
 
 
