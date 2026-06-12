@@ -94,6 +94,8 @@ COUNTRY_LEVEL_NAMES = {
     "kingdom of england",
     "ross ice shelf",
     "king william island",
+    "begwena",
+    "lower lorraine",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -137,6 +139,7 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "north atlantic": 1_700_000,
   "ross ice shelf": 300_000,
   "king william island": 100_000,
+  "begwena": 200_000,
 }
 
 

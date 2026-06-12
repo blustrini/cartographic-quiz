@@ -76,6 +76,17 @@
     "death_place": "New York City",
     "status": "ok"
   },
+  "Alexander Selkirk": {
+    "birth_date": "1676",
+    "birth_lat": 56.214,
+    "birth_lon": -2.941,
+    "birth_place": "Lower Largo",
+    "death_date": "13 December 1721",
+    "death_lat": 5.1,
+    "death_lon": -1.25,
+    "death_place": "Cape Coast",
+    "status": "ok"
+  },
   "Alexander the Great": {
     "birth_date": "21 July 356 BC",
     "birth_lat": 40.754669,
@@ -635,6 +646,17 @@
     "death_place": "Balham",
     "status": "ok"
   },
+  "Gertrude Bell": {
+    "birth_date": "1868-07-14",
+    "birth_lat": 54.9,
+    "birth_lon": -1.52,
+    "birth_place": "Washington New Hall",
+    "death_date": "1926-07-12",
+    "death_lat": 33.31528,
+    "death_lon": 44.36611,
+    "death_place": "Baghdad",
+    "status": "ok"
+  },
   "Gianni Versace": {
     "birth_date": "1946-12-02",
     "birth_lat": 38.11139,
@@ -699,6 +721,17 @@
     "death_lat": 51.5074456,
     "death_lon": -0.1277653,
     "death_place": "London, England",
+    "status": "ok"
+  },
+  "Harald Hadrada": {
+    "birth_date": "c. 1015",
+    "birth_lat": 60.2917,
+    "birth_lon": 10.0488,
+    "birth_place": "Ringerike",
+    "death_date": "1066-09-25",
+    "death_lat": 53.99,
+    "death_lon": -0.91167,
+    "death_place": "Stamford Bridge, Yorkshire",
     "status": "ok"
   },
   "Harry Houdini": {
@@ -903,6 +936,17 @@
     "death_lat": -11.65,
     "death_lon": 166.9,
     "death_place": "Vanikoro",
+    "status": "ok"
+  },
+  "Jeronimus Cornelisz": {
+    "birth_date": "c. 1598",
+    "birth_lat": 53.2,
+    "birth_lon": 5.783,
+    "birth_place": "Leeuwarden",
+    "death_date": "1629-10-02",
+    "death_lat": -28.467,
+    "death_lon": 113.7,
+    "death_place": "Long Island",
     "status": "ok"
   },
   "Joan of Arc": {
@@ -1665,6 +1709,17 @@
     "death_place": "Croton",
     "status": "ok"
   },
+  "Queen Gudit": {
+    "birth_date": "c. 940 A.D.",
+    "birth_lat": 12.0356,
+    "birth_lon": 39.0472,
+    "birth_place": "Begwena",
+    "death_date": "1000 AD",
+    "death_lat": 12.0356,
+    "death_lon": 39.0472,
+    "death_place": "Begwena",
+    "status": "ok"
+  },
   "Queen S\u0101lote Tupou III": {
     "birth_date": "1900-03-13",
     "birth_lat": -21.13139,
@@ -1685,6 +1740,17 @@
     "death_lat": 50.75056,
     "death_lon": -1.26972,
     "death_place": "Osborne House",
+    "status": "ok"
+  },
+  "Rabban Bar Sauma": {
+    "birth_date": "c. 1220",
+    "birth_lat": 24.6792177,
+    "birth_lon": 109.6974837,
+    "birth_place": "Zhongdu",
+    "death_date": "January 1294",
+    "death_lat": 33.31528,
+    "death_lon": 44.36611,
+    "death_place": "Baghdad",
     "status": "ok"
   },
   "Rashid Nazhethdinov": {
@@ -2062,6 +2128,17 @@
     "death_place": "Alexandria, Virginia",
     "status": "ok"
   },
+  "William Adams": {
+    "birth_date": "1564-09-24",
+    "birth_lat": 51.385,
+    "birth_lon": 0.55,
+    "birth_place": "Gillingham, Kent",
+    "death_date": "1620-05-16",
+    "death_lat": 33.36806,
+    "death_lon": 129.55361,
+    "death_place": "Hirado",
+    "status": "ok"
+  },
   "William Walker (filibuster)": {
     "birth_date": "1824-05-08",
     "birth_lat": 36.16222,
@@ -2115,6 +2192,17 @@
     "death_lat": 48.87,
     "death_lon": 2.22,
     "death_place": "Suresnes",
+    "status": "ok"
+  },
+  "baldwin I of Jerusalem": {
+    "birth_date": "1060",
+    "birth_lat": 50.8503,
+    "birth_lon": 4.3517,
+    "birth_place": "Lower Lorraine",
+    "death_date": "1118-04-02",
+    "death_lat": 31.132072,
+    "death_lon": 33.803376,
+    "death_place": "Al-Arish",
     "status": "ok"
   }
 }

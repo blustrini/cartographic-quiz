@@ -41,6 +41,15 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.death_place = "Floreana Island"
             bio.death_lat = -1.2975
             bio.death_lon = -90.434167
+        case "Gudit":
+            bio.birth_date = "c. 940 A.D."
+            bio.death_place = bio.birth_place
+            bio.death_lat = bio.birth_lat
+            bio.death_lon = bio.birth_lon
+        case "Baldwin_I_of_Jerusalem":
+            bio.birth_place = "Lower Lorraine"
+            bio.birth_lat = 50.8503
+            bio.birth_lon = 4.3517
         case _:
             matched = False
 

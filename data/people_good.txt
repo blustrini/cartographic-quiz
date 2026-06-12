@@ -5,6 +5,7 @@ Albert Einstein
 Alex Salmond
 Alexander Hamilton
 Alexander Kerensky
+Alexander Selkirk
 Alexander the Great
 Amelia Earhart
 Anne of Cleves
@@ -55,12 +56,14 @@ George II
 George II of Great Britain
 George Orwell
 Georgi Markov
+Gertrude Bell
 Gianni Versace
 Giordano Bruno
 Giuseppe Garibaldi
 Grigori Rasputin
 Hannibal Barca
 Hans Holbein the Younger
+Harald Hadrada
 Harry Houdini
 Heath Ledger
 Henry Hudson
@@ -79,6 +82,7 @@ James Francis Edward Stuart
 James Joyce
 James Wolfe
 Jean-François de Lapérouse
+Jeronimus Cornelisz
 Joan of Arc
 Joao Gilberto
 Johan Sebastian Bach
@@ -147,8 +151,10 @@ Pope Francis
 Prince Metternich
 Prince Philip, Duke of Edinburgh
 Pythagoras
+Queen Gudit
 Queen Sālote Tupou III
 Queen Victoria I
+Rabban Bar Sauma
 Rashid Nezhmetdinov
 Richard I
 Roald Amundsen
@@ -182,8 +188,10 @@ Vivien Leigh
 Vladimir Nabokov
 Walter Benjamin
 Wernher von Braun
+William Adams
 William Walker (filibuster)
 William the Silent
 Wolfgang Amadeus Mozart
 Władysław III of Poland
 Zog I
+baldwin I of Jerusalem
