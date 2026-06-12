@@ -70,6 +70,9 @@ NON_PLACE_SINGLETONS = {
     "new style",
     "near the",
     "near",
+    "approximately",
+    "approx",
+    "deme",
 }
 ROMAN_NUMERAL_TOKEN = re.compile(r"^[ivxlcdm]+$", flags=re.IGNORECASE)
 NON_PLACE_TERM_PATTERN = re.compile(

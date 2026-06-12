@@ -1,6 +1,6 @@
 Napoleon Bonaparte
 Che Guevara
-Maximilian I
+Maximilian I of Mexico
 Toussaint Louverture
 Leon Trotsky
 Paul Gauguin
@@ -21,7 +21,6 @@ Ho Chi Minh
 Cyrus the Great
 Eva Perón
 Genghis Khan
-Hiram Bingham
 Rudyard Kipling
 George Orwell
 Mata Hari
@@ -39,7 +38,6 @@ Gerhard Mercator
 Saint Patrick
 John Cabot
 Thomas Paine
-King Alexander of Greece
 Charlemagne
 Akbar the Great
 Leonardo da Vinci
@@ -74,7 +72,6 @@ Rudolf Nureyev
 Father Damien
 Zog I
 Francisco de Miranda
-Alexander Kerensky
 Marcus Aurelius
 Freddie Mercury
 Karl Marx
@@ -124,7 +121,7 @@ Hannibal Barca
 Mithridates VI of Pontus
 Pompey the Great
 Marcus Licinius Crassus
-Mark Anthony
+Mark Antony
 Spartacus
 Herodotus
 John F. Kennedy
@@ -249,3 +246,7 @@ William Walker (filibuster)
 Lope de Aguirre
 Henry Hudson
 Alexander Selkirk
+Hildergard of Bingen
+Joseph Stalin
+Antônio Carlos Jobim
+Harry Houdini

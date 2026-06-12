@@ -49,6 +49,8 @@ COUNTRY_LEVEL_NAMES = {
     "hungary",
     "india",
     "indonesia",
+    "iceland",
+    "icelandic commonwealth",
     "iran",
     "iraq",
     "ireland",
@@ -81,6 +83,7 @@ COUNTRY_LEVEL_NAMES = {
     "syria",
     "thailand",
     "turkey",
+    "tajikistan",
     "ukraine",
     "united kingdom",
     "united states",
@@ -88,6 +91,7 @@ COUNTRY_LEVEL_NAMES = {
     "vietnam",
     "wales",
     "james bay",
+    "kingdom of england",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -115,6 +119,7 @@ REGION_LEVEL_NAMES = {
     "mediterranean sea",
     "pacific ocean",
     "atlantic ocean",
+    "greenland",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -152,13 +157,13 @@ def _build_popup(event_kind: str, location_name: str | None) -> str:
         return (
             f"<b>{event_kind}</b><br>"
             f"Place: {place}<br>"
-            "<i>Country-level location only (approximate pin)</i>"
+            "<i>(exact location unknown)</i>"
         )
     if _is_region_level_location(location_name):
         return (
             f"<b>{event_kind}</b><br>"
             f"Place: {place}<br>"
-            "<i>Region-level location only (approximate pin)</i>"
+            "<i>(exact location unknown)</i>"
         )
     return f"<b>{event_kind}</b><br>Place: {place}"
 

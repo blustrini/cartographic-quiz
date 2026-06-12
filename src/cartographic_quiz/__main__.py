@@ -213,9 +213,14 @@ def _build_random_round_profiles(
         needed = target_count - len(rounds)
         selected_names = remaining_names[:needed]
         selected_set = set(selected_names)
-
         remaining_names = [name for name in remaining_names if name not in selected_set]
-        rounds.extend(_build_round_profiles(selected_names, verbose))
+
+        round_profiles = _build_round_profiles(selected_names, verbose)
+        rounds.extend(round_profiles)
+
+        successful_names = [name for _, _, name in round_profiles]
+        unsuccessful_names = [name for name in selected_names if name not in successful_names]
+        print(f"Rejected names: {unsuccessful_names}")
 
     return rounds, target_count
 
@@ -341,7 +346,11 @@ def _build_round_profiles(
             latitude=biography_data.death_lat,
             longitude=biography_data.death_lon,
         )
+
         rounds.append((birth_profile, death_profile, name))
+
+    if len(rounds) != len(names):
+        print("Not all names made it into a round!")
 
     if cache_changed:
         _save_cache(cache)
@@ -567,7 +576,6 @@ def main() -> None:
         seed = random.randint(0, 1000000000000)
     print(f"random seed: {seed}")
     random.seed(seed)
-
 
     if clear_cache:
         removed, missing = _clear_cache_files()

@@ -7,6 +7,11 @@ from geopy.geocoders import Nominatim
 from cartographic_quiz.constants import REQUEST_TIMEOUT_SECONDS
 
 
+HISTORICAL_TRANSLATIONS: dict[str, str] = {
+    "kabasa": "caculo cabaça",
+}
+
+
 HISTORICAL_POLITY_TERMS = (
     "empire",
     "kingdom",
@@ -35,11 +40,12 @@ REGION_CENTROIDS = {
     "caucasus": (42.5, 45.0),
     "balkans": (42.5, 22.0),
     "iberia": (40.2, -3.5),
+    "kingdom of england": (52.6, -1.5)
 }
 
 
 def _geocode_candidates(text: str) -> list[str]:
-    cleaned = text.strip()
+    cleaned = text.strip(' ,')
     if not cleaned:
         return []
 
@@ -129,7 +135,13 @@ def geocode_fallback(text: str) -> tuple[Optional[float], Optional[float]]:
     """Fallback geocoder that trims historical tails if standard lookup fails."""
     geolocator = Nominatim(user_agent="history_proof_final_mapper")
     try:
-        for candidate in _geocode_candidates(text):
+        for original_candidate in _geocode_candidates(text):
+
+            if original_candidate.lower() in HISTORICAL_TRANSLATIONS:
+                candidate = HISTORICAL_TRANSLATIONS[original_candidate.lower()]
+            else:
+                candidate = original_candidate.lower()
+
             centroid_lat, centroid_lon = _region_centroid(candidate)
             if centroid_lat is not None and centroid_lon is not None:
                 return centroid_lat, centroid_lon
