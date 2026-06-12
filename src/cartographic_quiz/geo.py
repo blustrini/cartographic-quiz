@@ -9,6 +9,7 @@ from cartographic_quiz.constants import REQUEST_TIMEOUT_SECONDS
 
 HISTORICAL_TRANSLATIONS: dict[str, str] = {
     "kabasa": "caculo cabaça",
+    "hanyang": "seoul",
 }
 
 

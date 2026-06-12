@@ -67,6 +67,7 @@ Francisco de Miranda
 Gaiseric
 Galileo Galilei
 Ganghis Khan
+Gautama Buddha
 General Gordon
 Genghis Khan
 George Armstrong Custer
@@ -80,6 +81,8 @@ Gianni Versace
 Giordano Bruno
 Giuseppe Garibaldi
 Glenn Miller
+Golda Meir
+Grace Kelly
 Grigori Rasputin
 Hannibal Barca
 Hans Holbein the Younger
@@ -181,6 +184,7 @@ Ovid
 Patrice Lumumba
 Paul Dirac
 Paul Gauguin
+Pedro II
 Pele
 Percy Fawcett
 Pliny the Elder
