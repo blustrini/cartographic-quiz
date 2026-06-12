@@ -1,5 +1,4 @@
 import re
-from dataclasses import dataclass
 from typing import Optional
 
 from bs4 import BeautifulSoup
@@ -8,6 +7,8 @@ from cartographic_quiz.constants import USER_AGENT, WIKIPEDIA_BASE_URL
 from cartographic_quiz.geo import fetch_html, fetch_json, geocode_fallback, get_coordinates_from_wikipedia_url
 
 from . import map_renderer
+from .override import override_biography
+from .models import BiographyData
 
 MONTH_PATTERN = (
     r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|"
@@ -412,24 +413,6 @@ def _resolve_title(name: str) -> Optional[str]:
     return None
 
 
-@dataclass
-class BiographyData:
-    url: str | None = None
-    formatted_name: str | None = None
-    birth_date: Optional[str] = None
-    birth_place: Optional[str] = None
-    birth_lat: Optional[float] = None
-    birth_lon: Optional[float] = None
-    birth_rad_m: Optional[float] = None
-    death_date: Optional[str] = None
-    death_place: Optional[str] = None
-    death_lat: Optional[float] = None
-    death_lon: Optional[float] = None
-    death_rad_m: Optional[float] = None
-    additional_places: Optional[list[str]] = None
-    additional_places_coords: Optional[list[tuple[float, float]]] = None
-
-
 def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[BiographyData]:
     """Scrapes a biography infobox, following hyperlinks to extract robust geographical data."""
     resolved_title = _resolve_title(name)
@@ -562,6 +545,8 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
                         if verbose:
                             print(f"    [Fallback] Geocoding raw location text: '{data.death_place}'")
                         data.death_lat, data.death_lon = geocode_fallback(data.death_place)
+
+    override_biography(data, verbose)
 
     if not data.birth_date or not data.death_date:
         if verbose:

@@ -914,7 +914,15 @@
     "status": "ok"
   },
   "Josephus": {
-    "status": "bad"
+    "birth_date": "c. AD 37",
+    "birth_lat": 31.77889,
+    "birth_lon": 35.22556,
+    "birth_place": "Jerusalem",
+    "death_date": "c. AD 100",
+    "death_lat": 41.9028,
+    "death_lon": 12.4964,
+    "death_place": "Rome",
+    "status": "ok"
   },
   "Julian the Apostate": {
     "birth_date": "331",

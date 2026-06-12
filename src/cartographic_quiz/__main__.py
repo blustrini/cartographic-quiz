@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Sequence
 
 from cartographic_quiz.biography import _is_valid_place_name, scrape_robust_biography
-from cartographic_quiz.override import override_biography
 from cartographic_quiz.constants import DEFAULT_REPEATS_EACH_SIDE
 from cartographic_quiz.map_renderer import generate_life_map, generate_multi_life_map
 from cartographic_quiz.models import CartographicDate
@@ -296,7 +295,6 @@ def _build_round_profiles(
             continue
 
         biography_data = scrape_robust_biography(name, verbose=verbose)
-        override_biography(biography_data, verbose)
 
         if not biography_data:
             cache[name] = {"status": "bad"}
@@ -378,7 +376,6 @@ def _rescan_bad_names(verbose: bool) -> tuple[int, int, int]:
 
     for name in sorted(bad_names):
         biography_data = scrape_robust_biography(name, verbose=verbose)
-        override_biography(biography_data, verbose)
         if not biography_data:
             cache[name] = {"status": "bad"}
             still_bad += 1
