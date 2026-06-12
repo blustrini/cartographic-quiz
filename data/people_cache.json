@@ -142,6 +142,17 @@
     "death_place": "Pacific Ocean",
     "status": "ok"
   },
+  "Andreas Vesalius": {
+    "birth_date": "31 December 1514",
+    "birth_lat": 50.84667,
+    "birth_lon": 4.3525,
+    "birth_place": "Brussels",
+    "death_date": "1564-10-15",
+    "death_lat": 37.8,
+    "death_lon": 20.75,
+    "death_place": "Zakynthos",
+    "status": "ok"
+  },
   "Andrew Bonar Law": {
     "birth_date": "1858-09-16",
     "birth_lat": 46.633333,
@@ -498,6 +509,17 @@
     "death_place": "Shaftesbury",
     "status": "ok"
   },
+  "Constantine the Great": {
+    "birth_date": "27 February 272",
+    "birth_lat": 43.32083,
+    "birth_lon": 21.89583,
+    "birth_place": "Naissus",
+    "death_date": "22 May 337",
+    "death_lat": 40.7625,
+    "death_lon": 29.9175,
+    "death_place": "Achyron,",
+    "status": "ok"
+  },
   "Constantinus": {
     "birth_date": "27 February 272",
     "birth_lat": 43.32083,
@@ -617,6 +639,17 @@
     "death_lat": -1.2975,
     "death_lon": -90.434167,
     "death_place": "Floreana Island",
+    "status": "ok"
+  },
+  "Emile Zola": {
+    "birth_date": "1840-04-02",
+    "birth_lat": 48.8534951,
+    "birth_lon": 2.3483915,
+    "birth_place": "Paris, France",
+    "death_date": "1902-09-29",
+    "death_lat": 48.8534951,
+    "death_lon": 2.3483915,
+    "death_place": "Paris, France",
     "status": "ok"
   },
   "Emmy Noether": {
@@ -1029,6 +1062,9 @@
     "death_place": "Stamford Bridge, Yorkshire",
     "status": "ok"
   },
+  "Harold Bluetooth": {
+    "status": "bad"
+  },
   "Harold Godwinson": {
     "birth_date": "c. 1022/23",
     "birth_lat": 51.2,
@@ -1131,6 +1167,17 @@
     "death_place": "Washington, D.C.",
     "status": "ok"
   },
+  "Ho Chi Minh": {
+    "birth_date": "1890-05-19",
+    "birth_lat": 18.883,
+    "birth_lon": 105.317,
+    "birth_place": "Kim Li\u00ean, Ngh\u1ec7 An",
+    "death_date": "1969-09-02",
+    "death_lat": 21.0,
+    "death_lon": 105.85,
+    "death_place": "Hanoi",
+    "status": "ok"
+  },
   "Horatio Nelson": {
     "birth_date": "1758-09-29",
     "birth_lat": 52.936,
@@ -1195,6 +1242,17 @@
     "death_lat": 21.54333,
     "death_lon": 39.17278,
     "death_place": "Jeddah",
+    "status": "ok"
+  },
+  "Immanuel Kant": {
+    "birth_date": "1724-04-22",
+    "birth_lat": 54.711472,
+    "birth_lon": 20.509306,
+    "birth_place": "K\u00f6nigsberg",
+    "death_date": "1804-02-12",
+    "death_lat": 54.711472,
+    "death_lon": 20.509306,
+    "death_place": "K\u00f6nigsberg, Prussia",
     "status": "ok"
   },
   "Irenaeus": {
@@ -2026,6 +2084,17 @@
     "death_place": "Froland",
     "status": "ok"
   },
+  "Nikola Tesla": {
+    "birth_date": "1856-07-10",
+    "birth_lat": 44.567,
+    "birth_lon": 15.317,
+    "birth_place": "Smiljan",
+    "death_date": "1943-01-07",
+    "death_lat": 40.7127281,
+    "death_lon": -74.0060152,
+    "death_place": "New York City, U.S.",
+    "status": "ok"
+  },
   "Nziga Mbande": {
     "status": "bad"
   },
@@ -2382,6 +2451,17 @@
   "Robert Scott": {
     "status": "bad"
   },
+  "Rudolf Nureyev": {
+    "birth_date": "1938-03-17",
+    "birth_lat": 53.5,
+    "birth_lon": 108.0,
+    "birth_place": "Lake Baikal",
+    "death_date": "1993-01-06",
+    "death_lat": 48.895,
+    "death_lon": 2.2872,
+    "death_place": "Levallois-Perret",
+    "status": "ok"
+  },
   "Rumi": {
     "birth_date": "30 September 1207",
     "birth_lat": 38.033,
@@ -2479,6 +2559,17 @@
     "death_lat": 51.5541,
     "death_lon": -0.1744,
     "death_place": "Hampstead",
+    "status": "ok"
+  },
+  "Sir Francis Drake": {
+    "birth_date": "c. 1540",
+    "birth_lat": 50.545,
+    "birth_lon": -4.15,
+    "birth_place": "Tavistock",
+    "death_date": "1596-01-28",
+    "death_lat": 9.55444,
+    "death_lon": -79.655,
+    "death_place": "off the coast of",
     "status": "ok"
   },
   "Sir John Franklin": {
@@ -2887,6 +2978,17 @@
     "death_lat": 37.06917,
     "death_lon": 15.2875,
     "death_place": "Syracuse",
+    "status": "ok"
+  },
+  "Zheng He": {
+    "birth_date": "1371",
+    "birth_lat": 25.0464,
+    "birth_lon": 102.7094,
+    "birth_place": "Kunming",
+    "death_date": "c. 1433",
+    "death_lat": 9,
+    "death_lon": 73.2,
+    "death_place": "off the coast of Calicut (Kozhikode)",
     "status": "ok"
   },
   "Zog I": {

@@ -128,6 +128,12 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.death_lon = 46.1031
             bio.death_place = "Ur, Sumer (Tell el-Muqayyar, Iraq)"
 
+        case "Zheng_He":
+            bio.death_date = "c. 1433"
+            bio.death_lat = 9
+            bio.death_lon = 73.2
+            bio.death_place = "off the coast of Calicut (Kozhikode)"
+
         case _:
             matched = False
 

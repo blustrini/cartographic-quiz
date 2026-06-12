@@ -11,6 +11,7 @@ Alexander Selkirk
 Alexander the Great
 Ali ibn abi talib
 Amelia Earhart
+Andreas Vesalius
 Andrew Bonar Law
 Anne of Cleves
 Anne of Denmark
@@ -42,6 +43,7 @@ Chopin
 Cicero
 Cleopatra
 Cnut
+Constantine the Great
 Constantinus
 Cyrus the Great
 David Livingstone
@@ -53,6 +55,7 @@ Edward Teach
 Edward VIII
 El Greco
 Eloise Wagner de Bosquet
+Emile Zola
 Emmy Noether
 Enrico Fermi
 Eratosthenes
@@ -99,12 +102,14 @@ Hernán Cortés
 Herodotus
 Hildegard of Bingen
 Hiram Bingham
+Ho Chi Minh
 Horatio Nelson
 Hugo Grotius
 Hulegu Khan
 Ibn Battuta
 Ibn Khaldun
 Idi Amin
+Immanuel Kant
 Irenaeus
 Isadora Duncan
 Italo Calvino
@@ -179,6 +184,7 @@ Mungo Park
 Mustafa Kemal Atatürk
 Napoleon Bonaparte
 Niels Henrik Abel
+Nikola Tesla
 Nzinga Mbande
 Olaudah Equiano
 Omai
@@ -210,6 +216,7 @@ Robert Capa
 Robert Falcon Scott
 Robert Guiscard
 Robert James Fischer
+Rudolf Nureyev
 Rumi
 Saint Boniface
 Saint Patrick
@@ -219,6 +226,7 @@ Sejong the Great
 Seneca the Younger
 Septimus Severus
 Sigmund Freud
+Sir Francis Drake
 Sir John Franklin
 Socrates
 Stanley Kubrik
@@ -255,5 +263,6 @@ William the Silent
 Wolfgang Amadeus Mozart
 Władysław III of Poland
 Zeno of Elea
+Zheng He
 Zog I
 baldwin I of Jerusalem
