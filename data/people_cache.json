@@ -564,6 +564,17 @@
     "death_place": "London, England",
     "status": "ok"
   },
+  "Ea-n\u0101\u1e63ir": {
+    "birth_date": "c. 1800 B.C.",
+    "birth_lat": 26,
+    "birth_lon": 50.2,
+    "birth_place": "Dilmun (?)",
+    "death_date": "c. 1740 B.C.",
+    "death_lat": 30.9633,
+    "death_lon": 46.1031,
+    "death_place": "Ur, Sumer (Tell el-Muqayyar, Iraq)",
+    "status": "ok"
+  },
   "Edward Teach": {
     "birth_date": "c. 1680",
     "birth_lat": 51.45361,
@@ -2479,6 +2490,17 @@
     "death_lat": 37.97,
     "death_lon": 23.72,
     "death_place": "Athens",
+    "status": "ok"
+  },
+  "Stanley Kubrik": {
+    "birth_date": "1928-07-26",
+    "birth_lat": 40.7127281,
+    "birth_lon": -74.0060152,
+    "birth_place": "New York City, U.S.",
+    "death_date": "1999-03-07",
+    "death_lat": 51.783,
+    "death_lon": -0.35,
+    "death_place": "Childwickbury",
     "status": "ok"
   },
   "Stefan Zweig": {

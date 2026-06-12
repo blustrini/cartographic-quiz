@@ -115,6 +115,19 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.death_lon = 35.1107
             bio.death_place = "Hebron, Canaan (West Bank)"
 
+        case "Ea-nāṣir":
+            # Dilmun copper trade era / Babylonian chronology
+            bio.birth_date = "c. 1800 B.C."
+            bio.birth_lat = 26
+            bio.birth_lon = 50.2
+            bio.birth_place = "Dilmun (?)"
+
+            # The city where his house (and his complaint tablet room) was excavated
+            bio.death_date = "c. 1740 B.C."
+            bio.death_lat = 30.9633
+            bio.death_lon = 46.1031
+            bio.death_place = "Ur, Sumer (Tell el-Muqayyar, Iraq)"
+
         case _:
             matched = False
 
