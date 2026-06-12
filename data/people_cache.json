@@ -120,6 +120,17 @@
     "death_place": "Hampton Court Palace",
     "status": "ok"
   },
+  "Antoine de Saint Exupery": {
+    "birth_date": "1900-06-29",
+    "birth_lat": 45.7675,
+    "birth_lon": 4.835,
+    "birth_place": "Lyon",
+    "death_date": "1944-07-31",
+    "death_lat": 40,
+    "death_lon": 5.4,
+    "death_place": "Mediterranean Sea",
+    "status": "ok"
+  },
   "Antoine de Saint-Exup\u00e9ry": {
     "birth_date": "1900-06-29",
     "birth_lat": 45.7675,

@@ -92,7 +92,6 @@ COUNTRY_LEVEL_NAMES = {
     "wales",
     "james bay",
     "kingdom of england",
-    "mali empire",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -121,11 +120,17 @@ REGION_LEVEL_NAMES = {
     "pacific ocean",
     "atlantic ocean",
     "greenland",
+    "mali empire",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
     r"(?:asia|africa|europe|america|americas)\b"
 )
+
+CUSTOM_RADIUS_METES: dict[str, int] = {
+  "pacific ocean": 3_500_000,
+  "mediterranean sea": 450_000,
+}
 
 
 def _is_country_level_location(location_name: str | None) -> bool:
@@ -147,6 +152,8 @@ def _is_approximate_pin_location(location_name: str | None) -> bool:
 
 
 def _approximate_radius_for_location(location_name: str | None) -> int:
+    if location_name and (location_name.lower() in CUSTOM_RADIUS_METES):
+      return CUSTOM_RADIUS_METES[location_name.lower()]
     if _is_region_level_location(location_name):
         return REGION_APPROX_RADIUS_METERS
     return COUNTRY_APPROX_RADIUS_METERS

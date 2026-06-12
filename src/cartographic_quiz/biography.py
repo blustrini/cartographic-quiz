@@ -415,14 +415,17 @@ def _resolve_title(name: str) -> Optional[str]:
 @dataclass
 class BiographyData:
     url: str | None = None
+    formatted_name: str | None = None
     birth_date: Optional[str] = None
     birth_place: Optional[str] = None
     birth_lat: Optional[float] = None
     birth_lon: Optional[float] = None
+    birth_rad_m: Optional[float] = None
     death_date: Optional[str] = None
     death_place: Optional[str] = None
     death_lat: Optional[float] = None
     death_lon: Optional[float] = None
+    death_rad_m: Optional[float] = None
     additional_places: Optional[list[str]] = None
     additional_places_coords: Optional[list[tuple[float, float]]] = None
 
@@ -453,6 +456,7 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
         return None
 
     data = BiographyData()
+    data.formatted_name = formatted_name
     data.url = url
     seen_place_links: list[tuple[str, str]] = []
 
