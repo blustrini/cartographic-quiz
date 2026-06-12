@@ -652,6 +652,17 @@
     "death_place": "Alexandria",
     "status": "ok"
   },
+  "Eric the Red": {
+    "birth_date": "c. 950",
+    "birth_lat": 58.717,
+    "birth_lon": 5.75,
+    "birth_place": "J\u00e6ren",
+    "death_date": "c. 1003",
+    "death_lat": 72.0,
+    "death_lon": -40.0,
+    "death_place": "Greenland",
+    "status": "ok"
+  },
   "Ernest Rutherford": {
     "birth_date": "1871-08-30",
     "birth_lat": -41.379,
