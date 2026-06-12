@@ -62,6 +62,7 @@ Eva Perón
 Father Damien
 Ferdinand Magellan
 Ferdinand Marcos
+Florence Nightingale
 Francisco de Miranda
 Gaiseric
 Galileo Galilei
@@ -154,6 +155,7 @@ Maria Montessori
 Marie Antoinette
 Marie Curie
 Mark Antony
+Marshal Joachim Murat
 Martin Luther King Jr.
 Mary, Queen of Scots
 Matteo Ricci
@@ -237,6 +239,7 @@ Vladimir Nabokov
 Walter Benjamin
 Wernher von Braun
 William Adams
+William Makepeace Thackeray
 William Walker (filibuster)
 William the Silent
 Wolfgang Amadeus Mozart

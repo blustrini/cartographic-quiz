@@ -721,6 +721,17 @@
     "death_place": "Honolulu",
     "status": "ok"
   },
+  "Florence Nightingale": {
+    "birth_date": "1820-05-12",
+    "birth_lat": 43.77139,
+    "birth_lon": 11.25417,
+    "birth_place": "Florence",
+    "death_date": "1910-08-13",
+    "death_lat": 51.51,
+    "death_lon": -0.147,
+    "death_place": "Mayfair",
+    "status": "ok"
+  },
   "Francisco de Miranda": {
     "birth_date": "1750-03-28",
     "birth_lat": 10.50611,
@@ -1748,6 +1759,17 @@
     "death_place": "Alexandria",
     "status": "ok"
   },
+  "Marshal Joachim Murat": {
+    "birth_date": "1767-03-25",
+    "birth_lat": 44.6481,
+    "birth_lon": 1.5683,
+    "birth_place": "Labastide-Fortuni\u00e8re",
+    "death_date": "1815-10-13",
+    "death_lat": 38.733,
+    "death_lon": 16.167,
+    "death_place": "Pizzo Calabro",
+    "status": "ok"
+  },
   "Martin Luther King Jr.": {
     "birth_date": "1929-01-15",
     "birth_lat": 33.74889,
@@ -2686,6 +2708,17 @@
     "death_lat": 33.36806,
     "death_lon": 129.55361,
     "death_place": "Hirado",
+    "status": "ok"
+  },
+  "William Makepeace Thackeray": {
+    "birth_date": "1811-07-18",
+    "birth_lat": 22.5675,
+    "birth_lon": 88.37,
+    "birth_place": "Calcutta",
+    "death_date": "1863-12-24",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
     "status": "ok"
   },
   "William Walker (filibuster)": {
