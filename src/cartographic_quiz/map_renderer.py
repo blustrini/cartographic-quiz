@@ -87,6 +87,7 @@ COUNTRY_LEVEL_NAMES = {
     "united states of america",
     "vietnam",
     "wales",
+    "james bay",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -111,6 +112,9 @@ REGION_LEVEL_NAMES = {
     "caucasus",
     "balkans",
     "iberia",
+    "mediterranean sea",
+    "pacific ocean",
+    "atlantic ocean",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"

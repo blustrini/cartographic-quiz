@@ -12,17 +12,7 @@ from cartographic_quiz.map_renderer import generate_life_map, generate_multi_lif
 from cartographic_quiz.models import CartographicDate
 
 
-DIFFICULTY_POOL_FILES: dict[str, str] = {
-    "easy": "people_easy.txt",
-    "medium": "people_medium.txt",
-    "hard": "people_hard.txt",
-}
-DIFFICULTY_WEIGHTS: dict[str, float] = {
-    "easy": 0.6,
-    "medium": 0.3,
-    "hard": 0.1,
-}
-
+NAMES_FILENAME = "people.txt"
 
 def _data_dir() -> Path:
     return Path(__file__).resolve().parents[2] / "data"
@@ -193,134 +183,46 @@ def _read_person_pool() -> list[str]:
     return list(dict.fromkeys(names))
 
 
-def _read_difficulty_pools() -> dict[str, list[str]]:
+def _read_names() -> list[str]:
     data_dir = _data_dir()
     bad_names = _load_bad_names()
-    pools: dict[str, list[str]] = {}
+    names = []
 
-    for difficulty, filename in DIFFICULTY_POOL_FILES.items():
-        path = data_dir / filename
-        names: list[str] = []
-        if path.exists():
-            for line in path.read_text(encoding="utf-8").splitlines():
-                cleaned = line.strip()
-                if cleaned and cleaned not in bad_names:
-                    names.append(cleaned)
-        pools[difficulty] = list(dict.fromkeys(names))
+    path = data_dir / NAMES_FILENAME
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            cleaned = line.strip()
+            if cleaned and cleaned not in bad_names:
+                names.append(cleaned)
 
-    return pools
-
-
-def _compute_difficulty_targets(total: int) -> dict[str, int]:
-    targets = {difficulty: int(total * DIFFICULTY_WEIGHTS[difficulty]) for difficulty in DIFFICULTY_WEIGHTS}
-    remainder = total - sum(targets.values())
-    if remainder <= 0:
-        return targets
-
-    fractional_order = sorted(
-        DIFFICULTY_WEIGHTS,
-        key=lambda difficulty: (total * DIFFICULTY_WEIGHTS[difficulty]) - targets[difficulty],
-        reverse=True,
-    )
-    for index in range(remainder):
-        difficulty = fractional_order[index % len(fractional_order)]
-        targets[difficulty] += 1
-    return targets
+    return names
 
 
 def _build_random_round_profiles(
-    person_pool: Sequence[str] | dict[str, Sequence[str]],
+    person_pool: Sequence[str],
+    verbose: bool,
     requested_count: int,
 ) -> tuple[list[tuple[CartographicDate, CartographicDate, str]], int]:
-    if isinstance(person_pool, dict):
-        pools = {difficulty: list(dict.fromkeys(names)) for difficulty, names in person_pool.items()}
-        all_names = [
-            name
-            for difficulty in ("easy", "medium", "hard")
-            for name in pools.get(difficulty, [])
-        ]
-        target_count = min(requested_count, len(all_names))
-        if target_count == 0:
-            return [], 0
-
-        desired = _compute_difficulty_targets(target_count)
-        remaining_by_difficulty = {
-            difficulty: list(pools.get(difficulty, [])) for difficulty in ("easy", "medium", "hard")
-        }
-        name_to_difficulty = {
-            name: difficulty for difficulty, names in remaining_by_difficulty.items() for name in names
-        }
-
-        rounds: list[tuple[CartographicDate, CartographicDate, str]] = []
-        successes_by_difficulty = {difficulty: 0 for difficulty in ("easy", "medium", "hard")}
-
-        while len(rounds) < target_count and any(remaining_by_difficulty.values()):
-            needed = target_count - len(rounds)
-            batch_counts = {difficulty: 0 for difficulty in ("easy", "medium", "hard")}
-
-            for difficulty in ("easy", "medium", "hard"):
-                outstanding = max(0, desired[difficulty] - successes_by_difficulty[difficulty])
-                if outstanding <= 0:
-                    continue
-                take = min(outstanding, len(remaining_by_difficulty[difficulty]), needed - sum(batch_counts.values()))
-                batch_counts[difficulty] = take
-
-            while sum(batch_counts.values()) < needed:
-                candidates = sorted(
-                    (
-                        difficulty
-                        for difficulty in ("easy", "medium", "hard")
-                        if len(remaining_by_difficulty[difficulty]) > batch_counts[difficulty]
-                    ),
-                    key=lambda difficulty: len(remaining_by_difficulty[difficulty]) - batch_counts[difficulty],
-                    reverse=True,
-                )
-                if not candidates:
-                    break
-                batch_counts[candidates[0]] += 1
-
-            selected_names: list[str] = []
-            for difficulty in ("easy", "medium", "hard"):
-                count = batch_counts[difficulty]
-                if count <= 0:
-                    continue
-                picked = random.sample(remaining_by_difficulty[difficulty], count)
-                picked_set = set(picked)
-                remaining_by_difficulty[difficulty] = [
-                    name for name in remaining_by_difficulty[difficulty] if name not in picked_set
-                ]
-                selected_names.extend(picked)
-
-            if not selected_names:
-                break
-
-            random.shuffle(selected_names)
-            batch_rounds = _build_round_profiles(selected_names)
-            rounds.extend(batch_rounds)
-            for _, _, name in batch_rounds:
-                difficulty = name_to_difficulty.get(name)
-                if difficulty:
-                    successes_by_difficulty[difficulty] += 1
-
-        return rounds, target_count
-
     target_count = min(requested_count, len(person_pool))
     remaining_names = list(person_pool)
     rounds: list[tuple[CartographicDate, CartographicDate, str]] = []
 
     while remaining_names and len(rounds) < target_count:
+        random.shuffle(remaining_names)
+
         needed = target_count - len(rounds)
-        batch_size = min(needed, len(remaining_names))
-        selected_names = random.sample(remaining_names, batch_size)
+        selected_names = remaining_names[:needed]
         selected_set = set(selected_names)
+
         remaining_names = [name for name in remaining_names if name not in selected_set]
-        rounds.extend(_build_round_profiles(selected_names))
+        rounds.extend(_build_round_profiles(selected_names, verbose))
 
     return rounds, target_count
 
 
 def _build_round_profiles(
     names: Sequence[str],
+    verbose: bool,
     *,
     force_rescrape_bad: bool = False,
     force_rescrape_all: bool = False,
@@ -387,7 +289,7 @@ def _build_round_profiles(
             rounds.append(cached_round)
             continue
 
-        biography_data = scrape_robust_biography(name, verbose=False)
+        biography_data = scrape_robust_biography(name, verbose=verbose)
         if not biography_data:
             cache[name] = {"status": "bad"}
             bad_names.add(name)
@@ -451,7 +353,7 @@ def _build_round_profiles(
     return rounds
 
 
-def _rescan_bad_names() -> tuple[int, int, int]:
+def _rescan_bad_names(verbose: bool) -> tuple[int, int, int]:
     cache = _load_cache()
     bad_names = _load_bad_names()
     good_names = _load_good_names()
@@ -463,7 +365,7 @@ def _rescan_bad_names() -> tuple[int, int, int]:
     still_bad = 0
 
     for name in sorted(bad_names):
-        biography_data = scrape_robust_biography(name, verbose=False)
+        biography_data = scrape_robust_biography(name, verbose=verbose)
         if not biography_data:
             cache[name] = {"status": "bad"}
             still_bad += 1
@@ -500,8 +402,12 @@ def _rescan_bad_names() -> tuple[int, int, int]:
     return len(bad_names), rescued, still_bad
 
 
-def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, int | None, bool, bool]:
+def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, int | None, bool, bool, int | None, bool]:
     parser = argparse.ArgumentParser(description="Generate a life map from a Wikipedia biography.")
+    parser.add_argument("-s", "--seed", type=int, default=None, help="Random seed")
+
+    parser.add_argument("-v", "--verbose", action="store_true", help="Verbose toggle")
+
     parser.add_argument("name", nargs="*", help="Name of the person to map")
     parser.add_argument(
         "-o",
@@ -539,7 +445,7 @@ def parse_cli_args(argv: Sequence[str] | None = None) -> tuple[str | None, str, 
     if args.num_random is not None and args.num_random <= 0:
         parser.error("--num-random must be a positive integer")
 
-    return person_name, output_name, args.num_random, args.rescan_bad, args.clear_cache
+    return person_name, output_name, args.num_random, args.rescan_bad, args.clear_cache, args.seed, args.verbose
 
 
 def parse_publish_args(argv: Sequence[str] | None = None) -> tuple[str, bool]:
@@ -655,7 +561,13 @@ def _publish_html_file(html_path: str, *, push: bool = True) -> int:
 
 
 def main() -> None:
-    subject_name, output_filename, num_random, rescan_bad, clear_cache = parse_cli_args()
+    subject_name, output_filename, num_random, rescan_bad, clear_cache, seed, verbose = parse_cli_args()
+
+    if seed is None:
+        seed = random.randint(0, 1000000000000)
+    print(f"random seed: {seed}")
+    random.seed(seed)
+
 
     if clear_cache:
         removed, missing = _clear_cache_files()
@@ -663,18 +575,18 @@ def main() -> None:
         return
 
     if rescan_bad:
-        total, rescued, still_bad = _rescan_bad_names()
+        total, rescued, still_bad = _rescan_bad_names(verbose)
         print(f"Rescanned bad names: {total} | rescued: {rescued} | still bad: {still_bad}")
         return
 
     if num_random is not None:
-        difficulty_pools = _read_difficulty_pools()
-        total_available = sum(len(names) for names in difficulty_pools.values())
+        all_names = _read_names()
+        total_available = len(all_names)
         if total_available == 0:
             print("Error: No people pool files found under data/.")
             return
 
-        rounds, sample_size = _build_random_round_profiles(difficulty_pools, num_random)
+        rounds, sample_size = _build_random_round_profiles(all_names, verbose, num_random)
         if sample_size < num_random:
             print(f"Warning: Requested {num_random} names but only {total_available} are available. Using {sample_size}.")
 
@@ -696,7 +608,7 @@ def main() -> None:
         print("Error: Missing person name.")
         return
 
-    rounds = _build_round_profiles([subject_name], force_rescrape_bad=True, force_rescrape_all=True)
+    rounds = _build_round_profiles([subject_name], force_rescrape_bad=True, force_rescrape_all=True, verbose=verbose)
     if not rounds:
         return
 

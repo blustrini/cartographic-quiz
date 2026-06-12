@@ -64,7 +64,11 @@ def _format_display_date(date_str: Optional[str]) -> str:
     day = int(iso_match.group(3))
     if month < 1 or month > 12:
         return cleaned
-    return f"{day} {MONTH_NAMES[month - 1]} {year}"
+    
+    if day:
+        return f"{day} {MONTH_NAMES[month - 1]} {year}"
+    else:
+        return f"{MONTH_NAMES[month - 1]} {year}"
 
 
 def build_birth_marker_svg(date_str: Optional[str]) -> str:

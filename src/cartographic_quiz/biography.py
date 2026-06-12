@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from cartographic_quiz.constants import USER_AGENT, WIKIPEDIA_BASE_URL
 from cartographic_quiz.geo import fetch_html, fetch_json, geocode_fallback, get_coordinates_from_wikipedia_url
 
+from . import map_renderer
 
 MONTH_PATTERN = (
     r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|"
@@ -24,9 +25,21 @@ NON_PLACE_TERMS = (
     "heart attack",
     "stroke",
     "suicide",
+    "John",
+    "Disappeared",
+    "Either",
 )
-BIRTH_ALT_DATE_HEADERS = ("baptized", "baptised", "christened", "christening")
+BIRTH_ALT_DATE_HEADERS = (
+    "baptized", 
+    "baptised", 
+    "christened", 
+    "christening",
+)
+DEATH_ALT_DATE_HEADERS = (
+    "disappeared",
+)
 NON_PLACE_SINGLETONS = {
+    "either",
     "a",
     "an",
     "the",
@@ -40,6 +53,7 @@ NON_PLACE_SINGLETONS = {
     "bce",
     "ce",
     "near",
+    "off",
     "u.s",
     "u.s.",
     "us",
@@ -54,6 +68,8 @@ NON_PLACE_SINGLETONS = {
     "ns",
     "old style",
     "new style",
+    "near the",
+    "near",
 }
 ROMAN_NUMERAL_TOKEN = re.compile(r"^[ivxlcdm]+$", flags=re.IGNORECASE)
 NON_PLACE_TERM_PATTERN = re.compile(
@@ -69,6 +85,7 @@ def _normalize_text(text: str) -> str:
 
 def _extract_date_candidate(text: str) -> Optional[str]:
     cleaned = _normalize_text(re.sub(r"\(aged[^)]*\)", "", text, flags=re.IGNORECASE))
+
     if not cleaned:
         return None
 
@@ -82,7 +99,7 @@ def _extract_date_candidate(text: str) -> Optional[str]:
         return re.sub(r"a\.?\s*d\.?", "AD", raw, flags=re.IGNORECASE)
 
     era_prefix_match = re.search(
-        r"\b(?:(?:c\.?|ca\.?|circa)\s+)?(?:ad|a\.d\.?|ce|c\.e\.?)\s*\d{1,4}(?:/\d{1,2})?\b",
+        r"\b(?:(?:c\.?|ca\.?|circa)\s+)?(?:am|ad|a\.d\.?|ce|c\.e\.?)\s*\d{1,4}(?:/\d{1,2})?\b",
         cleaned,
         flags=re.IGNORECASE,
     )
@@ -90,6 +107,17 @@ def _extract_date_candidate(text: str) -> Optional[str]:
         raw = _normalize_text(era_prefix_match.group(0))
         raw = re.sub(r"a\.?\s*d\.?", "AD", raw, flags=re.IGNORECASE)
         raw = re.sub(r"c\.?\s*e\.?", "CE", raw, flags=re.IGNORECASE)
+        raw = re.sub(r"a\.?\s*m\.?", "AM", raw, flags=re.IGNORECASE)
+        return raw
+
+    am_match = re.search(
+        rf"\b(?:(?:c\.?|ca\.?|circa)\s*)?(?:(?:\d{{1,2}}\s+{MONTH_PATTERN}\s+)?\d{{1,4}}(?:/\d{{1,2}})?)\s*(?:am|a\.m\.?)($|\W)",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    if am_match:
+        raw = _normalize_text(am_match.group(0)).rstrip(".,;:")
+        raw = re.sub(r"a\.?\s*m\.?", "AM", raw, flags=re.IGNORECASE)
         return raw
 
     bc_match = re.search(
@@ -117,6 +145,7 @@ def _extract_date_candidate(text: str) -> Optional[str]:
         rf"\b{MONTH_PATTERN}\s+\d{{3,4}}\b",
         r"\b(?:c\.?|ca\.?|circa)\s*\d{3,4}(?:/\d{1,2})?\b",
         r"\b\d{3,4}(?:/\d{1,2})?\b",
+        r"\b\d{3,4}s?(?:/\d{1,2})?\b",
     )
 
     for pattern in patterns:
@@ -275,7 +304,6 @@ def _extract_location_link(td, date_str: Optional[str] = None, place_text: Optio
 
     if place_text_links:
         return place_text_links[0]
-
     if preferred_links:
         return preferred_links[0]
     if fallback_links:
@@ -301,7 +329,7 @@ def _is_cause_header(header: str) -> bool:
 def _extract_date_from_cell(cell: BeautifulSoup) -> Optional[str]:
     bday = cell.find(class_="bday")
     if bday:
-        return bday.text.strip()
+        return _extract_date_candidate(bday.text.strip())
 
     deathdate = cell.find(class_=lambda c: c and "deathdate" in c)
     if deathdate:
@@ -327,7 +355,7 @@ def _clean_place_text(text: str, date_str: Optional[str]) -> str:
     raw_text = re.sub(r"\[\d+\]|\s*\([^)]*\)", "", text).strip()
     without_date = raw_text.replace(date_str or "", "")
     without_causes = re.sub(
-        r"\b(?:cause of death|death cause|murder|assassination|gunshot wounds?|execution|battle)\b.*$",
+        r"\b(?:cause of death|death cause|murder|assassination|gunshot wounds?|execution|battle|off)\b.*$",
         "",
         without_date,
         flags=re.IGNORECASE,
@@ -381,6 +409,7 @@ def _resolve_title(name: str) -> Optional[str]:
 
 @dataclass
 class BiographyData:
+    url: str | None = None
     birth_date: Optional[str] = None
     birth_place: Optional[str] = None
     birth_lat: Optional[float] = None
@@ -389,6 +418,8 @@ class BiographyData:
     death_place: Optional[str] = None
     death_lat: Optional[float] = None
     death_lon: Optional[float] = None
+    additional_places: Optional[list[str]] = None
+    additional_places_coords: Optional[list[tuple[float, float]]] = None
 
 
 def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[BiographyData]:
@@ -417,6 +448,7 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
         return None
 
     data = BiographyData()
+    data.url = url
     seen_place_links: list[tuple[str, str]] = []
 
     for row in infobox.find_all("tr"):
@@ -433,8 +465,9 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
         is_birth = any(key in header for key in ("born", "birth"))
         is_birth_alt_date = any(key in header for key in BIRTH_ALT_DATE_HEADERS)
         is_death = any(key in header for key in ("died", "death"))
+        is_death_alt_date = any(key in header for key in DEATH_ALT_DATE_HEADERS)
 
-        if is_birth or is_birth_alt_date or is_death:
+        if is_birth or is_birth_alt_date or is_death or is_death_alt_date:
             prefix = "birth" if (is_birth or is_birth_alt_date) else "death"
             date_str = None
 
@@ -450,7 +483,13 @@ def scrape_robust_biography(name: str, verbose: bool = True) -> Optional[Biograp
             present_day_place = _extract_present_day_place(td.get_text(" ", strip=True))
             cleaned_place = _clean_place_text(td.get_text(), date_str)
             extracted_place = _extract_place_from_cell(td, date_str)
+
             final_place = present_day_place or extracted_place or cleaned_place
+
+            if present_day_place and map_renderer._is_approximate_pin_location(present_day_place):
+                if not map_renderer._is_approximate_pin_location(extracted_place):
+                    final_place = extracted_place
+
             if final_place and not _is_valid_place_name(final_place):
                 final_place = None
 
