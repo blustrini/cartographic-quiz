@@ -93,7 +93,7 @@ Thomas the Apostle
 Saint Boniface
 Junípero Serra
 Joan of Arc
-Columba
+Saint Columba
 Francis of Assisi
 Anselm of Canterbury
 Augustine of Hippo
@@ -303,7 +303,7 @@ Arthur Wellesley, 2nd Duke of Wellington
 Valerian (emperor)
 Julian (emperor)
 Herbert Kitchener, 1st Earl Kitchener
-General Gordon
+Charles George Gordon
 Ptolemy I
 Ali ibn Ali Talib
 Andrew Bonar Law

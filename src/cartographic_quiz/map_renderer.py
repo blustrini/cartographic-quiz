@@ -107,6 +107,7 @@ COUNTRY_LEVEL_NAMES = {
   "dilmun (?)",
   "off the coast of calicut (kozhikode)",
   "trans-siberian train near lake baikal",
+  "mohegan territory, connecticut colony",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -161,6 +162,8 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "dilmun (?)": 100_000,
   "off the coast of calicut (kozhikode)": 500_000,
   "trans-siberian train near lake baikal": 500_000,
+  "mohegan territory, connecticut colony": 35_000,
+  "barents sea": 300_000,
 }
 
 
@@ -967,7 +970,7 @@ def generate_multi_life_map(
               const birthLabelIcon = L.divIcon({{
                 html: round.birth.country_label_html,
                 iconSize: [320, 34],
-                iconAnchor: [160, 17],
+                iconAnchor: [160, 0],
                 className: "empty",
               }});
               L.marker([round.birth.lat, round.birth.lon], {{ icon: birthLabelIcon, interactive: false }})
@@ -997,7 +1000,7 @@ def generate_multi_life_map(
               const deathLabelIcon = L.divIcon({{
                 html: round.death.country_label_html,
                 iconSize: [320, 34],
-                iconAnchor: [160, 17],
+                iconAnchor: [160, 34],
                 className: "empty",
               }});
               L.marker([round.death.lat, round.death.lon], {{ icon: deathLabelIcon, interactive: false }})
