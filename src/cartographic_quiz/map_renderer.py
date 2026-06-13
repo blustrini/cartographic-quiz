@@ -106,6 +106,7 @@ COUNTRY_LEVEL_NAMES = {
   "near rome",
   "dilmun (?)",
   "off the coast of calicut (kozhikode)",
+  "trans-siberian train near lake baikal",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -159,6 +160,7 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "near rome": 100_000,
   "dilmun (?)": 100_000,
   "off the coast of calicut (kozhikode)": 500_000,
+  "trans-siberian train near lake baikal": 500_000,
 }
 
 

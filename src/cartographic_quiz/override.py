@@ -134,6 +134,9 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.death_lon = 73.2
             bio.death_place = "off the coast of Calicut (Kozhikode)"
 
+        case "Rudolf_Nureyev":
+            bio.birth_place = "Trans-Siberian train near Lake Baikal"
+
         case _:
             matched = False
 
