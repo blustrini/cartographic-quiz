@@ -133,6 +133,7 @@ REGION_LEVEL_NAMES = {
     "balkans",
     "iberia",
     "mediterranean sea",
+    "mediterranean sea, off the coast of marseilles",
     "pacific ocean",
     "atlantic ocean",
     "greenland",
@@ -140,6 +141,7 @@ REGION_LEVEL_NAMES = {
     "north atlantic",
     "barents sea",
     "mongol empire",
+    "along the syr darya river basin",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -148,7 +150,7 @@ REGION_DIRECTIONAL_PATTERN = re.compile(
 
 CUSTOM_RADIUS_METES: dict[str, int] = {
   "pacific ocean": 3_500_000,
-  "mediterranean sea": 450_000,
+  "mediterranean sea, off the coast of marseilles": 150_000,
   "north atlantic": 1_700_000,
   "ross ice shelf": 300_000,
   "king william island": 100_000,
@@ -163,7 +165,8 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "off the coast of calicut (kozhikode)": 500_000,
   "trans-siberian train near lake baikal": 500_000,
   "mohegan territory, connecticut colony": 35_000,
-  "barents sea": 300_000,
+  "barents sea": 100_000,
+  "along the syr darya river basin": 300_000,
 }
 
 

@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "Python: Debug Current File as Module",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/.vscode/launch_current_module.py",
+      "args": ["${file}", "${debugArgs:}"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

@@ -10,6 +10,7 @@ from cartographic_quiz.biography import _is_valid_place_name, scrape_robust_biog
 from cartographic_quiz.constants import DEFAULT_REPEATS_EACH_SIDE
 from cartographic_quiz.map_renderer import generate_life_map, generate_multi_life_map
 from cartographic_quiz.models import CartographicDate
+from .used_people import read_used_people
 
 
 NAMES_FILENAME = "people.txt"
@@ -590,12 +591,19 @@ def main() -> None:
 
     if num_random is not None:
         all_names = _read_names()
+        used_names = read_used_people()
+
+        all_unused_names = [n for n in all_names if n not in used_names]
+
         total_available = len(all_names)
         if total_available == 0:
             print("Error: No people pool files found under data/.")
             return
 
-        rounds, sample_size = _build_random_round_profiles(all_names, verbose, num_random)
+        rounds, sample_size = _build_random_round_profiles(all_unused_names, verbose, num_random)
+
+        if verbose:
+            print([name for _, _, name in rounds])
         if sample_size < num_random:
             print(f"Warning: Requested {num_random} names but only {total_available} are available. Using {sample_size}.")
 

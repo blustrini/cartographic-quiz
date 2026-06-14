@@ -11,7 +11,8 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
     matched = True
     match name:
         case "Antoine_de_Saint-Exupéry":
-           bio.death_lat = 40
+           bio.death_place = "Mediterranean Sea, off the coast of Marseilles"
+           bio.death_lat = 42
            bio.death_lon = 5.4
         case "Josephus":
             bio.death_lat = 41.9028
@@ -147,8 +148,13 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
 
         case "Willem_Barentsz":
             bio.death_place = "Barents Sea"
-            bio.death_lat = 72.5
-            bio.death_lon = 46
+            bio.death_lat = 76.8
+            bio.death_lon = 64
+
+        case "Cyrus_the_Great":
+            bio.death_place = "Along the Syr Darya River basin"
+            bio.death_lat = 45.0
+            bio.death_lon = 64.0
 
 
         case _:
