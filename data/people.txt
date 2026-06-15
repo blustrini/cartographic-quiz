@@ -167,7 +167,7 @@ Steve Irwin
 Bruce Lee
 Heath Ledger
 Leonhard Euler
-René Descartes
+George II of Great Britain
 Tycho Brahe
 Andreas Vesalius
 Hans Holbein the Younger
@@ -202,7 +202,7 @@ Kamehameha II
 Shaka Zulu
 Nzinga Mbande
 Sejong the Great
-Juana Inés de la Cruz
+Sergei Rachmaninoff
 William the Silent
 Suleiman the Magnificent
 Atawallpa
@@ -260,7 +260,7 @@ James Francis Edward Stuart
 Irenaeus
 Anne of Denmark
 Anne of Cleves
-George II of Great Britain
+René Descartes
 Charles XIV of Sweden
 Hulegu Khan
 Cnut
@@ -276,7 +276,7 @@ José Raúl Capablanca
 Robert James Fischer
 Ernest Rutherford
 Patrice Lumumba
-Tupaia
+Tupaia (navigator)
 Sālote Tupou III
 Eugène Eyraud
 Blackbeard

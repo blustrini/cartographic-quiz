@@ -142,6 +142,7 @@ REGION_LEVEL_NAMES = {
     "barents sea",
     "mongol empire",
     "along the syr darya river basin",
+    "carnuntum",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -167,6 +168,7 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "mohegan territory, connecticut colony": 35_000,
   "barents sea": 100_000,
   "along the syr darya river basin": 300_000,
+  "carnuntum": 80_000,
 }
 
 
