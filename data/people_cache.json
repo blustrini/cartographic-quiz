@@ -21,83 +21,6 @@
     "death_place": "Bologna",
     "status": "ok"
   },
-  "Cyrus the Great": {
-    "birth_date": "c. 600 BC",
-    "birth_lat": 29.417,
-    "birth_lon": 53.233,
-    "birth_place": "Fars",
-    "death_date": "530 BC",
-    "death_lat": 45.0,
-    "death_lon": 64.0,
-    "death_place": "Along the Syr Darya River basin",
-    "status": "ok"
-  },
-  "Domenico Scarlatti": {
-    "birth_date": "1685-10-26",
-    "birth_lat": 40.8358,
-    "birth_lon": 14.2486,
-    "birth_place": "Naples",
-    "death_date": "1757-07-23",
-    "death_lat": 40.4169,
-    "death_lon": -3.7033,
-    "death_place": "Madrid",
-    "status": "ok"
-  },
-  "Ea-n\u0101\u1e63ir": {
-    "birth_date": "c. 1800 B.C.",
-    "birth_lat": 26,
-    "birth_lon": 50.2,
-    "birth_place": "Dilmun (?)",
-    "death_date": "c. 1740 B.C.",
-    "death_lat": 30.9633,
-    "death_lon": 46.1031,
-    "death_place": "Ur, Sumer (Tell el-Muqayyar, Iraq)",
-    "status": "ok"
-  },
-  "Gaiseric": {
-    "birth_date": "c. 389",
-    "birth_lat": 46.85,
-    "birth_lon": 17.72,
-    "birth_place": "Lake Balaton",
-    "death_date": "25 January 477",
-    "death_lat": 36.8528,
-    "death_lon": 10.3233,
-    "death_place": "Carthage",
-    "status": "ok"
-  },
-  "George II of Great Britain": {
-    "birth_date": "1683-11-09",
-    "birth_lat": 52.39118,
-    "birth_lon": 9.69773,
-    "birth_place": "Herrenhausen Palace",
-    "death_date": "1760-10-25",
-    "death_lat": 51.50528,
-    "death_lon": -0.18833,
-    "death_place": "Kensington Palace",
-    "status": "ok"
-  },
-  "Gustavus Adolphus": {
-    "birth_date": "1594-12-09",
-    "birth_lat": 59.32667,
-    "birth_lon": 18.07167,
-    "birth_place": "Castle Tre Kronor",
-    "death_date": "1632-11-06",
-    "death_lat": 51.25972,
-    "death_lon": 12.14167,
-    "death_place": "L\u00fctzen",
-    "status": "ok"
-  },
-  "Heath Ledger": {
-    "birth_date": "1979-04-04",
-    "birth_lat": -32.0,
-    "birth_lon": 115.9,
-    "birth_place": "Perth",
-    "death_date": "2008-01-22",
-    "death_lat": 40.7127281,
-    "death_lon": -74.0060152,
-    "death_place": "New York City, US",
-    "status": "ok"
-  },
   "Josef Mengele": {
     "birth_date": "1911-03-16",
     "birth_lat": 48.45267,
@@ -109,28 +32,6 @@
     "death_place": "Bertioga",
     "status": "ok"
   },
-  "Juana In\u00e9s de la Cruz": {
-    "birth_date": "12 November 1648",
-    "birth_lat": 19.00056,
-    "birth_lon": -98.81778,
-    "birth_place": "San Miguel Nepantla",
-    "death_date": "1695-04-17",
-    "death_lat": 19.433,
-    "death_lon": -99.133,
-    "death_place": "Mexico City",
-    "status": "ok"
-  },
-  "Marie Antoinette": {
-    "birth_date": "1755-11-02",
-    "birth_lat": 48.20639,
-    "birth_lon": 16.36528,
-    "birth_place": "Hofburg",
-    "death_date": "1793-10-16",
-    "death_lat": 48.8656331,
-    "death_lon": 2.3212357,
-    "death_place": "Place de la R\u00e9volution",
-    "status": "ok"
-  },
   "Maximilian I of Mexico": {
     "birth_date": "1832-07-06",
     "birth_lat": 48.184516,
@@ -140,17 +41,6 @@
     "death_lat": 20.59333,
     "death_lon": -100.410361,
     "death_place": "Cerro de las Campanas",
-    "status": "ok"
-  },
-  "Muhammad Ali Pasha": {
-    "birth_date": "4 March 1769",
-    "birth_lat": 42.0461592,
-    "birth_lon": 19.4942129,
-    "birth_place": "Ottoman Albania",
-    "death_date": "1849-08-02",
-    "death_lat": 31.199194,
-    "death_lon": 29.868639,
-    "death_place": "Ras el-Tin Palace",
     "status": "ok"
   },
   "Patrice Lumumba": {
@@ -186,17 +76,6 @@
     "death_place": "Stockholm",
     "status": "ok"
   },
-  "Robert James Fischer": {
-    "birth_date": "1943-03-09",
-    "birth_lat": 41.88194,
-    "birth_lon": -87.62778,
-    "birth_place": "Chicago",
-    "death_date": "2008-01-17",
-    "death_lat": 64.14583,
-    "death_lon": -21.9425,
-    "death_place": "Reykjav\u00edk",
-    "status": "ok"
-  },
   "Sergei Rachmaninoff": {
     "birth_date": "1873-04-01",
     "birth_lat": 57.916,
@@ -206,17 +85,6 @@
     "death_lat": 34.07306,
     "death_lon": -118.39944,
     "death_place": "Beverly Hills, California",
-    "status": "ok"
-  },
-  "Sigmund Freud": {
-    "birth_date": "1856-05-06",
-    "birth_lat": 49.64083,
-    "birth_lon": 18.145,
-    "birth_place": "Freiberg in M\u00e4hren",
-    "death_date": "1939-09-23",
-    "death_lat": 51.5541,
-    "death_lon": -0.1744,
-    "death_place": "Hampstead",
     "status": "ok"
   },
   "Theodoric the Great": {
@@ -230,21 +98,10 @@
     "death_place": "Ravenna",
     "status": "ok"
   },
-  "Tupaia": {
-    "birth_date": "1725",
-    "birth_lat": -16.82,
-    "birth_lon": -151.44,
-    "birth_place": "near Ha'amanino Harbour,",
-    "death_date": "20 December 1770",
-    "death_lat": -6.132212,
-    "death_lon": 106.811779,
-    "death_place": "Batavia",
-    "status": "ok"
-  },
   "Tupaia (navigator)": {
     "birth_date": "1725",
     "birth_lat": -16.82,
-    "birth_lon": -151.44,
+    "birth_lon": 208.56,
     "birth_place": "near Ha'amanino Harbour,",
     "death_date": "20 December 1770",
     "death_lat": -6.132212,
