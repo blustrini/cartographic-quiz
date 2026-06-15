@@ -159,6 +159,10 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
         case "Theodoric_the_Great":
             bio.birth_place = "Carnuntum"
 
+        case "Sergei_Rachmaninoff":
+            bio.birth_lat = 57.916
+            bio.birth_lon = 31.750
+
 
         case _:
             matched = False
