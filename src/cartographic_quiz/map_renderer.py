@@ -111,7 +111,7 @@ COUNTRY_LEVEL_NAMES = {
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
-MAX_CITY_LEVEL_ZOOM = 8
+MAX_CITY_LEVEL_ZOOM = 9
 REGION_LEVEL_NAMES = {
     "africa",
     "asia",
@@ -142,7 +142,6 @@ REGION_LEVEL_NAMES = {
     "barents sea",
     "mongol empire",
     "along the syr darya river basin",
-    "carnuntum",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -168,7 +167,6 @@ CUSTOM_RADIUS_METES: dict[str, int] = {
   "mohegan territory, connecticut colony": 35_000,
   "barents sea": 100_000,
   "along the syr darya river basin": 300_000,
-  "carnuntum": 80_000,
 }
 
 
