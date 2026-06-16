@@ -19,7 +19,7 @@ def read_used_people() -> list[str]:
 
 
 def _get_published_quizzes() -> list[Path]:
-    return list(PUBLIC_QUIZ_FILE.glob('*.html'))
+    return sorted(list(PUBLIC_QUIZ_FILE.glob('*.html')))
 
 
 def _get_names_from_quiz(file_path: Path) -> list[str]:
@@ -55,7 +55,7 @@ def _get_names_from_quiz(file_path: Path) -> list[str]:
 def update():
     published_quizzes = _get_published_quizzes()
 
-    all_names = set()
+    all_names = []
 
     for quiz in published_quizzes:
         print(f"analysing quiz {quiz}")
@@ -69,7 +69,7 @@ def update():
             if name in all_names:
                 print(f"name {name} already in use!")
             else:
-                all_names.add(name)
+                all_names.append(name)
 
     with open(USED_PEOPLE_FILE, 'w'):
         USED_PEOPLE_FILE.write_text('\n'.join(all_names))

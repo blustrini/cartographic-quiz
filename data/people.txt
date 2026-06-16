@@ -65,7 +65,7 @@ Kofi Annan
 Pope Francis
 Subhas Chandra Bose
 Golda Meir
-Samuel Beckett
+Spartacus
 Chopin
 Maria Callas
 Rudolf Nureyev
@@ -122,7 +122,7 @@ Mithridates VI of Pontus
 Pompey the Great
 Marcus Licinius Crassus
 Mark Antony
-Spartacus
+Samuel Beckett
 Herodotus
 John F. Kennedy
 Abraham Lincoln
@@ -179,7 +179,7 @@ Paul Dirac
 John von Neumann
 Bernhard Riemann
 Ludwig Boltzmann
-Søren Kierkegaard
+Ötzi
 Kurt Gödel
 Marie Curie
 Ludwig Wittgenstein

@@ -88,7 +88,6 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.birth_lat = 41.8967
             bio.birth_lon = 12.4822
         case "Bernardo_the_Japanese":
-            print(bio)
             bio.birth_place = "Kagoshima"
             bio.birth_lat = 31.5967
             bio.birth_lon = 130.5578
