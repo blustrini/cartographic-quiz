@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_55c0f438184c728b6969e185141b9b5d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    \
+    <div id="quiz-panel" style="position: fixed; top: 16px; left: 16px; z-index: 9999; background: rgba(255,255,255,0.94); border-radius: 10px; padding: 12px 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); max-width: 340px; font-family: Helvetica Neue, Arial, sans-serif;">
+      <div style="font-weight: 700; margin-bottom: 6px;">Guess The Person</div>
+      <div id="quiz-progress" style="font-size: 12px; color: #555; margin-bottom: 6px;">Round 1/10</div>
+      <div id="quiz-instructions" style="font-size: 13px; margin-bottom: 8px;">One guess per round. Wrong answers move to the next person.</div>
+      <input id="quiz-input" type="text" placeholder="Type a name" style="width: 100%; box-sizing: border-box; padding: 7px 8px; border: 1px solid #bdbdbd; border-radius: 6px; margin-bottom: 8px;" />
+      <button id="quiz-submit" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #1565c0; color: white; font-weight: 700; cursor: pointer;">Submit Guess</button>
+      <div id="quiz-emoji-grid" style="display: none; margin-top: 8px; font-size: 24px; line-height: 1.25; letter-spacing: 1px;"></div>
+      <button id="quiz-copy-summary" style="display: none; width: 100%; padding: 6px 8px; border: 0; border-radius: 6px; background: #455a64; color: white; font-weight: 600; cursor: pointer; margin-top: 8px;">Copy Emoji Summary</button>
+      <div id="quiz-copy-status" style="margin-top: 6px; font-size: 12px; color: #546e7a; min-height: 16px;"></div>
+      <div id="quiz-result" style="margin-top: 8px; font-size: 13px;"></div>
+      <div id="quiz-controls" style="display: none; margin-top: 8px;">
+        <button id="quiz-continue" style="width: 100%; padding: 7px 8px; border: 0; border-radius: 6px; background: #2e7d32; color: white; font-weight: 700; cursor: pointer; margin-bottom: 6px;">Continue</button>
+        <div style="display: flex; gap: 6px;">
+          <button id="quiz-force-correct" style="flex: 1; padding: 6px 8px; border: 0; border-radius: 6px; background: #43a047; color: white; font-weight: 600; cursor: pointer;">Force Correct</button>
+          <button id="quiz-force-wrong" style="flex: 1; padding: 6px 8px; border: 0; border-radius: 6px; background: #e53935; color: white; font-weight: 600; cursor: pointer;">Force Wrong</button>
+        </div>
+      </div>
+      <div id="quiz-stats" style="margin-top: 6px; font-size: 12px; color: #666; font-weight: 600;">Correct: <span id="correct-count">0</span> | Wrong: <span id="wrong-count">0</span></div>
+    </div>
+    <script>
+      (function() {
+        const rounds = [{"person": "Cleopatra", "birth": {"lat": 31.1975, "lon": 29.8925, "date": "69 BC", "place": "Alexandria", "popup": "<b>Birth</b><br>Place: Alexandria", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"105\" y=\"32\" width=\"110\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 69 BC</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 31.1975, "lon": 29.8925, "date": "12 August 30 BC", "place": "Alexandria, Ptolemaic Kingdom", "popup": "<b>Death</b><br>Place: Alexandria, Ptolemaic Kingdom", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"49\" y=\"28\" width=\"222\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 12 August 30 BC</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Harry Houdini", "birth": {"lat": 47.4925, "lon": 19.05139, "date": "1874-03-24", "place": "Budapest", "popup": "<b>Birth</b><br>Place: Budapest", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"61\" y=\"32\" width=\"198\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 24 March 1874</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 42.33167, "lon": -83.04583, "date": "1926-10-31", "place": "Detroit", "popup": "<b>Death</b><br>Place: Detroit", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"49\" y=\"28\" width=\"222\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 31 October 1926</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Robert Falcon Scott", "birth": {"lat": 50.37139, "lon": -4.14222, "date": "1868-06-06", "place": "Plymouth", "popup": "<b>Birth</b><br>Place: Plymouth", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"73\" y=\"32\" width=\"174\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 6 June 1868</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": -81.5, "lon": -175.0, "date": "1912-03-29", "place": "Ross Ice Shelf", "popup": "<b>Death</b><br>Place: Ross Ice Shelf<br><i>(exact location unknown)</i>", "country_level": true, "icon": null, "country_label_html": "<div class=\"country-date-label\" style=\"display:inline-block;padding:2px 12px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.2);font-family:Helvetica Neue, Arial, sans-serif;font-size:22px;line-height:1.15;font-weight:700;color:#b71c1c;white-space:nowrap;\">\ud83d\udc80 29 March 1912</div>", "circle_radius": 300000}}, {"person": "Leonidas I", "birth": {"lat": 37.08194, "lon": 22.42361, "date": "c. 540 BC", "place": "Sparta", "popup": "<b>Birth</b><br>Place: Sparta", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"85\" y=\"32\" width=\"150\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 c. 540 BC</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 38.80528, "lon": 22.56278, "date": "11 August 480 BC", "place": "Thermopylae", "popup": "<b>Death</b><br>Place: Thermopylae", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"43\" y=\"28\" width=\"234\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 11 August 480 BC</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Diogenes of Sinope", "birth": {"lat": 42.02667, "lon": 35.15111, "date": "403 BC", "place": "Sinope", "popup": "<b>Birth</b><br>Place: Sinope", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"103\" y=\"32\" width=\"114\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 403 BC</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 37.9053455, "lon": 22.8801924, "date": "321 BC", "place": "Corinth", "popup": "<b>Death</b><br>Place: Corinth", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"103\" y=\"28\" width=\"114\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 321 BC</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Albert Einstein", "birth": {"lat": 48.39861, "lon": 9.99111, "date": "1879-03-14", "place": "Ulm", "popup": "<b>Birth</b><br>Place: Ulm", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"61\" y=\"32\" width=\"198\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 14 March 1879</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 40.358244, "lon": -74.666728, "date": "1955-04-18", "place": "Princeton, New Jersey", "popup": "<b>Death</b><br>Place: Princeton, New Jersey", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"61\" y=\"28\" width=\"198\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 18 April 1955</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "David Livingstone", "birth": {"lat": 55.79361, "lon": -4.09194, "date": "1813-03-19", "place": "Blantyre", "popup": "<b>Birth</b><br>Place: Blantyre", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"61\" y=\"32\" width=\"198\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 19 March 1813</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": -12.3, "lon": 30.29111, "date": "1873-05-01", "place": "Chief Chitambo's Village", "popup": "<b>Death</b><br>Place: Chief Chitambo's Village", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"79\" y=\"28\" width=\"162\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 1 May 1873</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Wernher von Braun", "birth": {"lat": 53.1525, "lon": 17.26778, "date": "1912-03-23", "place": "Wirsitz", "popup": "<b>Birth</b><br>Place: Wirsitz", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"61\" y=\"32\" width=\"198\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 23 March 1912</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 38.82028, "lon": -77.05028, "date": "1977-06-16", "place": "Alexandria, Virginia", "popup": "<b>Death</b><br>Place: Alexandria, Virginia", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"67\" y=\"28\" width=\"186\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 16 June 1977</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Leon Trotsky", "birth": {"lat": 47.89278, "lon": 32.29028, "date": "1879-11-07", "place": "Yanovka", "popup": "<b>Birth</b><br>Place: Yanovka", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"49\" y=\"32\" width=\"222\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 7 November 1879</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 19.433, "lon": -99.133, "date": "1940-08-21", "place": "Mexico City", "popup": "<b>Death</b><br>Place: Mexico City", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"55\" y=\"28\" width=\"210\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 21 August 1940</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}, {"person": "Vladimir Nabokov", "birth": {"lat": 59.9375, "lon": 30.30861, "date": "1899-04-22", "place": "Saint Petersburg", "popup": "<b>Birth</b><br>Place: Saint Petersburg", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"160,0 148,22 172,22\" fill=\"#1b5e20\" />\n        <rect x=\"61\" y=\"32\" width=\"198\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"53\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#1b5e20\">\ud83d\udc76 22 April 1899</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}, "death": {"lat": 46.435, "lon": 6.9125, "date": "1977-07-02", "place": "Montreux", "popup": "<b>Death</b><br>Place: Montreux", "country_level": false, "icon": "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"90\" viewBox=\"0 0 320 90\">\n        <polygon points=\"148,68 172,68 160,90\" fill=\"#b71c1c\" />\n        <rect x=\"73\" y=\"28\" width=\"174\" height=\"30\" rx=\"8\" ry=\"8\" fill=\"white\" fill-opacity=\"0.84\" /><text x=\"160\" y=\"49\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" font-family=\"Helvetica Neue, Arial, sans-serif\" fill=\"#b71c1c\">\ud83d\udc80 2 July 1977</text>\n    </svg>\n    ", "country_label_html": null, "circle_radius": 250000}}];
+        const mapName = "map_55c0f438184c728b6969e185141b9b5d";
+
+        const normalize = (value) => (value || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/['’`-]/g, "")
+          .replace(/[^a-z0-9\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+
+        const canonicalizeName = (value) => (value || "")
+          .replace(/\bsaint\b/g, "st")
+          .replace(/\s+/g, " ")
+          .trim();
+
+        const buildAcceptedAnswers = (expectedValue) => {
+          const variants = new Set();
+          const normalizedExpected = normalize(expectedValue);
+          if (normalizedExpected) {
+            variants.add(normalizedExpected);
+            variants.add(canonicalizeName(normalizedExpected));
+          }
+
+          const commaIndex = expectedValue.indexOf(",");
+          if (commaIndex !== -1) {
+            const shortName = normalize(expectedValue.slice(0, commaIndex));
+            if (shortName) {
+              variants.add(shortName);
+              variants.add(canonicalizeName(shortName));
+            }
+          }
+
+          return variants;
+        };
+
+        const levenshteinDistance = (left, right) => {
+          if (left === right) {
+            return 0;
+          }
+
+          const leftLength = left.length;
+          const rightLength = right.length;
+          if (leftLength === 0) {
+            return rightLength;
+          }
+          if (rightLength === 0) {
+            return leftLength;
+          }
+
+          const matrix = Array.from({ length: leftLength + 1 }, () => new Array(rightLength + 1).fill(0));
+          for (let i = 0; i <= leftLength; i += 1) {
+            matrix[i][0] = i;
+          }
+          for (let j = 0; j <= rightLength; j += 1) {
+            matrix[0][j] = j;
+          }
+
+          for (let i = 1; i <= leftLength; i += 1) {
+            for (let j = 1; j <= rightLength; j += 1) {
+              const cost = left[i - 1] === right[j - 1] ? 0 : 1;
+              matrix[i][j] = Math.min(
+                matrix[i - 1][j] + 1,
+                matrix[i][j - 1] + 1,
+                matrix[i - 1][j - 1] + cost,
+              );
+            }
+          }
+
+          return matrix[leftLength][rightLength];
+        };
+
+        const isTooGenericGuess = (guess, expectedValue) => {
+          const expectedTokens = expectedValue.split(" ").filter(Boolean);
+          const guessTokens = guess.split(" ").filter(Boolean);
+          if (expectedTokens.length < 2 || guessTokens.length !== 1) {
+            return false;
+          }
+          return expectedTokens.includes(guessTokens[0]);
+        };
+
+        const isCloseMatch = (guess, expectedValue) => {
+          if (!guess || !expectedValue) {
+            return false;
+          }
+          if (Math.abs(guess.length - expectedValue.length) > 2) {
+            return false;
+          }
+          const distance = levenshteinDistance(guess, expectedValue);
+          const threshold = expectedValue.length <= 5 ? 1 : 2;
+          return distance <= threshold;
+        };
+
+        const input = document.getElementById("quiz-input");
+        const submit = document.getElementById("quiz-submit");
+        const result = document.getElementById("quiz-result");
+        const instructions = document.getElementById("quiz-instructions");
+        const emojiGrid = document.getElementById("quiz-emoji-grid");
+        const progress = document.getElementById("quiz-progress");
+        const correctCountElement = document.getElementById("correct-count");
+        const wrongCountElement = document.getElementById("wrong-count");
+        const controls = document.getElementById("quiz-controls");
+        const continueButton = document.getElementById("quiz-continue");
+        const forceCorrectButton = document.getElementById("quiz-force-correct");
+        const forceWrongButton = document.getElementById("quiz-force-wrong");
+        const copySummaryButton = document.getElementById("quiz-copy-summary");
+        const copyStatus = document.getElementById("quiz-copy-status");
+
+        let currentIndex = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        const roundResults = [];
+        let mapRef = null;
+        let roundLayer = null;
+        let awaitingAdvance = false;
+        let pendingResultIndex = -1;
+        let latestEmojiSummary = "";
+
+        const setCopyStatus = (message, color = "#546e7a") => {
+          if (!copyStatus) {
+            return;
+          }
+          copyStatus.style.color = color;
+          copyStatus.textContent = message;
+        };
+
+        const buildEmojiSummary = () => {
+          const total = roundResults.length;
+          if (!total) {
+            return "";
+          }
+
+          const columns = total >= 10 ? 5 : Math.min(5, total);
+          const symbols = roundResults.map((entry) => (entry.isCorrect ? "✅" : "❌"));
+          const lines = [];
+
+          for (let i = 0; i < symbols.length; i += columns) {
+            lines.push(symbols.slice(i, i + columns).join(""));
+          }
+
+          return `Cartographic Quiz: ${correctCount}/${total} correct\n${lines.join("\n")}`;
+        };
+
+        const buildEmojiGridHtml = () => {
+          const total = roundResults.length;
+          if (!total) {
+            return "";
+          }
+
+          const columns = total >= 10 ? 5 : Math.min(5, total);
+          const symbols = roundResults.map((entry) => (entry.isCorrect ? "✅" : "❌"));
+          const lines = [];
+
+          for (let i = 0; i < symbols.length; i += columns) {
+            lines.push(symbols.slice(i, i + columns).join(""));
+          }
+
+          return lines.join("<br>");
+        };
+
+        const copyTextToClipboard = async (text) => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+            return;
+          }
+
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          textArea.style.position = "fixed";
+          textArea.style.opacity = "0";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+        };
+
+        const buildWikipediaUrl = (personName) => {
+          const normalized = (personName || "").trim().replace(/\s+/g, "_");
+          return `https://en.wikipedia.org/wiki/${encodeURIComponent(normalized)}`;
+        };
+
+        const setGuessingLocked = (locked) => {
+          if (input) {
+            input.disabled = locked;
+          }
+          if (submit) {
+            submit.disabled = locked;
+            submit.style.opacity = locked ? "0.65" : "1";
+          }
+        };
+
+        const setControlsVisible = (visible) => {
+          if (!controls) {
+            return;
+          }
+          controls.style.display = visible ? "block" : "none";
+        };
+
+        const updateStats = () => {
+          if (correctCountElement) {
+            correctCountElement.textContent = String(correctCount);
+          }
+          if (wrongCountElement) {
+            wrongCountElement.textContent = String(wrongCount);
+          }
+          if (progress) {
+            const shownRound = Math.min(currentIndex + 1, rounds.length);
+            progress.textContent = `Round ${shownRound}/${rounds.length}`;
+          }
+        };
+
+        const drawRound = (roundIndex) => {
+          if (!mapRef || !roundLayer) {
+            return;
+          }
+
+          const round = rounds[roundIndex];
+          if (!round) {
+            return;
+          }
+
+          roundLayer.clearLayers();
+
+          if (round.birth.country_level) {
+            L.circle([round.birth.lat, round.birth.lon], {
+              radius: round.birth.circle_radius,
+              color: "#1b5e20",
+              weight: 1,
+              fillColor: "#66bb6a",
+              fillOpacity: 0.16,
+            }).bindPopup(round.birth.popup).addTo(roundLayer);
+            if (round.birth.country_label_html) {
+              const birthLabelIcon = L.divIcon({
+                html: round.birth.country_label_html,
+                iconSize: [320, 34],
+                iconAnchor: [160, 0],
+                className: "empty",
+              });
+              L.marker([round.birth.lat, round.birth.lon], { icon: birthLabelIcon, interactive: false })
+                .addTo(roundLayer);
+            }
+          } else {
+            const birthIcon = L.divIcon({
+              html: round.birth.icon,
+              iconSize: [320, 90],
+              iconAnchor: [160, 0],
+              className: "empty",
+            });
+            L.marker([round.birth.lat, round.birth.lon], { icon: birthIcon })
+              .bindPopup(round.birth.popup)
+              .addTo(roundLayer);
+          }
+
+          if (round.death.country_level) {
+            L.circle([round.death.lat, round.death.lon], {
+              radius: round.death.circle_radius,
+              color: "#b71c1c",
+              weight: 1,
+              fillColor: "#ef5350",
+              fillOpacity: 0.16,
+            }).bindPopup(round.death.popup).addTo(roundLayer);
+            if (round.death.country_label_html) {
+              const deathLabelIcon = L.divIcon({
+                html: round.death.country_label_html,
+                iconSize: [320, 34],
+                iconAnchor: [160, 34],
+                className: "empty",
+              });
+              L.marker([round.death.lat, round.death.lon], { icon: deathLabelIcon, interactive: false })
+                .addTo(roundLayer);
+            }
+          } else {
+            const deathIcon = L.divIcon({
+              html: round.death.icon,
+              iconSize: [320, 90],
+              iconAnchor: [160, 90],
+              className: "empty",
+            });
+            L.marker([round.death.lat, round.death.lon], { icon: deathIcon })
+              .bindPopup(round.death.popup)
+              .addTo(roundLayer);
+          }
+
+          const bounds = L.latLngBounds([
+            [round.birth.lat, round.birth.lon],
+            [round.death.lat, round.death.lon],
+          ]);
+          mapRef.fitBounds(bounds.pad(0.5), { maxZoom: 9 });
+        };
+
+        const renderRound = () => {
+          drawRound(currentIndex);
+          updateStats();
+        };
+
+        const finishQuiz = () => {
+          if (!input || !submit || !result || !progress) {
+            return;
+          }
+
+          setControlsVisible(false);
+          setGuessingLocked(true);
+
+          const total = rounds.length;
+          const accuracy = total ? Math.round((correctCount / total) * 100) : 0;
+          progress.textContent = `Complete (${total}/${total})`;
+          result.style.color = "#263238";
+
+          result.innerHTML = `
+            <div style="margin-bottom: 8px;">
+              Finished! Correct: <b>${correctCount}</b> | Wrong: <b>${wrongCount}</b> | Accuracy: <b>${accuracy}%</b>
+            </div>
+          `;
+
+          const detailItems = roundResults.map((entry, index) => `
+            <button type="button" class="quiz-round-item" data-round-index="${index}" style="display: block; width: 100%; text-align: left; border: 1px solid #d0d0d0; border-radius: 6px; padding: 6px; margin-top: 6px; background: #fafafa; cursor: pointer;">
+              <div style="font-weight: 600; margin-bottom: 4px;">Round ${index + 1}</div>
+              <div>Birth: ${entry.birthDate} - ${entry.birthPlace}</div>
+              <div>Death: ${entry.deathDate} - ${entry.deathPlace}</div>
+              <div>Your guess: <b>${entry.guess}</b></div>
+              <div>Answer: <a href="${buildWikipediaUrl(entry.answer)}" target="_blank" rel="noopener noreferrer"><b>${entry.answer}</b></a></div>
+              <div>Result: <b>${entry.isCorrect ? "Correct" : "Wrong"}</b>${entry.overridden ? " (manual override)" : ""}</div>
+            </button>
+          `).join("");
+
+          result.style.maxHeight = "260px";
+          result.style.overflowY = "auto";
+          result.innerHTML += detailItems;
+
+          if (instructions) {
+            instructions.style.display = "none";
+          }
+          input.style.display = "none";
+          submit.style.display = "none";
+
+          if (emojiGrid) {
+            emojiGrid.innerHTML = buildEmojiGridHtml();
+            emojiGrid.style.display = "block";
+          }
+
+          latestEmojiSummary = buildEmojiSummary();
+          if (copySummaryButton) {
+            copySummaryButton.style.display = "block";
+          }
+          setCopyStatus("Copy your emoji scorecard to share.");
+
+          result.addEventListener("click", (event) => {
+            const target = event.target;
+            if (!(target instanceof Element)) {
+              return;
+            }
+
+            const item = target.closest(".quiz-round-item");
+            if (!item) {
+              return;
+            }
+
+            const roundIndexRaw = item.getAttribute("data-round-index");
+            const roundIndex = Number.parseInt(roundIndexRaw || "", 10);
+            if (Number.isNaN(roundIndex)) {
+              return;
+            }
+
+            drawRound(roundIndex);
+          });
+        };
+
+        const nextRound = () => {
+          awaitingAdvance = false;
+          pendingResultIndex = -1;
+          setControlsVisible(false);
+          setGuessingLocked(false);
+
+          currentIndex += 1;
+          if (currentIndex >= rounds.length) {
+            finishQuiz();
+            return;
+          }
+
+          if (input) {
+            input.value = "";
+            input.focus();
+          }
+          renderRound();
+        };
+
+        const check = () => {
+          if (!input || !result) {
+            return;
+          }
+
+          const guess = canonicalizeName(normalize(input.value));
+          const acceptedAnswers = buildAcceptedAnswers(rounds[currentIndex].person);
+          const normalizedExpected = canonicalizeName(normalize(rounds[currentIndex].person));
+
+          if (isTooGenericGuess(guess, normalizedExpected)) {
+            result.style.color = "#7f6000";
+            result.textContent = "Please enter the full name, not just a surname.";
+            input.focus();
+            return;
+          }
+
+          const rawGuess = (input.value || "").trim();
+          const revealed = rounds[currentIndex].person;
+          const revealedLink = `<a href="${buildWikipediaUrl(revealed)}" target="_blank" rel="noopener noreferrer">${revealed}</a>`;
+          let isCorrect = false;
+          const matchedExactly = acceptedAnswers.has(guess);
+          const matchedClosely = Array.from(acceptedAnswers).some((candidate) => isCloseMatch(guess, candidate));
+
+          if (matchedExactly || matchedClosely) {
+            correctCount += 1;
+            isCorrect = true;
+            result.style.color = "#1b5e20";
+            result.innerHTML = `Correct! It was ${revealedLink}.`;
+          } else {
+            wrongCount += 1;
+            result.style.color = "#b71c1c";
+            result.innerHTML = `Not quite. It was ${revealedLink}.`;
+          }
+
+          roundResults.push({
+            birthDate: rounds[currentIndex].birth.date,
+            birthPlace: rounds[currentIndex].birth.place,
+            deathDate: rounds[currentIndex].death.date,
+            deathPlace: rounds[currentIndex].death.place,
+            guess: rawGuess || "(blank)",
+            answer: revealed,
+            isCorrect,
+            overridden: false,
+          });
+          pendingResultIndex = roundResults.length - 1;
+
+          updateStats();
+          awaitingAdvance = true;
+          setGuessingLocked(true);
+          setControlsVisible(true);
+        };
+
+        const applyManualOverride = (forceCorrect) => {
+          if (!result || pendingResultIndex < 0) {
+            return;
+          }
+
+          const entry = roundResults[pendingResultIndex];
+          if (!entry) {
+            return;
+          }
+
+          if (entry.isCorrect !== forceCorrect) {
+            if (forceCorrect) {
+              wrongCount = Math.max(0, wrongCount - 1);
+              correctCount += 1;
+            } else {
+              correctCount = Math.max(0, correctCount - 1);
+              wrongCount += 1;
+            }
+            entry.isCorrect = forceCorrect;
+          }
+
+          entry.overridden = true;
+          updateStats();
+          result.style.color = forceCorrect ? "#1b5e20" : "#b71c1c";
+          const answerLink = `<a href="${buildWikipediaUrl(entry.answer)}" target="_blank" rel="noopener noreferrer">${entry.answer}</a>`;
+          result.innerHTML = forceCorrect
+            ? `Manually set to correct. It was ${answerLink}.`
+            : `Manually set to wrong. It was ${answerLink}.`;
+        };
+
+        if (submit) {
+          submit.addEventListener("click", check);
+        }
+        if (continueButton) {
+          continueButton.addEventListener("click", nextRound);
+        }
+        if (forceCorrectButton) {
+          forceCorrectButton.addEventListener("click", () => applyManualOverride(true));
+        }
+        if (forceWrongButton) {
+          forceWrongButton.addEventListener("click", () => applyManualOverride(false));
+        }
+        if (input) {
+          input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              event.stopPropagation();
+              if (awaitingAdvance) {
+                nextRound();
+              } else {
+                check();
+              }
+            }
+          });
+        }
+        document.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" || !awaitingAdvance) {
+            return;
+          }
+          event.preventDefault();
+          nextRound();
+        });
+        if (copySummaryButton) {
+          copySummaryButton.addEventListener("click", async () => {
+            if (!latestEmojiSummary) {
+              setCopyStatus("No summary available yet.", "#b71c1c");
+              return;
+            }
+
+            try {
+              await copyTextToClipboard(latestEmojiSummary);
+              setCopyStatus("Copied emoji scorecard to clipboard.", "#1b5e20");
+            } catch (_error) {
+              setCopyStatus("Could not copy automatically. Select and copy manually.", "#b71c1c");
+            }
+          });
+        }
+
+        const initializeQuiz = () => {
+          if (typeof L === "undefined") {
+            window.setTimeout(initializeQuiz, 50);
+            return;
+          }
+
+          const mapFromWindow = window[mapName];
+          if (!mapFromWindow) {
+            window.setTimeout(initializeQuiz, 50);
+            return;
+          }
+
+          mapRef = mapFromWindow;
+          roundLayer = L.layerGroup().addTo(mapRef);
+          if (input) {
+            input.focus();
+          }
+          renderRound();
+        };
+
+        initializeQuiz();
+      })();
+    </script>
+    
+    
+            <div class="folium-map" id="map_55c0f438184c728b6969e185141b9b5d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_55c0f438184c728b6969e185141b9b5d = L.map(
+                "map_55c0f438184c728b6969e185141b9b5d",
+                {
+                    center: [33.741565975, -10.410726279999997],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-85,
+-900,
+],
+[
+85,
+900,
+],
+],
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9e5af1f3c537438cf73f8d84aacae8bb = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 9,
+  "maxNativeZoom": 9,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9e5af1f3c537438cf73f8d84aacae8bb.addTo(map_55c0f438184c728b6969e185141b9b5d);
+        
+</script>
+</html>

@@ -168,6 +168,13 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
         case "Tupaia_(navigator)":
             bio.birth_lon = 360 - 151.44
 
+        case "Gaiseric":
+            bio.birth_place = "Near Lake Balaton"
+
+        case "Muhammad_Ali_of_Egypt":
+            bio.birth_lat = 41.1
+            bio.birth_lon = 20
+
         case _:
             matched = False
 

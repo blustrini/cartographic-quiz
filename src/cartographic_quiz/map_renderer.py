@@ -108,6 +108,7 @@ COUNTRY_LEVEL_NAMES = {
   "off the coast of calicut (kozhikode)",
   "trans-siberian train near lake baikal",
   "mohegan territory, connecticut colony",
+  "near lake balaton"
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -142,6 +143,7 @@ REGION_LEVEL_NAMES = {
     "barents sea",
     "mongol empire",
     "along the syr darya river basin",
+    "ottoman albania",
 }
 REGION_DIRECTIONAL_PATTERN = re.compile(
     r"\b(?:central|northern|southern|eastern|western|north|south|east|west)\b\s+"
@@ -149,6 +151,8 @@ REGION_DIRECTIONAL_PATTERN = re.compile(
 )
 
 CUSTOM_RADIUS_METES: dict[str, int] = {
+  "ottoman albania": 110_000,
+  "near lake balaton": 50_000,
   "pacific ocean": 3_500_000,
   "mediterranean sea, off the coast of marseilles": 150_000,
   "north atlantic": 1_700_000,

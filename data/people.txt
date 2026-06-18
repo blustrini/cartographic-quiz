@@ -28,8 +28,8 @@ Doris Lessing
 Saint Francis Xavier
 Isadora Duncan
 Joseph Conrad
-Alexandra Feodorovna (Charlotte of Prussia)
 Robert Falcon Scott
+Alexandra Feodorovna (Charlotte of Prussia)
 Ernest Shackleton
 Prince Metternich
 Mikhail Bakunin
@@ -178,7 +178,6 @@ Immanuel Kant
 Paul Dirac
 John von Neumann
 Bernhard Riemann
-Ludwig Boltzmann
 Ötzi
 Kurt Gödel
 Marie Curie
@@ -307,13 +306,13 @@ Charles George Gordon
 Ptolemy I
 Ali ibn Ali Talib
 Andrew Bonar Law
-Muhammad Ali Pasha
+Muhammad Ali of Egypt
 Pope Adrian IV
 Josephus
 Ettore Majorana
 Bernardo the Japanese
 William Makepeace Thackeray
-Marshal Joachim Murat
+Michiel de Ruyter
 Florence Nightingale
 Mary Seacole
 Lord Raglan
