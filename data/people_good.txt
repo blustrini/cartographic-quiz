@@ -1,143 +1,23 @@
-Abel Tasman
-Abraham Lincoln
-Akbar the Great
-Alaric I
-Albert Camus
-Albert Einstein
-Aldous Huxley
-Alexander Hamilton
-Alexander the Great
-Alexandra Feodorovna (Charlotte of Prussia)
-Ali ibn Ali Talib
-Amelia Earhart
-Anne of Denmark
-Anselm of Canterbury
-Archimedes
-Augustus
-Ayrton Senna
-Babur
-Bernardo the Japanese
-Charlemagne
-Charles XIV of Sweden
-Che Guevara
-Chiang Kai-shek
+Alan Turing
+Blackbeard
 Chien-Shiung Wu
-Chopin
-Christopher Columbus
-Cleopatra
-David Livingstone
-Diogenes of Sinope
-Doris Lessing
-Ea-nāṣir
-El Greco
-Eloise Wagner de Bosquet
-Eric the Red
-Eugène Eyraud
-Francis of Assisi
-Gaiseric
-Galileo Galilei
+Cnut
+Eva Perón
+Ferdinand Marcos
+Frederick Barbarossa
 Gautama Buddha
-George Frideric Handel
-George II of Great Britain
-George Orwell
-Georgi Markov
-Gerhard Mercator
-Gertrude Bell
-Giordano Bruno
-Glenn Miller
-Gustavus Adolphus
-Hannah Arendt
-Harold Godwinson
-Harry Houdini
-Heath Ledger
-Herbert Kitchener, 1st Earl Kitchener
-Hernán Cortés
-Horatio Nelson
-Ibn al-Haytham
-Irenaeus
-J. R. R. Tolkien
-James Francis Edward Stuart
-James Joyce
-Jean-François de Lapérouse
-Jeronimus Cornelisz
-Joan of Arc
-Johann Sebastian Bach
-John Cabot
-John Keats
-Josef Mengele
-Joseph Conrad
-Joseph Stalin
-José Raúl Capablanca
-Julian the Apostate
-Junípero Serra
-Karl Marx
-Kofi Annan
+George Armstrong Custer
+Ibn Sina
+James Wolfe
 Kurt Gödel
-Lafcadio Hearn
-Leon Trotsky
-Leonardo da Vinci
-Leonhard Euler
-Leonidas I
-Lope de Aguirre
-Lord Byron
-Louis IX of France
-Ludwig Boltzmann
-Maimonides
-Mansa Musa
-Margaret Thatcher
-Marie Antoinette
-Marie Curie
-Marshal Joachim Murat
-Mata Hari
-Matteo Ricci
-Maximilian I of Mexico
-Michiel de Ruyter
-Mother Teresa
-Muhammad Ali Pasha
-Muhammad Ali of Egypt
-Mungo Park
-Olaudah Equiano
-Patrice Lumumba
-Percy Fawcett
-Princess Diana
-Pythagoras
-René Descartes
-René-Robert Cavelier, Sieur de La Salle
-Richard the Lionheart
-Roald Amundsen
-Robert Falcon Scott
+Mahomet Weyonomon
+Pocahontas
 Robert James Fischer
-Robert Louis Stevenson
-Saint Boniface
-Saint Francis Xavier
-Saint Paul
-Saladin
-Salomon August Andrée
-Samuel Beckett
-Sejong the Great
-Seneca the Younger
-Sergei Rachmaninoff
-Shaka Zulu
-Sir John Franklin
-Socrates
-Spartacus
-Stanley Kubrik
-Subhas Chandra Bose
-Sylvia Plath
-Søren Kierkegaard
-Thales of Miletus
-Theodoric the Great
-Tupaia (navigator)
-Tycho Brahe
-Vasco Núñez de Balboa
-Vasco da Gama
-Vercingetorix
-Vincent van Gogh
-Vitus Bering
-Vivien Leigh
-Vladimir Nabokov
-Wernher von Braun
-William Makepeace Thackeray
-William the Silent
-Zog I
-Ötzi
+Rudyard Kipling
+Steve Irwin
+Subrahmanyan Chandrasekhar
+Sun Yat-sen
+Thomas Becket
+Timur
+Virginia Woolf
+Évariste Galois

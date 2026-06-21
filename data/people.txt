@@ -113,7 +113,7 @@ David Livingstone
 Vitus Bering
 Adolf Hitler
 Adolf Eichmann
-Mungo Park
+Mungo Park (explorer)
 Willem Barentsz
 René-Robert Cavelier, Sieur de La Salle
 Attila
@@ -148,8 +148,8 @@ Archimedes
 Socrates
 Amelia Earhart
 Vincent van Gogh
-Virginia Woolf
 Alan Turing
+Virginia Woolf
 Christopher Columbus
 Jimi Hendrix
 Kurt Cobain
@@ -183,8 +183,8 @@ Kurt Gödel
 Marie Curie
 Ludwig Wittgenstein
 Emmy Noether
-Subrahmanyan Chandrasekhar
 Chien-Shiung Wu
+Subrahmanyan Chandrasekhar
 Lise Meitner
 Al-Khwarizmi
 Ibn al-Haytham
@@ -211,8 +211,8 @@ Niels Henrik Abel
 James Clerk Maxwell
 Giordano Bruno
 Ibn Sina
-Pocahontas
 Mahomet Weyonomon
+Pocahontas
 Mai (Ra'iatean man)
 William Adams
 Lafcadio Hearn

@@ -175,6 +175,13 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
             bio.birth_lat = 41.1
             bio.birth_lon = 20
 
+        case "Timur":
+            bio.birth_place = "near Kesh, Chagatai Khanate"
+
+        case "Pocahontas":
+            bio.birth_place  = "Werowocomoco, Tsenacommacah"
+
+
         case _:
             matched = False
 
