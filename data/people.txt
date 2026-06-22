@@ -80,11 +80,11 @@ Richard the Lionheart
 Edward VIII
 Idi Amin
 Mary, Queen of Scots
-Saint Paul
+Vivien Leigh
 Ayn Rand
 George Frideric Handel
 Aldous Huxley
-Vivien Leigh
+Saint Paul
 Kahlil Gibran
 Napoleon III
 Ferdinand Marcos
@@ -103,10 +103,10 @@ Gustavus Adolphus
 Julian the Apostate
 Richard III of England
 Leonidas I
-Abel Tasman
-Sir John Franklin
 Percy Fawcett
+Sir John Franklin
 Henry Hudson
+Abel Tasman
 Jean-François de Lapérouse
 George Mallory
 David Livingstone
@@ -313,11 +313,11 @@ Ettore Majorana
 Bernardo the Japanese
 William Makepeace Thackeray
 Michiel de Ruyter
-Florence Nightingale
+Stanley Kubrik
 Mary Seacole
 Lord Raglan
 Grace Kelly
 Abraham
-Stanley Kubrik
+Florence Nightingale
 Ea-nāṣir
 Eric the Red

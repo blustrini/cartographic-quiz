@@ -1,4 +1,15 @@
 {
+  "Abel Tasman": {
+    "birth_date": "1603",
+    "birth_lat": 53.23333,
+    "birth_lon": 6.25778,
+    "birth_place": "Lutjegast",
+    "death_date": "1659-10-10",
+    "death_lat": -6.132212,
+    "death_lon": 106.811779,
+    "death_place": "Batavia, Dutch East Indies",
+    "status": "ok"
+  },
   "Alan Turing": {
     "birth_date": "1912-06-23",
     "birth_lat": 51.53,
@@ -10,6 +21,17 @@
     "death_place": "Wilmslow",
     "status": "ok"
   },
+  "Anne of Cleves": {
+    "birth_date": "22 September 1515",
+    "birth_lat": 51.2256,
+    "birth_lon": 6.7767,
+    "birth_place": "D\u00fcsseldorf",
+    "death_date": "16 July 1557",
+    "death_lat": 51.49528,
+    "death_lon": -0.16056,
+    "death_place": "Chelsea Manor",
+    "status": "ok"
+  },
   "Blackbeard": {
     "birth_date": "c. 1680",
     "birth_lat": 51.45361,
@@ -19,6 +41,28 @@
     "death_lat": 35.11278,
     "death_lon": -75.97583,
     "death_place": "Ocracoke",
+    "status": "ok"
+  },
+  "Buddy Holly": {
+    "birth_date": "1936-09-07",
+    "birth_lat": 33.585,
+    "birth_lon": -101.845,
+    "birth_place": "Lubbock, Texas",
+    "death_date": "1959-02-03",
+    "death_lat": 43.22083,
+    "death_lon": -93.44806,
+    "death_place": "Grant Township, Iowa",
+    "status": "ok"
+  },
+  "Captain James Cook": {
+    "birth_date": "1728-11-07",
+    "birth_lat": 54.5372,
+    "birth_lon": -1.2047,
+    "birth_place": "Marton",
+    "death_date": "1779-02-14",
+    "death_lat": 19.476,
+    "death_lon": -155.927,
+    "death_place": "Kealakekua Bay",
     "status": "ok"
   },
   "Chien-Shiung Wu": {
@@ -43,6 +87,17 @@
     "death_place": "Shaftesbury",
     "status": "ok"
   },
+  "Elvis Presley": {
+    "birth_date": "1935-01-08",
+    "birth_lat": 34.25972,
+    "birth_lon": -88.72583,
+    "birth_place": "Tupelo, Mississippi",
+    "death_date": "1977-08-16",
+    "death_lat": 35.14611,
+    "death_lon": -90.05194,
+    "death_place": "Memphis, Tennessee",
+    "status": "ok"
+  },
   "Eva Per\u00f3n": {
     "birth_date": "1919-05-07",
     "birth_lat": -34.583,
@@ -63,6 +118,17 @@
     "death_lat": 21.3,
     "death_lon": -157.85,
     "death_place": "Honolulu",
+    "status": "ok"
+  },
+  "Florence Nightingale": {
+    "birth_date": "1820-05-12",
+    "birth_lat": 43.77139,
+    "birth_lon": 11.25417,
+    "birth_place": "Florence",
+    "death_date": "1910-08-13",
+    "death_lat": 51.51,
+    "death_lon": -0.147,
+    "death_place": "Mayfair",
     "status": "ok"
   },
   "Frederick Barbarossa": {
@@ -98,6 +164,17 @@
     "death_place": "Little Bighorn",
     "status": "ok"
   },
+  "Henry Hudson": {
+    "birth_date": "c. 1565",
+    "birth_lat": 52.6,
+    "birth_lon": -1.5,
+    "birth_place": "Kingdom of England",
+    "death_date": "1611-06-23",
+    "death_lat": 53.5,
+    "death_lon": -80.5,
+    "death_place": "James Bay",
+    "status": "ok"
+  },
   "Ibn Sina": {
     "birth_date": "c. 980",
     "birth_lat": 39.9942553,
@@ -120,6 +197,17 @@
     "death_place": "Plains of Abraham",
     "status": "ok"
   },
+  "John of Gaunt": {
+    "birth_date": "6 March 1340",
+    "birth_lat": 51.0539,
+    "birth_lon": 3.7361,
+    "birth_place": "Saint Bavo's Abbey",
+    "death_date": "3 February 1399",
+    "death_lat": 52.632333,
+    "death_lon": -1.141194,
+    "death_place": "Leicester Castle",
+    "status": "ok"
+  },
   "Kurt G\u00f6del": {
     "birth_date": "1906-04-28",
     "birth_lat": 49.1925,
@@ -131,6 +219,28 @@
     "death_place": "Princeton, New Jersey",
     "status": "ok"
   },
+  "Lafcadio Hearn": {
+    "birth_date": "1850-06-27",
+    "birth_lat": 38.717,
+    "birth_lon": 20.65,
+    "birth_place": "Lefkada",
+    "death_date": "1904-09-26",
+    "death_lat": 35.6768601,
+    "death_lon": 139.7638947,
+    "death_place": "Tokyo, Japan",
+    "status": "ok"
+  },
+  "Leonhard Euler": {
+    "birth_date": "1707-04-15",
+    "birth_lat": 47.55472,
+    "birth_lon": 7.59056,
+    "birth_place": "Basel",
+    "death_date": "1783-09-18",
+    "death_lat": 59.9375,
+    "death_lon": 30.30861,
+    "death_place": "Saint Petersburg",
+    "status": "ok"
+  },
   "Mahomet Weyonomon": {
     "birth_date": "c. 1700",
     "birth_lat": 41.4,
@@ -140,6 +250,17 @@
     "death_lat": 51.50722,
     "death_lon": -0.1275,
     "death_place": "London",
+    "status": "ok"
+  },
+  "Percy Fawcett": {
+    "birth_date": "1867-08-18",
+    "birth_lat": 50.47,
+    "birth_lon": -3.53,
+    "birth_place": "Torquay",
+    "death_date": "1925-05-29",
+    "death_lat": -15.56667,
+    "death_lon": -56.075,
+    "death_place": "Mato Grosso",
     "status": "ok"
   },
   "Pocahontas": {
@@ -173,6 +294,28 @@
     "death_lat": 51.5074456,
     "death_lon": -0.1277653,
     "death_place": "London, England",
+    "status": "ok"
+  },
+  "Saint Paul": {
+    "birth_date": "5 AD",
+    "birth_lat": 36.9165,
+    "birth_lon": 34.8951,
+    "birth_place": "Tarsus",
+    "death_date": "65 AD",
+    "death_lat": 41.89333,
+    "death_lon": 12.48278,
+    "death_place": "Rome",
+    "status": "ok"
+  },
+  "Stanley Kubrik": {
+    "birth_date": "1928-07-26",
+    "birth_lat": 40.7127281,
+    "birth_lon": -74.0060152,
+    "birth_place": "New York City, U.S.",
+    "death_date": "1999-03-07",
+    "death_lat": 51.783,
+    "death_lon": -0.35,
+    "death_place": "Childwickbury",
     "status": "ok"
   },
   "Steve Irwin": {
@@ -239,6 +382,17 @@
     "death_lat": 50.83581,
     "death_lon": 0.0134,
     "death_place": "Rodmell",
+    "status": "ok"
+  },
+  "Vivien Leigh": {
+    "birth_date": "1913-11-05",
+    "birth_lat": 27.0375,
+    "birth_lon": 88.26306,
+    "birth_place": "Darjeeling",
+    "death_date": "1967-07-08",
+    "death_lat": 51.5074456,
+    "death_lon": -0.1277653,
+    "death_place": "London, England",
     "status": "ok"
   },
   "\u00c9variste Galois": {
