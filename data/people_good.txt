@@ -4,6 +4,7 @@ Al-Khwarizmi
 Alan Turing
 Albert Camus
 Alexander the Great
+Alexei Navalny
 Anne of Cleves
 Arthur Wellesley, 2nd Duke of Wellington
 Atawallpa
@@ -17,12 +18,16 @@ Blackbeard
 Buddy Holly
 Captain James Cook
 Caravaggio
+Cecil Rhodes
 Chandragupta Maurya
 Charlemagne
 Charles XIV of Sweden
 Charlie Kirk
 Chien-Shiung Wu
 Cnut
+Daniel Bernoulli
+Ea-nāṣir
+Eloise Wagner de Bosquet
 Elvis Presley
 Enrico Fermi
 Ettore Majorana
@@ -34,6 +39,7 @@ Francisco Pizarro
 Frederick Barbarossa
 Galileo Galilei
 Gautama Buddha
+Genghis Khan
 George Armstrong Custer
 George Frideric Handel
 Gertrude Bell
@@ -56,27 +62,35 @@ Lafcadio Hearn
 Leonardo da Vinci
 Leonhard Euler
 Lope de Aguirre
+Louis Armstrong
 Louis IX of France
 Ludwig Wittgenstein
 Mahomet Weyonomon
 Mansa Musa
 Marc Chagall
+Margaret Thatcher
 Mary, Queen of Scots
 Mother Teresa
 Napoleon Bonaparte
+Napoleon III
 Niels Henrik Abel
+Osama Bin Laden
 Paul Gauguin
 Pedro II of Brazil
+Percy Bysshe Shelley
 Percy Fawcett
 Pocahontas
 Prince Metternich
 Princess Diana
+René-Robert Cavelier, Sieur de La Salle
 Richard the Lionheart
+Robert Capa
 Robert James Fischer
 Rudyard Kipling
 Saint Francis Xavier
 Saint Paul
 Salomon August Andrée
+Sir Richard Greenville
 Stanley Kubrik
 Steve Irwin
 Stockton Rush
@@ -89,6 +103,7 @@ Timur
 Tycho Brahe
 Virginia Woolf
 Vivien Leigh
+Wilhelm II
 William Makepeace Thackeray
 irenaeus
 Évariste Galois

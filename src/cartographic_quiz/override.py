@@ -188,7 +188,11 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
 
         case "Irenaeus":
             bio.birth_date = "before c. 155 AD"
-            bio.death_date = "before c. 191 AD"
+            bio.death_date = "after c. 191 AD"
+
+        case "Percy_Bysshe_Shelley":
+            bio.death_lat = 43.8
+            bio.death_lon = 9.83
 
         case _:
             matched = False

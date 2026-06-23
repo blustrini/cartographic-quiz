@@ -111,6 +111,7 @@ COUNTRY_LEVEL_NAMES = {
   "near lake balaton",
   "kingdom of denmark",
   "plains of abraham",
+  "gulf of la spezia",
 }
 COUNTRY_APPROX_RADIUS_METERS = 250_000
 REGION_APPROX_RADIUS_METERS = 900_000
@@ -154,6 +155,7 @@ REGION_DIRECTIONAL_PATTERN = re.compile(
 )
 
 CUSTOM_RADIUS_METES: dict[str, int] = {
+  "gulf of la spezia": 40_000,
   "plains of abraham": 50_000,
   "near kesh, chagatai khanate": 50_000,
   "ottoman albania": 110_000,
