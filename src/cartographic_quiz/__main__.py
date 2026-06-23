@@ -12,7 +12,6 @@ from cartographic_quiz.map_renderer import generate_life_map, generate_multi_lif
 from cartographic_quiz.models import CartographicDate
 from .used_people import read_used_people
 
-
 NAMES_FILENAME = "people.txt"
 
 def _data_dir() -> Path:
@@ -184,7 +183,7 @@ def _read_person_pool() -> list[str]:
     return list(dict.fromkeys(names))
 
 
-def _read_names() -> list[str]:
+def _read_all_names() -> list[str]:
     data_dir = _data_dir()
     bad_names = _load_bad_names()
     names = []
@@ -590,7 +589,7 @@ def main() -> None:
         return
 
     if num_random is not None:
-        all_names = _read_names()
+        all_names = _read_all_names()
         used_names = read_used_people()
 
         all_unused_names = [n for n in all_names if n not in used_names]

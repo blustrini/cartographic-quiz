@@ -7,7 +7,7 @@ Paul Gauguin
 Ferdinand Magellan
 Oscar Wilde
 Ovid
-Alexander the Great
+Saint Francis Xavier
 Chiang Kai-shek
 Saladin
 Gautama Buddha
@@ -25,7 +25,7 @@ Rudyard Kipling
 George Orwell
 Mata Hari
 Doris Lessing
-Saint Francis Xavier
+Princess Diana
 Isadora Duncan
 Joseph Conrad
 Robert Falcon Scott
@@ -76,7 +76,7 @@ Marcus Aurelius
 Freddie Mercury
 Karl Marx
 James Joyce
-Richard the Lionheart
+Augustus
 Edward VIII
 Idi Amin
 Mary, Queen of Scots
@@ -129,7 +129,7 @@ Abraham Lincoln
 Archduke Franz Ferdinand
 Malcolm X
 Mahatma Gandhi
-Princess Diana
+Alexander the Great
 Elvis Presley
 Gianni Versace
 John Lennon
@@ -160,7 +160,7 @@ Italo Calvino
 John Keats
 Percy Bysshe Shelley
 Sylvia Plath
-Albert Camus
+Richard the Lionheart
 Antoine de Saint-Exupéry
 Ayrton Senna
 Steve Irwin
@@ -234,7 +234,7 @@ Chandragupta Maurya
 Ibn Battuta
 Dante Alighieri
 Giuseppe Garibaldi
-Augustus
+Albert Camus
 Saint Nicholas
 Charles Edward Stuart
 Roman von Ungern-Sternberg
@@ -321,3 +321,89 @@ Abraham
 Florence Nightingale
 Ea-nāṣir
 Eric the Red
+Simón Bolívar
+Nicolae Ceaușescu
+Charles I of England
+Nicholas II
+Jesus
+Pol Pot
+Frederick the Great
+Jorge Luis Borges
+Gabriel García Márquez
+Alexei Navalny
+Christopher Marlowe
+William Shakespeare
+Tupac Shakur
+The Notorious B.I.G.
+Pelé
+Charles Dickens
+William Wallace
+Karl Popper
+Pope Benedict XVI
+Pope John Paul II
+Josip Broz Tito
+Friedrich Engels
+Wilhelm II
+Rosa Luxemburg
+Louis-Napoléon, Prince Imperial
+Oliver Cromwell
+Anne Boleyn
+Luke the Evangelist
+Winston Churchill
+Cecil Rhodes
+Bernardo O'Higgins
+Anthony of Padua
+Saint Sebastian
+Rafael Trujillo
+Indira Gandhi
+Reza Shah
+Saddam Hussein
+David Ben-Gurion
+Yasser Arafat
+Joachim Murat
+Anna Pavlovna of Russia
+Muhammad
+Manuel L. Quezon
+Vlad the Impaler
+Palmiro Togliatti
+Francisco Franco
+Ernst Thälmann
+John Hughes (businessman)
+George Berkeley
+Juan Ponce de León
+Louis Armstrong
+Nelson Mandela
+Nicolaus Copernicus
+Tenzing Norgay
+Daniel Bernoulli
+László Bíró
+Franz Kafka
+Lord Kelvin
+Prince Rupert of the Rhine
+Stephen Hawking
+Thomas Sankara
+Jan Hus
+Bartolomeu Dias
+Mary Kingsley
+William Beebe
+Kim Jong Il
+Mansa Muhammad
+Charlie Kirk
+Anton de Kom
+Osama Bin Laden
+Roald Amundsen
+Michael Rockefeller
+Stockton Rush
+Mike Lynch
+David Douglas
+Timothy Treadwell
+John Jacob Astor IV
+Alexander Litvinenko
+Lord Mountbatten
+Martin Luther
+Kim Jong-nam
+Admiral Yi Sun-si
+Sir Richard Greenville
+Jean-François de Galaup, comte de Lapérouse
+Hernando de Soto
+Jan Janse de Weltevree

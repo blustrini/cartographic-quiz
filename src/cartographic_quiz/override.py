@@ -181,6 +181,14 @@ def override_biography(bio: BiographyData | None, verbose: bool) -> None:
         case "Pocahontas":
             bio.birth_place  = "Werowocomoco, Tsenacommacah"
 
+        case "Al-Khwarizmi":
+            bio.death_place = "House of Wisdom"
+            bio.death_lat = 33.31528
+            bio.death_lon = 44.3661
+
+        case "Irenaeus":
+            bio.birth_date = "before c. 155 AD"
+            bio.death_date = "before c. 191 AD"
 
         case _:
             matched = False

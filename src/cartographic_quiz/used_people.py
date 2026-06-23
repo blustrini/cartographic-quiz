@@ -2,10 +2,11 @@ from pathlib import Path
 import json
 import re
 
-
-
 PUBLIC_QUIZ_FILE = Path(__file__).resolve().parents[2] / "quizzes" / "public"
 USED_PEOPLE_FILE = PUBLIC_QUIZ_FILE / "used_people.txt"
+UNUSED_PEOPLE_FILE = PUBLIC_QUIZ_FILE / "unused_people.txt"
+
+
 
 def read_used_people() -> list[str]:
     people = []
@@ -55,8 +56,7 @@ def _get_names_from_quiz(file_path: Path) -> list[str]:
 def update():
     published_quizzes = _get_published_quizzes()
 
-    all_names = []
-
+    all_used_names = []
     for quiz in published_quizzes:
         print(f"analysing quiz {quiz}")
 
@@ -66,13 +66,13 @@ def update():
             print("Duplicate names found in quiz")
         
         for name in names:
-            if name in all_names:
+            if name in all_used_names:
                 print(f"name {name} already in use!")
             else:
-                all_names.append(name)
+                all_used_names.append(name)
 
     with open(USED_PEOPLE_FILE, 'w'):
-        USED_PEOPLE_FILE.write_text('\n'.join(all_names))
+        USED_PEOPLE_FILE.write_text('\n'.join(all_used_names))
 
     return
 
